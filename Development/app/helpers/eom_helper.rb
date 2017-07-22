@@ -1,0 +1,2 @@
+module EomHelper
+end

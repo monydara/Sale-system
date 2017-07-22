@@ -1,0 +1,205 @@
+  [1m[36m (10483.1ms)[0m  [1mDROP DATABASE IF EXISTS `SMSReport`[0m
+  [1m[35m (74.7ms)[0m  CREATE DATABASE `SMSReport` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (500.3ms)[0m  [1mCREATE TABLE `acknowledges` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tbl_purchase_requests_id` int(11), `signature_id` int(11), `signature_employee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (393.6ms)[0m  CREATE TABLE `actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `action_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (360.9ms)[0m  [1mCREATE TABLE `addresses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `address_title` varchar(255), `address_type` int(11), `lead_id` int(11), `customer_id` int(11), `supplier_id` int(11), `address_line1` varchar(255), `address_line2` varchar(255), `state` varchar(255), `email` varchar(255), `phone` varchar(255), `fax` varchar(255), `created_at` datetime, `updated_at` datetime, `city_id` int(11), `district_id` int(11), `commune_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (336.5ms)[0m  CREATE TABLE `approvals` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tbl_purchase_requests_id` int(11), `signature_id` int(11), `emp_approve` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (400.8ms)[0m  [1mCREATE TABLE `campaings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `campaign_name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (478.3ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `Name` varchar(255) NOT NULL, `Description` varchar(255), `created_at` datetime, `updated_at` datetime, `is_limit_stock` int(11)) ENGINE=InnoDB
+  [1m[36m (482.5ms)[0m  [1mCREATE TABLE `cities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `city` varchar(255), `created_at` datetime, `updated_at` datetime, `country_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (442.3ms)[0m  CREATE TABLE `communes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `district_id` int(11), `commune` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (398.8ms)[0m  [1mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email_id` varchar(255), `mobile_no` varchar(255), `phone` varchar(255), `is_supplier_customer` int(11), `supplier_customer_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (491.1ms)[0m  CREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `Country` varchar(255), `Description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (355.4ms)[0m  [1mCREATE TABLE `currencies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `currency_name` varchar(255), `fraction_units` varchar(255), `symbol` varchar(191), `enabled` varchar(255), `fraction` varchar(255), `number_format` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (408.5ms)[0m  CREATE TABLE `customer_groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (448.9ms)[0m  [1mCREATE TABLE `customerlist` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `Organization` varchar(255), `Zone` varchar(255), `ContactName` varchar(255), `Phone` varchar(255), `FullAmount` float, `Unpaid` float, `SignedDate` varchar(255), `FreeSM` float, `AMCCharge` float, `Products` varchar(255), `Sale` varchar(255), `Technical` varchar(255), `Remark` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (343.8ms)[0m  CREATE TABLE `customers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `customer_name` varchar(255), `lead_name` int(11), `customer_type` varchar(255), `customer_group` varchar(255), `territory_id` int(11), `company` varchar(255), `customer_details` varchar(255), `default_currency` int(11), `credit_days` int(11), `credit_limit` int(11), `website` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (341.4ms)[0m  [1mCREATE TABLE `departments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (672.7ms)[0m  CREATE TABLE `districts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `city_id` int(11), `district` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (515.1ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_series` varchar(255) NOT NULL, `title` int(11), `employee_name` varchar(255) NOT NULL, `gender` varchar(255) NOT NULL, `dob` date NOT NULL, `doj` date NOT NULL, `user_id` int(11), `position_id` int(11), `department_id` int(11), `company_email` varchar(255), `salary` decimal(10,0), `supervisor_id` int(11), `phone_no` varchar(255), `personal_email` varchar(255), `address` varchar(255), `issalesperson` varchar(255), `status` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (296.9ms)[0m  CREATE TABLE `employeetesting` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_code` varchar(50), `employee_name` varchar(50), `position_name` varchar(50), `department_name` varchar(50), `phone` varchar(50)) ENGINE=InnoDB
+  [1m[36m (393.3ms)[0m  [1mCREATE TABLE `implications` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `implication_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (470.2ms)[0m  CREATE TABLE `inventories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11) NOT NULL, `warehouse_id` int(11) NOT NULL, `TotalQty` int(11) NOT NULL, `UpdateDate` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (434.2ms)[0m  [1mCREATE TABLE `lead_activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `lead_id` int(11), `status` int(11), `source` varchar(255), `description` text, `activityDate` date, `created_at` datetime, `updated_at` datetime, `create_by` int(11), `next_contact_date` date, `next_contact_by` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (375.1ms)[0m  CREATE TABLE `lead_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `lead_id` int(11), `product_id` int(11), `item_code` varchar(255), `item_name` varchar(255), `description` text, `qty` int(11), `stock_uom_id` int(11), `export_rate` decimal(10,0), `item_tax_rate` decimal(10,0), `tax_export_amount` decimal(10,0), `export_amount` decimal(10,0), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (453.1ms)[0m  [1mCREATE TABLE `leads` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_series` varchar(255), `name` varchar(255), `lead_name` varchar(255), `company_name` varchar(255), `email_id` varchar(255), `source` varchar(255), `status` int(11), `lead_owner` int(11), `next_contact_by` int(11), `next_contact_date` date, `phone` varchar(255), `mobile_no` varchar(255), `fax` varchar(255), `website` varchar(255), `territory_id` int(11), `type` varchar(255), `market_segment` varchar(255), `industry` varchar(255), `request_type` varchar(255), `campaign_id` int(11), `created_at` datetime, `updated_at` datetime, `address` text, `city` int(11), `district` int(11), `commune` int(11), `lead_at` date, `description` text, `is_failed` int(11), `is_converted` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (368.0ms)[0m  CREATE TABLE `maintenance_report` (`Organization` varchar(255), `Zone` varchar(255), `ContactName` varchar(255), `Phone` varchar(255), `FullAmount` float, `Free S&M` varchar(255), `Charge%` float, `Product` varchar(255), `Amount` float, `StartDate` datetime, `EndDate` datetime, `IsActive` float) ENGINE=InnoDB
+  [1m[36m (444.5ms)[0m  [1mCREATE TABLE `maintenances` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `is_free` int(11), `months` int(11), `frome_date` date, `to_date` date, `sale_price` float, `charge_percent` float, `technical` int(11), `customer_id` int(11), `contact_id` int(11), `currency_id` int(11), `is_include_tax` int(11), `created_at` datetime, `updated_at` datetime, `status` varchar(255), `sale_order_id` int(11), `in_words_export` text, `grand_total_export` float, `rounded_total_export` float, `tax_charges_total_export` float, `net_total_export` float, `paid_amount` float, `unpaid_amount` float) ENGINE=InnoDB[0m
+  [1m[35m (422.5ms)[0m  CREATE TABLE `menu_temp_permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` int(11), `iconCls` varchar(255), `text` varchar(255), `expended` tinyint(1), `leaf` tinyint(1), `ancestry` varchar(255), `action` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (680.8ms)[0m  [1mCREATE INDEX `index_menu_temp_permissions_on_ancestry` USING btree ON `menu_temp_permissions` (`ancestry`(191)) [0m
+  [1m[35m (401.8ms)[0m  CREATE TABLE `menu_temps` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` int(11), `iconCls` varchar(255), `text` varchar(255), `expanded` tinyint(1), `leaf` tinyint(1), `ancestry` varchar(255), `action` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (478.9ms)[0m  [1mCREATE INDEX `index_menu_temps_on_ancestry` USING btree ON `menu_temps` (`ancestry`(191)) [0m
+  [1m[35m (380.2ms)[0m  CREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` int(11), `cls` varchar(255), `text` varchar(255), `expanded` int(11), `leaf` int(11), `parentId` int(11), `action` varchar(255), `iconCls` varchar(255), `created_at` datetime, `updated_at` datetime, `ancestry` varchar(255)) ENGINE=InnoDB
+  [1m[36m (328.5ms)[0m  [1mCREATE TABLE `naming_series` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_type` varchar(255), `series` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (468.8ms)[0m  CREATE TABLE `oums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uom_name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime, `user_id` int(11)) ENGINE=InnoDB
+  [1m[36m (496.6ms)[0m  [1mCREATE TABLE `positions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (588.7ms)[0m  CREATE TABLE `priortiys` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (383.6ms)[0m  [1mCREATE TABLE `product` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `category_id` int(11), `supplier_id` int(11), `code` varchar(255), `stock_uom_id` int(11) NOT NULL, `unitprice` float, `brand` varchar(255), `image` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime, `avatar_file_name` varchar(255), `avatar_content_type` varchar(255), `avatar_file_size` int(11), `avatar_updated_at` datetime, `product_type_id` int(11), `real_name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (405.3ms)[0m  CREATE TABLE `product_price_lists` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_version_id` int(11) NOT NULL, `price_list_name` varchar(255) NOT NULL, `unit_price` decimal(10,4) NOT NULL, `IsDefault` tinyint(1) DEFAULT 1, `user_id` int(11), `created_at` datetime, `updated_at` datetime, `description` text, `product_version` varchar(255)) ENGINE=InnoDB
+  [1m[36m (427.6ms)[0m  [1mCREATE TABLE `product_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (619.2ms)[0m  CREATE TABLE `product_version` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `version` varchar(255)) ENGINE=InnoDB
+  [1m[36m (599.5ms)[0m  [1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `category_id` int(11), `supplier_id` int(11), `code` varchar(255), `stock_uom_id` int(11) NOT NULL, `unitprice` float, `brand` varchar(255), `image` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime, `avatar_file_name` varchar(255), `avatar_content_type` varchar(255), `avatar_file_size` int(11), `avatar_updated_at` datetime, `product_type_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (346.2ms)[0m  CREATE TABLE `project_statuses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (352.8ms)[0m  [1mCREATE TABLE `projects` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `customer_id` int(11), `employee_id` int(11), `start_date` date, `end_date` date, `actual_end_date` date, `status` int(11), `priority` int(11), `description` varchar(255), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `customer_name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (553.7ms)[0m  CREATE TABLE `projecttasks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `project_id` int(11), `name` varchar(255), `priority` int(11), `employee_id` int(11), `start_date` date, `end_date` date, `status` int(11), `description` varchar(255), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `action_id` int(11), `implication` varchar(255), `task_category_id` int(11), `task_sub_category_id` int(11)) ENGINE=InnoDB
+  [1m[36m (378.9ms)[0m  [1mCREATE TABLE `purchase_request_signatures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tbl_purchase_requests_id` int(11), `signature_id` int(11), `signature_employee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (361.9ms)[0m  CREATE TABLE `quotation_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `quotation_id` int(11), `product_id` int(11), `item_code` varchar(255), `item_name` varchar(255), `description` text, `qty` int(11), `stock_uom_id` int(11), `export_rate` decimal(10,0), `item_tax_rate` decimal(10,0), `tax_export_amount` decimal(10,0), `export_amount` decimal(10,0), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (359.9ms)[0m  [1mCREATE TABLE `quotations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_series` varchar(255), `quotation_to` int(11), `customer_id` int(11), `employee_id` int(11), `lead_id` int(11), `quotation_date` date, `order_type` varchar(255), `currency_id` int(11), `net_total_export` decimal(10,0), `tax_charges_total_export` decimal(10,0), `grand_total_export` decimal(10,0), `rounded_total_export` decimal(10,0), `in_words_export` varchar(255), `tc_name` varchar(255), `terms` varchar(255), `territory_id` int(11), `contact_id` int(11), `campaign_id` int(11), `source` varchar(255), `status` varchar(255), `order_lost_reason` text, `expired_date` date, `due_date` varchar(255), `created_at` datetime, `updated_at` datetime, `version` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (361.8ms)[0m  CREATE TABLE `reciepts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_series` varchar(255), `customer_id` int(11), `due_date` date, `sale_invoice_id` int(11), `payment_method` int(11), `currency_id` int(11), `employee_id` int(11), `tax_charges_total_export` float, `grand_total_export` float, `rounded_total_export` float, `in_words_export` varchar(255), `created_at` datetime, `updated_at` datetime, `is_include_tax` int(11)) ENGINE=InnoDB
+  [1m[36m (314.6ms)[0m  [1mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role` varchar(255) NOT NULL, `member` int(11), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (497.9ms)[0m  CREATE TABLE `roles_system_menus` (`role_id` int(11) NOT NULL, `system_menu_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (454.4ms)[0m  [1mCREATE INDEX `index_roles_system_menus_on_role_id_and_system_menu_id` USING btree ON `roles_system_menus` (`role_id`, `system_menu_id`) [0m
+  [1m[35m (342.8ms)[0m  CREATE TABLE `roles_users` (`role_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (429.7ms)[0m  [1mCREATE INDEX `index_roles_users_on_role_id_and_user_id` USING btree ON `roles_users` (`role_id`, `user_id`) [0m
+  [1m[35m (474.9ms)[0m  CREATE TABLE `sale_invoice_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sale_invoice_id` int(11), `product_id` int(11), `item_code` varchar(255), `item_name` varchar(255), `description` text, `reserved_warehouse_id` int(11), `qty` int(11), `stock_uom_id` int(11), `export_rate` decimal(10,0), `item_tax_rate` decimal(10,0), `tax_export_amount` decimal(10,0), `export_amount` decimal(10,0), `is_include_tax` int(11), `discount_amount` decimal(10,0), `discount_percent` decimal(10,0), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (720.4ms)[0m  [1mCREATE TABLE `sale_invoices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sale_order_id` int(11), `naming_series` varchar(255), `customer_id` int(11), `contact_id` int(11), `posting_date` date, `posting_time` time, `payment_due_date` date, `currency_id` int(11), `net_total_export` decimal(10,4), `tax_charges_total_export` decimal(10,4), `grand_total_export` decimal(10,4), `rounded_total_export` decimal(10,4), `in_words_export` varchar(255), `tc_name` varchar(255), `terms` varchar(255), `is_paid` tinyint(1), `created_at` datetime, `updated_at` datetime, `is_include_tax` int(11), `description` varchar(255), `maintenance_id` int(11), `paid_amount` float, `unpaid_amount` float) ENGINE=InnoDB[0m
+  [1m[35m (431.8ms)[0m  CREATE TABLE `sale_order_item` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sale_order_id` int(11), `product_id` int(11), `item_code` varchar(255), `item_name` varchar(255), `description` text, `qty` int(11), `stock_uom_id` varchar(255), `reserved_warehouse_id` int(11), `export_rate` decimal(10,4), `item_tax_rate` decimal(10,4), `tax_export_amount` decimal(10,4), `export_amount` decimal(10,4), `is_include_tax` int(11), `discount_percent` decimal(10,4), `discount_amount` decimal(10,4), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (443.6ms)[0m  [1mCREATE TABLE `sale_order_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sale_order_id` int(11), `product_id` int(11), `item_code` varchar(255), `item_name` varchar(255), `description` text, `qty` int(11), `stock_uom_id` varchar(255), `reserved_warehouse_id` int(11), `export_rate` decimal(10,4), `item_tax_rate` decimal(10,4), `tax_export_amount` decimal(10,4), `export_amount` decimal(10,4), `is_include_tax` int(11), `discount_percent` decimal(10,4), `discount_amount` decimal(10,4), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (400.9ms)[0m  CREATE TABLE `sale_orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_series` varchar(255), `customer_id` int(11), `contact_id` int(11), `order_type` int(11), `sales_order_date` date, `delivery_date` datetime, `delivery_status` tinyint(1), `po_no` varchar(255), `po_date` date, `currency_id` int(11), `net_total_export` decimal(10,4), `tax_charges_total_export` decimal(10,4), `grand_total_export` decimal(10,4), `rounded_total_export` decimal(10,4), `in_words_export` varchar(255), `tc_name` varchar(255), `is_include_tax` int(11), `reason` varchar(255), `terms` varchar(255), `source` varchar(255), `status` varchar(255), `created_at` datetime, `updated_at` datetime, `paid_amount` decimal(10,4), `unpaid_amount` decimal(10,4), `employee_id` int(11)) ENGINE=InnoDB
+  [1m[36m (439.7ms)[0m  [1mCREATE TABLE `sale_orders_back` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `naming_series` varchar(255), `customer_id` int(11), `contact_id` int(11), `order_type` int(11), `sales_order_date` date, `delivery_date` date, `delivery_status` tinyint(1), `po_no` varchar(255), `po_date` date, `currency_id` int(11), `net_total_export` decimal(10,4), `tax_charges_total_export` decimal(10,4), `grand_total_export` decimal(10,4), `rounded_total_export` decimal(10,4), `in_words_export` varchar(255), `tc_name` varchar(255), `is_include_tax` int(11), `reason` varchar(255), `terms` varchar(255), `source` varchar(255), `status` varchar(255), `created_at` datetime, `updated_at` datetime, `paid_amount` decimal(10,4), `unpaid_amount` decimal(10,4), `employee_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (417.7ms)[0m  CREATE TABLE `signatures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `signature_name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (565.2ms)[0m  [1mCREATE TABLE `statuses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `status_no` int(11), `status_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (529.3ms)[0m  CREATE TABLE `statusleads` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `Lstatus` varchar(255), `Description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (322.4ms)[0m  [1mCREATE TABLE `system_menu_permisions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` int(11), `iconCls` varchar(255), `text` varchar(255), `expended` tinyint(1), `leaf` tinyint(1), `ancestry` varchar(255), `action` varchar(255), `checked` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (402.4ms)[0m  CREATE TABLE `system_menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` int(11), `iconCls` varchar(255), `text` varchar(255), `expanded` tinyint(1), `leaf` tinyint(1), `ancestry` varchar(255), `action` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (389.5ms)[0m  [1mCREATE INDEX `index_system_menus_on_ancestry` USING btree ON `system_menus` (`ancestry`(191)) [0m
+  [1m[35m (470.6ms)[0m  CREATE TABLE `task_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (563.2ms)[0m  [1mCREATE TABLE `task_details` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `projecttask_id` int(11), `product_id` int(11), `start_date` date, `end_date` date, `description` varchar(255), `created_at` datetime, `updated_at` datetime, `product_name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (332.4ms)[0m  CREATE TABLE `task_statuses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `status` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (470.0ms)[0m  [1mCREATE TABLE `task_sub_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `task_category_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (535.3ms)[0m  CREATE TABLE `tbl_pur_request_history_details` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `PR_Date` date, `Supplier_ID` int(11), `Qty` int(11), `Uom_id` int(11), `UnitPrice` decimal(18,2), `Amount` decimal(18,2), `Description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (540.7ms)[0m  [1mCREATE TABLE `tbl_purchase_histories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tbl_purchase_requests_id` int(11), `tbl_purchase_request_detail_id` int(11), `Product_ID` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (903.6ms)[0m  CREATE TABLE `tbl_purchase_request_details` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tbl_purchase_requests_id` int(11), `Product_ID` int(11), `ProductName` varchar(255), `Qty` int(11), `Uom_id` int(11), `UnitPrice` decimal(18,2), `Amount` decimal(18,2), `Description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (478.3ms)[0m  [1mCREATE TABLE `tbl_purchase_requests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `PR_no` varchar(255), `Date` date, `Request_reason` varchar(255), `Employee_ID` int(11), `Supplier_ID` int(11), `Grand_total` decimal(18,2), `status` int(11), `created_at` datetime, `updated_at` datetime, `description` text) ENGINE=InnoDB[0m
+  [1m[35m (568.9ms)[0m  CREATE TABLE `tblbranches` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `branch_name` varchar(255), `Address` varchar(255), `Description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (488.3ms)[0m  [1mCREATE TABLE `tblsuppliers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `CompanyName` varchar(255), `ContactName` varchar(255), `ContactTitle` varchar(255), `Address` varchar(255), `city` int(11), `Country` int(11), `Phone` varchar(255), `Email` varchar(255), `Website` varchar(255), `created_at` datetime, `updated_at` datetime, `district` int(11), `commune` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (433.3ms)[0m  CREATE TABLE `terms_and_conditions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `terms` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (480.4ms)[0m  [1mCREATE TABLE `territories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `territory_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (334.6ms)[0m  CREATE TABLE `tmp_maintenance` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company` varchar(45), `zone` varchar(45), `contact_name` varchar(45), `phone` varchar(45), `sale_amount` varchar(45), `duration` varchar(45), `charge_percent` varchar(45), `product` varchar(45), `amount` varchar(45), `start_date` date, `end_date` date, `customer_id` int(11), `is_include_tax` int(11), `is_use` int(11)) ENGINE=InnoDB
+  [1m[36m (332.5ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `title` varchar(255), `englishName` varchar(255), `khmerName` varchar(255), `userName` varchar(255), `password` varchar(255), `positionId` int(11), `extention` varchar(255), `departmentId` int(11), `address` varchar(255), `phone` varchar(255), `email` varchar(255), `isAdmin` int(11), `statusId` int(11), `description` varchar(255), `lastLogin` datetime, `createBy` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (294.5ms)[0m  CREATE TABLE `warehouses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `Name` varchar(255) NOT NULL, `AddressLine1` varchar(255) NOT NULL, `AddressLine2` varchar(255), `Phone` varchar(255), `Email` varchar(255), `Description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (466.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (668.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (249.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20141125074937')
+  [1m[36m (43.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140320162533')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140320174928')
+  [1m[36m (51.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140320175729')[0m
+  [1m[35m (31.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140321020140')
+  [1m[36m (31.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140321021805')[0m
+  [1m[35m (22.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140322013016')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140322055408')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140322065126')
+  [1m[36m (15.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140324174438')[0m
+  [1m[35m (36.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140324184704')
+  [1m[36m (15.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140324192510')[0m
+  [1m[35m (31.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140324193557')
+  [1m[36m (52.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140325145600')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325151424')
+  [1m[36m (15.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140325174141')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140326000012')
+  [1m[36m (49.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140326084428')[0m
+  [1m[35m (24.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140326135635')
+  [1m[36m (15.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327044103')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140331140121')
+  [1m[36m (37.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331140210')[0m
+  [1m[35m (28.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140401201751')
+  [1m[36m (19.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140401201809')[0m
+  [1m[35m (34.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140404141638')
+  [1m[36m (17.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140404142213')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140407214457')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140411013544')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140421043305')
+  [1m[36m (37.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140422041420')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140422041444')
+  [1m[36m (15.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140422041456')[0m
+  [1m[35m (31.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140422041811')
+  [1m[36m (20.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140423052025')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140423150017')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140424011554')[0m
+  [1m[35m (36.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140424025421')
+  [1m[36m (17.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140424041023')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140424045220')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140424234844')[0m
+  [1m[35m (29.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140425041013')
+  [1m[36m (24.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140426221139')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140429034122')
+  [1m[36m (31.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140503163144')[0m
+  [1m[35m (36.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140504101818')
+  [1m[36m (15.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140505164226')[0m
+  [1m[35m (39.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140506112030')
+  [1m[36m (29.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140506171827')[0m
+  [1m[35m (15.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140506180409')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140506192603')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140506194447')
+  [1m[36m (31.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140506195421')[0m
+  [1m[35m (20.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140507102738')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140507172759')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140507173740')
+  [1m[36m (42.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140508002448')[0m
+  [1m[35m (11.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140508143655')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140508203903')[0m
+  [1m[35m (37.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140508225833')
+  [1m[36m (18.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140509113247')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140509121234')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140509142405')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140509144817')
+  [1m[36m (42.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140509175232')[0m
+  [1m[35m (24.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140512013736')
+  [1m[36m (15.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140515101201')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140515101215')
+  [1m[36m (36.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140515101233')[0m
+  [1m[35m (15.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140516122804')
+  [1m[36m (40.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140519132542')[0m
+  [1m[35m (25.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140519184842')
+  [1m[36m (20.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140519225737')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140519234845')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140520042158')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140521023709')
+  [1m[36m (39.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140521045117')[0m
+  [1m[35m (25.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140521082502')
+  [1m[36m (19.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140521082759')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140521185619')
+  [1m[36m (20.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140523185642')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140524011146')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140524073005')[0m
+  [1m[35m (31.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140524114600')
+  [1m[36m (21.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140524201201')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140526023846')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140526203008')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140527045614')
+  [1m[36m (40.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140527091950')[0m
+  [1m[35m (25.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140527092443')
+  [1m[36m (22.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140529211156')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140530210242')
+  [1m[36m (30.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140530210243')[0m
+  [1m[35m (18.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140530210244')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140530210245')[0m
+  [1m[35m (31.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140531020839')
+  [1m[36m (23.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140531044944')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140603041019')
+  [1m[36m (15.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140603041020')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140603041021')
+  [1m[36m (36.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140608161205')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140611084425')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140611084441')[0m
+  [1m[35m (31.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140612090030')
+  [1m[36m (20.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140612091613')[0m
+  [1m[35m (78.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140701034749')
+  [1m[36m (55.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140702160350')[0m
+  [1m[35m (19.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140702190501')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140702191926')[0m
+  [1m[35m (15.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140702193333')
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140702193348')[0m
+  [1m[35m (25.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140702193349')
+  [1m[36m (16.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140703012559')[0m
+  [1m[35m (36.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140703012841')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140703012900')[0m
+  [1m[35m (15.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140703033319')
+  [1m[36m (31.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140705152439')[0m
+  [1m[35m (33.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140707090848')
+  [1m[36m (29.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140707125453')[0m
+  [1m[35m (25.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140707154920')
+  [1m[36m (28.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140710071018')[0m
+  [1m[35m (20.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20141118093728')
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m

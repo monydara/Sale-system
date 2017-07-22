@@ -1,0 +1,2 @@
+module EodHelper
+end

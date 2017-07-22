@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Invoice</title>
+<style type="text/css">
+	.container{
+		/*border: 1px solid gray;*/
+		overflow: auto;
+	}
+	.row{
+		display: block;
+		overflow: auto;
+
+	}
+	.left{
+		float: left;
+
+	}
+	.right{
+		float:right;
+	}
+
+
+	.col2{
+		width:20%;
+	}
+	.col1{
+		width:10%;
+	}
+	.col3{
+		width:30%;
+	}
+	.col4{
+		width:40%;
+	}
+	.col5{
+		width:50%;
+	}
+	.col6{
+		width:60%;
+	}
+	.col7{
+		width:70%;
+	}
+	.col8{
+		width:80%;
+	}
+	.col9{
+		width:90%;
+	}
+	.col10{
+		width:100%;
+	}
+	.col-header{
+		overflow: auto;
+		font-size: 16px ;
+		color:white;
+		text-align: center;
+		background-color: red;
+		text-decoration: underline;
+		height: 25px;
+		padding-top:5px;
+	}
+	.border{
+		border:1px solid black;
+
+	}
+	.border-right{
+		border-right: 1px solid black;
+	}
+	.border-bottom{
+		border-bottom: 1px solid black;
+	}
+	.text-center{
+		text-align: center;
+	}
+/* =============under css can copy to other form ==============*/
+
+	table{
+		border-spacing: 0 ;
+		border:1px solid black;
+	}
+	table td{
+		border:1px solid black;
+		margin:0px;
+		padding:5px;
+	}
+	table th{
+
+		font-size: 16px ;
+		border:1px solid black;
+		color:black;
+		text-align: center;
+		/*background-color: red;*/
+		text-decoration: underline;
+		height: 25px;
+		padding-top:5px;
+	}
+	.none-border-top td{
+		border-top:0px;
+	}
+	.none-border-bottom td{
+		border-bottom:0px;
+		border-top:0px;
+	}
+	.no{
+		text-align: center;
+	}
+	.logo{
+		  color: red;
+		  font-size: 45px;
+		  font-weight: bold;
+		  font-family: Khmer OS Muol Light;
+		  padding-left:40px;
+	}
+	.left{
+		float: left;
+
+	}
+	.right{
+		float:right;
+	}
+
+</style>
+</head>
+<body>
+	<div class="container">
+
+		<div style="margin-top:60px">
+
+		</div>
+
+
+			<div style="display:inline-block; width:100%">
+
+				<div class="right" style="   margin-bottom: -15px; margin-right: 60px; ">
+					<h1>Invoice</h1>
+				</div>
+			</div>
+
+
+
+		<!-- Customer and invoice information -->
+
+			<div style="display:inline-block; ">
+				<div style="display:inline-block;height:146px">
+					<table>
+						<tr>
+
+							<td width="617px"> To: <%= @customer.legal_name %></td>
+						</tr>
+						<tr>
+							<td valign="top" height="100px">
+								Addr: <%= @customer.address %><br>
+								Emial: <%= @customer.email %><br>
+								Phone Number: <%= @customer.phone %> <br>
+								Attn: <%= @customer.contact.contact_name %><br>
+								<% if @invoice.tax_amount.to_i > 0 %>
+
+									VAT TIN: <%= @customer.vat_tin %><br>
+								<% end %>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div style="display:inline-block; width:89px" >
+
+				</div >
+				<div style="display:inline-block ; height:146px">
+					<table>
+						<tr>
+							<td width="118px" >
+								<center>Date </center>
+							</td>
+							<td width="91px">
+								<center>Invoice# </center>
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<center><%= @invoice.date.strftime("%d-%b-%Y") %></center>
+							</td>
+							<td>
+								<center><%= @invoice.invoice_no %> </center>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" height="68px">
+								<% if @invoice.tax_amount.to_i > 0 %>
+									<center>VAT: <%= @company.vat_tin %></center>
+								<% end %>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+			<br>
+			<br>
+
+
+		<!-- Invoice Detail -->
+			<table>
+				<thead>
+					<tr>
+						<th>P.O/Quote Number</th>
+						<th>Due Date</th>
+						<th colspan="2">Project</th>
+					</tr>
+					<tr>
+						<th> <%= @quotaion_no %> </th>
+						<th> <%= @invoice.due_date.strftime("%d-%b-%Y") %></th>
+						<th colspan="2"> </th>
+					</tr>
+					<tr>
+						<th  width="627px" style="  border-bottom: 2pt solid black;" >Description</th>
+						<th width="95px" style="  border-bottom: 2pt solid black;" >QTY</th>
+						<th width="126px" style="  border-bottom: 2pt solid black;" >Unit Price</th>
+						<th width="101px" style="  border-bottom: 2pt solid black;" >Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @invoice_detail.each_with_index do |qd| %>
+						<tr class="none-border-bottom">
+
+							<td  >
+								<b><%= qd.items.name %></b><br>
+
+							</td>
+							<td>
+							<center><%= qd.qty %> </center>
+							</td>
+							<td>
+								<div class="left">
+										$
+								</div>
+								<div class="right">
+									<%= qd.price   %>
+								</div>
+							</td>
+							<td>
+								<div class="left">
+										$
+								</div>
+								<div class="right">
+									<%= '%.02f' % qd.extent_price   %>
+								</div>
+							</td>
+						</tr>
+
+
+					<% end %>
+					<%= @additional_row.html_safe %>
+				</tbody>
+			</table>
+			<table border="0" style="border:0px">
+				<tr>
+					
+						<td colspan="2" rowspan="3" style="border:0px; width:720px"><b>
+							Amount in word:
+						<% amount = ( @invoice.grand_total_amount.round).humanize %>
+							<% amount[0] = amount[0].capitalize %>
+							<%= amount%> USD only.
+
+						</b></td>
+						<td style="border-left:2px solid black;width:118px">Sub Total</td>
+						<td style="border-right:2px solid black;width:93px">
+							<div class="left">$</div>
+							<div class="right"> <%=@invoice.total_amount %></div>
+
+						</td>
+					</tr>
+					<% if @invoice.tax_amount.to_i > 0 %>
+
+						<tr>
+							<td style="border-left:2px solid black;">Vat <%= '%.00f' %  @invoice.tax_percentag %>% </td>
+							<td style="border-right:2px solid black;">
+								<div class="left">
+									$
+								</div>
+								<div class="right">
+									<%= '%.02f' %  @invoice.tax_amount %>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td style="border-left:2px solid black;"><b>Total</b></td>
+							<td style="border-right:2px solid black;">
+								<div class="left">
+									$
+								</div>
+								<div class="right">
+									<%= '%.02f' %  @invoice.grand_total_amount %>
+								</div>
+
+							</td>
+						</tr>
+						<% end %>
+			</table>
+
+
+		<!-- Footer -->
+			<div>
+				<div class="left">
+					<br>
+					<br>
+					<br>
+					
+					
+					_____________________________ <br>
+					<b>Authorized Signature </b><br>
+					Bank name : <%= @company.bank_name %><br>
+					Account name: <%= @company.account_name %> <br>
+					Account No: <%= @company.account_no %><br>
+					If you have inquiry, Please Contact, Tel: <%= @company.phone %>
+
+				</div>
+				<div class="right" style="margin-right:20px">
+					<br>
+					<br>
+					<br>
+					
+					_____________________________ <br>
+					<b>Customer Authorized </b><br>
+				</div>
+
+			</div>
+
+	</div>
+</body>
+
+</html>
+

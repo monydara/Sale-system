@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotation</title>
+<style type="text/css">
+	.container{
+		overflow: auto;
+	
+	}
+	
+	.left1{
+		float: left;
+
+	}
+	.right1{
+		float:right;
+	}
+
+
+	.col2{
+		width:20%;
+	}
+	.col1{
+		width:10%;
+		font-size:10px;
+	}
+	.col3{
+		width:30%;
+		font-size:12px;
+	}
+	.col4{
+		width:40%;
+	}
+	.col5{
+		width:50%;
+		font-size:10px;
+	}
+	.col6{
+		width:60%;
+	}
+	.col7{
+		width:70%;
+	}
+	.col8{
+		width:80%;
+	}
+	.col9{
+		width:80%;
+		font-size:10px;
+	}
+	.col10{
+		width:100%;
+		font-size:12px;
+	}
+	.col-header{
+		overflow: auto;
+		font-size: 12px ;
+		color:white;
+		text-align: center;
+		background-color: red;
+		text-decoration:underline;
+		height: 40pxpx;
+		padding-top:10px;
+		padding-bottom:10px;
+		font-weight:bold;
+	}
+	.border{
+		border:1px solid black;
+
+	}
+	.border-right{
+		border-right: 1px solid black;
+	}
+	.border-bottom{
+		/*border-bottom: 1px solid black;*/
+	}
+	.text-center{
+		text-align: center;
+	}
+/* =============under css can copy to other form ==============*/
+
+	table{
+		border-spacing: 0 ;
+		/*border:1px solid black;*/
+border-right:1px solid #555;
+	}
+	table td{
+		margin:0px;
+		padding:5px;
+                border-right:1px solid #555;
+border-left:1px solid #555;
+border-bottom:1px solid #555;
+                overflow:auto;
+	}
+	table th{
+		font-size: 16px ;
+		color:white;
+		text-align: center;
+		background-color: red;
+		text-decoration: underline;
+		height: 25px;
+		width:40px;
+		padding-top:5px;
+	}
+	.none-border-top td{
+		border-top:0px;
+	}
+	.none-border-bottom td{
+		border-bottom:0px;
+	}
+	.no{
+		text-align: center;
+	}
+	.logo{	
+		  float:left;
+		  color: red;
+		  padding-left:20px;
+		  padding-top:10px;
+		  font-size: 35px;
+		  font-weight: bolder;
+		  font-family: Khmer OS Muol Light;
+		 
+	}
+	.left{
+		float: left;
+		
+
+	}
+	.right{
+		float:right;
+	}
+
+</style>
+</head>
+<body>
+<div class="container" style="overflow:hidden;">
+
+	<!-- header compnay profile -->
+	<div class="profile">	
+		
+			<% if @quotation.tax_amount.to_i > 0 %>
+			    <div class="left1">
+			<% if request.env["REQUEST_PATH"] && request.env["REQUEST_PATH"].include?(".pdf") %>
+<img src= "<%= Rails.root %>/public/<%=@company.image_file_name %>" style="width: 190px;height:120px" />
+				<% end %>	
+			    </div>
+			    <div class="left1">
+				<h1>
+				     <span class="logo"><b><%= @company.legal_name %></b></span>
+				</h1>	
+			    </div>
+			<% end %>
+		
+	</div><!--end company header profile-->
+
+
+<!-- customer information and quotation header -->
+<div  class="row">
+	<!--head of address-->
+	<div class="left col8">
+		<div class="row">
+			<div class="col1 left">
+				<tr>To:<tr><br>
+				<tr>Addr:</tr><br>
+				<tr>H/P:</tr><br>
+				<tr>Email:</tr><br>
+				<tr>Attn:</tr><br>
+			</div>
+			<div class="col9 left">
+				<% if !@customer.nil? %>
+				<tr><%= @customer.name%></tr><br>
+				<tr><%= @customer.address %></tr><br>
+				<tr><%= @customer.phone %></tr><br>
+				<tr><u><i><%= @customer.email %><br></i></u></tr>
+				<tr><b><%= @customer.contact.contact_name %></b></tr><br>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div class="right col2 ">
+		<div class="row">
+			<div class="col5 left">
+				<tr>Quote:</tr><br>
+				<tr>Date:</tr> <br>
+				<tr>Expire Date:</tr>
+			</div>
+			<div class="col5 left">
+				<tr><%= @quotation.sale_quotation_no %></tr><br>
+				<tr><%= @quotation.date.strftime("%d-%b-%Y") %></tr><br>
+				<tr><%= @quotation.expire_date.strftime("%d-%b-%Y")%><tr>
+			</div>
+		</div>
+	</div>
+
+</div><!--end column address-->
+
+<style>
+ .col-header{b}
+</style>
+
+<!--blog infomation  -->
+<div class="rodw border" style="overflow:auto;width:100%;">
+	<div class="col3 left" style="width:33%;height:100px;border-left:1px solid #555;">
+		<div class="row col-header">
+			SALE PERSON
+		</div>
+		<div class="col10">
+			<%= @sale.first_name+" "+@sale.last_name %><br>
+			Tel. <%= @sale.mobile %><br>
+			Email: <%= @sale.email %>
+		</div>
+	</div>
+
+	<div class="col3 left" style="height:100px;border-left:1px solid #555;width:33%">
+		<div class="row col-header">
+			PAYMENT TERM
+		</div>
+		<div class="col10">
+		    <%= simple_format(@quotation.payment_term) %><br>
+		</div>
+	</div>
+   
+
+	<div class="col3 left border-right" style="height:100px;border-left:1px solid #555;width:33%;">
+		<div class="row col-header ">
+			DUE DATE
+		</div>
+		<div class="text-center">
+			<br>
+			7 days after invoice
+		</div>
+	</div>
+</div><!--end header information-->
+<br>
+
+<!--blog body informatin-->
+<table  class="col10">
+	<thead>
+		<th width="40px">No</th>
+		<th width="340px">Description</th>
+		<th>Product</th>
+		<th>QTY</th>
+		<th>Unit Price</th>
+		<th>Total</th>
+	</thead>
+
+	<tbody>
+	<% @quotation_detail.each_with_index do |qd, index| %>
+	<tr class="none-border-bottom">
+		<td width="40px" class="no">
+			<b><%= index+1 %></b>
+		</td>
+		<td>
+			<b><%= qd.items.name %></b><br>
+		</td>
+
+		<td>
+			<center>
+		<img src= "<%= Rails.root %>/public/<%= qd.items.image_url %>" style="width: 50;height:50px"/>
+			</center>
+		</td>
+
+		<td>
+			<center><%= qd.qty %> </center>
+		</td>
+
+		<td>
+			<!--<div class="left">$</div>-->
+			<center>$<%= qd.price%></center>
+		</td>
+		
+
+		<td>
+			<!--<div class="right">$</div>-->
+			<center>$<%= qd.extent_price %></center>
+		</td>
+	</tr>
+
+	<tr class="none-border-top">
+		<td></td>
+		<td ><%= simple_format(qd.description) %></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<% end %>
+
+	</tbody>
+
+</table><!--end blog information-->
+
+<!--blog footer-->
+<table border="0" style="border:0px">
+	<tr>
+		<td colspan="3" rowspan="3" style="border:0px; width:720px">
+			<b font-size:15px;>
+				Amount in word:
+				<%  amount = ( @quotation.grand_total_amount.round).humanize   %>
+				<% amount[0] = amount[0].capitalize %>
+				USD <%= amount%> only.
+			</b>
+		</td>
+		<td style="border-left:2px solid black;width:118px">Sub Total</td>
+		<td style="border-right:2px solid black;width:93px">
+			<div class="left">$</div>
+			<div class="right"> <%= @quotation.total_amount %></div>
+
+		</td>
+	</tr>
+				<tr>
+					<td style="border-left:2px solid black;">Vat <%= @quotation.tax_percentag %>% </td>
+					<td style="border-right:2px solid black;">
+						<div class="left">$</div>
+						<div class="right">
+							<%= @quotation.tax_amount %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="border-left:2px solid black;"><b>Total</b></td>
+					<td style="border-right:2px solid black;">
+						<div class="left">$</div>
+						<div class="right">
+							<%= @quotation.grand_total_amount %>
+						</div>
+
+					</td>
+				</tr>
+		</table>
+
+
+		<div>
+			<b>Note</b><br>
+			<%= simple_format(@quotation.note) %>
+		</div>
+		<br>
+				<br>
+				<br>
+		<div>
+			<div class="left" >
+				On behalf of BDK Tel Co , LTD.
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				Name: <%= @sale.first_name+" "+@sale.last_name %><br><br>
+				Positioin: <%= @sale.position.name %><br><br>
+				Date: <%= Time.now.strftime(" %d-%b-%Y") %><br><br>
+
+			</div>
+			<div class="right" style="width:250px">
+				On behalf of ...............
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				Name:  ______________________<br><br>
+				Positioin: ____________________<br><br>
+				Date: _____/________/_________<br><br>
+			</div>
+			</div>
+		</div>
+			<div style="font-size:25px">
+				<center>Thank Your for Your Business</center>
+			</div>
+	</div>
+</body>
+
+</html>

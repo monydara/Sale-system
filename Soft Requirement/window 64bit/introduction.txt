@@ -1,0 +1,6 @@
+
+1- soft file.exe install get file form client side
+2- soft imagemagick is method for avatar get property file 
+
+after install both of them must be add to enviroment vairable in window . 
+	

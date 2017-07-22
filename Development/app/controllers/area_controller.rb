@@ -1,0 +1,51 @@
+class AreaController < ApplicationController
+	@@common = Common.new
+	def index
+		data = Area
+		if !params[:string].nil?
+			text = "%"+params[:string]+"%"
+			data = data.where(" code like '#{text}' or name like '#{text}'")
+		end
+		render @@common.returnPaginate(data, params[:page],params[:limit])
+	end
+
+	def combo
+		data = Area.all
+		render json:{ data:data , success:true}
+	end
+
+	def create
+		data = Area.new(permit_data)
+		data.save
+		if data.valid?
+			render json:{ data:data , success:true}
+		else
+			render json:{ error:data.errors, success:false}
+		end
+
+	end
+
+	def update
+		data = Area.find(params[:id])
+		data.update_attributes(permit_data)
+		if data.valid?
+			render json:{data:data, success:true}
+		else
+			render json:{error:data.errors, success:false}
+		end
+	end
+	
+	def destroy
+		
+	end
+
+	private
+	def permit_data
+		params.permit(
+				:id, 
+				:code, 
+				:name
+			)
+		
+	end
+end

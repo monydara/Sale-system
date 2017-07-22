@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sale_order_id: 1
+  sale_order_item_id: 1
+  customer_id: 1
+  cycle_date: 2015-03-10
+  status_id: 1
+
+two:
+  sale_order_id: 1
+  sale_order_item_id: 1
+  customer_id: 1
+  cycle_date: 2015-03-10
+  status_id: 1

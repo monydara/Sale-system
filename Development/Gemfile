@@ -1,0 +1,99 @@
+source 'https://rubygems.org'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.0'
+
+# Use mysql as the database for Active Record
+gem 'mysql2' , '0.3.18'
+
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+
+
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+gem 'rake' , '10.5.0'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+#use for pagination
+gem 'will_paginate', '~> 3.0'
+
+
+#use for tree data
+gem 'ancestry'
+
+#use for fileupload
+gem 'paperclip','~> 4.1'
+
+#use for report
+gem 'spreadsheet', '~> 0.9.7'
+
+# wkthmltopdf==>core of pdfkit
+gem 'wkhtmltopdf-binary' , '~> 0.9.9.3'
+
+# use for pdf printing
+gem 'pdfkit'
+
+gem 'thread_safe', '0.3.3'
+
+#  use for ruby schedule
+gem 'whenever', :require => false
+
+# sqlserver adapter
+gem 'activerecord-sqlserver-adapter' #, :git => "git://github.com/rails-sqlserver/activerecord-sqlserver-adapter.git", :branch => "3-2-stable"
+
+# multi database
+gem 'connection_ninja'
+
+# for convert number to english word
+# gem 'linguistics', '2.1.0'
+gem 'humanize'
+
+#  use for encrypt
+gem 'attr_encrypted'
+
+# use for audit trail
+gem "audited-activerecord", "~> 4.0"
+# get diagram from
+#
+gem 'graphviz'
+gem "rails-erd"
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+# == message pop up
+ gem 'toastr-rails'
+# use for encrypt key
+gem 'aescrypt'
+
+gem "seed_dump"
+# ====
+gem 'activerecord-session_store'

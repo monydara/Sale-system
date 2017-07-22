@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  n_type: MyString
+  next_code: 1
+  degit: 1
+
+two:
+  n_type: MyString
+  next_code: 1
+  degit: 1

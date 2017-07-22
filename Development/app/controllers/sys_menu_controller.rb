@@ -1,0 +1,2 @@
+class SysMenuController < ApplicationController
+end

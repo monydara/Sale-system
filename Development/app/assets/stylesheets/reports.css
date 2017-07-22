@@ -1,0 +1,55 @@
+
+.noBorder{
+			border:none;
+		}
+		.subItem{
+			border:none;
+		}
+		.subItem td{
+			border-top:none;
+			border-bottom:none;
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+		}
+		.grid{
+				border-collapse:collapse;
+				border:1px solid #000000;
+				border:none;
+			}
+		.grid td{
+				border:1px solid #000000;
+				text-align: center;
+				}
+		.grid th{
+				border:1px solid #000000;
+				background-color: #1C91D0;
+				font-size: 15px;
+				font-weight: normal;
+				text-align: center;
+				}
+		.headertab{
+			style="width:100%;"
+		}
+		.headertd10{
+			text-align: left;
+			width: 10%;
+		}
+		.headertd55{			
+			width: 55%;
+			text-align: left;
+		}
+		.headertd20{
+			width: 20%;
+			text-align: left;	
+		}
+		.headertd15{
+			width: 15%;
+			text-align: left;	
+		}	
+
+		@media print{
+			body{
+				background-color:red;	
+			}
+			
+		}	
