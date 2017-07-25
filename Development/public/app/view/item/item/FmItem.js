@@ -63,136 +63,136 @@ Ext.define('App.view.item.item.FmItem', {
             },
 
             items: [
+              {
+                  name: 'name',
+                  fieldLabel: 'Name'+redStar,
+                  allowBlank: false,
+              }, {
+                  xtype: 'form',
+                  style: 'margin-left:10px',
+                  width: 300,
+                  items: [{
+                      xtype: 'image',
+                      width: 300,
+                      height: 200,
+                      style: 'border: 1px solid gray; border-radius:10px',
+                      // src:'http://www.chongwu123.info/images/no_image.jpg'
+                      // name: 'image_url',
+                  }, {
+                      xtype: 'hiddenfield',
+                      name: 'image_url'
+                  }],
+                  rowspan: 7,
+                  bbar: [{
+                      xtype: 'filefield',
+                      name: 'image',
+                      width: 50,
+                      buttonOnly: true,
+                  }, '->', {
+                      text: 'Remove',
+                      action: 'Remove',
+                  }],
+              },{
+                  xtype: 'combo',
+                  name: 'item_type_id',
+                  store: 'combo.ItemType',
+                  valueField: 'id',
+                  displayField: 'name',
+                  queryMode: 'local',
+                  listeners: Util.firstSelect(),
+                  autoSelect: true,
+                  selectOnFocus: true,
+                  editable: false,
+                  allowBlank:false,
+                  fieldLabel: 'Item Type'+redStar
+              }, {
+                  layout: 'hbox',
+                  xtype: 'container',
+                  style: 'margin-bottom:5px; margin-left:10px',
+                  items: [{
+                      xtype: 'combo',
+                      name: 'category_id',
+                      store: 'combo.ItemCategory',
+                      valueField: 'id',
+                      displayField: 'name',
+                      queryMode: 'local',
+                      listeners: Util.firstSelect(),
+                      autoSelect: true,
+                      selectOnFocus: true,
+                      allowBlank:false ,
+                      fieldLabel: 'Category'+redStar,
+                      width: 365
+                  }, {
+                      xtype: 'button',
+                      name: 'btnCategory',
+                      style: 'margin-left:5px',
+                      text: '+',
+                      action: 'AddCategory'
+                  }]
+              }, {
+                  layout: 'hbox',
+                  xtype: 'container',
+                  style: 'margin-bottom:5px; margin-left:10px',
+                  items: [{
+                      xtype: 'combo',
+                      name: 'um_id',
+                      store: 'combo.UM',
+                      valueField: 'id',
+                      displayField: 'name',
+                      queryMode: 'local',
+                      listeners: Util.firstSelect(),
+                      autoSelect: true,
+                      selectOnFocus: true,
+                      allowBlank:false,
+                      fieldLabel: 'UM'+redStar,
+                      width: 365
+                  }, {
+                      xtype: 'button',
+                      name: 'btnUM',
+                      style: 'margin-left:5px',
+                      text: '+',
+                      action: 'AddUM',
+                  }]
+              }, {
+                  xtype: 'numberfield',
+                  name: 'price',
+                  allowBlank:false,
+                  minValue:0 ,
+                  fieldLabel: 'Price'+redStar,
+              }, {
+                  xtype: 'numberfield',
+                  name: 're_order_point',
+                  fieldLabel: 'Reorder Point'+redStar,
+                  allowBlank:false ,
+                  minValue: 0
+              }, {
+                  xtype: 'container',
+                  layout: 'hbox',
+                  items: [
 
-                {
-                    xtype: 'form',
-                    style: 'margin-left:10px',
-                    width: 300,
-                    items: [{
-                        xtype: 'image',
-                        width: 300,
-                        height: 200,
-                        style: 'border: 1px solid gray; border-radius:10px',
-                        // src:'http://www.chongwu123.info/images/no_image.jpg'
-                        // name: 'image_url',
-                    }, {
-                        xtype: 'hiddenfield',
-                        name: 'image_url'
-                    }],
-                    rowspan: 7,
-                    bbar: [{
-                        xtype: 'filefield',
-                        name: 'image',
-                        width: 50,
-                        buttonOnly: true,
-                    }, '->', {
-                        text: 'Remove',
-                        action: 'Remove',
-                    }],
-                }, {
-                    name: 'name',
-                    fieldLabel: 'Name'+redStar,
-                    allowBlank: false,
-                }, {
-                    xtype: 'combo',
-                    name: 'item_type_id',
-                    store: 'combo.ItemType',
-                    valueField: 'id',
-                    displayField: 'name',
-                    queryMode: 'local',
-                    listeners: Util.firstSelect(),
-                    autoSelect: true,
-                    selectOnFocus: true,
-                    editable: false,
-                    allowBlank:false,
-                    fieldLabel: 'Item Type'+redStar
-                }, {
-                    layout: 'hbox',
-                    xtype: 'container',
-                    style: 'margin-bottom:5px; margin-left:10px',
-                    items: [{
-                        xtype: 'combo',
-                        name: 'category_id',
-                        store: 'combo.ItemCategory',
-                        valueField: 'id',
-                        displayField: 'name',
-                        queryMode: 'local',
-                        listeners: Util.firstSelect(),
-                        autoSelect: true,
-                        selectOnFocus: true,
-                        allowBlank:false ,
-                        fieldLabel: 'Category'+redStar,
-                        width: 365
-                    }, {
-                        xtype: 'button',
-                        name: 'btnCategory',
-                        style: 'margin-left:5px',
-                        text: '+',
-                        action: 'AddCategory'
-                    }]
-                }, {
-                    layout: 'hbox',
-                    xtype: 'container',
-                    style: 'margin-bottom:5px; margin-left:10px',
-                    items: [{
-                        xtype: 'combo',
-                        name: 'um_id',
-                        store: 'combo.UM',
-                        valueField: 'id',
-                        displayField: 'name',
-                        queryMode: 'local',
-                        listeners: Util.firstSelect(),
-                        autoSelect: true,
-                        selectOnFocus: true,
-                        allowBlank:false,
-                        fieldLabel: 'UM'+redStar,
-                        width: 365
-                    }, {
-                        xtype: 'button',
-                        name: 'btnUM',
-                        style: 'margin-left:5px',
-                        text: '+',
-                        action: 'AddUM',
-                    }]
-                }, {
-                    xtype: 'numberfield',
-                    name: 'price',
-                    allowBlank:false,
-                    minValue:0 ,
-                    fieldLabel: 'Price'+redStar,
-                }, {
-                    xtype: 'numberfield',
-                    name: 're_order_point',
-                    fieldLabel: 'Reorder Point'+redStar,
-                    allowBlank:false ,
-                    minValue: 0
-                }, {
-                    xtype: 'container',
-                    layout: 'hbox',
-                    items: [
+                      {
+                          // style: 'margin-left:115px',
+                          xtype: 'checkbox',
+                          name: 'is_use_serial',
+                          boxLabel: 'Use Serial',
+                          checkedValue: true,
+                          uncheckedValue: false,
+                          style: 'margin-left:100px'
+                      }, {
+                          xtype: 'checkbox',
+                          name: 'status',
+                          boxLabel: 'Active',
+                          checkedValue: true,
+                          uncheckedValue: false,
+                          style: 'margin-left:20px'
+                      },
 
-                        {
-                            // style: 'margin-left:115px',
-                            xtype: 'checkbox',
-                            name: 'is_use_serial',
-                            boxLabel: 'Use Serial',
-                            checkedValue: true,
-                            uncheckedValue: false,
-                            style: 'margin-left:100px'
-                        }, {
-                            xtype: 'checkbox',
-                            name: 'status',
-                            boxLabel: 'Active',
-                            checkedValue: true,
-                            uncheckedValue: false,
-                            style: 'margin-left:20px'
-                        },
+                  ]
 
-                    ]
+              },
 
-                },
             ]
-        }, 
+        },
         // {
         //     xtype: "grid",
         //     title: "Item Price",
@@ -276,7 +276,7 @@ Ext.define('App.view.item.item.FmItem', {
         //     }],
         //     store: 'item.ItemPrice'
 
-        // }, 
+        // },
         {
             xtype: 'container',
             layout: {
