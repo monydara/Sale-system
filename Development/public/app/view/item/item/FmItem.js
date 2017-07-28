@@ -165,6 +165,13 @@ Ext.define('App.view.item.item.FmItem', {
                   fieldLabel: 'Reorder Point'+redStar,
                   allowBlank:false ,
                   minValue: 0
+              },{
+                xtype:'combo',
+                store:'combo.Currency',
+                valueField:'id' ,
+                displayField:'name',
+                fieldLabel:'Item Currency',
+                name:'currency_id'
               }, {
                   xtype: 'container',
                   layout: 'hbox',
@@ -193,90 +200,90 @@ Ext.define('App.view.item.item.FmItem', {
 
             ]
         },
-        // {
-        //     xtype: "grid",
-        //     title: "Item Price",
-        //     height: 200,
-        //     tools: [{
-        //         xtype: 'button',
-        //         iconCls: 'icon-add',
-        //         tooltip: 'Add New Price',
-        //         action: 'addItemPrice',
-        //     }],
-        //     border: true,
-        //     plugins: Ext.create('Ext.grid.plugin.CellEditing', {
-        //         clicksToEdit: 1
-        //     }),
-        //     style: 'border:1px solid silver',
-        //     selModel: {
-        //         selType: 'cellmodel'
-        //     },
-        //     columns: [{
-        //         xtype: 'rownumberer',
-        //         width: 50,
-        //         align: 'center',
-        //         text: 'No'
-        //     }, {
-        //         header: "UoM",
-        //         flex:1,
-        //         dataIndex: 'um_id',
-        //         editor: {
-        //             xtype: 'combo',
-        //             store: 'combo.UM',
-        //             valueField: 'id',
-        //             displayField: 'name',
-        //             queryMode: 'local',
-        //             editable:false ,
-        //             // triggerAction: 'all',
-        //             // listeners: {
-        //             //     select: function(combo, record, index) {
-        //             //         var rec = record[0];
-        //             //         App.app.getController("sale.Quotation").umRecord = rec;
+        {
+            xtype: "grid",
+            title: "Item Price",
+            height: 200,
+            tools: [{
+                xtype: 'button',
+                iconCls: 'icon-add',
+                tooltip: 'Add New Price',
+                action: 'addItemPrice',
+            }],
+            border: true,
+            plugins: Ext.create('Ext.grid.plugin.CellEditing', {
+                clicksToEdit: 1
+            }),
+            style: 'border:1px solid silver',
+            selModel: {
+                selType: 'cellmodel'
+            },
+            columns: [{
+                xtype: 'rownumberer',
+                width: 50,
+                align: 'center',
+                text: 'No'
+            }, {
+                header: "UoM",
+                flex:1,
+                dataIndex: 'um_id',
+                editor: {
+                    xtype: 'combo',
+                    store: 'combo.UM',
+                    valueField: 'id',
+                    displayField: 'name',
+                    queryMode: 'local',
+                    editable:false ,
+                    // triggerAction: 'all',
+                    // listeners: {
+                    //     select: function(combo, record, index) {
+                    //         var rec = record[0];
+                    //         App.app.getController("sale.Quotation").umRecord = rec;
 
-        //             //     }
-        //             // },
-        //         },
-        //         renderer:function(value){
-        //             var store = App.app.getController("item.Item").getComboUMStore();
-        //            var rec =  store.getById(value);
-        //            if (rec) {
-        //             return rec.get("name");
-        //            };
-        //            return '';
-        //         }
-        //     }, {
-        //         flex:1,
+                    //     }
+                    // },
+                },
+                renderer:function(value){
+                    var store = App.app.getController("item.Item").getComboUMStore();
+                   var rec =  store.getById(value);
+                   if (rec) {
+                    return rec.get("name");
+                   };
+                   return '';
+                }
+            }, {
+                flex:1,
 
-        //         header: 'Multiplier',
-        //         dataIndex: 'multiplier',
-        //         field: {
-        //             xtype: 'numberfield',
-        //             name: 'price',
-        //             minValue: 0,
-        //         }
-        //     }, {
-        //         flex:1,
-        //         header: 'Price',
-        //         dataIndex: 'price',
-        //         // renderer: 'usMoney',
-        //         width: 120,
-        //         field: {
-        //             xtype: 'numberfield',
-        //             name: 'price',
-        //             minValue: 0,
-        //         }
-        //     }, {
-        //         flex: 1,
-        //         header: 'Remark',
-        //         dataIndex:'remark',
-        //         field:{
-        //             xtype:'textarea',
-        //             name:'remark',
-        //         }
-        //     }],
-        //     store: 'item.ItemPrice'
+                header: 'Multiplier',
+                dataIndex: 'multiplier',
+                field: {
+                    xtype: 'numberfield',
+                    name: 'price',
+                    minValue: 0,
+                }
+            }, {
+                flex:1,
+                header: 'Price',
+                dataIndex: 'price',
+                // renderer: 'usMoney',
+                width: 120,
+                field: {
+                    xtype: 'numberfield',
+                    name: 'price',
+                    minValue: 0,
+                }
+            }, {
+                flex: 1,
+                header: 'Remark',
+                dataIndex:'remark',
+                field:{
+                    xtype:'textarea',
+                    name:'remark',
+                }
+            }],
+            store: 'item.ItemPrice'
 
-        // },
+        },
         {
             xtype: 'container',
             layout: {

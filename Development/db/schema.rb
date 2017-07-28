@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219073242) do
+ActiveRecord::Schema.define(version: 20170727184726) do
 
   create_table "adjust_stock_details", force: true do |t|
     t.integer  "adjust_stock_id"
@@ -110,6 +110,18 @@ ActiveRecord::Schema.define(version: 20160219073242) do
     t.string   "contact_email"
     t.string   "contact_address"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "currencies", force: true do |t|
+    t.string   "name"
+    t.string   "symbol"
+    t.string   "abbr"
+    t.decimal  "fraction_unit", precision: 10, scale: 0
+    t.decimal  "rate_in",       precision: 18, scale: 6
+    t.decimal  "rate_out",      precision: 18, scale: 6
+    t.boolean  "is_base"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -325,6 +337,7 @@ ActiveRecord::Schema.define(version: 20160219073242) do
     t.integer  "category_id"
     t.integer  "um_id"
     t.decimal  "price",                              precision: 18, scale: 6
+    t.integer  "currency_id"
     t.decimal  "cost_avc",                           precision: 18, scale: 6
     t.decimal  "re_order_point",                     precision: 18, scale: 6
     t.boolean  "is_use_serial"
@@ -795,9 +808,9 @@ ActiveRecord::Schema.define(version: 20160219073242) do
     t.string   "action"
     t.boolean  "is_active"
     t.string   "view_index"
-    t.string   "controller"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "controller_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "transaction_types", force: true do |t|

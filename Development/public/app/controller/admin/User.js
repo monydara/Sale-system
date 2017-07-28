@@ -96,7 +96,7 @@ Ext.define('App.controller.admin.User', {
 	            		style:'font-weight:bold',
 	            		iconCls:eachSubMenu.icon_cls,
 	            		handler:me.fn,
-	            		cn:eachSubMenu.controller,
+	            		cn:eachSubMenu.controller_name,
 		                vn:eachSubMenu.view_index
 
 					}
@@ -115,7 +115,7 @@ Ext.define('App.controller.admin.User', {
 	   				items:subItemMenu
 				}
 				items.push(itemObj)
-				
+
 			}
 
 

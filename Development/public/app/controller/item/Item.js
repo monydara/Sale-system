@@ -9,6 +9,7 @@ Ext.define('App.controller.item.Item', {
 		'combo.UM',
 		'combo.ItemCategory',
 		'combo.ItemType',
+		'combo.Currency',
 		"item.ItemPrice"
 	],
 	init: function() {

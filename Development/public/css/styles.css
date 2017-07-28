@@ -1,6 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+/*@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);*/
 @charset "UTF-8";
 /* Base Styles */
 #cssmenu,
@@ -144,9 +143,9 @@
 
 
 .title_form{
-   color: gray;  
-   font-weight: bold;  
-   font-size: 30px;   
-   padding: 17px;  
+   color: gray;
+   font-weight: bold;
+   font-size: 30px;
+   padding: 17px;
    border-radius: 10px;
 }

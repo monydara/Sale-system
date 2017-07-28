@@ -1,7 +1,7 @@
-class SysMenuController < ApplicationController
+class CurrenciesController < ApplicationController
   @@common = Common.new
 	def index
-		data = SysMenu
+		data = Currency
 		if !params[:string].nil?
 			text = "%"+params[:string]+"%"
 			data = data.where(" code like '#{text}' or name like '#{text}'")
@@ -10,12 +10,12 @@ class SysMenuController < ApplicationController
 	end
 
 	def combo
-		data = SysMenu.where is_leaf:0
-    render json:{ data:data , success:true}
+		data = Currency.all
+		render json:{ data:data , success:true}
 	end
 
 	def create
-		data = SysMenu.new(permit_data)
+		data = Currency.new(permit_data)
 		data.save
 		if data.valid?
 			render json:{ data:data , success:true}
@@ -26,7 +26,7 @@ class SysMenuController < ApplicationController
 	end
 
 	def update
-		data = SysMenu.find(params[:id])
+		data = Currency.find(params[:id])
 		data.update_attributes(permit_data)
 		if data.valid?
 			render json:{data:data, success:true}
@@ -43,16 +43,12 @@ class SysMenuController < ApplicationController
 	def permit_data
 		params.permit(
         :id,
-        :menu,
-        :icon_cls,
-        :expand,
-        :is_leaf,
-        :parent_id,
-        :action,
-        :is_active,
-        :view_index,
-        :controller_name
-			)
-
+        :name,
+        :symbol,
+        :abbr,
+        :fraction_unit,
+        :rate_in,
+        :rate_out
+		)
 	end
 end

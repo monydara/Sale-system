@@ -1,6 +1,6 @@
 Ext.define('App.model.Item', {
     extend: 'Ext.data.Model',
-    fields: [ 
+    fields: [
 	    'id',
 		'name',
 		'code',
@@ -26,6 +26,8 @@ Ext.define('App.model.Item', {
 		'create_by',
 		'modify_by',
 		'um',
+    'currency_id',
+    'currency_name'
    ]
-    
+
 });

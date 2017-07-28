@@ -14,8 +14,11 @@ resources :login
 resources :customers , :item_price , :sale_quotation , :sale_representative , :sale_invoice , :receive_payment, :customer_payment , :lead, :lead_direct_sale, :lead_website, :lead_infomation
 # controller for Transfer fix asset
 resources :depreciation,:transfer_fix_asset
+
 #  controller for set up module
-resources :area , :code , :company_profile , :position , :payment_terms
+resources :area , :code , :company_profile , :position , :payment_terms , :currencies
+
+
 #  controller for purchase module
 resources :venders
 

@@ -2,6 +2,7 @@ class Items < ActiveRecord::Base
 	belongs_to :item_category, foreign_key: 'category_id'
 	belongs_to :item_type, foreign_key: 'item_type_id'
 	belongs_to :ums , :foreign_key => "um_id"
+	belongs_to :currency , :foreign_key => "currency_id"
 	has_many :sale_quotation_detail , foreign_key:'item_id'
 	has_many :opening_stock_detail, foreign_key: "item_id"
 	has_many :adjust_stock_detail, foreign_key: "item_id"

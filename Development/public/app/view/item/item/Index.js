@@ -1,19 +1,19 @@
 
 Ext.define('App.view.item.item.Index', {
     extend:'Ext.panel.Panel',
-    alias:'widget.itemIndex' ,	   
-   
+    alias:'widget.itemIndex' ,
+
     border:true,
-    layout:'card',   
+    layout:'card',
     initComponent:function () {
-        Ext.apply(this, {   
+        Ext.apply(this, {
             items:[
 
-            { 
+            {
                 title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Item List</font>',
                  tools:[
                     {
-                        // fieldLabel:'Search',                    
+                        // fieldLabel:'Search',
                         xtype:'textfield',
                         name:'Search',
                         emptyText:'-- Search Record --'
@@ -28,7 +28,7 @@ Ext.define('App.view.item.item.Index', {
                     },{
                         xtype:'button',
                         action:'Edit',
-                        tooltip:'Edit', 
+                        tooltip:'Edit',
                         style:'margin-left:5px',
                         iconCls:'icon-edit'
                     }
@@ -36,48 +36,53 @@ Ext.define('App.view.item.item.Index', {
                 xtype:'grid',
                 border:true,
                 name:'index',
-                store:'item.Item',                
+                store:'item.Item',
                 columns: [{
-                    header:'NO', 
-                    xtype:'rownumberer', 
-                    width:50, 
+                    header:'NO',
+                    xtype:'rownumberer',
+                    width:50,
                     align:'center',
                 }, {
-                    header:'Code', 
-                    width:100, 
+                    header:'Code',
+                    width:100,
                     dataIndex:'code'
                 }, {
-                    header:'Barcode', 
-                    width:100, 
+                    header:'Barcode',
+                    width:100,
                     dataIndex:'barcode'
                 }, {
-                    header:'Name', 
-                    width:200, 
+                    header:'Name',
+                    width:200,
                     dataIndex:'name'
                 }, {
-                    header: 'Unit', 
-                    width:100, 
+                    header: 'Unit',
+                    width:100,
                     dataIndex: 'um_name'
                 }, {
-                    header:'Item Type', 
-                    width:150, 
+                    header:'Item Type',
+                    width:150,
                     dataIndex:'item_type_name'
                 }, {
                     header:'Category',
-                    width:150, 
+                    width:150,
                     dataIndex:'category_name'
                 }, {
                     header:'Price',
-                    width:100, 
-                    dataIndex:'price', 
+                    width:100,
+                    dataIndex:'price',
                     renderer: Ext.util.Format.usMoney
+                },  {
+                    header:'Currency',
+                    width:100,
+                    dataIndex:'currency_name', 
+                    //renderer: Ext.util.Format.usMoney
                 }, {
                     header:'Reorder Point',
-                    width:150, 
+                    width:150,
                     dataIndex:'re_order_point'
                 }, {
                     header:'Status',
-                    flex:1, 
+                    flex:1,
                     dataIndex:'status'
                 }],
                 bbar:Ext.create('Ext.PagingToolbar', {
@@ -93,7 +98,7 @@ Ext.define('App.view.item.item.Index', {
         });
         this.callParent(arguments);
     },
-   
+
 
 
 

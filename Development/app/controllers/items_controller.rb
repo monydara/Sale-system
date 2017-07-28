@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
 	@@image_url = ''
 
 	def index
-		data = Items.joins(:item_category, :item_type, :ums).select("items.* , item_categories.name 'category_name',
-			item_types.name 'item_type_name', ums.name 'um_name'" )
+		data = Items.joins(:item_category, :item_type, :ums , :currency).select("items.* , item_categories.name 'category_name',
+			item_types.name 'item_type_name', ums.name 'um_name', currencies.name 'currency_name' " )
 		if !params[:search_string].nil?
 			text = '%' + params[:search_string] + '%'
 			data = data.where("items.name like '#{text}' or items.code like '#{text}' or items.barcode like '#{text}'")
@@ -134,6 +134,7 @@ class ItemsController < ApplicationController
 			:depreciation_rate,
 			:purchase_description,
 			:sale_description,
+			:currency_id,
 			:memo,
 			:status,
          item_price_attributes:[
