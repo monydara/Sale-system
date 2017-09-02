@@ -1,6 +1,6 @@
 Ext.define('App.model.Customer', {
     extend: 'Ext.data.Model',
-    fields: [ 
+    fields: [
 		'id',
 		"code",
 		'name',
@@ -23,8 +23,8 @@ Ext.define('App.model.Customer', {
 		'modify_by',
 		'created_at',
 		'updated_at',
-
+    'custom_price_id',
 		'area_name'
     ]
-    
+
 });

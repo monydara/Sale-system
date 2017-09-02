@@ -7,6 +7,7 @@ Ext.application({
     	'Login',
         'Util',
         'Menu',
+        
         // sale menu
         // 'sale.Customer',
         // 'sale.Quotation',

@@ -1,11 +1,11 @@
-Ext.define('App.store.combo.UM', {
+Ext.define('App.store.combo.CustomPrice', {
     extend: 'Ext.data.Store',
     queryMode: 'local',
-  //  autoLoad:false,
-    model: 'App.model.UM',
+    autoLoad:false,
+    model: 'App.model.CustomPrice',
     proxy:{
  	    	type: 'rest',
- 	    	url : '/Ums/combo',
+ 	    	url : '/CustomPrices/combo',
  	    	reader: {
 	            type: 'json',
 	            root: 'data',

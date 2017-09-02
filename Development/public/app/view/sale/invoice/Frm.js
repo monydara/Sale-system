@@ -74,11 +74,11 @@ Ext.define('App.view.sale.invoice.Frm', {
                         fieldLabel: 'From Quotaion',
                         name: 'sale_quotation_id',
                         valueField: 'id',
-                        forceSelection:true,                        
+                        forceSelection:true,
                         displayField: 'sale_quotation_no',
                         store: 'combo.Quotation',
                         queryMode: 'remote',
-                        minChars:2 , 
+                        minChars:2 ,
                         emptyText: '-- Quotation Code --',
                         width: 400,
                     }]
@@ -89,7 +89,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                     allowBlank: false,
                     emptyText: '-- Select Customer --',
                     store: 'combo.Customer',
-                     forceSelection:true,                        
+                     forceSelection:true,
                     valueField: 'id',
                     // editable: false,
                     displayField: 'name',
@@ -140,28 +140,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                 xtype: 'rownumberer',
                 align: 'center',
                 width: 50
-            }, {
-                header: 'Item',
-                dataIndex: 'item_name',
-                width: 200,
-                editor: {
-                    xtype: 'combo',
-                    displayField: 'name',
-                    store: 'combo.Item',
-                    valueField: 'name',
-                    name: 'name',
-                    queryMode: 'local',
-                    typeAhead: true,
-                    triggerAction: 'all',
-                    listeners: {
-                        select: function(combo, record, index) {
-                            var rec = record[0];
-                            App.app.getController("sale.Invoice").itemRecord = rec;
-
-                        }
-                    },
-                }
-            }, {
+            },{
                 header: 'Code',
                 dataIndex: 'code',
                 width: 100,
@@ -184,15 +163,15 @@ Ext.define('App.view.sale.invoice.Frm', {
                 }
 
             }, {
-                header: 'Barcode',
-                width: 100,
-                dataIndex: 'barcode',
+                header: 'Item',
+                dataIndex: 'item_name',
+                width: 200,
                 editor: {
                     xtype: 'combo',
-                    displayField: 'barcode',
-                    valueField: 'barcode',
+                    displayField: 'name',
                     store: 'combo.Item',
-                    name: 'barcode',
+                    valueField: 'name',
+                    name: 'name',
                     queryMode: 'local',
                     typeAhead: true,
                     triggerAction: 'all',
@@ -204,8 +183,31 @@ Ext.define('App.view.sale.invoice.Frm', {
                         }
                     },
                 }
-
-            }, {
+            },
+            // {
+            //     header: 'Barcode',
+            //     width: 100,
+            //     dataIndex: 'barcode',
+            //     editor: {
+            //         xtype: 'combo',
+            //         displayField: 'barcode',
+            //         valueField: 'barcode',
+            //         store: 'combo.Item',
+            //         name: 'barcode',
+            //         queryMode: 'local',
+            //         typeAhead: true,
+            //         triggerAction: 'all',
+            //         listeners: {
+            //             select: function(combo, record, index) {
+            //                 var rec = record[0];
+            //                 App.app.getController("sale.Invoice").itemRecord = rec;
+            //
+            //             }
+            //         },
+            //     }
+            //
+            // },
+            {
                 header: 'UM',
                 dataIndex: 'um',
                 width: 70,

@@ -64,6 +64,7 @@ class CustomersController < ApplicationController
 				:name,
 				:legal_name,
 				:customer_type,
+				:custom_price_id, 
 				:customer_area_id,
 				:vat_tin,
 				:phone,

@@ -33,6 +33,7 @@ resources :opening_stock
 resources :opening_stock_detail
 resources :adjust_stock
 resources :adjust_stock_detail
+resources :custom_prices
 
 # controller for Maintenance module
 resources :maintenance

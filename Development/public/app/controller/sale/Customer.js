@@ -10,7 +10,8 @@ Ext.define('App.controller.sale.Customer', {
 		'sale.Customer',
 		'combo.Area',
 		"combo.Contact",
-		"combo.Lead"
+		"combo.Lead",
+		'combo.CustomPrice'
 
 	],
 	init: function() {

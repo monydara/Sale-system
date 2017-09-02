@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727184726) do
+ActiveRecord::Schema.define(version: 20170820024042) do
 
   create_table "adjust_stock_details", force: true do |t|
     t.integer  "adjust_stock_id"
@@ -126,6 +126,26 @@ ActiveRecord::Schema.define(version: 20170727184726) do
     t.datetime "updated_at"
   end
 
+  create_table "custom_price_details", force: true do |t|
+    t.integer  "custom_price_id"
+    t.integer  "item_id"
+    t.integer  "um_id"
+    t.decimal  "price",           precision: 10, scale: 0
+    t.decimal  "extend_price",    precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "custom_prices", force: true do |t|
+    t.string   "name"
+    t.boolean  "is_active"
+    t.string   "description"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "customer_balances", force: true do |t|
     t.integer  "customer_id"
     t.date     "date"
@@ -165,6 +185,7 @@ ActiveRecord::Schema.define(version: 20170727184726) do
     t.string   "legal_name",        limit: 100
     t.string   "customer_type",     limit: 20
     t.integer  "customer_area_id"
+    t.integer  "custom_price_id"
     t.string   "phone",             limit: 100
     t.string   "mobile",            limit: 100
     t.string   "email",             limit: 100

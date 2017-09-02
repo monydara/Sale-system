@@ -82,13 +82,28 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                     fieldLabel:'Customer Type',
 
                 },{
+                  xtype:'combo' ,
+                  name:'custom_price_id' ,
+                  store:'combo.CustomPrice',
+                  valueField:'id',
+                  displayField:'name',
+                  fieldLabel:'Custom Price'+redStar,
+                  queryMode:'remote',
+                  minChars:2,
+                   listeners:Util.firstSelect(),
+                  autoSelect: true,
+                  allowBlank:false,
+                  selectOnFocus:true,
+
+
+                },{
                     xtype:'combo',
                     name:'customer_area_id',
                     store:'combo.Area',
                     valueField:'id',
                     displayField:'name',
                     queryMode:'remote',
-                    minChars:4,
+                    minChars:2,
                      listeners:Util.firstSelect(),
                     autoSelect: true,
                     allowBlank:false,
