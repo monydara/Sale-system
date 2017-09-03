@@ -3,6 +3,7 @@
 	views: [
 		'sale.invoice.Index',
 		'sale.invoice.Frm',
+        'sale.invoice.Currency'
 
 	],
 	stores: [
@@ -249,7 +250,7 @@
 		var record = grid.getStore().getAt(e.rowIdx);
 
 		switch (e.colIdx) {
-			case 4:
+			case 3:
 				if (record.get("item_id") > 0) {
 					me.getComboItemPriceStore().load({
 						params: {
@@ -269,25 +270,29 @@
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
 		switch (e.colIdx) {
-
+        // change code
 			case 1:
 				getRecordComboSetToGrid(editor, e, me, record);
 				break;
-			case 2:
+            // change item name
+            case 2:
 				getRecordComboSetToGrid(editor, e, me, record);
 				break;
-			case 3:
-				getRecordComboSetToGrid(editor, e, me, record);
+		// change um
+            case 3:
+                setValuePrice(editor, e, me, record);
 				break;
+        // change Qyt
 			case 4:
-				setValuePrice(editor, e, me, record);
+                setValueAmount(editor, e, me, record);
 				break;
+        //change price
 			case 5:
 				setValueAmount(editor, e, me, record);
 				break;
-			case 6:
-				setValueAmount(editor, e, me, record);
-				break;
+			// case 6:
+			// 	setValueAmount(editor, e, me, record);
+			// 	break;
 			default:
 
 		}
@@ -349,6 +354,8 @@
 				record.set("barcode", values.barcode);
 				record.set("um", values.um);
 				record.set("description", values.sale_description);
+				record.set("currency_id", values.currency_id );
+				record.set("currency_symbol" , values.symbol);
 
 
 				me.setTotalAmount(e.grid);
@@ -372,12 +379,14 @@
 		var form = grid.up("form");
 		var taxRate = form.down("numberfield[name=tax_percentag]").getValue();
 		var discounAmount = form.down("numberfield[name=discount_amount]").getValue();
-		var grandTotalAmount = totalAmount;
+
 
 
 		if (discounAmount > 0) {
 			totalAmount =totalAmount -discounAmount ;
 		};
+
+        var grandTotalAmount = totalAmount;
 
 		if (taxRate > 0) {
 			var taxAmount = (taxRate * totalAmount / 100);

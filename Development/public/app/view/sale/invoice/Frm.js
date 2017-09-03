@@ -255,6 +255,11 @@ Ext.define('App.view.sale.invoice.Frm', {
                 dataIndex: 'extent_price',
                 // renderer: 'usMoney'
 
+            },{
+                header:'Currency' ,
+                width: 50 ,
+                dataIndex:'currency_symbol'
+
             }, {
                 header: 'Description',
                 dataIndex: 'description',
@@ -287,7 +292,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                 xtype: 'container',
                 flex: 1,
                 defaults: {
-                    width: 400
+                    width:'100%',
                 },
                 items: [{
                     xtype: 'textarea',
@@ -295,6 +300,20 @@ Ext.define('App.view.sale.invoice.Frm', {
                     fieldLabel: 'Memo',
                     width: 600,
                     height: 100,
+                },{
+                    xtype:'invTotalByCurrency'
+                    // xtype:'fieldset' ,
+                    // title:'Total By Currency ' ,
+                    // bodyPadding: 20 ,
+                    // defaults: {
+                    //     width:'100%',
+                    // },
+                    // // items:[
+                    // //     {
+                    // //         xtype:'textfield',
+                    // //         fieldLabel:"Total Currency "
+                    // //     }
+                    // // ]
                 }]
             }, {
                 xtype: 'container',
@@ -313,7 +332,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                         name: 'tax_amount'
                     }, {
                         xtype: 'numberfield',
-                        fieldLabel: 'Discount($)',
+                        fieldLabel: 'Discount('+App.store.Config.defaultCurrencySymbol+')',
                         name: 'discount_amount',
                         value: 0,
                         minValue: 0
@@ -330,7 +349,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                         minValue: 0
                     }, {
                         xtype: 'displayfield',
-                        fieldLabel: 'Grand Total($)',
+                        fieldLabel: 'Grand Total('+App.store.Config.defaultCurrencySymbol+')',
                         name: 'grand_total_amount_display',
                         value: '0.00'
                     }

@@ -77,7 +77,9 @@ Ext.define('App.view.sale.invoice.Index', {
                             header: 'Amount',
                             width: 150,
                             dataIndex: 'grand_total_amount',
-                            renderer: Ext.util.Format.usMoney
+                            renderer: function(value ){
+                                return Ext.util.Format.currency(value , App.store.Config.defaultCurrencySymbol, 2 )
+                            }
                         }, {
                             header: 'Status',
                             width: 100,

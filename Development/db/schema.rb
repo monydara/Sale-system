@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170820024042) do
+ActiveRecord::Schema.define(version: 20170902082805) do
 
   create_table "adjust_stock_details", force: true do |t|
     t.integer  "adjust_stock_id"
@@ -252,6 +252,7 @@ ActiveRecord::Schema.define(version: 20170820024042) do
     t.float    "total_qty"
     t.decimal  "price",         precision: 18, scale: 6
     t.decimal  "extent_price",  precision: 18, scale: 6
+    t.integer  "currency_id"
     t.integer  "created_by"
     t.integer  "modify_by"
     t.datetime "created_at"

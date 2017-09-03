@@ -44,20 +44,25 @@ Ext.define('App.view.setup.currency.Frm', {
                     xtype:'numberfield',
                     name:'fraction_unit',
                     minValue:1,
-                    fieldLabel:'Fraction Unit'
+                    fieldLabel:'Fraction Unit',
+
                 },
                 {
                     xtype:'numberfield',
                     name:'rate_in',
                     minValue:1,
-                    fieldLabel:'Rate In'
+                    fieldLabel:'Rate In( <b>'+App.store.Config.defaultCurrencySymbol+' </b>)'
                 },
                 {
                     xtype:'numberfield',
                     name:'rate_out',
                     minValue:1,
-                    fieldLabel:'Rate Out'
-                },
+                    fieldLabel:'Rate Out( <b>'+App.store.Config.defaultCurrencySymbol+'</b> )'
+                },{
+                    xtype:'panel',
+                    html:'<b>Note: </b> <p> This form is use for exchange rate.<br> Example. you want set up one'+
+                    ' more currency is Dollar and your default currency is Riel.<b> Fraction Unit = 1$ </b> and <b>Rate In : 4100 </b> mean your exchange is 1$ = 4100 Riel   </p>'
+                }
             ]
         }
     ]

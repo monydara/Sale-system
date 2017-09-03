@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
 	end
 	def combo
 
-		data = Items.joins(:item_category , :ums ).select("items.* , item_categories.name 'category_name' , ums.name 'um'" )
+		data = Items.joins(:item_category , :ums , :currency ).select("items.* , item_categories.name 'category_name' , ums.name 'um' , currencies.symbol " )
 		text = params[:query]
 		if !text.nil?
 			data = data.where "items.name like '%#{text}%' "

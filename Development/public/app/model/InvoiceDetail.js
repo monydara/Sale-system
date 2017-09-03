@@ -15,10 +15,12 @@ Ext.define('App.model.InvoiceDetail', {
 		"extent_price",
 		"created_by",
 		"modify_by",
+		"currency_id",
 		// ====
 		"item_name",
 		"code",
 		"barcode",
+		"currency_symbol",
 		"um",
 		"_destroy"
 	],

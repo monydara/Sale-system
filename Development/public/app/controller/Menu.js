@@ -1,13 +1,20 @@
 
 Ext.define('App.controller.Menu', {
 	extend: 'Ext.app.Controller',
+    requires:[
+		'App.store.Config'
+	],
 	init: function() {
-		
+        this.loadConfigure();
 	    this.control({
 	    	
 	    });
 	},
-	
+	loadConfigure: function(){
+		var me = this ;
+		Util.ajax("Menu/load_config" , {} , App.store.Config.initParam)
+	},
+
 	showPage: function(fileName){
 		var tabpanel = Ext.getCmp('container-page');
 		var panel =tabpanel.down('panel[action='+fileName+']');
