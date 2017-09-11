@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902082805) do
+ActiveRecord::Schema.define(version: 20170910013805) do
 
   create_table "adjust_stock_details", force: true do |t|
     t.integer  "adjust_stock_id"
@@ -126,6 +126,19 @@ ActiveRecord::Schema.define(version: 20170902082805) do
     t.datetime "updated_at"
   end
 
+  create_table "currency_tran_details", force: true do |t|
+    t.string   "ref_type"
+    t.integer  "ref_id"
+    t.integer  "currency_id"
+    t.decimal  "sub_total",      precision: 18, scale: 6
+    t.decimal  "dis_percentage", precision: 18, scale: 6
+    t.decimal  "dis_amount",     precision: 18, scale: 6
+    t.decimal  "tax_amount",     precision: 18, scale: 6
+    t.decimal  "grad_total",     precision: 18, scale: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "custom_price_details", force: true do |t|
     t.integer  "custom_price_id"
     t.integer  "item_id"
@@ -150,6 +163,7 @@ ActiveRecord::Schema.define(version: 20170902082805) do
     t.integer  "customer_id"
     t.date     "date"
     t.decimal  "balance",     precision: 18, scale: 6
+    t.integer  "currency_id"
     t.integer  "created_by"
     t.integer  "modify_by"
     t.datetime "created_at"
@@ -243,15 +257,17 @@ ActiveRecord::Schema.define(version: 20170902082805) do
   create_table "invoice_details", force: true do |t|
     t.integer  "invoice_id"
     t.integer  "item_id"
+    t.decimal  "dis_amount",     precision: 10, scale: 0
+    t.decimal  "dis_percentage", precision: 10, scale: 0
     t.integer  "item_group_id"
     t.text     "description"
     t.string   "serial"
     t.float    "qty"
     t.integer  "um_id"
-    t.decimal  "multiplier",    precision: 18, scale: 6
+    t.decimal  "multiplier",     precision: 18, scale: 6
     t.float    "total_qty"
-    t.decimal  "price",         precision: 18, scale: 6
-    t.decimal  "extent_price",  precision: 18, scale: 6
+    t.decimal  "price",          precision: 18, scale: 6
+    t.decimal  "extent_price",   precision: 18, scale: 6
     t.integer  "currency_id"
     t.integer  "created_by"
     t.integer  "modify_by"

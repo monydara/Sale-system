@@ -96,8 +96,12 @@
       });
    },
 	setDiscount:function(field){
-		var grid = field.up("form").down("grid");
-		this.setTotalAmount(grid);
+       var form =  field.up("form");
+		var grid =form.down("grid");
+		var value = field.getValue();
+
+
+		this.setTotalAmountByCurrency(grid);
 	},
 
 	selectQuotation: function(combo, records) {
@@ -234,7 +238,7 @@
 
 				}
 				store.remove(rec);
-				me.setTotalAmount(grid);
+				me.setTotalAmountByCurrency(grid);
 
 			}
 		});
@@ -242,7 +246,7 @@
 	},
 	getTax: function(field) {
 		var grid = field.up('form').down("grid");
-		this.setTotalAmount(grid);
+		this.setTotalAmountByCurrency(grid);
 	},
 	filterItemPrice: function(editor, e) {
 		var grid = e.grid,
@@ -290,9 +294,10 @@
 			case 5:
 				setValueAmount(editor, e, me, record);
 				break;
-			// case 6:
-			// 	setValueAmount(editor, e, me, record);
-			// 	break;
+		// change Discount
+			case 6:
+				setValueAmount(editor, e, me, record);
+				break;
 			default:
 
 		}
@@ -300,18 +305,30 @@
 		function setValueAmount(editore, e, me, record) {
 
 			if (record.get("qty") > 0 ) {
-				record.set("extent_price", record.get("price") * record.get("qty"));
-				record.set("total_qty", record.get("qty") *record.get("multiplier"));
+				var totalAmount = record.get("price") * record.get("qty") ;
+				var disPercentage = record.get('dis_percentage');
+				var grandTotal = totalAmount ;
+				if(disPercentage > 0 ){
+                    var disAmount  = totalAmount *disPercentage/100;
+                    grandTotal = totalAmount - disAmount ;
+				}
 
-				me.setTotalAmount(e.grid);
+
+
+				record.set("extent_price",grandTotal );
+                record.set("total_qty", record.get("qty") *record.get("multiplier"));
+                record.set("total_qty", record.get("qty") *record.get("multiplier"));
+
+				me.setTotalAmountByCurrency(e.grid);
 
 			}else{
 				Util.msg("QTY must be bigger than 0");
 				record.set("qty" , 1);
 				record.set("extent_price", record.get("price") * 1);
-				record.set("total_qty",1 *record.get("multiplier"));
+                record.set("total_qty",1 *record.get("multiplier"));
+                record.set("dis_percentage",0);
 
-				me.setTotalAmount(e.grid);
+				me.setTotalAmountByCurrency(e.grid);
 			};
 
 
@@ -327,7 +344,8 @@
 				record.set("extent_price", rec.get("price") * record.get("qty"));
 				record.set("um_id", rec.get("um_id"));
 				record.set("um", rec.get("um"));
-				me.setTotalAmount(e.grid);
+				me.setTotalAmountByCurrency(e.grid);
+
 
 				me.umRecord = false;
 			};
@@ -358,7 +376,7 @@
 				record.set("currency_symbol" , values.symbol);
 
 
-				me.setTotalAmount(e.grid);
+				me.setTotalAmountByCurrency(e.grid);
 				me.itemRecord = false;
 
 			};
@@ -366,10 +384,87 @@
 		}
 	},
 
+     setTotalAmountByCurrency:function (grid) {
+         //  sum total amount
+         var totalAmountLocalCurrency = 0;
+         var grandTotalAmountLocalCurrency = 0 ;
+         var totalAmoutByCurrency = {};
+         var form = grid.up("form");
+         var taxRate = form.down("numberfield[name=tax_percentag]").getValue();
+
+         // == summary by currency to amount
+         grid.getStore().each(function(rec) {
+             // sum by currency
+             var amount = rec.get("extent_price") * 1;
+
+             var amountByCurrency = totalAmoutByCurrency[rec.get("currency_id")] ;
+            if(amountByCurrency > 0){
+                amountByCurrency += amount;
+            }else{
+                amountByCurrency = amount;
+            }
+             totalAmoutByCurrency[rec.get("currency_id")] = amountByCurrency;
+
+         });
+
+         //---set to value to total amount by currency form
+         for(var index in totalAmoutByCurrency){
+             var subTotal = totalAmoutByCurrency[index] ;
+             var grandTotalAmount = subTotal ;
+             var discounAmount = form.down("numberfield[name=discount_amount_"+index+"]").getValue();
+
+             if (discounAmount > 0) {
+                 grandTotalAmount =subTotal -discounAmount ;
+             }
+             if (taxRate > 0) {
+                 var taxAmount = (taxRate * grandTotalAmount / 100);
+                 form.down("numberfield[name=tax_amount_"+index+"]").setValue(taxAmount);
+
+                 grandTotalAmount = grandTotalAmount + taxAmount;
+             }
+
+             form.down('textfield[name=sub_total_'+index+']').setValue(subTotal);
+             form.down('textfield[name=grand_total_'+index+']').setValue(grandTotalAmount);
+
+             // convert to total currency
+
+             totalAmountLocalCurrency +=App.controller.GlobalFn.exchagneLocalRateIn(subTotal , index)
+
+
+         }
+
+         // // calculate tax for local currency
+         var discounAmount = form.down("numberfield[name=discount_amount]").getValue();
+
+
+
+         if (discounAmount > 0) {
+             grandTotalAmountLocalCurrency =totalAmountLocalCurrency -discounAmount ;
+         };
+
+
+         if (taxRate > 0) {
+             var taxAmount = (taxRate * grandTotalAmountLocalCurrency / 100);
+             form.down("hiddenfield[name=tax_amount]").setValue(taxAmount);
+             grandTotalAmountLocalCurrency = grandTotalAmountLocalCurrency + taxAmount;
+         };
+
+
+
+
+         // // grand total
+         form.down("displayfield[name=total_amount_display]").setValue(totalAmountLocalCurrency.toFixed(2));
+         form.down("displayfield[name=grand_total_amount_display]").setValue(grandTotalAmountLocalCurrency.toFixed(2));
+         form.down("hiddenfield[name=total_amount]").setValue(totalAmountLocalCurrency);
+         form.down("hiddenfield[name=grand_total_amount]").setValue(grandTotalAmountLocalCurrency);
+
+     },
+
 	setTotalAmount: function(grid) {
 
 		//  sum total amount
 		var totalAmount = 0;
+
 
 		grid.getStore().each(function(rec) {
 			totalAmount += rec.get("extent_price") * 1;
@@ -393,7 +488,6 @@
 			form.down("hiddenfield[name=tax_amount]").setValue(taxAmount);
 			grandTotalAmount = totalAmount + taxAmount;
 		};
-
 
 
 		// grand total
@@ -515,6 +609,11 @@
 					n_type: 'INVOICE NOT INCLUDE TAX'
 				}, me.setCode, form);
 			};
+			setTimeout(function () {
+                me.setTotalAmountByCurrency(conatiner.down("form").down('grid'));
+            },1000)
+
+
 		} else {
 			Util.msg("Invoice can edit in status Draft only .")
 		};
@@ -531,8 +630,6 @@
 			store = me.getSaleInvoiceStore();
 
 		if (form.isValid()) {
-
-
 
 			if (record) {
 				// get delete record from tmp store and add to the real store for submit to server

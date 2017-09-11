@@ -184,29 +184,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                     },
                 }
             },
-            // {
-            //     header: 'Barcode',
-            //     width: 100,
-            //     dataIndex: 'barcode',
-            //     editor: {
-            //         xtype: 'combo',
-            //         displayField: 'barcode',
-            //         valueField: 'barcode',
-            //         store: 'combo.Item',
-            //         name: 'barcode',
-            //         queryMode: 'local',
-            //         typeAhead: true,
-            //         triggerAction: 'all',
-            //         listeners: {
-            //             select: function(combo, record, index) {
-            //                 var rec = record[0];
-            //                 App.app.getController("sale.Invoice").itemRecord = rec;
-            //
-            //             }
-            //         },
-            //     }
-            //
-            // },
+
             {
                 header: 'UM',
                 dataIndex: 'um',
@@ -249,6 +227,16 @@ Ext.define('App.view.sale.invoice.Frm', {
                     minValue: 0
                 }
 
+            },{
+                header: 'Dis(%)',
+                dataIndex: 'dis_percentage',
+                // renderer: 'usMoney',
+                width: 120,
+                field: {
+                    xtype: 'numberfield',
+                    name: 'dis_percentage',
+                    minValue: 0
+                }
             }, {
                 header: 'Extend Price',
                 width: 120,
@@ -263,14 +251,14 @@ Ext.define('App.view.sale.invoice.Frm', {
             }, {
                 header: 'Description',
                 dataIndex: 'description',
-                width: 200,
+               // width: 200,
+                flex:1 ,
                 field: {
                     xtype: 'textarea'
                 }
             }, {
                 header: 'Action',
-                minWidth: 100,
-                flex: 1,
+                width: 50,
                 align: 'center',
                 xtype: 'actioncolumn',
                 items: [{
@@ -339,7 +327,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                     }, {
                         xtype: 'displayfield',
                         name: 'total_amount_display',
-                        fieldLabel: 'Sub Total($)',
+                        fieldLabel: 'Sub Total('+App.store.Config.defaultCurrencySymbol+')',
                         value: '0.00'
                     }, {
                         xtype: 'numberfield',

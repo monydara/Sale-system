@@ -280,6 +280,7 @@ class SaleInvoiceController < ApplicationController
 				:total_qty,
 				:price,
 				:extent_price,
+				:dis_percentage,
 				:_destroy
 			]
 		)
@@ -311,6 +312,7 @@ class SaleInvoiceController < ApplicationController
 				:multiplier,
 				:currency_id ,
 				:total_qty,
+				:dis_percentage,
 				:price,
 				:extent_price
 			]

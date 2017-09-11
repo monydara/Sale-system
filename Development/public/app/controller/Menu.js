@@ -2,7 +2,8 @@
 Ext.define('App.controller.Menu', {
 	extend: 'Ext.app.Controller',
     requires:[
-		'App.store.Config'
+		'App.store.Config',
+		'App.controller.GlobalFn'
 	],
 	init: function() {
         this.loadConfigure();
