@@ -1,3 +1,4 @@
+#Get Start
 1. How to start project 
 ` cd 'to project directory'`
 
