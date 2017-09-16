@@ -1,6 +1,6 @@
 Ext.define('App.store.combo.ItemPrice', {
     extend: 'Ext.data.Store',
-    queryMode: 'remote',
+    queryMode: 'local',
     autoLoad:false,
     model: 'App.model.ItemPrice',
     proxy:{

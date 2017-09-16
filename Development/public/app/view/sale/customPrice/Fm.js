@@ -126,53 +126,60 @@ Ext.define('App.view.sale.customPrice.Fm', {
                     align:'center'
                 },{
                     text:'ITEM NAME',
-                    dataIndex:'item_id',
+                    dataIndex:'item_name',
                     flex:0.5,
                     editor:{
                         xtype:'combo',
                         store:'combo.Item',
-                        valueField:'id',
+                        valueField:'name',
                         queryMode:'remote',
                         minChars:2,
-                        displayField:'name'
+                        displayField:'name',
+                        listeners: {
+                            select: function(combo, record, index) {
+                                var rec = record[0];
+                                console.log(rec);
+                                App.app.getController("sale.CustomPrice").itemRecord = rec;
+
+                            }
+                        },
                     },
-                    renderer:function(value){
-                        if (value ) {
-                            var store = Ext.getStore('combo.Item');
-                            var rec = store.getById(value);
-                            return rec.data.name;
-                        }else{
-                            return "";
-                        };
-                    }
+
                 },{
                     text:'UOM',
-                    dataIndex:'um_id',
+                    dataIndex:'um_name',
                     editor:{
                         xtype:'combo',
                         store:'combo.ItemPrice',
-                        valueField:'um_id',
-                        displayField:'um'
-                    },
-                    renderer:function(value){
-                        var store = Ext.getStore('combo.UM');
-                        var rec = store.getById(value);
-                        if (rec) {
-                            return rec.data.um;
-                        }else{
-                            return ""
-                        };
+                        queryMode:'local',
+                        valueField:'um',
+                        displayField:'um',
+                        listeners: {
+                            select: function(combo, record, index) {
+                                var rec = record[0];
+                                console.log(rec);
+                                App.app.getController("sale.CustomPrice").umRecord = rec;
 
+                            }
+                        },
                     },
+
                     flex:0.3
                 },{
                     text:'Price',
                     dataIndex:'price',
+                    flex:0.2
+                },{
+                    text:'Extend Price',
+                    dataIndex:'extend_price',
                     flex:0.2,
                     field:{
                         xtype:'numberfield',
                         minValue:0
                     }
+                },{
+                    text:'Currency',
+                    dataIndex:'symbol'
                 },{
                     header: 'Action',
                     minWidth: 100,

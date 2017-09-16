@@ -57,6 +57,9 @@
 			'invoiceForm numberfield[name=tax_percentag]': {
 				change: this.getTax
 			},
+			'invoiceForm combo[name=customer_id]':{
+				change: this.filterCustomerPrice
+			},
 
 			'invoiceForm combo[name=sale_quotation_id]': {
 				select: this.selectQuotation
@@ -64,9 +67,9 @@
 			'invoiceForm numberfield[name=discount_amount]': {
 				blur: this.setDiscount
 			},
-         "invoiceForm combo[name=sale_quotation_id]":{
-            select : this.loadDataQuotationDetail
-         }
+			"invoiceForm combo[name=sale_quotation_id]":{
+				select : this.loadDataQuotationDetail
+			}
 
 
 
@@ -74,6 +77,19 @@
 	},
 	itemRecord: {},
 	umRecord: {},
+     filterCustomerPrice:function(combo , value ){
+		var me = this ;
+		 // filter item detail base on custom price
+		 var itemStore =  me.getComboItemStore();
+         itemStore.proxy.extraParams.customer_id =value ;
+         itemStore.load();
+
+         var itemPriceStore = me.getComboItemPriceStore();
+         itemPriceStore.proxy.extraParams.customer_id =value ;
+         itemPriceStore.load();
+
+
+	 },
    loadDataQuotationDetail:function(combo , records){
       var rec = records[0];
       var me = this ;
@@ -135,7 +151,7 @@
 	print: function(btn) {
 		var record = Util.getRecord(btn, "Please Select Invoice For Print");
 		if (record) {
-			window.open("/SaleInvoice/print_invoice.pdf?id=" + record.get('id'));
+			window.open("/SaleInvoice/print_invoice.html?id=" + record.get('id'));
 		};
 	},
 	voidInvoice: function(btn, me ) {
@@ -310,6 +326,7 @@
 				var grandTotal = totalAmount ;
 				if(disPercentage > 0 ){
                     var disAmount  = totalAmount *disPercentage/100;
+                    record.set('dis_amount' , disAmount);
                     grandTotal = totalAmount - disAmount ;
 				}
 
@@ -435,7 +452,7 @@
 
          // // calculate tax for local currency
          var discounAmount = form.down("numberfield[name=discount_amount]").getValue();
-
+         grandTotalAmountLocalCurrency =totalAmountLocalCurrency;
 
 
          if (discounAmount > 0) {
@@ -446,13 +463,17 @@
          if (taxRate > 0) {
              var taxAmount = (taxRate * grandTotalAmountLocalCurrency / 100);
              form.down("hiddenfield[name=tax_amount]").setValue(taxAmount);
-             grandTotalAmountLocalCurrency = grandTotalAmountLocalCurrency + taxAmount;
+             if(taxAmount > 0){
+                 grandTotalAmountLocalCurrency = grandTotalAmountLocalCurrency + taxAmount;
+			 }
+
          };
 
 
 
 
-         // // grand total
+		 // grand total
+
          form.down("displayfield[name=total_amount_display]").setValue(totalAmountLocalCurrency.toFixed(2));
          form.down("displayfield[name=grand_total_amount_display]").setValue(grandTotalAmountLocalCurrency.toFixed(2));
          form.down("hiddenfield[name=total_amount]").setValue(totalAmountLocalCurrency);

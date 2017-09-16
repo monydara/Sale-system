@@ -12,7 +12,9 @@ Ext.define('App.model.CustomPriceDetail', {
       //=====
       'item_name' ,
       'um_name',
+        "symbol",
       "_destroy"
+
     ]
 
 });

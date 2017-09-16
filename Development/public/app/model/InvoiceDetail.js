@@ -16,6 +16,7 @@ Ext.define('App.model.InvoiceDetail', {
 		"created_by",
 		"modify_by",
 		"currency_id",
+		"dis_amount",
 		"dis_percentage",
 		// ====
 		"item_name",

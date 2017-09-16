@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910013805) do
+ActiveRecord::Schema.define(version: 20170916143841) do
 
   create_table "adjust_stock_details", force: true do |t|
     t.integer  "adjust_stock_id"
@@ -833,6 +833,17 @@ ActiveRecord::Schema.define(version: 20170910013805) do
     t.integer  "created_by"
     t.decimal  "avg_cost",                       precision: 18, scale: 6
     t.integer  "modify_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sys_configs", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.text     "description"
+    t.string   "data_type"
+    t.string   "value"
+    t.string   "configs_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

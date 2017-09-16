@@ -7,7 +7,7 @@ class CustomPricesController < ApplicationController
   end
 
   def get_item_detail
-      @data = CustomPriceDetail.where custom_price_id:params[:custom_price_id]
+      @data = CustomPriceDetail.joins(:ums, items:[:currency]).where(custom_price_id:params[:custom_price_id]).select("custom_price_details.* , ums.name 'um_name' , items.name 'item_name' , currencies.symbol")
       render json:{ data:@data , success:true}
 
   end
@@ -59,7 +59,6 @@ class CustomPricesController < ApplicationController
   private
   def permit_data
      params.permit(
-        :id,
         :name,
         :is_active,
         :description,
@@ -67,7 +66,8 @@ class CustomPricesController < ApplicationController
            :id,
            :item_id,
            :um_id,
-           :price
+           :price,
+           :extend_price
         ]
 
         )

@@ -107,8 +107,9 @@ class SaleInvoiceController < ApplicationController
 			@invoice = Invoice.find(params[:id])
 			@company  = CompanyProfile.find(1)
 			@customer = @invoice.customer
-			@invoice_detail = @invoice.invoice_detail
-
+			@invoice_detail = @invoice.invoice_detail.order("currency_id")
+			@default_currency = Currency.find_by_is_base true
+			@invoice_by_currency =@invoice_detail.select(" currency_id , sum(extent_price) amount ").group("currency_id")
 			@quotation_no = ''
 
 			quotation = @invoice.sale_quotation
@@ -140,21 +141,13 @@ class SaleInvoiceController < ApplicationController
 				"
 
 			end
-		#  ========= add blank row
-			$i = @invoice_detail.count()
-			$num = 15
 
-			until $i > $num  do
-			   @additional_row =@additional_row + "<tr>
-			   <td style='border-top:0px; border-bottom:0px'> &nbsp;</td>
-			   <td style='border-top:0px; border-bottom:0px'> </td>
-			   <td style='border-top:0px; border-bottom:0px'> </td>
-			   <td style='border-top:0px; border-bottom:0px'> </td>
-			   </tr>"
-			   $i +=1;
-			end
 
 		end
+
+		@invoice_file_name = SysConfig.get_config_by_code "INV01"
+
+		render @invoice_file_name
 	end
 
 
@@ -280,6 +273,7 @@ class SaleInvoiceController < ApplicationController
 				:total_qty,
 				:price,
 				:extent_price,
+				:dis_amount,
 				:dis_percentage,
 				:_destroy
 			]
@@ -312,6 +306,7 @@ class SaleInvoiceController < ApplicationController
 				:multiplier,
 				:currency_id ,
 				:total_qty,
+				:dis_amount,
 				:dis_percentage,
 				:price,
 				:extent_price

@@ -48,7 +48,24 @@ module SaleInvoiceHelper
 			puts "===========ERROR : "+e.message
 			return false 
 		end
-		
+
+
+	end
+
+	def get_amount_with_tax amount , invoice
+		puts '-------'
+		puts invoice.tax_percentag
+		puts amount
+
+
+		if !invoice.tax_percentag.nil?
+			puts (amount*invoice.tax_percentag)/100
+			((amount*invoice.tax_percentag)/100) + amount
+		else
+			amount
+		end
+
+
 	end
 
 	def self.customer_transaction(invoice , user_id )

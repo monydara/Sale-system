@@ -1,6 +1,6 @@
 Ext.define('App.store.combo.UM', {
     extend: 'Ext.data.Store',
-    queryMode: 'local',
+    queryMode: 'remote',
   //  autoLoad:false,
     model: 'App.model.UM',
     proxy:{

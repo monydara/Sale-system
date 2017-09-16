@@ -28,12 +28,21 @@ class ItemsController < ApplicationController
 	end
 	def combo
 
-		data = Items.joins(:item_category , :ums , :currency ).select("items.* , item_categories.name 'category_name' , ums.name 'um' , currencies.symbol " )
-		text = params[:query]
-		if !text.nil?
-			data = data.where "items.name like '%#{text}%' "
+		@customer_id = params[:customer_id]
+		@data = nil
+
+		if !@customer_id.nil?  and @customer_id.to_i > 0 # filter customer price
+      @data =  ItemsHelper.get_item_by_custom_price(@customer_id , params[:query])
+
+		else
+			@data = Items.joins(:item_category , :ums , :currency ).select("items.* , item_categories.name 'category_name' , ums.name 'um' , currencies.symbol " )
+			text = params[:query]
+			if !text.nil?
+				@data = @data.where "items.name like '%#{text}%' "
+			end
 		end
-		render json:{data:data , success:true}
+
+		render json:{data:@data , success:true}
 	end
 
 	def create

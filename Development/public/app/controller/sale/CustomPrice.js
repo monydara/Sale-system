@@ -50,23 +50,56 @@ Ext.define('App.controller.sale.CustomPrice', {
 	    	"FormCustomPrice combo[name=oppunity_to]":{
 	    		change: this.showAndHideCustomer
 	    	},
-				"FormCustomPrice grid":{
-					beforeedit: this.filterItemPrice,
-
-
-				}
+			"FormCustomPrice grid":{
+				beforeedit: this.filterItemPrice,
+				edit: this.setPriceToItem
+			}
 
 
 	    });
 	},
+    umRecord:{} ,
+    itemRecord:{},
+    setPriceToItem:function (editor , e) {
+        var grid = e.grid,
+            me = this;
+        var record = grid.getStore().getAt(e.rowIdx);
 
+        switch (e.colIdx) {
+
+            case 1:
+                me.imSetPriceToItemDetail(me,record);
+                break;
+			case 2 :
+				me.imSetUmNameAndPriceToItem(me , record)
+				break;
+        }
+
+    },
+    imSetUmNameAndPriceToItem:function (me, record) {
+       	var itemPrice = me.umRecord;
+
+        record.set('price' , itemPrice.get('price'))
+        record.set('um_id' , itemPrice.get('um_id'));
+        record.set('um_name' , itemPrice.get('um'))
+    },
+	imSetPriceToItemDetail:function (me , record) {
+
+		var item = me.itemRecord;
+		record.set('item_id' , item.get('id'));
+        record.set('price' , item.get('price'))
+		record.set('um_id' , item.get('um_id'));
+        record.set('um_name' , item.get('um'))
+    },
 	filterItemPrice: function(editor, e) {
 		var grid = e.grid,
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
 
 		switch (e.colIdx) {
+
 			case 2:
+				// before select item price must be filter price
 				if (record.get("item_id") > 0) {
 					me.getComboItemPriceStore().load({
 						params: {
