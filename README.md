@@ -1,13 +1,24 @@
-#Get Start
-1. How to start project 
-` cd 'to project directory'`
+# README
 
-2. Run project must be run command 
-` rails s `
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-> default url is : _localhost:3000_
-> username: _test_
-> password: _test_
+Things you may want to cover:
 
-3. If case have any changing in database please run : 
- `rake db:migrate`
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

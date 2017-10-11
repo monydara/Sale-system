@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Print</title>
+<style type="text/css">
+	.container{
+		/*border: 1px solid gray;*/
+		overflow: auto;
+	}
+	.row{
+		display: block;
+		overflow: auto;
+
+	}
+	.left{
+		float: left;
+
+	}
+	.right{
+		float:right;
+	}
+
+
+	.col2{
+		width:20%;
+	}
+	.col1{
+		width:10%;
+	}
+	.col3{
+		width:30%;
+	}
+	.col4{
+		width:40%;
+	}
+	.col5{
+		width:50%;
+	}
+	.col6{
+		width:60%;
+	}
+	.col7{
+		width:70%;
+	}
+	.col8{
+		width:80%;
+	}
+	.col9{
+		width:90%;
+	}
+	.col10{
+		width:100%;
+	}
+	.col-header{
+		overflow: auto;
+		font-size: 16px ;
+		color:white;
+		text-align: center;
+		background-color: red;
+		text-decoration: underline;
+		height: 25px;
+		padding-top:5px;
+	}
+	.border{
+		border:1px solid black;
+
+	}
+	.border-right{
+		border-right: 1px solid black;
+	}
+	.border-bottom{
+		border-bottom: 1px solid black;
+	}
+	tr.border-bottom th{
+		 border-top:0pt solid black;
+		 border-bottom:2pt solid black;
+		 border-left:2pt solid black;
+		 border-right:2pt solid black;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.text-left{
+		text-align: left;
+	}
+	.text-right{
+		text-align: right !important;
+	}
+/* =============under css can copy to other form ==============*/
+
+	table{
+		border-spacing: 0 ;
+		border:1px solid black;
+	}
+	table td{
+		border:1px solid black;
+		margin:0px;
+		padding:5px;
+	}
+	table th{
+
+		font-size: 20px ;
+		border:1px solid black;
+		color:black;
+		text-align: center;
+		/*background-color: red;*/
+		/*text-decoration: underline;*/
+		height: 25px;
+		padding-top:5px;
+	}
+	.border-top th{
+		border-top:2px;
+	}
+	.none-border-top td{
+		border-top:0px;
+	}
+	.none-border-bottom td{
+		border-bottom:0px;
+		padding-top: 10px;
+	}
+	.no{
+		text-align: center;
+	}
+	.logo{
+		  color: red;
+		  font-size: 45px;
+		  font-weight: bold;
+		  font-family: Khmer OS Muol Light;
+		  padding-left:40px;
+	}
+	.left{
+		float: left;
+
+	}
+	.right{
+		float:right;
+	}
+	.underline-dot {
+	    border-bottom: 1px dotted #000;
+	    text-decoration: none;
+	}
+</style>
+</head>
+<body style="font-size:20px">
+	<div class="container">
+
+		<div style="margin-top:70px">
+
+		</div>
+
+
+			<div style="display:inline-block; width:100%">
+
+				<div class="right" style="   margin-bottom: -15px; margin-right:20px  ">
+					<h1>Customer Receipt</h1>
+				</div>
+			</div>
+
+
+
+		<!-- Customer and invoice information -->
+
+			<div style="display:inline-block; ">
+				<div style="display:inline-block;height:146px">
+					<table>
+						<tr>
+
+							<td width="517px"> To: <%= @customer.legal_name %></td>
+						</tr>
+						<tr>
+							<td valign="top" height="100px">
+								Addr: <%= @customer.address %><br>
+								Emial: <%= @customer.email %><br>
+								Phone Number: <%= @customer.phone %> <br>
+								Attn: <%= @customer.contact.contact_name %><br>
+								<% if @is_include_tax == true %>
+
+									VAT TIN: <%= @customer.vat_tin %><br>
+								<% end %>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div style="display:inline-block; width:59px" >
+
+				</div >
+				<div style="display:inline-block ; height:146px">
+					<table>
+						<tr>
+							<td width="168px" >
+								<center>Date </center>
+							</td>
+							<td width="171px">
+								<center>Receipt No. </center>
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<center><%= @recieve_payment.date.strftime("%d-%b-%Y") %></center>
+							</td>
+							<td>
+								<center><%= @recieve_payment.receipt_no %> </center>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" height="68px">
+								<% if @is_include_tax == true %>
+									<center>VAT: <%= @company.vat_tin %></center>
+								<% end %>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+
+
+		<!-- Invoice Detail -->
+			<table>
+			 <col width="131">
+			 <col width="131">
+			 <col width="381">
+			 <col width="200">
+			 <col width="121">
+
+				<thead>
+					<tr >
+
+						<th colspan="5" class="text-left">
+							<div >
+
+								<div  class="left" style="width:180px;margin-top:15px;">
+									<center>Payment Method:</center>
+								</div>
+								<div  class="left" style="width:500px; margin:5px 0px">
+								<% if @recieve_payment.payment_type == "CA" %>
+									<input type="checkbox" style="  transform: scale(1.5);" checked="true">	Cash <br>
+									<input type="checkbox" style="transform: scale(1.5);"> Cheque ..............................
+								<% else %>
+									<input type="checkbox" style="  transform: scale(1.5);" >	Cash <br>
+									<input type="checkbox" style="transform: scale(1.5);" checked="true"> Cheque <span class="underline-dot" style="margin-left:20px"><%= " :    "+@recieve_payment.check_no %></span>
+								<% end %>
+
+								</div>
+							</div>
+
+						</th>
+					</tr>
+					<tr>
+						<th>
+							Billed Date
+						</th>
+						<th>
+							Invoice No.
+						</th>
+						<th colspan="2">
+							Description
+						</th>
+						<th>
+							Amount
+						</th>
+					</tr>
+				</thead>
+				<tbody >
+
+					<% @recieve_payment_detail.each_with_index do |d| %>
+						<tr class="none-border-bottom">
+
+							<td valign="top" >
+								<center>
+									<%= 	d.invoice.date.strftime("%d-%b-%Y")  %>
+								</center>
+							</td>
+							<td valign="top">
+								<center>
+									<%= 	d.invoice.invoice_no %>
+								</center>
+							</td>
+							<td colspan="2">
+								<%= d.description %>
+							</td>
+							<td valign="top">
+								<div class="left">
+										$
+								</div>
+								<div class="right">
+									 <%= '%.02f' % d.amount   %>
+								</div>
+							</td>
+						</tr>
+
+
+					<% end %>
+					<%= @additional_row.html_safe %>
+
+					<!-- invoice amount -->
+					<tr >
+
+						<th colspan="4" class="text-right">
+							Total Amount :
+						</th>
+						<th style="padding:5px">
+							<div class="left">$</div>
+							<div class="right"> <%= '%.02f' % @recieve_payment.total_amount %></div>
+						</th>
+					</tr>
+					<tr>
+						<% Linguistics.use( :en ) %>
+						<th colspan="5"  class="text-left"><b>
+							<u>Amount in words</u>:
+							<%  amount = ( @recieve_payment.grand_total_amount.round).en.numwords %>
+							<% amount[0] = amount[0].capitalize %>
+							<%= amount%> USD only.
+
+							</b>
+						</th>
+					</tr>
+
+				</tbody>
+			</table>
+			<table style="border:0px">
+				<col width="966">
+
+
+			</table>
+
+
+		<!-- Footer -->
+			<div>
+				<div class="left">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+
+					_____________________________ <br><br>
+					<b>Received By:....................................</b><br><br>
+					<b>Date:............/.............../................... </b>
+					<br>
+					<br>
+					<br>
+					Bank name : <%= @company.bank_name %><br>
+					Account name: <%= @company.account_name %> <br>
+					Account No: <%= @company.account_no %><br>
+					If you have inquiry, Please Contact, Tel: <%= @company.phone %>
+
+				</div>
+				<div class="right" style="margin-right:20px">
+						<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					_____________________________ <br><br>
+					<b>Payer's Signature:.......................... </b><br><br>
+					<b>Date:............/.............../................... </b>
+
+				</div>
+
+			</div>
+
+	</div>
+</body>
+
+</html>
+
