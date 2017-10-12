@@ -67,3 +67,5 @@ gem 'paperclip','~> 4.1'
 
 # use active record for session store
 gem 'activerecord-session_store'
+
+gem 'rack-cors', :require => 'rack/cors'
