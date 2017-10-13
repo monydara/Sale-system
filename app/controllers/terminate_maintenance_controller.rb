@@ -13,7 +13,7 @@ class TerminateMaintenanceController < ApplicationController
 
 	def update
 		data = Maintenance.find(params[:id])
-		data.modify_by = session[:user_id]
+		data.modify_by = @current_user.id
 		data.update_attributes(permit_data_edit)
 
 		if data.valid?

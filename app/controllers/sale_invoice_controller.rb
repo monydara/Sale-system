@@ -67,8 +67,8 @@ class SaleInvoiceController < ApplicationController
 				if data.valid?
 
 
-					success= SaleInvoiceHelper.save_to_stock_transaction(data, session[:user_id] , session[:location_id] , session[:success], session[:message])
-					success= SaleInvoiceHelper.customer_transaction(data, session[:user_id] )
+					success= SaleInvoiceHelper.save_to_stock_transaction(data, @current_user.id , session[:location_id] , session[:success], session[:message])
+					success= SaleInvoiceHelper.customer_transaction(data, @current_user.id  )
 					render json:{ data:data , success:success}
 				else
 					render json:{ data:data , success:false, error:data.errors }
@@ -198,9 +198,9 @@ class SaleInvoiceController < ApplicationController
 							data.sale_quotation.update_attributes(status:"I")
 						end
 						# process save to stock transaction
-						session[:success]= SaleInvoiceHelper.save_to_stock_transaction(data, session[:user_id] , session[:location_id] , session[:success], session[:message])
+						session[:success]= SaleInvoiceHelper.save_to_stock_transaction(data, @current_user.id , session[:location_id] , session[:success], session[:message])
 						# process save to customer transaction
-						session[:success]= SaleInvoiceHelper.customer_transaction(data, session[:user_id] )
+						session[:success]= SaleInvoiceHelper.customer_transaction(data, @current_user.id )
 
 					else
 

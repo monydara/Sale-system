@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 			data = Items.new(permit_data)
 			# generate code
 			data.code = @@common.get_code_with_config("ITEM" , params[:code])
-			data.create_by = session[:user_id]
+			data.create_by = @current_user.id
 			data.cost_avc = 0
 			# insert um Price
 			@itemPrice = [{um_id:data.um_id.to_i,price:data.price,multiplier:1.to_i }]
@@ -71,7 +71,7 @@ class ItemsController < ApplicationController
 	def update
 
 		data = Items.find(params[:id])
-		data.modify_by = session[:user_id]
+		data.modify_by =@current_user.id
 		old_code = data.code
 		data.update_attributes(permit_data)
 

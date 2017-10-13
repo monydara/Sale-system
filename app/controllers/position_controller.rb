@@ -13,7 +13,7 @@ class PositionController < ApplicationController
 	def create
 		data = Position.new(permit_data)
 		data.is_deleted = false
-		data.created_by = session[:user_id]
+		data.created_by = @current_user.id
 		data.save
 		if data.valid?
 			render json:{ data:data , success:true}

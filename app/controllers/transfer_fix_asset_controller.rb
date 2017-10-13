@@ -45,7 +45,7 @@ class TransferFixAssetController < ApplicationController
 
 
 					if data.valid?
-						success = TransferFixAssetHelper.save_to_stock_transaction_to_location(data, session[:user_id] , data.to_location_id, data.from_location_id, session[:ref_no], session[:success], session[:message])
+						success = TransferFixAssetHelper.save_to_stock_transaction_to_location(data, @current_user.id  , data.to_location_id, data.from_location_id, session[:ref_no], session[:success], session[:message])
 						render json:{data:data , success:success}
 					else
 						render json:{data:data, success:false}
@@ -65,7 +65,7 @@ class TransferFixAssetController < ApplicationController
 				render json:{data:data, success:false, message:'This location not avaliable to transfer. Because item in stock eqaul 0.'}
 				raise ActiveRecord::Rollback
 			else
-				session[:success]= TransferFixAssetHelper.save_to_stock_transaction_to_location(data, session[:user_id] , data.to_location_id, data.from_location_id, session[:ref_no], session[:success], session[:message])
+				session[:success]= TransferFixAssetHelper.save_to_stock_transaction_to_location(data, @current_user.id  , data.to_location_id, data.from_location_id, session[:ref_no], session[:success], session[:message])
 				if data.valid?
 					render json:{data:data, success:true}
 				else

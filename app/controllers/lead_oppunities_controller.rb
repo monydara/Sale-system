@@ -1,7 +1,7 @@
 class LeadOppunitiesController < ApplicationController
    @@common = Common.new
    def index
-      user_id =  session[:user_id]
+      user_id = @current_user.id
       data = LeadOpportunity.joins(:look_up  ).joins("
             left join leads on leads.id = lead_opportunities.lead_id
             left join customers on customers.id = lead_opportunities.customer_id
@@ -33,7 +33,7 @@ class LeadOppunitiesController < ApplicationController
    end
    def create
       begin
-         user_id =  session[:user_id]
+         user_id =@current_user.id
          @data = LeadOpportunity.new(permit_data)
          @data.code = @@common.get_code_with_config("OPPORTUNITY " , params[:code])
          if @data.valid?
@@ -51,7 +51,7 @@ class LeadOppunitiesController < ApplicationController
    end
    def update
       begin
-         user_id =  session[:user_id]
+         user_id =  @current_user.id
          @data = LeadOpportunity.find params[:id]
          @data.update_attributes(permit_data)
          @data.update(modified_by:user_id)

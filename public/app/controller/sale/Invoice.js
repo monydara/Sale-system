@@ -445,7 +445,7 @@
 
              // convert to total currency
 
-             totalAmountLocalCurrency +=App.controller.GlobalFn.exchagneLocalRateIn(subTotal , index)
+             totalAmountLocalCurrency +=App.conf.GlobalFn.exchagneLocalRateIn(subTotal , index)
 
 
          }

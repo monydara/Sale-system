@@ -1,0 +1,2 @@
+module TerminateMaintenanceHelper
+end

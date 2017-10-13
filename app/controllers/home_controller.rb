@@ -43,7 +43,7 @@ class HomeController < ApplicationController
           render json:{ login:false , success:false , message:"Your account is deactive in system"}
         else
 
-          session[:user_id] = @user.id
+          session[:user_id] = @current_user.id
           session[:user] = @user
           redirect_to root_path
         end

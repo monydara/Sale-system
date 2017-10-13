@@ -20,7 +20,7 @@ class CustomerPaymentController < ApplicationController
 		begin
 			ReceivePayment.transaction do
 				data = ReceivePayment.new(permit_data)
-				data.created_by = session[:user_id]
+				data.created_by = @current_user.id
 				data.grand_total_amount = data.total_amount
 				# === get code
 				data.receipt_no = CustomerPaymentHelper.get_code(data)
@@ -35,9 +35,9 @@ class CustomerPaymentController < ApplicationController
 				else
 					# === update unpaid amount and status
 
-					success = CustomerPaymentHelper.payment_invoice(data , session[:user_id])
+					success = CustomerPaymentHelper.payment_invoice(data , @current_user.id )
 					data.save
-					success = CustomerPaymentHelper.insert_to_customer_transaction(data, session[:user_id])
+					success = CustomerPaymentHelper.insert_to_customer_transaction(data, @current_user.id )
 
 
 					if data.valid? && success == true
@@ -63,7 +63,7 @@ class CustomerPaymentController < ApplicationController
 		begin
 			ReceivePayment.transaction do
 				data = ReceivePayment.find(params[:id])
-				data.modify_by = session[:user_id]
+				data.modify_by = @current_user.id
 
 				# check code exist
 				if EomController.check_eom_date(data.date) == false
@@ -74,7 +74,7 @@ class CustomerPaymentController < ApplicationController
 				else
 					# === roll back last invoice paid
 
-					if CustomerPaymentHelper.roll_back_invoice(data , session[:user_id]) == false
+					if CustomerPaymentHelper.roll_back_invoice(data , @current_user.id ) == false
 						render @@common.return_fail("data can not rollback invoice paid")
 						raise ActiveRecord::Rollback
 						return
@@ -84,13 +84,13 @@ class CustomerPaymentController < ApplicationController
 					data.update_attributes(grand_total_amount:data.total_amount)
 
 					# ======  update customer transaction
-					if CustomerPaymentHelper.update_customer_transaction(data , session[:user_id]) == false
+					if CustomerPaymentHelper.update_customer_transaction(data , @current_user.id ) == false
 						render @@common.return_fail("data can not update customer transaction")
 						raise ActiveRecord::Rollback
 						return
 					end
 					# ==== make payment_invoice
-					if CustomerPaymentHelper.payment_invoice(data , session[:user_id])	== false
+					if CustomerPaymentHelper.payment_invoice(data , @current_user.id )	== false
 						render @@common.return_fail("data can not make payment invoice")
 						raise ActiveRecord::Rollback
 						return
@@ -117,7 +117,7 @@ class CustomerPaymentController < ApplicationController
 	def destroy
 
 	end
-	layout false
+	# layout false
 	def print
 		if !params[:id].nil?
 

@@ -1,0 +1,2 @@
+module OpeningStockDetailHelper
+end

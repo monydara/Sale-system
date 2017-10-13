@@ -2,7 +2,7 @@ class LeadWebsiteController < ApplicationController
 	@@common = Common.new
 	def index
 		@@service = LeadPermission::Service.new()
-		user_id =  session[:user_id]
+		user_id =  @current_user.id
 		user_permission = @@service.get_user_permission user_id
 		if user_permission==true
 			data = Lead.joins(:area, :contact,:look_up, :sale_representative, :source, :user ).where("leads.flag=#{3}").select("leads.* , areas.name 'area_name',

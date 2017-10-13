@@ -16,7 +16,7 @@ class OpeningStockController < ApplicationController
 			session[:success] = false 
 			session[:message] = "<b> #{data.date} </b> is already closed.Date Avaliable after closed transaction only "
 		else
-			data.created_by = session[:user_id]
+			data.created_by = @current_user.id
 			data.save
 			if data.valid?
 				render json:{ data:data , success:true }
@@ -27,7 +27,7 @@ class OpeningStockController < ApplicationController
 	end
 	def update
 		data = OpeningStock.find(params[:id])
-		data.modify_by = session[:user_id]
+		data.modify_by = @current_user.id
 		data.update_attributes(permit_data_edit)
 
 		if data.valid?

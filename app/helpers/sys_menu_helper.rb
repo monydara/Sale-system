@@ -1,0 +1,2 @@
+module SysMenuHelper
+end

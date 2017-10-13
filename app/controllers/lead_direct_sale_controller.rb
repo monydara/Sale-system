@@ -2,7 +2,7 @@ class LeadDirectSaleController < ApplicationController
 	@@common = Common.new
 	def index
 		@@service = LeadPermission::Service.new()
-		user_id =  session[:user_id]
+		user_id = @current_user.id
 		user_permission = @@service.get_user_permission user_id
 		puts "============user_permission=#{user_permission}"
 		if user_permission==true
@@ -24,7 +24,7 @@ class LeadDirectSaleController < ApplicationController
 
 	def create
 		Lead.transaction do
-			user_id =  session[:user_id]
+			user_id = @current_user.id
 			data = Lead.new(permit_data)
 			source_id = params[:source_name]
 			data.code = @@common.get_code_with_config("LEAD" , "")
@@ -44,7 +44,7 @@ class LeadDirectSaleController < ApplicationController
 	end
 	def update
 		Lead.transaction do
-			user_id =  session[:user_id]
+			user_id = @current_user.id
 			data = Lead.find(params[:id])
 			data.update_attributes(permit_data)
 			data.update(modified_by:user_id)

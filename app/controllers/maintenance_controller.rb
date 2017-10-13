@@ -13,7 +13,7 @@ class MaintenanceController < ApplicationController
 
 	def create
 		data = Maintenance.new(permit_data)
-		data.created_by = session[:user_id]
+		data.created_by = @current_user.id
 		data.status = 1
 		data.save
 		if data.valid?
@@ -25,7 +25,7 @@ class MaintenanceController < ApplicationController
 
 	def update
 		data = Maintenance.find(params[:id])
-		data.modify_by = session[:user_id]
+		data.modify_by = @current_user.id
 		data.update_attributes(permit_data_edit)
 
 		if data.valid?

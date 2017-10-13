@@ -24,7 +24,7 @@ class CustomPricesController < ApplicationController
   end
   def create
      begin
-        user_id =  session[:user_id]
+        user_id = @current_user.id
         @data = CustomPrice.new(permit_data)
 
         if @data.valid?
@@ -42,7 +42,7 @@ class CustomPricesController < ApplicationController
   end
   def update
      begin
-        user_id =  session[:user_id]
+        user_id =  @current_user.id
         @data = CustomPrice.find params[:id]
         @data.update_attributes(permit_data)
         @data.update(updated_by:user_id)

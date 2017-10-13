@@ -3,7 +3,7 @@ class SaleQuotationController < ApplicationController
 	@@common = Common.new
 	def index
 		@@service = LeadPermission::Service.new()
-		user_id =  session[:user_id]
+		user_id =  @current_user.id
 		user_permission = @@service.get_user_permission user_id
 		if user_permission==true
 			data = SaleQuotation.includes( :customer, :lead)	
@@ -45,7 +45,7 @@ class SaleQuotationController < ApplicationController
 	def create
 
 		SaleQuotation.transaction do
-			user_id =  session[:user_id]
+			user_id =  @current_user.id
 			data = SaleQuotation.new(permit_data_quotation)
 
 			data.sale_quotation_no = @@common.get_code_with_config("QUOTATION" , params[:sale_quotation_no])

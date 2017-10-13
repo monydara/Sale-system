@@ -10,7 +10,7 @@ class VendersController < ApplicationController
 	end
 	def create
 		data = Vender.new(permit_data)
-		data.create_by = session[:user_id]
+		data.create_by = @current_user.id
 		data.save
 		if data.valid?
 			render json:{ data:data , success:true}
@@ -22,7 +22,7 @@ class VendersController < ApplicationController
 
 	def update
 		data = Vender.find(params[:id])
-		data.modify_by = session[:user_id]
+		data.modify_by = @current_user.id
 		data.update_attributes(permit_data)
 		if data.valid?
 			render json:{data:data, success:true}
