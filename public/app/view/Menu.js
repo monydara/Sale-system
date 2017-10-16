@@ -282,7 +282,7 @@ Ext.define('App.view.Menu', {
    		// 	},
    		// 	{
 
-   		// 		title:'System Administration',
+   		// 		title:'extjs Administration',
    		// 		xtype:'menu',
    		// 		cls:'my-menu',
 

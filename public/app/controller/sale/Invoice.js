@@ -151,7 +151,7 @@
 	print: function(btn) {
 		var record = Util.getRecord(btn, "Please Select Invoice For Print");
 		if (record) {
-			window.open("/SaleInvoice/print_invoice.html?id=" + record.get('id'));
+			window.open("/Prints/print_invoice.html?id=" + record.get('id'));
 		};
 	},
 	voidInvoice: function(btn, me ) {
@@ -576,7 +576,7 @@
 			};
 
 		} else {
-			Ext.Msg.alert("Error", "System Can't Get Code");
+			Ext.Msg.alert("Error", "extjs Can't Get Code");
 		};
 	},
 	beforeEdit:function(btn){

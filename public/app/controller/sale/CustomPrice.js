@@ -232,7 +232,7 @@ Ext.define('App.controller.sale.CustomPrice', {
 		var recs = store.getModifiedRecords();
 		if (recs.length > 0) {
 
-			Ext.MessageBox.wait("Please System Proccessing Data.....", "Please Wait")
+			Ext.MessageBox.wait("Please extjs Proccessing Data.....", "Please Wait")
 		};
 		store.sync({
 				success: function() {

@@ -8,14 +8,10 @@ Ext.define('App.controller.Menu', {
 
 	],
 	init: function() {
-        this.loadConfigure();
+      // this.loadConfigure();
 	    this.control({
 	    	
 	    });
-	},
-	loadConfigure: function(){
-		var me = this ;
-		Util.ajax("Menu/load_config" , {} , App.store.Config.initParam)
 	},
 
 	showPage: function(fileName){

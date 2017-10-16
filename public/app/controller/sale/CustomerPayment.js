@@ -182,7 +182,7 @@ Ext.define('App.controller.sale.CustomerPayment', {
 			};
 
 		} else {
-			Ext.Msg.alert("Error", "System Can't Get Code");
+			Ext.Msg.alert("Error", "extjs Can't Get Code");
 		};
 	},
 	edit: function(btn){

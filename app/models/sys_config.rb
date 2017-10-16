@@ -4,7 +4,7 @@ class SysConfig < ActiveRecord::Base
 --- invoice
    INV01 = invoice format name
 
--- System
+-- extjs
   SYS01 = multi currency
 
 =end

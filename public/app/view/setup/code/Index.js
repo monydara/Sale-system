@@ -66,7 +66,7 @@ Ext.define('App.view.setup.code.Index', {
                                 if (rec.get("is_manaul")) {
                                     return "By Manaul";
                                 } else {
-                                    return "By System";
+                                    return "By extjs";
                                 };
                             }
                         },

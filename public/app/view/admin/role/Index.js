@@ -33,7 +33,7 @@ Ext.define('App.view.admin.role.Index', {
                             action: 'ApplyPermission',
                             style: 'margin-left:5px',
                             iconCls: 'icon-applyPermission',
-                            tooltip: 'Apply System Permission'
+                            tooltip: 'Apply extjs Permission'
                         }
                     ],
                     columns: [{

@@ -148,7 +148,7 @@ Ext.define('App.view.item.adjuststock.FmAdjustStock', {
                 }
             }
         }, {
-            header:'System Qty', 
+            header:'extjs Qty', 
             width: 100, 
             dataIndex:'system_qty',
             field: {

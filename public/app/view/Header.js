@@ -15,9 +15,9 @@ Ext.define('App.view.Header', {
         	   border:false,
         	   xtype:'label',
              flex:1,
-        	   text:'Sale Management System',
+        	   text:'Sale Management extjs',
     		   style:'font-weight: bold;font-size: 20px;margin-top:10px'
-//        	   html:'<h3> Document Management System</h3>',  
+//        	   html:'<h3> Document Management extjs</h3>',
            },{
         	   xtype:'label',
         	   width:160,

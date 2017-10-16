@@ -69,7 +69,7 @@ module SaleInvoiceHelper
 	end
 
 	def self.customer_transaction(invoice , user_id )
-		begin
+
 			CustomerTransaction.transaction do
 
 				# --- check if set multi currency
@@ -89,7 +89,7 @@ module SaleInvoiceHelper
 					puts '--------'
 					puts @inv_detail
 
-						else
+				else
 						insert_customer_transcaction(invoice , user_id , currency_id ,invoice.grand_total_amount )
 
 				end
@@ -97,25 +97,20 @@ module SaleInvoiceHelper
 		
 				return true 			
 			end
-		rescue Exception => e
-			puts "===========ERROR : "+e.message
-			return false 
-			
-		end
 	end
 
 	def self.insert_customer_transcaction(invoice , user_id , currency_id , total_amount)
-		@data = CustomerTransaction.new()
+		data = CustomerTransaction.new()
 
-		@data.transaction_id=invoice.id
-		@data.date=DateTime.now()
-		@data.transaction_type_id=2
-		@data.ref_no=invoice.invoice_no
-		@data.created_by=user_id
-		@data.customer_id = invoice.customer_id
-		@data.currency_id =currency_id
-		@data.amount = total_amount
-		@data.save
+		data.transaction_id=invoice.id
+		data.date=DateTime.now()
+		data.transaction_type_id=2
+		data.ref_no=invoice.invoice_no
+		data.created_by=user_id
+		data.customer_id = invoice.customer_id
+		data.currency_id =currency_id
+		data.amount = total_amount
+		data.save
 	end
 
 	def self.remove_item_transaction(invoice)

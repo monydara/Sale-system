@@ -443,7 +443,7 @@ Ext.define('App.controller.sale.Quotation', {
 			};
 
 		} else {
-			Ext.Msg.alert("Error", "System Can't Get Code");
+			Ext.Msg.alert("Error", "extjs Can't Get Code");
 		};
 	},
 
@@ -537,7 +537,7 @@ Ext.define('App.controller.sale.Quotation', {
 			var recs = store.getModifiedRecords();
 			if (recs.length > 0) {
 
-				Ext.MessageBox.wait("Please System Proccessing Data.....", "Please Wait")
+				Ext.MessageBox.wait("Please extjs Proccessing Data.....", "Please Wait")
 			};
 
 			

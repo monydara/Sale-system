@@ -8,10 +8,13 @@ Ext.define('App.controller.Login', {
 		
 	],
 	requires:[
-		'App.conf.Store'
+	// config for store in system
+		'App.conf.Store',
+		// load config feature  like currency and other
+		'App.store.Config'
 	],
 	init: function() {
-		
+
 	    this.control({
 	    	"fmLogin":{
 	    		afterrender:this.checkUserLogedIn
@@ -30,7 +33,13 @@ Ext.define('App.controller.Login', {
 
 	    
 	},
-	logout:function(btn){
+    loadConfigure: function(){
+        var me = this ;
+
+        Util.ajax("Menu/load_config" , {} , App.store.Config.initParam)
+    },
+
+    logout:function(btn){
 		this.showPageLogin();		
 
 	},
@@ -70,7 +79,7 @@ Ext.define('App.controller.Login', {
 	logInProcess:function(username, password){
 
 		if(username && password){
-			 Ext.MessageBox.wait("Please Wait ...... ",'System  logIn');
+			 Ext.MessageBox.wait("Please Wait ...... ",'extjs  logIn');
 			
 			this.username=username;
 			this.password=password;
@@ -88,6 +97,8 @@ Ext.define('App.controller.Login', {
 			// Ext.get('loggedin').setText(obj.data.first_name +" "+ obj.data.last_name);
 			me.showPageCustomer();
 			Ext.MessageBox.hide();
+
+            me.loadConfigure();
 			
 		}else{
 			Ext.MessageBox.hide();

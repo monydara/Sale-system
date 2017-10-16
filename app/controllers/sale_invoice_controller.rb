@@ -1,8 +1,9 @@
 class SaleInvoiceController < ApplicationController
+
 	@@common = Common.new
 
 	def index
-		model = Invoice.joins( :customer )
+		model = Invoice.joins( :customer ).where is_sale_receipt:false
 		data = model.select( " invoices.* ,
 		 customers.name customer_name ,
 		 invoices.grand_total_amount grand_total_amount_display ,
@@ -35,7 +36,7 @@ class SaleInvoiceController < ApplicationController
 
 	def create
 
-		result = create_service()
+		result = create_service false
 
 		render json:result
 
@@ -101,60 +102,12 @@ class SaleInvoiceController < ApplicationController
 		end
 	end
 	# layout false
-	def print_invoice
-		if !params[:id].nil?
-
-			@invoice = Invoice.find(params[:id])
-			@company  = CompanyProfile.find(1)
-			@customer = @invoice.customer
-			@invoice_detail = @invoice.invoice_detail.order("currency_id")
-			@default_currency = Currency.find_by_is_base true
-			@invoice_by_currency =@invoice_detail.select(" currency_id , sum(extent_price) amount ").group("currency_id")
-			@quotation_no = ''
-
-			quotation = @invoice.sale_quotation
-			if !quotation.nil?
-				@quotation_no = quotation.sale_quotation_no
-			end
-
-			@additional_row = ""
-
-		# ====== add discount item
-			if @invoice.discount_amount > 0
-				@additional_row = "
-					<tr class='none-border-bottom'>
-						<td>
-							Discount
-						</td>
-						<td></td>
-						<td></td>
-						<td>
-							<div class='left'>
-										$
-							</div>
-							<div class='right'>
-								(#{ '%.02f' %  @invoice.discount_amount  })
-							</div>
-						</td>
-
-					</tr>
-				"
-
-			end
-
-
-		end
-
-		@invoice_file_name = SysConfig.get_config_by_code "INV01"
- puts "----- #{@invoice_file_name}"
-		render "print_invoice_lux"
-	end
 
 
 
 	private
 
-	def create_service
+	def create_service is_sale_reciept
 
 		session[:success]= true
 		session[:message] ="create success"
@@ -183,16 +136,22 @@ class SaleInvoiceController < ApplicationController
 
 				else
 					# input value by system
-					data.created_by = session['user_id']
+					data.created_by = @current_user.id
 					data.location_id = session[:location_id]
 					data.paid_amount = 0
 					data.unpaid_amount = data.grand_total_amount
 					data.payment_flag =1 # for flat not yet pay
 					data.status = "S" # for status submit
+					data.is_sale_receipt = is_sale_reciept
 
+					puts "------ 1"
+
+					puts "invoie detail #{data.invoice_detail.count}"
+					puts "invoice detail natse #{ params[:invoice_detail_attributes] }"
 
 					if data.valid?
 						data.save
+						puts "------ 2"
 						# update quotation to invoie status
 						if !data.sale_quotation_id.nil? && data.sale_quotation_id > 0
 							data.sale_quotation.update_attributes(status:"I")

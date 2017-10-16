@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   resources :sys_menu, :menu
   resources :rel_menu_role
 
+  resources :prints
+
   get  ':controller(/:action(/:id))'
   post  ':controller(/:action(/:id))'
 end
