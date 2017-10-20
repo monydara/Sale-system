@@ -20,13 +20,16 @@ class MenuController < ApplicationController
   def load_config
     @defaultCurrency = Currency.find_by is_base:true
     @allCurrency = Currency.all
+    defaultVat = SysConfig.get_config_by_code "INV02" #-- load default value of default tax
+
 
     render json:{
         success:true ,
         defaultCurrencyId: @defaultCurrency.id  ,
         defaultCurrencySymbol: @defaultCurrency.symbol ,
         defaultCurrencyAbbr: @defaultCurrency.abbr,
-        allCurrency: @allCurrency
+        allCurrency: @allCurrency,
+        defaultVAT: defaultVat
 
     }
   end

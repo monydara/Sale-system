@@ -15,14 +15,9 @@ class ContactController < ApplicationController
 
    end
    def create
-      begin
-         @data = Contact.new permit_data
-         @data.save
-         render json:{ success:true , message:'Contact save success.'}
-      rescue Exception => e
-         render json:{ success:false  , message:e.message}
-      end
-
+      @data = Contact.new permit_data
+      @data.save
+      render json:{ success:true , message:'Contact save success.'}
    end
    def update
       begin

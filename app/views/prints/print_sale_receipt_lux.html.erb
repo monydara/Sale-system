@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Invoice <%= @invoice.invoice_no %>  </title>
+  <script>
+      window.print();
+  </script>
+  <style type="text/css">
+    .container{
+      /*border: 1px solid gray;*/
+      overflow: auto;
+    }
+    .row{
+      display: block;
+      overflow: auto;
+
+    }
+    .left{
+      float: left;
+
+    }
+    .right{
+      float:right;
+    }
+
+
+    .col2{
+      width:20%;
+    }
+    .col1{
+      width:10%;
+    }
+    .col3{
+      width:30%;
+    }
+    .col4{
+      width:40%;
+    }
+    .col5{
+      width:50%;
+    }
+    .col6{
+      width:60%;
+    }
+    .col7{
+      width:70%;
+    }
+    .col8{
+      width:80%;
+    }
+    .col9{
+      width:90%;
+    }
+    .col10{
+      width:100%;
+    }
+    .col-header{
+      overflow: auto;
+      font-size: 16px ;
+      color:white;
+      text-align: center;
+      background-color: red;
+      text-decoration: underline;
+      height: 25px;
+      padding-top:5px;
+    }
+    .border{
+      border:1px solid black;
+
+    }
+    .border-right{
+      border-right: 1px solid black;
+    }
+    .border-bottom{
+      border-bottom: 1px solid grey;
+    }
+    .text-center{
+      text-align: center;
+    }
+    /* =============under css can copy to other form ==============*/
+
+    table{
+      border-spacing: 0 ;
+      border:1px solid black;
+    }
+    table td{
+      border:1px solid black;
+      margin:0px;
+      padding:5px;
+      font-size: 12px ;
+
+    }
+    table th{
+
+      font-size: 12px ;
+      border:1px solid black;
+      color:black;
+      text-align: center;
+      /*background-color: red;*/
+      text-decoration: underline;
+      height: 25px;
+      padding-top:5px;
+    }
+    .none-border-top td{
+      border-top:0px;
+    }
+    .none-border-bottom td{
+      border-bottom:0px;
+      border-top:0px;
+    }
+    .no{
+      text-align: center;
+    }
+    .logo{
+      color: red;
+      font-size: 45px;
+      font-weight: bold;
+      font-family: Khmer OS Muol Light;
+      padding-left:40px;
+    }
+    .left{
+      float: left;
+
+    }
+    .right{
+      float:right;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div style="margin-top:60px">
+
+  </div>
+
+
+  <div style="display:inline-block; width:100%">
+    <!-- logo -->
+    <img style="width: 200px;" src="<%= @company.image_file_name %>">
+
+    <div class="right" style="   margin-bottom: -15px; margin-right: 60px; ">
+      <b> Main Branch <br>
+        សាខាចម្បង<br></b>
+      Tel: <%= @company.phone %>
+    </div>
+  </div>
+
+
+
+  <!-- Customer and invoice information -->
+
+  <div style="display:inline-block; ">
+    <div style="display:inline-block;">
+
+      <table style="border:0px">
+        <tr >
+
+          <td width="345px" style="border:none">
+            បេឡាករ: <%= @invoice.user.first_name   %> <%= @invoice.user.last_name  %> <br>
+            អតិថិជន: <b><%= @customer.legal_name %> </b>
+          </td>
+          <td width="340px" style="text-align: right; border:none">
+            វិក័យប័ត្រ : <%= @invoice.invoice_no  %> <br>
+            ថ្ងៃ : <%= @invoice.date.strftime("%d-%b-%Y %H:%m")  %>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+  </div>
+  <br>
+  <br>
+
+
+  <!-- Invoice Detail -->
+  <table>
+    <thead>
+
+
+    <tr>
+      <th  width="497px" style="  border-bottom: 2pt solid black;" >Name/ឈ្មោះ</th>
+      <th width="105px" style="  border-bottom: 2pt solid black;" >QTY/បរិមាណ</th>
+      <th width="126px" style="  border-bottom: 2pt solid black;" >Price/តំលៃ</th>
+      <th width="120px" style="  border-bottom: 2pt solid black;" >Dis./បញ្ចូះុតំលៃ</th>
+
+      <th width="101px" style="  border-bottom: 2pt solid black;" >Amount/សរុប</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @invoice_detail.each_with_index do |qd| %>
+        <tr class="none-border-bottom">
+
+          <td  >
+            <b><%= qd.items.name %></b><br>
+
+          </td>
+          <td>
+            <center><%= qd.qty %> </center>
+          </td>
+
+          <td>
+            <div class="left">
+
+            </div>
+            <div class="right">
+              <%=  '%.02f' % qd.price   %>
+            </div>
+          </td>
+          <td >
+            <div class="right">
+              <% if qd.dis_amount.nil? %>
+                  <%=  qd.dis_amount %>
+              <% else  %>
+                  <%= '%.02f' % qd.dis_amount %>
+              <% end %>
+
+            </div>
+          </td>
+          <td>
+            <div class="left">
+              <%= qd.currency.symbol %>
+            </div>
+            <div class="right">
+              <%= '%.02f' % qd.extent_price   %>
+            </div>
+          </td>
+        </tr>
+
+
+    <% end %>
+
+    </tbody>
+  </table>
+  <table border="0" style="border:0px">
+    <% @invoice_by_currency.each_with_index do |inv| %>
+        <tr>
+          <td  style="border:0px; width:580px"><b>
+          <td style="border-left:2px solid black;width:249px">Summary of <%= inv.currency.abbr %> </td>
+          <td style="border-right:2px solid black;width:89px">
+            <div class="left">
+              <%= inv.currency.symbol %>
+            </div>
+            <div class="right"> <%= '%.02f' % get_amount_with_tax(inv.amount , @invoice) %></div>
+
+          </td>
+        </tr>
+
+    <% end  %>
+    <!--<tr>-->
+
+    <!--<td rowspan="3" style="border:0px; width:730px"><b>-->
+
+    <!--</b></td>-->
+    <!--<td style="border-left:2px solid black;width:118px">Sub Total/សរុប</td>-->
+    <!--<td style="border-right:2px solid black;width:93px">-->
+    <!--<div class="left">-->
+    <!--<%= @default_currency.symbol %>-->
+    <!--</div>-->
+    <!--<div class="right"> <%=@invoice.total_amount %></div>-->
+
+    <!--</td>-->
+    <!--</tr>-->
+    <!--<% if @invoice.tax_amount.to_i > 0 %>-->
+
+        <!--<tr>-->
+        <!--<td style="border-left:2px solid black;">Vat <%= '%.00f' %  @invoice.tax_percentag %>% </td>-->
+        <!--<td style="border-right:2px solid black;">-->
+        <!--<div class="left">-->
+        <!--<%= @default_currency.symbol %>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+        <!--<%= '%.02f' %  @invoice.tax_amount %>-->
+        <!--</div>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td style="border-left:2px solid black;"><b>Total</b></td>-->
+        <!--<td style="border-right:2px solid black;">-->
+        <!--<div class="left">-->
+        <!--<%= @default_currency.symbol %>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+        <!--<%= '%.02f' %  @invoice.grand_total_amount %>-->
+        <!--</div>-->
+
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<% end %>-->
+  </table>
+
+
+  <!-- Footer -->
+
+
+</div>
+</body>
+
+</html>
+

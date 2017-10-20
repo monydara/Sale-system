@@ -4,7 +4,7 @@ class Extjs::Generator
 
 
   def generate_controller controller_dir , view_dir
-    @_path = Rails.root.join('public','tmp')
+    _path = Rails.root.join('public','tmp')
     name_splite = controller_dir.split "."
     # -- declear path
     main_folder =  name_splite[0]
@@ -12,7 +12,7 @@ class Extjs::Generator
     controller_name = name_splite[1]
 
 
-    file_path = "#{@_path}/controller/#{main_folder}"
+    file_path = "#{_path}/controller/#{main_folder}"
 
 
     write_directory file_path
@@ -24,6 +24,19 @@ class Extjs::Generator
   end
 
   def generate_view view_dir
+    _path = Rails.root.join('public','tmp')
+    dir= view_dir.split "."
+    main_folder  = dir[0]
+    sub_folder = dir[1]
+  # ---- generate grid
+    grid_content = get_view_index_content view_dir
+
+    file_path = "#{_path}/view/#{main_folder}/#{sub_folder}"
+    write_directory file_path
+    File.write("#{file_path}/Index.js", content )
+
+
+  # ----- generate form
 
   end
 
@@ -39,7 +52,7 @@ class Extjs::Generator
     dir= view_name.split "."
     main_folder  = dir[0]
     sub_folder = dir[1]
-    alias_name = view_name.replace ".",""
+    alias_name = view_name.gsub ".",""
   "Ext.define('App.view.#{main_folder}.#{sub_folder}.Index', {
       extend:'Ext.panel.Panel',
       alias:'widget.#{alias_name}Index' ,
@@ -51,7 +64,7 @@ class Extjs::Generator
               items:[
 
               {
-                  title:'<font style=\"font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;\" > Customer List</font>',
+                  title:'<font style=\"font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;\" > #{alias_name} List</font>',
                    tools:[
                       {
                           fieldLabel:'Search',
@@ -81,23 +94,18 @@ class Extjs::Generator
                   columns:[
                       {header:'NO', xtype:'rownumberer', width:50, align:'center'},
                       {header:'Code', dataIndex:'code'},
-                      {header:'Name ',width:150,dataIndex:'name'},
-                      {header:'Legal Name',width:150,dataIndex:'legal_name'},
-                      {header:'Phone',width:150,dataIndex:'phone'},
-                      {header:'Contact',width:150,dataIndex:'contact_name'},
-                      {header:'Contact Phone',width:150,dataIndex:'contact_mobile'},
-                      {header:'Area', flex:1 , dataIndex:'area_name'}
+
 
                   ],
                   bbar:Ext.create('Ext.PagingToolbar', {
                       store:'sale.Customer',
                       displayInfo: true,
                       displayMsg: 'view {0} - {1} of {2}',
-                      emptyMsg: "view 0"
+                      emptyMsg: \"view 0\"
                   })
 
               },{
-                  xtype:'FormCustomer'
+                  xtype:'#{alias_name}Form'
               }
           ]
           });
@@ -114,7 +122,7 @@ class Extjs::Generator
   end
   def get_controller_contennt main_folder , file_name,view_name
 
-    alias_name = view_name.replace ".",""
+    alias_name = view_name.gsub ".",""
     "Ext.define('App.controller.#{main_folder}.#{file_name}', {
       extend: 'Ext.app.Controller',
       views:[

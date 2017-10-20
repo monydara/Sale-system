@@ -29,13 +29,13 @@ Ext.define('App.view.Login', {
     				name:'username',
                     emptyText:'User Name',
     				fieldLabel:'User Name', 
-                    value:'Admin'
+                    value:'dara5'
     			},{
     				xtype:'textfield',
     				inputType: 'password' ,
                     emptyText:'Password',
     				fieldLabel:'Password',
-                    value:'Admin',
+                    value:'dara',
     				name:'password'
     			}
 

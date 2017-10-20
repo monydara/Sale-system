@@ -35,8 +35,8 @@ class SaleInvoiceController < ApplicationController
 	end
 
 	def create
-
-		result = create_service false
+		data = Invoice.new(permit_data_invoice)
+		result = create_service false , params  , data , 1 , @current_user.id
 
 		render json:result
 
@@ -105,39 +105,35 @@ class SaleInvoiceController < ApplicationController
 
 
 
-	private
 
-	def create_service is_sale_reciept
 
-		session[:success]= true
-		session[:message] ="create success"
-		data = []
-		begin
+	def create_service is_sale_reciept , p_data , data , location_id , user_id
+
+		success= true
+		message="create success"
+
+
 			Invoice.transaction do
 
-				data = Invoice.new(permit_data_invoice)
 
-				if data.tax_percentag > 0
-					data.invoice_no = @@common.get_code_with_config("INVOICE INCLUDE TAX" , params[:invoice_no])
-				else
-					data.invoice_no = @@common.get_code_with_config("INVOICE NOT INCLUDE TAX" , params[:invoice_no])
+				data.invoice_no = get_invoice_code is_sale_reciept , data.tax_percentag , p_data[:invoice_no]
 
-				end
+
 				# check end of month date must be eirly
 				if EomController.check_eom_date(data.date) == false
-					session[:success] = false
-					session[:message] = "<b> #{data.date} </b> is already closed.Date Avaliable after closed transaction only "
+					success = false
+					message = "<b> #{data.date} </b> is already closed.Date Avaliable after closed transaction only "
 
 				# check code is exist . if exist will return error and message exist code in quotation
 				elsif check_code_exist( data.invoice_no , data.tax_percentag ) == true
 
-					session[:success] = false
-					session[:message]="Invoice code already exist"
+					success = false
+					message="Invoice code already exist"
 
 				else
 					# input value by system
-					data.created_by = @current_user.id
-					data.location_id = session[:location_id]
+					data.created_by = user_id
+					data.location_id = location_id
 					data.paid_amount = 0
 					data.unpaid_amount = data.grand_total_amount
 					data.payment_flag =1 # for flat not yet pay
@@ -147,7 +143,7 @@ class SaleInvoiceController < ApplicationController
 					puts "------ 1"
 
 					puts "invoie detail #{data.invoice_detail.count}"
-					puts "invoice detail natse #{ params[:invoice_detail_attributes] }"
+					puts "invoice detail natse #{ p_data[:invoice_detail_attributes] }"
 
 					if data.valid?
 						data.save
@@ -157,36 +153,44 @@ class SaleInvoiceController < ApplicationController
 							data.sale_quotation.update_attributes(status:"I")
 						end
 						# process save to stock transaction
-						session[:success]= SaleInvoiceHelper.save_to_stock_transaction(data, @current_user.id , session[:location_id] , session[:success], session[:message])
+						success= SaleInvoiceHelper.save_to_stock_transaction(data, user_id , location_id , success, message)
 						# process save to customer transaction
-						session[:success]= SaleInvoiceHelper.customer_transaction(data, @current_user.id )
+						success= SaleInvoiceHelper.customer_transaction(data, user_id )
 
 					else
 
-						session[:success]=false
-						session[:message]=data.errors.full_messages.first
+						success=false
+						message=data.errors.full_messages.first
 
 					end
 				end
 				# rollback data change
-				if session[:success] == false
+				if success == false
 					raise ActiveRecord::Rollback
 				end
 			end
-		rescue Exception => e
-			session[:success]=false
-			session[:message]=e.message
-			puts "===========ERROR : "+e.message
-		end
-
-
-
-		result = { data:data , success:session[:success] , message:session[:message] }
+			result = { data:data , success:success , message:message }
 
 		return result
 	end
 
+private
+	def get_invoice_code is_sale_receipt , tax , inv_code
 
+		# --- filter if function calll by sale receipt will return code as sale receipt
+
+		code_name = ""
+		if tax > 0
+			code_name = is_sale_receipt ? "SALE RECEIPT INCLUDE TAX" :  "INVOICE INCLUDE TAX"
+
+		else
+			code_name = is_sale_receipt ? "SALE RECEIPT NOT INCLUDE TAX" :  "INVOICE NOT INCLUDE TAX"
+		end
+
+
+
+		@@common.get_code_with_config(code_name  , inv_code)
+	end
 	def check_code_exist( code, tax_percentag )
 		result = false
 		if tax_percentag > 0
