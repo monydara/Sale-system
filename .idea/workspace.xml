@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1739221e-c4a8-4f99-85fb-f03dc44c68ac" name="Default" comment="update sale receipt">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/items_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/prints/print_sale_receipt_lux.html.erb" afterPath="$PROJECT_DIR$/app/views/prints/print_sale_receipt_lux.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/conf/GlobalFn.js" afterPath="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/controller/sale/Invoice.js" afterPath="$PROJECT_DIR$/public/app/controller/sale/Invoice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js" afterPath="$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js" />
-    </list>
+    <list default="true" id="1739221e-c4a8-4f99-85fb-f03dc44c68ac" name="Default" comment="update sale receipt" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -44,50 +37,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sale_receipts_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/sale_receipts_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sale_invoice_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1935">
-              <caret line="129" column="17" lean-forward="false" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="print_invoice_lux.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/prints/print_invoice_lux.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="print_sale_receipt_lux.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/prints/print_sale_receipt_lux.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="17">
               <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding />
             </state>
@@ -97,32 +50,62 @@
       <file leaf-file-name="Frm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3270">
-              <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="28" selection-end-line="218" selection-end-column="39" />
+            <state relative-caret-position="272">
+              <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
               <folding>
-                <marker date="1508565330000" expanded="true" signature="1145:1154" ph="..." />
-                <marker date="1508565330000" expanded="true" signature="1278:1287" ph="..." />
-                <marker date="1508565330000" expanded="true" signature="2697:2706" ph="..." />
+                <marker date="1508846921719" expanded="true" signature="1145:1154" ph="..." />
+                <marker date="1508846921719" expanded="true" signature="1278:1287" ph="..." />
+                <marker date="1508846921719" expanded="true" signature="2697:2706" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Invoice.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Invoice.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Invoice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="93" column="11" lean-forward="false" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
+            <state relative-caret-position="140">
+              <caret line="128" column="27" lean-forward="true" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalFn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
+      <file leaf-file-name="Fm.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/view/sale/customPrice/Fm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+            <state relative-caret-position="170">
+              <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items_helper.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/items_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomPrice.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomPrice.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom_prices_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/custom_prices_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="67" column="3" lean-forward="false" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -131,8 +114,8 @@
       <file leaf-file-name="items_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+            <state relative-caret-position="199">
+              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -142,7 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>home/logout</find>
       <find>log in success</find>
       <find>'Menu'</find>
       <find>GlobalFn</find>
@@ -172,6 +154,7 @@
       <find>getRecordComboSetToGrid</find>
       <find>qty</find>
       <find>focus</find>
+      <find>_destroy</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public/app</dir>
@@ -188,10 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/app/store/combo/Invoice.js" />
-        <option value="$PROJECT_DIR$/public/app/store/combo/Department.js" />
-        <option value="$PROJECT_DIR$/public/app/store/combo/CustomPrice.js" />
-        <option value="$PROJECT_DIR$/public/app/store/combo/Customer.js" />
         <option value="$PROJECT_DIR$/public/app/store/combo/Currency.js" />
         <option value="$PROJECT_DIR$/public/app/store/combo/Contact.js" />
         <option value="$PROJECT_DIR$/public/app/store/combo/Area.js" />
@@ -239,6 +218,10 @@
         <option value="$PROJECT_DIR$/app/controllers/items_controller.rb" />
         <option value="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
         <option value="$PROJECT_DIR$/public/app/controller/sale/Invoice.js" />
+        <option value="$PROJECT_DIR$/app/helpers/items_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/custom_prices_controller.rb" />
+        <option value="$PROJECT_DIR$/public/app/controller/sale/CustomPrice.js" />
+        <option value="$PROJECT_DIR$/public/app/view/sale/customPrice/Fm.js" />
       </list>
     </option>
   </component>
@@ -256,7 +239,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="70" />
+    <option name="y" value="97" />
     <option name="width" value="1542" />
     <option name="height" value="840" />
   </component>
@@ -275,87 +259,66 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="prints" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="sale" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Sale-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sale-system" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="extjs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="extjs" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sale-system-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sale-system-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="sale" type="462c0819:PsiDirectoryNode" />
+              <item name="customPrice" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,6 +326,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -513,6 +477,7 @@
       <workItem from="1508413245942" duration="12495000" />
       <workItem from="1508747104839" duration="921000" />
       <workItem from="1508748993005" duration="655000" />
+      <workItem from="1508854069969" duration="3606000" />
     </task>
     <task id="LOCAL-00001" summary="update sale receipt">
       <created>1508500694827</created>
@@ -525,30 +490,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57908000" />
+    <option name="totallyTimeSpent" value="61514000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1542" height="840" extended-state="0" />
-    <editor active="true" />
+    <frame x="70" y="97" width="1542" height="840" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2129751" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.308" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2715655" sideWeight="0.49570817" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34237728" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34214002" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,34 +532,17 @@
           <url>file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb</url>
           <line>246</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/items_controller.rb</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Customer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/tmp/controller/sale/asdf" />
-    <entry file="file://$PROJECT_DIR$/app/services/lead_permission/service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/roles/service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/controller/admin/Auditrail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -652,13 +599,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/41161011/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.sys_menus">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/41161011/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.sys_menus" />
     <entry file="file://$PROJECT_DIR$/public/app/view/sale/invoice/Index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -722,13 +663,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/41161011/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.sys_configs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/41161011/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.sys_configs" />
     <entry file="file://$PROJECT_DIR$/app/models/contact.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -740,7 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="176" column="21" lean-forward="false" selection-start-line="176" selection-start-column="21" selection-end-line="176" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,13 +762,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/41161011/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.next_versions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/41161011/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.next_versions" />
     <entry file="file://$PROJECT_DIR$/public/app/controller/sale/SaleReceipt.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2730">
@@ -843,16 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/route.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/route.rb" />
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
@@ -860,7 +782,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sale_receipts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="0">
           <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding />
         </state>
@@ -873,55 +795,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="129" column="17" lean-forward="false" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/prints/print_invoice_lux.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="357">
           <caret line="21" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/prints/print_sale_receipt_lux.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3270">
-          <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="28" selection-end-line="218" selection-end-column="39" />
-          <folding>
-            <marker date="1508565330000" expanded="true" signature="1145:1154" ph="..." />
-            <marker date="1508565330000" expanded="true" signature="1278:1287" ph="..." />
-            <marker date="1508565330000" expanded="true" signature="2697:2706" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -932,10 +810,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/prints/print_sale_receipt_lux.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="241" column="17" lean-forward="false" selection-start-line="241" selection-start-column="9" selection-end-line="241" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <marker date="1508846921719" expanded="true" signature="1145:1154" ph="..." />
+            <marker date="1508846921719" expanded="true" signature="1278:1287" ph="..." />
+            <marker date="1508846921719" expanded="true" signature="2697:2706" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/custom_prices_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="67" column="3" lean-forward="false" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomPrice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/items_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Invoice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="93" column="11" lean-forward="false" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
+        <state relative-caret-position="140">
+          <caret line="128" column="27" lean-forward="true" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customPrice/Fm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="22" />
           <folding />
         </state>
       </provider>

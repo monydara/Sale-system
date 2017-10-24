@@ -67,7 +67,8 @@ class CustomPricesController < ApplicationController
            :item_id,
            :um_id,
            :price,
-           :extend_price
+           :extend_price,
+           :_destroy
         ]
 
         )

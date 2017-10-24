@@ -89,8 +89,10 @@
          	debugger;
             var form =f.up('form'),
 			fieldItem = form.down('combo[name=txtItem]');
+			setTimeout(function () {
+                fieldItem.focus(true , 200 );
+            }, 200 )
 
-            fieldItem.focus();
          } 
      },
      loadInfoToGrid:function (combo, recs) {
@@ -122,6 +124,11 @@
          var itemPriceStore = me.getComboItemPriceStore();
          itemPriceStore.proxy.extraParams.customer_id =value ;
          itemPriceStore.load();
+
+         // set default customer to combo item
+		 var itemStoreCombo = combo.up("form").down('combo[name=txtItem]').getStore();
+         itemStoreCombo.proxy.extraParams.customer_id =value ;
+         itemStoreCombo.load();
 
 
 	 },

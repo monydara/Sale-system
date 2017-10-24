@@ -4,29 +4,24 @@ module ItemsHelper
   def self.get_item_by_custom_price customer_id , qeuryString
 
     # get customer price id
-    @data = nil
-    @customer  = Customer.find(customer_id)
-    if @customer.custom_price_id > 0
+    data = nil
+    customer  = Customer.find(customer_id)
+    if customer.custom_price_id > 0
 
       # --- join with  custom price item detail
 
-      @data = get_item_price_data(  @customer.custom_price_id)
+      data = get_item_price_data(  customer.custom_price_id , qeuryString)
 
     end
 
-
-    if !qeuryString.nil?
-      @data = @data.where "items.name like '%#{qeuryString}%' "
-    end
-
-    return @data
+    return data
   end
 
   private
   # -- get item price base on cutomer id
-  def self.get_item_price_data custom_price_id
+  def self.get_item_price_data custom_price_id , query
 
-    @data = Items.find_by_sql("
+    Items.find_by_sql("
         select
         itm.id ,
         itm.name ,
@@ -61,9 +56,9 @@ module ItemsHelper
         left join custom_price_details cpd on cpd.item_id = itm.id and itm.um_id = cpd.um_id  and cpd.custom_price_id = #{custom_price_id}
         inner join item_categories itc  on itc.id = itm.category_id
         inner join ums um on um.id = itm.um_id
-        inner join currencies crn on crn.id = itm.currency_id "
-    )
-    return @data
+        inner join currencies crn on crn.id = itm.currency_id
+        where itm.name like '%#{ query }%' or itm.code like '%#{ query }%' ")
+
 
   end
 end

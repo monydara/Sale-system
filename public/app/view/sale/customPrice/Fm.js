@@ -100,7 +100,9 @@ Ext.define('App.view.sale.customPrice.Fm', {
             }),
             viewConfig : {
               getRowClass : function(record,id){
+                  console.log( record.get('_destroy') , '-- result record delete');
                  if(record.get('_destroy') == true){
+
                     return 'hidden';
                  }
               }
