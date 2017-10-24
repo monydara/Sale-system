@@ -69,7 +69,14 @@
 			},
 			"invoiceForm combo[name=sale_quotation_id]":{
 				select : this.loadDataQuotationDetail
+			},
+			"invoiceForm combo[name=txtItem]":{
+				select : this.loadInfoToGrid
+			},
+			'invoiceForm numberfield[name=qty]':{
+                specialkey: this.autoSelectCombo
 			}
+
 
 
 
@@ -77,6 +84,34 @@
 	},
 	itemRecord: {},
 	umRecord: {},
+     autoSelectCombo: function(f,e){
+         if (e.getKey() == e.ENTER) {
+         	debugger;
+            var form =f.up('form'),
+			fieldItem = form.down('combo[name=txtItem]');
+
+            fieldItem.focus();
+         } 
+     },
+     loadInfoToGrid:function (combo, recs) {
+		var me = this ;
+        me.itemRecord = recs[0];
+        var grid = combo.up("form").down("grid");
+        var store =  grid.getStore() ;
+        //--- add to grid with blank row
+
+         store.add({})
+        var index = store.count() -1;
+         var rec =  store.getAt(index);
+
+        me.getRecordComboSetToGrid(grid, me, rec);
+        //-- auto edit on column qty
+		 setTimeout(function(){
+             App.conf.GlobalFn.startGridEdit(grid , index , 4);
+		 } , 200)
+
+
+     },
      filterCustomerPrice:function(combo , value ){
 		var me = this ;
 		 // filter item detail base on custom price
@@ -292,11 +327,11 @@
 		switch (e.colIdx) {
         // change code
 			case 1:
-				getRecordComboSetToGrid(editor, e, me, record);
+				me.getRecordComboSetToGrid(grid, me, record);
 				break;
             // change item name
             case 2:
-				getRecordComboSetToGrid(editor, e, me, record);
+                me.getRecordComboSetToGrid(grid, me, record);
 				break;
 		// change um
             case 3:
@@ -369,37 +404,39 @@
 
 		}
 
-		function getRecordComboSetToGrid(editor, e, me, record) {
 
-			if (me.itemRecord.data) {
-
-				var values = me.itemRecord.data; //get record form grid/combobox
-
-				// e.grid.getView().refresh();
-				record.set("item_id", values.id);
-				record.set("description", values.memo);
-				record.set("qty", 1);
-				record.set("um_id", values.um_id);
-				record.set("multiplier", 1);
-				record.set("total_qty", 1);
-				record.set("price", values.price);
-				record.set("extent_price", values.price);
-				record.set("item_name", values.name);
-				record.set("code", values.code);
-				record.set("barcode", values.barcode);
-				record.set("um", values.um);
-				record.set("description", values.sale_description);
-				record.set("currency_id", values.currency_id );
-				record.set("currency_symbol" , values.symbol);
-
-
-				me.setTotalAmountByCurrency(e.grid);
-				me.itemRecord = false;
-
-			};
-
-		}
 	},
+     getRecordComboSetToGrid:function(grid, me, record) {
+
+
+		 if (me.itemRecord.data) {
+
+			 var values = me.itemRecord.data; //get record form grid/combobox
+
+			 // e.grid.getView().refresh();
+			 record.set("item_id", values.id);
+			 record.set("description", values.memo);
+			 record.set("qty", 1);
+			 record.set("um_id", values.um_id);
+			 record.set("multiplier", 1);
+			 record.set("total_qty", 1);
+			 record.set("price", values.price);
+			 record.set("extent_price", values.price);
+			 record.set("item_name", values.name);
+			 record.set("code", values.code);
+			 record.set("barcode", values.barcode);
+			 record.set("um", values.um);
+			 record.set("description", values.sale_description);
+			 record.set("currency_id", values.currency_id );
+			 record.set("currency_symbol" , values.symbol);
+
+
+			 me.setTotalAmountByCurrency(grid);
+			 me.itemRecord = false;
+
+		 };
+
+	 },
 
      setTotalAmountByCurrency:function (grid) {
          //  sum total amount

@@ -23,6 +23,14 @@ Ext.define('App.conf.GlobalFn',{
 
         return amount ;
 
+    },
+    //-- set auto set grid to edit
+    startGridEdit:function(grid , rowIndex , colInex){
+        var editor = grid.plugins[0] ;
+       var e=  editor.startEdit(rowIndex, colInex)
+        //debugger;
+
     }
+
 
 })
