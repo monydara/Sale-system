@@ -6,7 +6,6 @@ Ext.define('App.conf.Store', {
             type: 'rest',
             url : url,
             headers: {
-
                 'Authorization':'Token token='+ App.conf.Store.token,
             },
             reader: {

@@ -124,9 +124,14 @@ Ext.define('App.view.sale.saleReceipt.Form', {
             store: 'sale.InvoiceDetail',
             title: 'Sale Receipt Item',
             tools: [{
-                xtype: 'textfield',
-                name: 'serialOrBarcode',
-                emptyText: 'Serial or Barcode'
+                xtype: 'combo',
+                name: 'txtItem',
+                valueField:'id' ,
+                displayField:'name',
+                store:Ext.create('App.store.combo.Item'),
+                emptyText: 'Code or Name',
+                queryMode: 'remote',
+                minChars:2 ,
             }, {
                 xtype: 'button',
                 style: 'margin-left:10px',

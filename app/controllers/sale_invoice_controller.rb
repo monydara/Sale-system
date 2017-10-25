@@ -155,7 +155,7 @@ class SaleInvoiceController < ApplicationController
 						# process save to stock transaction
 						success= SaleInvoiceHelper.save_to_stock_transaction(data, user_id , location_id , success, message)
 						# process save to customer transaction
-						success= SaleInvoiceHelper.customer_transaction(data, user_id )
+						success= SaleInvoiceHelper.customer_transaction(data, user_id, is_sale_reciept  )
 
 					else
 

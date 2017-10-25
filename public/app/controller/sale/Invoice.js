@@ -86,7 +86,7 @@
 	umRecord: {},
      autoSelectCombo: function(f,e){
          if (e.getKey() == e.ENTER) {
-         	debugger;
+
             var form =f.up('form'),
 			fieldItem = form.down('combo[name=txtItem]');
 			setTimeout(function () {

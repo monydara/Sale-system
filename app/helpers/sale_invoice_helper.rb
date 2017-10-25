@@ -68,7 +68,7 @@ module SaleInvoiceHelper
 
 	end
 
-	def self.customer_transaction(invoice , user_id )
+	def self.customer_transaction(invoice , user_id,is_sale_reciept )
 
 			CustomerTransaction.transaction do
 
@@ -76,13 +76,18 @@ module SaleInvoiceHelper
 				@isMultiCurrency = SysConfig.get_config_by_code("SYS01")
 				puts '---------'
 				puts @isMultiCurrency
+				transaction_type_id = 2 # --- transaction type invoice
+				if is_sale_reciept == true
+					transaction_type_id  = 7
+				end
+
 				if @isMultiCurrency == "TRUE"
 					#-- loop save by currency
 					@inv_detail = invoice.invoice_detail.group(:currency_id).select("currency_id , sum(extent_price) amount")
 
 						@inv_detail.each_with_index do |detail|
 							grand_total  =detail.amount+(detail.amount * invoice.tax_percentag / 100)
-							insert_customer_transcaction(invoice , user_id , detail.currency_id ,grand_total )
+							insert_customer_transcaction(invoice , user_id , detail.currency_id ,grand_total , transaction_type_id)
 						end
 
 
@@ -90,7 +95,7 @@ module SaleInvoiceHelper
 					puts @inv_detail
 
 				else
-						insert_customer_transcaction(invoice , user_id , currency_id ,invoice.grand_total_amount )
+						insert_customer_transcaction(invoice , user_id , currency_id ,invoice.grand_total_amount ,transaction_type_id)
 
 				end
 
@@ -99,17 +104,17 @@ module SaleInvoiceHelper
 			end
 	end
 
-	def self.insert_customer_transcaction(invoice , user_id , currency_id , total_amount)
+	def self.insert_customer_transcaction(invoice , user_id , currency_id , total_amount , transaction_type_id)
 		data = CustomerTransaction.new()
 
 		data.transaction_id=invoice.id
 		data.date=DateTime.now()
-		data.transaction_type_id=2
+		data.transaction_type_id=transaction_type_id
 		data.ref_no=invoice.invoice_no
 		data.created_by=user_id
 		data.customer_id = invoice.customer_id
 		data.currency_id =currency_id
-		data.amount = total_amount
+		data.amount =transaction_type_id == 2 ?  total_amount :( total_amount* -1)
 		data.save
 	end
 
