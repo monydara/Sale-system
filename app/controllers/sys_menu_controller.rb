@@ -4,7 +4,7 @@ class SysMenuController < ApplicationController
 		data = SysMenu
 		if !params[:string].nil?
 			text = "%"+params[:string]+"%"
-			data = data.where(" code like '#{text}' or name like '#{text}'")
+			data = data.where(" menu like '%#{text}%'")
 		end
 		render @@common.returnPaginate(data, params[:page],params[:limit])
 	end

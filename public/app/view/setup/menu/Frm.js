@@ -54,10 +54,12 @@ Ext.define('App.view.setup.menu.Frm', {
                 },{
                     xtype:'textfield',
                     name:'view_index',
+                    allowBlank:true ,
                     fieldLabel:'View Index'
                 },{
                     xtype:'textfield',
                     name:'controller_name',
+                    allowBlank:true ,
                     fieldLabel:'Controller'
                 },
             ]

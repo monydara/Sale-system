@@ -108,10 +108,12 @@ Ext.define('App.controller.admin.User', {
 // ========== main menu
 			if (subItemMenu.length>0){
 				itemObj={
-					title:eachMainMenu.menu,
+					title:"<i class='"+eachMainMenu.icon_cls +"' style=\"" +
+                    "    color: #157fcc !important;" +
+                    "\"> </i>  "+eachMainMenu.menu,
 	   				xtype:'menu',
 	   				cls:'my-menu',
-	   				iconCls:eachMainMenu.icon_cls ,
+	   				//iconCls:eachMainMenu.icon_cls ,
 	   				items:subItemMenu
 				}
 				items.push(itemObj)
