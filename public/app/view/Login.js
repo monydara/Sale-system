@@ -45,7 +45,7 @@ Ext.define('App.view.Login', {
     			{
     				text:'Login',
     				action:'Login',
-                    iconCls:'icon-login'
+                    iconCls:'fa fa-sign-in'
     			}
 
     		]

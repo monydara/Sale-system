@@ -46,6 +46,7 @@ Ext.define('App.view.Viewport', {
                             region:'center',
                             layout:'card',
                             id:'container-page',
+                            html :'Dashboard Page',
                             items:[
                                 // {
                                 //     xtype:'roomIndex'

@@ -29,7 +29,7 @@ Ext.define('App.view.Header', {
                id:'logoutButton',
                xtype:'button',
                iconAlign:'right',
-               iconCls:'icon-logout',
+               iconCls:'fa fa-sign-out',
                text:'Logout',
                margin:'5 0 0 5',
                action:'logout'

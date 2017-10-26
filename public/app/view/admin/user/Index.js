@@ -18,14 +18,14 @@ Ext.define('App.view.admin.user.Index', {
 
                                         {   xtype:'button',
                                             action:'Add',
-                                            iconCls:'icon-add',
+                                            iconCls:'fa fa-plus',
                                             tooltip:'Add New User'
                                         },
                                         {
                                             xtype:'button',
                                             action:'Edit',
                                             style:'margin-left:5px',
-                                            iconCls:'icon-edit',
+                                            iconCls:'fa fa-trash-o',
                                             tooltip:'Edit User'
                                         }
                                     ],

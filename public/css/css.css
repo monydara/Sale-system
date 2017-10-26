@@ -21,3 +21,6 @@ a:hover{
 .fa {
 	color: black !important;
 }
+.x-btn-icon-el.fa{
+    color: white !important
+}
