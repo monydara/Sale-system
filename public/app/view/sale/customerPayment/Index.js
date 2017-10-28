@@ -13,29 +13,14 @@ Ext.define('App.view.sale.customerPayment.Index', {
                 title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Customer Payment List</font>',
                  tools:[
                     {
-                        fieldLabel:'Search',                    
-                        xtype:'textfield',
-                        name:'Search',
-                        emptyText:'-- Search Record --'
+                       xtype:'cTxtSearch'
                     },
-                    // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New Customer Payment'
+                      xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit Customer Payment', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                        xtype:'cBtnEdit'
                     },{
-                        xtype:'button',
-                        iconCls:'icon-printer',
-                        style:'margin-left:5px',
-                        action:'Print'
+                        xtype:'cBtnPrint'
                     }
                 ],
                 xtype:'grid',
@@ -64,12 +49,10 @@ Ext.define('App.view.sale.customerPayment.Index', {
                     {header:'Memo', flex:1 , dataIndex:'memo'}
                    
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
-                    store:'sale.CustomerPayment',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                bbar:{
+                    xtype:'cPaging',
+                    store:'sale.CustomerPayment'
+                }
 
             },{
                 xtype:'FormCustomerPayment'

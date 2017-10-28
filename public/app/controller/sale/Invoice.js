@@ -35,7 +35,7 @@
 			'invoiceIndex button[action=Print]': {
 				click: this.print
 			},
-			'invoiceIndex button[action=VoidInvoice]': {
+			'invoiceIndex button[action=Delete]': {
 				click: this.beforeVoid
 			},
 

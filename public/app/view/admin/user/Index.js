@@ -15,19 +15,11 @@ Ext.define('App.view.admin.user.Index', {
                                     title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" >User Management</font>',
 
                                      tools:[
-
-                                        {   xtype:'button',
-                                            action:'Add',
-                                            iconCls:'fa fa-plus',
-                                            tooltip:'Add New User'
-                                        },
                                         {
-                                            xtype:'button',
-                                            action:'Edit',
-                                            style:'margin-left:5px',
-                                            iconCls:'fa fa-trash-o',
-                                            tooltip:'Edit User'
-                                        }
+                                            xtype:'cBtnAdd',
+                                        },{
+                                            xtype:'cBtnEdit'
+                                         }
                                     ],
                                     columns:[
                                         {header:'NO', xtype:'rownumberer', width:50, align:'center'},
@@ -67,12 +59,11 @@ Ext.define('App.view.admin.user.Index', {
                                             ]
                                     },
                                     ],
-                                    bbar:Ext.create('Ext.PagingToolbar', {
-                                        store:'admin.User',
-                                        displayInfo: true,
-                                        displayMsg: 'view {0} - {1} of {2}',
-                                        emptyMsg: "view 0"
-                                    })
+                                    bbar:{
+                                        xtype:'cPaging',
+                                        store :'admin.User'
+                                    }
+
 
                                 },{
                                     xtype:'userForm'

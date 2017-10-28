@@ -11,24 +11,13 @@ Ext.define('App.view.sale.leadOpportunity.Index', {
                 title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Lead Opportunity List</font>',
                 tools:[
                     {
-                        fieldLabel:'Search',
-                        xtype:'textfield',
-                        name:'Search',
-                        emptyText:'-- Search Record --'
+                     xtype:'cTxtSearch'
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New Lead'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit Lead',
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                        xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -53,12 +42,10 @@ Ext.define('App.view.sale.leadOpportunity.Index', {
                     {header:'Status',width:90, dataIndex:'status_name'}
 
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
-                    store:'sale.LeadOpportunity',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                bbar:{
+                    xtype:'cPaging',
+                     store:'sale.LeadOpportunity',
+                },
 
             },{
                 xtype:'FormLeadOpportunity'

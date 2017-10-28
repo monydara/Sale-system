@@ -13,24 +13,12 @@ Ext.define('App.view.item.openingstock.Index', {
                 title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Opening Stock List</font>',
                  tools:[
                     {
-                        // fieldLabel:'Search',                    
-                        xtype:'textfield',
-                        name:'Search',
-                        emptyText:'-- Search Record --'
+                      xtype:'cTxtSearch'
                     },
-                    // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                      xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -61,13 +49,10 @@ Ext.define('App.view.item.openingstock.Index', {
                         dataIndex: 'remark'
                     },
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging',
                     store:'item.OpeningStock',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
-
+                }
             }
             ,{
                 xtype:'FormOpeningStock'

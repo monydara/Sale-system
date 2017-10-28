@@ -97,9 +97,7 @@ Ext.define('App.view.setup.companyProfile.Index', {
 
                     ],
                     buttons: [{
-                        text: 'Save',
-                        iconCls: 'icon-save',
-                        action: 'Save'
+                        xtype:'cBtnSave'
                     }]
                 }
 

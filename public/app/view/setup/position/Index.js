@@ -12,11 +12,7 @@ Ext.define('App.view.setup.position.Index', {
                     title: '<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Position List</font>',
                     tools: [
                         {
-                            action: 'Add',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New Position'
+                            xtype:'cBtnAdd'
                         }, {
                             xtype: 'button',
                             action: 'Edit',
@@ -54,12 +50,10 @@ Ext.define('App.view.setup.position.Index', {
 
 
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
+                    bbar: {
+                        xtype:'cPaging',
                         store: 'setup.Position',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    }
 
                 }
             ]

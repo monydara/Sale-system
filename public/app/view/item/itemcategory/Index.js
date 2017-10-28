@@ -13,24 +13,13 @@ Ext.define('App.view.item.itemcategory.Index', {
                 title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Item Category List</font>',
                  tools:[
                     {
-                        // fieldLabel:'Search',                    
-                        xtype:'textfield',
-                        name:'Search',
-                        emptyText:'-- Search Record --'
+                       xtype:'cTxtSearch'
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New'
+                       xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit',
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                       xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -44,12 +33,10 @@ Ext.define('App.view.item.itemcategory.Index', {
                     {header: 'Remark', flex:1, dataIndex: 'remark'},
                     {header:'Status',width:100, dataIndex:'is_active'},
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging' ,
                     store:'item.ItemCategory',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                }
 
             }
             ,{

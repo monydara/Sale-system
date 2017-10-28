@@ -20,17 +20,9 @@ Ext.define('App.view.service.maintenance.Index', {
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                         xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -85,12 +77,10 @@ Ext.define('App.view.service.maintenance.Index', {
                         dataIndex: 'remark'
                     }
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging',
                     store:'service.Maintenance',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                },
 
             }
             ,{

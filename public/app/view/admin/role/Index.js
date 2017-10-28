@@ -18,16 +18,9 @@ Ext.define('App.view.admin.role.Index', {
                     tools: [
 
                         {
-                            xtype: 'button',
-                            action: 'Add',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New Role'
+                            xtype: 'cBtnAdd'
                         }, {
-                            xtype: 'button',
-                            action: 'Edit',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-edit',
-                            tooltip: 'Edit Role'
+                            xtype: 'cBtnEdit'
                         }, {
                             xtype: 'button',
                             action: 'ApplyPermission',
@@ -51,12 +44,11 @@ Ext.define('App.view.admin.role.Index', {
                             flex:1
                         }
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
-                        store: 'admin.Role',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    bbar:{
+                        xtype:'cPaging' ,
+                        store:'admin.Role',
+                    }
+
 
                 },
             ]

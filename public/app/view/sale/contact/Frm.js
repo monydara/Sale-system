@@ -5,15 +5,10 @@ Ext.define('App.view.sale.contact.Frm', {
     title:'Contact Form',
     buttons:[
         '->',
-
         {
-            text:'Save',
-            iconCls:'icon-save',
-            action:'Save'
+            xtype:'cBtnSave'
         },{
-            text:'Cancel',
-            action:'Cancel',
-            iconCls:'icon-cancel'
+            xtype:'cBtnCancel'
         }
     ],
     items:[

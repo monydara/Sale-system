@@ -11,26 +11,12 @@ Ext.define('App.view.sale.quotation.Index', {
                 {
                     title: '<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Quotation List</font>',
                     tools: [{
-                            fieldLabel: 'Search',
-                            xtype: 'textfield',
-                            name: 'Search',
-                            labelAlign: 'right',
-                            width: 300,
-                            emptyText: '-- Search Quotation --'
+                            xtype:'cTxtSearch'
                         },
-                        // '->',
                         {
-                            action: 'Add',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New Quotation'
+                            xtype:'cBtnAdd'
                         }, {
-                            xtype: 'button',
-                            action: 'Edit',
-                            tooltip: 'Edit Quotation',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-edit'
+                          xtype:'cBtnEdit'
                         }, {
                             xtype: 'button',
                             style: 'margin-left:5px',
@@ -38,17 +24,12 @@ Ext.define('App.view.sale.quotation.Index', {
                             action:'Submit',
                             tooltip: 'Submit Quote'
                         }, {
-                            xtype: 'button',
-                            style: 'margin-left:5px',
+                            xtype: 'cBtnDelete',
                             action: 'CancelQuotation',
                             tooltip: 'Cancel This Quotation',
-                            iconCls: 'icon-delete'
+
                         }, {
-                            xtype: 'button',
-                            iconCls: 'icon-printer',
-                            action:'Print',
-                            tooltip: 'Print Quotation',
-                            style: 'margin-left:5px',
+                            xtype:'cBtnPrint'
 
                         }, 
                         // {
@@ -119,12 +100,11 @@ Ext.define('App.view.sale.quotation.Index', {
                         },
 
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
+                    bbar: {
+                        xtype:'cPaging',
                         store: 'sale.Quotation',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    }
+
 
                 }, {
                     xtype: 'quotationForm'

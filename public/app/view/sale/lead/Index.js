@@ -269,12 +269,11 @@ Ext.define('App.view.sale.lead.Index', {
                     {header:'Area',width:150, dataIndex:'area_name'},
                     {header:'Status', width:150, dataIndex:'status_name'}
                 ],
-                 bbar: Ext.create('Ext.PagingToolbar', {
-                        store: 'sale.LeadInfomation',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    }),
+                 bbar:{
+                    xtype:'cPaging',
+                     store: 'sale.LeadInfomation',
+                 },
+
                  listeners: {
                         itemclick: function(dv, record, item, index, e){
                             var ctr = App.app.getController("sale.Lead");
@@ -354,12 +353,10 @@ Ext.define('App.view.sale.lead.Index', {
                     {header:'Area',width:150, dataIndex:'area_name'},
                     {header:'Status', width:150, dataIndex:'status_name'}
                 ],
-                 bbar: Ext.create('Ext.PagingToolbar', {
-                        store: 'sale.LeadDirectsale',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    }),
+                 bbar:{
+                    xtype:'cPaging',
+                     store: 'sale.LeadDirectsale',
+                 },
                  listeners: {
                         itemclick: function(dv, record, item, index, e){
                             var ctr = App.app.getController("sale.Lead");
@@ -412,12 +409,10 @@ Ext.define('App.view.sale.lead.Index', {
                     {header:'Area',width:150, dataIndex:'area_name'},
                     {header:'Status', width:150, dataIndex:'status_name'}
                 ],
-                 bbar: Ext.create('Ext.PagingToolbar', {
-                        store: 'sale.LeadWebsite',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    }),
+                 bbar:{
+                    xtype:'cPaging',
+                     store: 'sale.LeadWebsite',
+                 } ,
                  listeners: {
                         itemclick: function(dv, record, item, index, e){
                             var ctr = App.app.getController("sale.Lead");
@@ -463,17 +458,9 @@ Ext.define('App.view.sale.lead.Index', {
                         tooltip: 'Advance Search'
                     },
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New Lead'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit Lead',
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                         xtype:'cBtnEdit'
                     }
                 ],
                 columns: [
@@ -490,12 +477,10 @@ Ext.define('App.view.sale.lead.Index', {
                     {header:'Area',width:150, dataIndex:'area_name'},
                     {header:'Status', width:150, dataIndex:'status_name'}
                 ], 
-                bbar: Ext.create('Ext.PagingToolbar', {
-                        store: 'sale.Lead',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    }),
+                bbar:{
+                    xtype:'cPaging',
+                    store: 'sale.Lead',
+                },
                 listeners: {
                         itemclick: function(dv, record, item, index, e){
                             var ctr = App.app.getController("sale.Lead");

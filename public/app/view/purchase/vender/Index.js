@@ -20,17 +20,9 @@ Ext.define('App.view.purchase.vender.Index', {
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New Vender'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit Vender', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                         xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -47,12 +39,10 @@ Ext.define('App.view.purchase.vender.Index', {
                     {header:'Contact Phone',flex:1,dataIndex:'contact_mobile'},
                    
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging',
                     store:'purchase.Vender',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                },
 
             },{
                 xtype:'venderForm'

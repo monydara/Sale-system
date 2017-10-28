@@ -11,38 +11,17 @@ Ext.define('App.view.sale.saleReceipt.Index', {
                 {
                     title: '<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Sale Receipt List</font>',
                     tools: [{
-                        fieldLabel: 'Search',
-                        xtype: 'textfield',
-                        name: 'Search',
-                        labelAlign: 'right',
-                        width: 300,
-                        emptyText: '-- Search Invoice --'
-                    },
-                        // '->',
-                        {
-                            action: 'Add',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New Invoice'
+                       xtype:'cTxtSearch'
+                    }, {
+                       xtype:'cBtnAdd'
                         },{
-                            action: 'Edit',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-edit',
-                            tooltip: 'Edit Invoice'
+                            xtype:'cBtnEdit'
                         },  {
-                            xtype: 'button',
-                            style: 'margin-left:5px',
+                            xtype: 'cBtnDelete',
                             action: 'VoidInvoice',
-                            tooltip: 'Void This Invoice',
-                            iconCls: 'icon-delete'
+
                         }, {
-                            xtype: 'button',
-                            iconCls: 'icon-printer',
-                            action:'Print',
-                            tooltip: 'Print Invoice',
-                            style: 'margin-left:5px',
+                            xtype: 'cBtnPrint'
 
                         }
                     ],
@@ -83,12 +62,11 @@ Ext.define('App.view.sale.saleReceipt.Index', {
                         },
 
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
+                    bbar:{
+                        xtype:'cPaging',
                         store: 'sale.SaleReceipt',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    }
+
 
                 }, {
                     xtype: 'saleReceiptForm'

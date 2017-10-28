@@ -9,13 +9,9 @@ Ext.define('App.view.admin.user.Form', {
         '<font style="font-weight: bold;color: gray;font-size: 25px;" > User Form </font>'
         ,'->',
         {
-            text:'Save',
-            iconCls:'icon-save',
-            action:'Save'
+            xtype:'cBtnSave'
         },{
-            text:'Cancel',
-            action:'Cancel',
-            iconCls:'icon-cancel'
+            xtype:'cBtnCancel'
         }
     ],
 

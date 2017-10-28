@@ -9,13 +9,9 @@ Ext.define('App.view.fixAsset.depreciation.FrmDepreciation', {
         '->',
 
         {
-            text:'Save',
-            iconCls:'icon-save',
-            action:'Save'
+            xtype:'cBtnSave'
         },{
-            text:'Cancel',
-            action:'Cancel',
-            iconCls:'icon-cancel'
+            xtype:'cBtnCancel'
         }
     ],
     defaultType:'textfield',

@@ -18,11 +18,7 @@ Ext.define('App.view.setup.code.Index', {
                         },
                         // '->',
                         {
-                            action: 'Add',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New Customer'
+                            xtype:'cBtnAdd'
                         }, {
                             xtype: 'button',
                             action: 'Edit',
@@ -73,12 +69,10 @@ Ext.define('App.view.setup.code.Index', {
 
 
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
-                        store: 'setup.Code',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    bbar:{
+                        xtype:'cPaging',
+                        store: 'setup.Code'
+                    }
 
                 }
             ]

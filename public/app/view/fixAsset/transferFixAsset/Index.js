@@ -21,17 +21,9 @@ Ext.define('App.view.fixAsset.transferFixAsset.Index', {
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New Transfer'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit Transfer', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                        xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -77,12 +69,11 @@ Ext.define('App.view.fixAsset.transferFixAsset.Index', {
                     },
                    
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging',
                     store:'fixAsset.TransferFixAsset',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                },
+
 
             },{
                 xtype:'FormTransfer'

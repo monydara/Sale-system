@@ -16,21 +16,14 @@ Ext.define('App.view.item.adjuststock.Index', {
                         // fieldLabel:'Search',                    
                         xtype:'textfield',
                         name:'Search',
-                        emptyText:'-- Search Record --'
+                        emptyText:'-- Search Record --',
+                        style:'margin-right:5px',
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New'
+                       xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                      xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -45,12 +38,10 @@ Ext.define('App.view.item.adjuststock.Index', {
                     {header:'Adjust Date', width:200, dataIndex:'date'},
                     {header:'Remark', flex:1, dataIndex: 'remark'},
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging',
                     store:'item.AdjustStock',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                }
 
             }
             ,{

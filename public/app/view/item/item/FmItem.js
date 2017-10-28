@@ -6,13 +6,9 @@ Ext.define('App.view.item.item.FmItem', {
     bodyPadding: 20,
     buttons: [
         '->', {
-            text: 'Save',
-            iconCls: 'icon-save',
-            action: 'Save'
+           xtype:'cBtnSave'
         }, {
-            text: 'Cancel',
-            action: 'Cancel',
-            iconCls: 'icon-cancel'
+            xtype:'cBtnCancel'
         }
     ],
 

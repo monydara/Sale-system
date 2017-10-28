@@ -11,38 +11,16 @@ Ext.define('App.view.sale.invoice.Index', {
                 {
                     title: '<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Invoice List</font>',
                     tools: [{
-                            fieldLabel: 'Search',
-                            xtype: 'textfield',
-                            name: 'Search',
-                            labelAlign: 'right',
-                            width: 300,
-                            emptyText: '-- Search Invoice --'
+                            xtype:'cTxtSearch'
                         },
-                        // '->',
                         {
-                            action: 'Add',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New Invoice'
+                            xtype:'cBtnAdd'
                         },{
-                            action: 'Edit',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-edit',
-                            tooltip: 'Edit Invoice'
+                            xtype:'cBtnEdit'
                         },  {
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            action: 'VoidInvoice',
-                            tooltip: 'Void This Invoice',
-                            iconCls: 'icon-delete'
+                            xtype:'cBtnDelete'
                         }, {
-                            xtype: 'button',
-                            iconCls: 'icon-printer',
-                            action:'Print',
-                            tooltip: 'Print Invoice',
-                            style: 'margin-left:5px',
+                            xtype:'cBtnPrint'
 
                         }
                     ],
@@ -100,12 +78,10 @@ Ext.define('App.view.sale.invoice.Index', {
                         },
 
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
+                    bbar:{
+                        xtype:'cPaging',
                         store: 'sale.Invoice',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    }
 
                 }, {
                     xtype: 'invoiceForm'

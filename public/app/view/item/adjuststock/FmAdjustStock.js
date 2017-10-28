@@ -8,13 +8,9 @@ Ext.define('App.view.item.adjuststock.FmAdjustStock', {
         '->',
 
         {
-            text: 'Save',
-            iconCls: 'icon-save',
-            action: 'Save'
+            xtype:'cBtnSave'
         }, {
-            text: 'Cancel',
-            action: 'Cancel',
-            iconCls: 'icon-cancel'
+            xtype:'cBtnCancel'
         }
     ],
 

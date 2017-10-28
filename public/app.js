@@ -4,10 +4,8 @@ Ext.application({
     name:'App',
 
     controllers:[
-
     	'Login',
         'Util',
-
     ],
     launch : function() {
       var viewport = Ext.create('App.view.Viewport');

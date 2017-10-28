@@ -11,26 +11,13 @@ Ext.define('App.view.sale.saleRepresentative.Index', {
                 {
                     title: '<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Sale Representative List</font>',
                     tools: [{
-                            fieldLabel: 'Search',
-                            xtype: 'textfield',
-                            name: 'Search',
-                            labelAlign: 'right',
-                            width: 300,
-                            emptyText: '-- Search SaleRepresentative --'
+                           xtype:'cTxtCancel'
                         },
                         // '->',
                         {
-                            action: 'Add',
-                            xtype: 'button',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-add',
-                            tooltip: 'Add New SaleRepresentative'
+                           xtype:'cBtnAdd'
                         }, {
-                            xtype: 'button',
-                            action: 'Edit',
-                            tooltip: 'Edit SaleRepresentative',
-                            style: 'margin-left:5px',
-                            iconCls: 'icon-edit'
+                            xtype: 'cBtnEdit'
                         }
                     ],
                     xtype: 'grid',
@@ -79,12 +66,10 @@ Ext.define('App.view.sale.saleRepresentative.Index', {
                         },
 
                     ],
-                    bbar: Ext.create('Ext.PagingToolbar', {
+                    bbar: {
+                        type:'cPaging',
                         store: 'sale.SaleRepresentative',
-                        displayInfo: true,
-                        displayMsg: 'view {0} - {1} of {2}',
-                        emptyMsg: "view 0"
-                    })
+                    }
 
                 }, {
                     xtype: 'saleRepresentativeForm'

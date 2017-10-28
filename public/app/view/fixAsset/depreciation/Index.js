@@ -22,17 +22,9 @@ Ext.define('App.view.fixAsset.depreciation.Index', {
                     },
                     // '->',
                     {
-                        action:'Add',
-                        xtype:'button',
-                        style:'margin-left:5px',
-                        iconCls:'icon-add',
-                        tooltip:'Add New Depreciation'
+                        xtype:'cBtnAdd'
                     },{
-                        xtype:'button',
-                        action:'Edit',
-                        tooltip:'Edit Depreciation', 
-                        style:'margin-left:5px',
-                        iconCls:'icon-edit'
+                        xtype:'cBtnEdit'
                     }
                 ],
                 xtype:'grid',
@@ -50,12 +42,10 @@ Ext.define('App.view.fixAsset.depreciation.Index', {
                     {header:'Depr%',width:100,dataIndex:'depreciation', align:'center'},
                     {header:'Remark',flex:1,dataIndex:'remark', align:'center'},
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
-                    // store:'room.Room',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                bbar:{
+                    xtype:'cPaging',
+                },
+
 
             },{
                 xtype:'FormDepreciation'

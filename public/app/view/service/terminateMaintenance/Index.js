@@ -79,12 +79,10 @@ Ext.define('App.view.service.terminateMaintenance.Index', {
                         dataIndex: 'remark'
                     }
                 ],
-                bbar:Ext.create('Ext.PagingToolbar', {
+                bbar:{
+                    xtype:'cPaging',
                     store:'service.TerminateMaintenance',
-                    displayInfo: true,
-                    displayMsg: 'view {0} - {1} of {2}',
-                    emptyMsg: "view 0"
-                })
+                },
 
             }, 
             // {
