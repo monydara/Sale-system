@@ -1,5 +1,20 @@
 module CustomerPaymentHelper
 	@@common = Common.new
+
+	def self.get_invioce_detail(customer_id)
+=begin
+TODO
+1- get list all  invoice
+2- get paid amount
+3- minus with grand total amount
+=end
+
+		invoice  = Invoice.get_unpaid_invoice_by_customer customer_id
+		if !invoice.nil?
+			invoice
+		end
+
+	end
 	def self.payment_invoice(receipt, user_id)
 		begin
 		

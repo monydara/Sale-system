@@ -115,6 +115,7 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                 selType: 'cellmodel'
             },
             store: 'sale.CustomerPaymentDetail',
+            features: [{ ftype: 'grouping' }],
             title: 'Invoice Item',
             tools: [{
                 xtype: 'textfield',
@@ -139,19 +140,15 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                 align: 'center',
                 width: 50
             },{
-                header:'Invoice No.',
-                dataIndex:'invoice_no',
-                width:150
-            },{
                 header:'Invoice Amount',
                 dataIndex:'invoice_amount',
-                renderer: Ext.util.Format.usMoney,
+                renderer: Ext.util.Format.currency,
                 width:150
 
             },{
                 header:'Unpaid Amount',
                 dataIndex:'unpaid_amount',
-                renderer: Ext.util.Format.usMoney,
+                renderer: Ext.util.Format.currency,
                 width:150 ,
             },{
                 header:'Description',
@@ -167,7 +164,9 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                     xtype:'numberfield',
                     minValue:0 
                 },
-                renderer: Ext.util.Format.usMoney,
+                renderer:function(value  , field , record){
+                    console.log('field' , field , 'value : ' , value  , 'Record : ' , record);
+                },
                 width:100 
             },{
                 header:'Balance',

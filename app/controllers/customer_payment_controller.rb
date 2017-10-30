@@ -155,11 +155,12 @@ class CustomerPaymentController < ApplicationController
 	def get_item_detail
 		begin
 			data = []
-			# == filter invoice but cusotmer
+			# == filter invoice by customer cusotmer
 			if !params[:customer_id].nil?
-				data = Invoice.where(customer_id:params[:customer_id],payment_flag:[1,2] , status:"S").select("
-					id as invoice_id , grand_total_amount as invoice_amount , unpaid_amount, paid_amount ,invoice_no , 0 balance , 0 amount")
-			elsif !params[:payment_id].nil?
+				data = CustomerPaymentHelper.get_invioce_detail(params[:customer_id])
+
+				# --- filter papyment detail by receipt
+				elsif !params[:payment_id].nil?
 				data = ReceivePaymentDetail.joins( :invoice).select("
 					receive_payment_details.id ,
 					invoices.id as invoice_id,

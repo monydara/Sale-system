@@ -16,7 +16,8 @@ Ext.define('App.model.CustomerPaymentDetail', {
 		"paid_amount",
 		"unpaid_amount",
 		"amount",
-		"balance"
+		"balance",
+		"currency"
 
 		
 		

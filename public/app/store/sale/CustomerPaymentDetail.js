@@ -3,6 +3,7 @@ Ext.define('App.store.sale.CustomerPaymentDetail', {
     queryMode: 'local', 
     autoLoad:false,
     controllerLoad:false,
+    groupField: 'invoice_no',
     model: 'App.model.CustomerPaymentDetail',
     proxy:App.conf.Store.proxy('/CustomerPayment/get_item_detail')
 

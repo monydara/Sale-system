@@ -60,9 +60,9 @@ Ext.define('App.view.setup.code.Index', {
                             dataIndex: 'is_manaul',
                             renderer: function(grid, col, rec) {
                                 if (rec.get("is_manaul")) {
-                                    return "By Manaul";
+                                    return "<div style='color:red'> By Manaul</div>";
                                 } else {
-                                    return "By extjs";
+                                    return "<div style='color:green'> By System </div>";
                                 };
                             }
                         },

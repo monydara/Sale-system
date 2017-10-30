@@ -28,7 +28,7 @@ Ext.define('App.conf.Store', {
                     exception : function(proxy, response, operation)
                     {
 
-
+                        console.log("Error : ",operation.getError());
                         Ext.MessageBox.show(
                             {
                                 title : 'REMOTE EXCEPTION', msg : operation.getError(), icon : Ext.MessageBox.ERROR, buttons : Ext.Msg.OK
