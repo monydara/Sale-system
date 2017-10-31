@@ -1,7 +1,11 @@
 Ext.define('App.conf.GlobalFn',{
     singleton: true,
-    // --  change other currency to local currency
+    // get currency format base on currency id
+    currencyFormat:function (amount , currencyId ) {
+//TODO function globle format 
+    },
 
+    // --  change other currency to local currency
     exchagneLocalRateIn:function( amountConvert , currencyId ){
         var config = App.store.Config ;
         var amount = 0 ;

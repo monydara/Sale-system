@@ -142,13 +142,14 @@ Ext.define('App.view.sale.customerPayment.Frm', {
             },{
                 header:'Invoice Amount',
                 dataIndex:'invoice_amount',
-                renderer: Ext.util.Format.currency,
+                // TODO render use function global currency by get fomart from local store
+                //renderer: Ext.util.Format.currency,
                 width:150
 
             },{
                 header:'Unpaid Amount',
                 dataIndex:'unpaid_amount',
-                renderer: Ext.util.Format.currency,
+                //renderer: Ext.util.Format.currency,
                 width:150 ,
             },{
                 header:'Description',

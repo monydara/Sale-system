@@ -13,10 +13,10 @@ class Invoice < ActiveRecord::Base
 	 validates_presence_of :invoice_detail
  	accepts_nested_attributes_for :invoice_detail , :allow_destroy => true
 
-	def get_unpaid_invoice_by_customer customer_id
+	def self.get_unpaid_invoice_by_customer customer_id
 		self.joins(:customer_transactions).where(customer_id:customer_id,payment_flag:[1,2] , status:"S" , :customer_transactions => { transaction_type_id: 2}).
-				select("invoices.id as invoice_id , grand_total_amount as invoice_amount , unpaid_amount, paid_amount ,invoice_no , 0 balance , 0 amount ,
-							 customer_transactions.currency_id  as currency")
+				select("invoices.id as invoice_id , customer_transactions.amount as invoice_amount , unpaid_amount, paid_amount ,invoice_no , 0 balance , 0 amount ,
+							 customer_transactions.currency_id  ")
 	end
 
  	# audited
