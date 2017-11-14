@@ -12,13 +12,11 @@ TODO
 		invoice  = Invoice.get_unpaid_invoice_by_customer customer_id
 		if !invoice.nil?
 			invoice.each {|d|
-
 				# -- sum paid amount by payment detail condition invoice id and currency id
 				paid_amount = ReceivePaymentDetail.get_paid_amount_by_invoice d.invoice_id , d.currency_id
 
-					d.paid_amount = paid_amount[d.invoice_id].nil? ? 0 : paid_amount[d.invoice_id]
+				d.paid_amount = paid_amount[d.invoice_id].nil? ? 0 : paid_amount[d.invoice_id]
 				d.unpaid_amount = d.invoice_amount - d.paid_amount
-
 			}
 		end
 

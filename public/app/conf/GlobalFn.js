@@ -2,7 +2,15 @@ Ext.define('App.conf.GlobalFn',{
     singleton: true,
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {
-//TODO function globle format 
+        var amountFormat ="";
+        App.store.Config.allCurrency.forEach(function(currency){
+            if(currency.id == currencyId){
+                amountFormat = Ext.util.Format.currency(amount , currency.symbol , 2,false);
+                return 0;
+            }
+        })
+        return amountFormat ;
+
     },
 
     // --  change other currency to local currency

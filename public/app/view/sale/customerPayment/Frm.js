@@ -50,18 +50,10 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                 }]
             }]
         }, {
-            xtype: 'fieldset',
-            autoScroll: true,
+            xtype: 'cFieldSet',
+
             title: '<b> Basic Info </b>',
-            padding: 10,
-            layout: {
-                type: 'table',
-                columns: 2
-            },
-            defaults: {
-                width: 400,
-                style: 'margin-left: 10px'
-            },
+
             items: [{
                     xtype: 'combo',
                     fieldLabel: 'Customer(<span style="color:red">*</span>)',
@@ -103,10 +95,12 @@ Ext.define('App.view.sale.customerPayment.Frm', {
 
             ]
         }, {
+            xtype:'customerPaymentPaymentFieldSet'
+        }, {
             xtype: 'grid',
             border: true,
             autoScroll: true,
-            height: 200,
+            height: 300,
             style: 'border:1px solid silver',
             plugins: Ext.create('Ext.grid.plugin.CellEditing', {
                 clicksToEdit: 1
@@ -144,12 +138,17 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                 dataIndex:'invoice_amount',
                 // TODO render use function global currency by get fomart from local store
                 //renderer: Ext.util.Format.currency,
+                renderer:function (value, field ) {
+                  return App.conf.GlobalFn.currencyFormat(value , field.record.data.currency_id);
+                },
                 width:150
 
             },{
                 header:'Unpaid Amount',
                 dataIndex:'unpaid_amount',
-                //renderer: Ext.util.Format.currency,
+                renderer:function(value  , field , record){
+                    return App.conf.GlobalFn.currencyFormat(value , field.record.data.currency_id);
+                },
                 width:150 ,
             },{
                 header:'Description',
@@ -166,17 +165,21 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                     minValue:0 
                 },
                 renderer:function(value  , field , record){
-                    console.log('field' , field , 'value : ' , value  , 'Record : ' , record);
+                    return App.conf.GlobalFn.currencyFormat(value , field.record.data.currency_id);
                 },
                 width:100 
             },{
                 header:'Balance',
-                renderer: Ext.util.Format.usMoney,
+                renderer:function(value  , field , record){
+                    return App.conf.GlobalFn.currencyFormat(value , field.record.data.currency_id);
+                },
                 flex: 1,
                 dataIndex:'balance'
             }
             ]
-        }, {
+        },
+
+        {
             xtype: 'container',
             layout: 'hbox',
             style: 'margin-top:10px',

@@ -4,6 +4,7 @@ Ext.define('App.controller.sale.CustomerPayment', {
 	views:[
 		'sale.customerPayment.Index',
 		'sale.customerPayment.Frm',
+		'sale.customerPayment.PaymentFieldSet'
 
 	],	
 	stores:[
