@@ -2,506 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1739221e-c4a8-4f99-85fb-f03dc44c68ac" name="Default" comment="update sale receipt">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-arrow-open-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-arrow-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-scroll-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-scroll-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-split-arrow-open-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-split-arrow-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-split-arrow-over-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-split-arrow-over.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-split-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/breadcrumb/default-split-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn-group/btn-group-default-framed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn-group/btn-group-default-framed-notitle-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn-group/btn-group-default-framed-notitle-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn-group/btn-group-default-framed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-large-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-medium-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-small-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-large-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-medium-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-default-toolbar-small-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-large-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-medium-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-focus-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-focus-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-pressed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/btn/btn-plain-toolbar-small-pressed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-large-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-large-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-large-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-large-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-large-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-large-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-medium-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-medium-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-medium-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-medium-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-medium-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-medium-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-small-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-small-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-small-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-small-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-small-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-small-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-large-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-large-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-large-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-large-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-large-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-large-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-medium-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-medium-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-medium-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-medium-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-medium-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-medium-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-small-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-small-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-small-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-small-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-small-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/default-toolbar-small-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/grid-cell-small-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/grid-cell-small-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/grid-cell-small-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/grid-cell-small-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/grid-cell-small-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-large-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-large-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-large-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-large-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-large-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-large-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-medium-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-medium-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-medium-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-medium-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-medium-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-medium-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-small-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-small-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-small-s-arrow-b-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-small-s-arrow-b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-small-s-arrow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/button/plain-toolbar-small-s-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/datepicker/arrow-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/datepicker/arrow-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/datepicker/month-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/dd/drop-add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/dd/drop-no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/dd/drop-yes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/editor/tb-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/fieldset/collapse-tool.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/checkbox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/clear-trigger-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/clear-trigger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/date-trigger-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/date-trigger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/exclamation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/radio.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/search-trigger-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/search-trigger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/spinner-down-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/spinner-down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/spinner-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/spinner-up-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/spinner-up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/spinner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/tag-field-item-close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/trigger-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/form/trigger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/col-move-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/col-move-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/columns.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/dd-insert-arrow-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/dd-insert-arrow-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/dirty-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/dirty.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/drop-no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/drop-yes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/filters/equals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/filters/find.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/filters/greater_than.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/filters/less_than.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/group-by.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/group-collapse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/group-expand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/hd-pop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/hmenu-asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/hmenu-desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/hmenu-lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/hmenu-unlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/page-first.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/page-last.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/page-next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/page-prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/pick-button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/grid/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/loadmask/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/magnify.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-checked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-group-checked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-menu-parent-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-menu-parent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-scroll-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-scroll-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/menu/default-unchecked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-collapsed-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-left-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-right-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-default-framed-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-left-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-right-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-collapsed-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-left-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-right-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel-header/panel-header-light-framed-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel/panel-default-framed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel/panel-default-framed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel/panel-light-framed-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/panel/panel-light-framed-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/shared/icon-error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/shared/icon-info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/shared/icon-question.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/shared/icon-warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/sizer/e-handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/sizer/ne-handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/sizer/nw-handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/sizer/s-handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/sizer/se-handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/sizer/sw-handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/slider/slider-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/slider/slider-thumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/slider/slider-v-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/slider/slider-v-thumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-plain-scroll-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-plain-scroll-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-plain-scroll-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-plain-scroll-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-scroll-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-scroll-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-scroll-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab-bar/default-scroll-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-disabled-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-disabled-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-disabled-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-disabled-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-disabled-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-disabled-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-active-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-active-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-active-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-focus-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-over-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-over-fbg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-over-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tab/tab-default-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tip/tip-default-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tip/tip-default-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tip/tip-form-invalid-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tip/tip-form-invalid-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/default-more-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/default-more.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/default-scroll-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/default-scroll-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/default-scroll-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/default-scroll-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/footer-more-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/footer-more.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/footer-scroll-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/toolbar/footer-scroll-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tools/tool-sprites-dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tools/tool-sprites.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/arrows-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-above.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-add.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-append.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-below.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-between.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-between.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-no.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-over.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-under.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-under.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-yes.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/drop-yes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-end-minus-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-end-minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-end-plus-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-end-plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-end-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-end.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-line-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-minus-nl-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-minus-nl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-minus-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-plus-nl-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-plus-nl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-plus-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/elbow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/folder-open-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/folder-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/folder-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/folder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/leaf-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/leaf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/tree/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/util/splitter/mini-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/util/splitter/mini-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/util/splitter/mini-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/util/splitter/mini-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/ux/dashboard/magnify.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-bottom-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-bottom-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-left-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-right-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-collapsed-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-left-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-left-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-left-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-right-corners-rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-right-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-right-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-top-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window-header/window-header-default-top-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window/toast/fade-blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window/toast/fader.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window/toast/icon16_error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window/toast/icon16_info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window/window-default-corners.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/images/window/window-default-sides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/custom/FieldSet.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/ext-theme-crisp-touch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/ext-theme-crisp-touch-all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/ext-theme-crisp-touch-all_01.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/extjs/build/packages/ext-theme-crisp-touch/build/resources/ext-theme-crisp-touch-all_02.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/customer_payment_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/customer_payment_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/conf/GlobalFn.js" afterPath="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" afterPath="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" afterPath="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js" afterPath="$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -592,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentFieldSet.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PaymentFieldSet.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+            <state relative-caret-position="493">
+              <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -622,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerPayment.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomerPayment.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+            <state relative-caret-position="425">
+              <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -635,8 +137,8 @@
       <file leaf-file-name="GlobalFn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="10" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="51">
+              <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -741,12 +243,12 @@
         <option value="$PROJECT_DIR$/app/models/receive_payment_detail.rb" />
         <option value="$PROJECT_DIR$/app/models/invoice.rb" />
         <option value="$PROJECT_DIR$/app/helpers/customer_payment_helper.rb" />
-        <option value="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
-        <option value="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/app/view/custom/FieldSet.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js" />
+        <option value="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
+        <option value="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" />
       </list>
     </option>
   </component>
@@ -770,7 +272,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1874" />
@@ -844,6 +346,28 @@
               <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
               <item name="Public" type="2bb883d:PublicFolderNode" />
               <item name="app" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="conf" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="controller" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="controller" type="3dfa953c:FolderSubFolderNode" />
+              <item name="sale" type="3dfa953c:FolderSubFolderNode" />
             </path>
             <path>
               <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
@@ -1157,7 +681,7 @@
       <workItem from="1509463392021" duration="2705000" />
       <workItem from="1509530664505" duration="646000" />
       <workItem from="1509856713552" duration="7504000" />
-      <workItem from="1510452084434" duration="2914000" />
+      <workItem from="1510452084434" duration="9290000" />
     </task>
     <task id="LOCAL-00001" summary="update sale receipt">
       <created>1508500694827</created>
@@ -1170,7 +694,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107527000" />
+    <option name="totallyTimeSpent" value="113903000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1183,15 +707,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1554" height="916" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25527704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21078432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32694763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32660782" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45379025" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2707535" sideWeight="0.49570817" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30779055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2502596" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39667705" sideWeight="0.49375" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1542,14 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/extjs/build/ext-all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1190">
@@ -1589,14 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/view/custom/FieldSet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1617,10 +1124,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+        <state relative-caret-position="493">
+          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
           <folding />
         </state>
       </provider>

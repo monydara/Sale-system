@@ -26,9 +26,23 @@ Ext.define('App.view.sale.customerPayment.PaymentFieldSet', {
                 fieldLabel:currency.name+"( "+currency.symbol+" )"
             })
         })
-
+        items = me.getDisplaySummaryAmount(items);
         items.push(me.getButtonApply())
         return items;
+    },
+
+    getDisplaySummaryAmount:function (items) {
+        App.store.Config.allCurrency.forEach(function(currency){
+            items.push({
+                xtype:'displayfield',
+                value: 0 ,
+                name:'currency_'+currency.id,
+                fieldLabel:"Total( "+currency.symbol+" ): "
+            })
+        })
+
+        return items;
+
     },
     getButtonApply:function () {
         return {

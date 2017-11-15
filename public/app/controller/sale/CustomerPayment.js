@@ -42,6 +42,9 @@ Ext.define('App.controller.sale.CustomerPayment', {
 	    	'FormCustomerPayment combo[name=payment_type]':{
 	    		change: this.changePaymentType
 	    	},
+            'FormCustomerPayment button[action=Apply]':{
+                click: this.applyPayment
+            },
 	    	// ===== grid action 
 	    	
 	    	'FormCustomerPayment grid': {
@@ -53,6 +56,20 @@ Ext.define('App.controller.sale.CustomerPayment', {
 
 	    });
 	},
+    applyPayment:function (btn) {
+		var form = btn.up("form");
+		if(form.isValid()){
+		 var values = form.getValues();
+			for(var i in values){
+				if(i.search("currency") ==0 ){
+					// TODO  add pay to store
+					console.log(values[i]);
+				}
+			}
+		 	debugger;
+		}
+	
+    },
 	changePaymentType:function(field){
 		var value = field.getValue();
 		var form = field.up("form");
@@ -116,16 +133,37 @@ Ext.define('App.controller.sale.CustomerPayment', {
 		form.down("hiddenfield[name=total_amount]").setValue(totalAmount.toFixed(2));
 	},
 	loadInvoice:function(combo , records ){
+		var me = this ;
 		var record =  records[0] ; 
 		var customerId = record.get('id');
+		var form = combo.up("form");
 
 		this.getSaleCustomerPaymentDetailStore().load({
 			params:{
 				customer_id:customerId
-			}
+			},
+            callback: function(records, operation, success) {
+               me.alert(records , form);
+            },
+            scope: this
 		});
 
 	},
+    alert:function (records , form) {
+		var totalByCurrency = [];
+		for(var i = 0 ; i< records.length ; i++){
+          	var rec = records[i].data ;
+            totalByCurrency[rec.currency_id] = isNaN(totalByCurrency[rec.currency_id])? Number(rec.unpaid_amount) :totalByCurrency[rec.currency_id]+Number(rec.unpaid_amount);
+
+		}
+
+		for( i in totalByCurrency){
+			form.down("numberfield[name=currency_"+i+"]").setMaxValue(totalByCurrency[i]);
+
+			form.down("displayfield[name=currency_"+i+"]").setValue(App.conf.GlobalFn.currencyFormat( totalByCurrency[i] , i));
+		}
+
+    },
 	search:function(field){
 		var store = this.getSaleCustomerPaymentStore();
 		var params={
