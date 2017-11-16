@@ -37,7 +37,10 @@ Ext.define('App.view.sale.customerPayment.PaymentFieldSet', {
                 xtype:'displayfield',
                 value: 0 ,
                 name:'currency_'+currency.id,
-                fieldLabel:"Total( "+currency.symbol+" ): "
+                fieldLabel:"Total( "+currency.symbol+" ): ",
+                renderer:function (value) {
+                   return App.conf.GlobalFn.currencyFormat(value , currency.id );
+                }
             })
         })
 
