@@ -53,10 +53,18 @@ Ext.define('App.controller.sale.CustomerPayment', {
 			'FormCustomerPayment button[action=payAll]': {
 				click: this.payAll				
 			},
+			'customerPaymentPaymentFieldSet numberfield':{
+                specialkey:this.applyPaymentEnter
+			}
 
 	    });
 	},
-    applyPayment:function (btn) {
+    applyPaymentEnter:function(f,e){
+        if (e.getKey() == e.ENTER) {
+            this.applyPayment(f);
+		}
+    },
+    applyPayment:function(btn) {
 		var form = btn.up("form");
 		var me = this;
 		if(form.isValid()){
@@ -72,8 +80,9 @@ Ext.define('App.controller.sale.CustomerPayment', {
 
 
                     store.each(function(record){ //-- loop for payment
-                       var unpaidAmount =  record.get("unpaid_amount");
+                        var unpaidAmount =  record.get("unpaid_amount");
                        if(amount > 0 && record.get("currency_id") == currency_id) {
+
                        		if(amount < unpaidAmount ){
                                 record.set("amount" , amount );
                                 record.set("balance" , unpaidAmount-amount);
@@ -83,10 +92,10 @@ Ext.define('App.controller.sale.CustomerPayment', {
                                 record.set("amount" ,unpaidAmount );
                                 record.set("balance" , 0);
 							}
-
-
+					   }else if(amount == 0 && record.get("currency_id") == currency_id){
+                           record.set("amount" ,0);
+                           record.set("balance" , unpaidAmount );
 					   }
-
                     });
 
 				}
@@ -151,16 +160,21 @@ Ext.define('App.controller.sale.CustomerPayment', {
 
 	setTotalAmountPay:function(grid){
 		var store =grid.getStore();
-		var totalAmounts = [] ;
+		var totalByCurrency = [] ;
 		store.each(function(record){
 
-			totalAmount+=Number(record.get("amount"));
+			var data = record.getData();
+			console.log(data); 
+            totalByCurrency[data.currency_id] =Ext.Number.from(totalByCurrency[data.currency_id] , 0)+Number(data.amount);
+
 		});
 
 		var form = grid.up('form');
 
-		//form.down("displayfield[name=total_amount]").setValue(totalAmount.toFixed(2));
-		//form.down("hiddenfield[name=total_amount]").setValue(totalAmount.toFixed(2));
+        for( i in totalByCurrency){
+            form.down("displayfield[name=total_currency_"+i+"]").setValue(totalByCurrency[i] );
+        }
+
 	},
 	loadInvoice:function(combo , records ){
 		var me = this ;
@@ -184,7 +198,7 @@ Ext.define('App.controller.sale.CustomerPayment', {
 		for(var i = 0 ; i< records.length ; i++){
           	var rec = records[i].data ;
             totalByCurrency[rec.currency_id] =Ext.Number.from(totalByCurrency[rec.currency_id] , 0)+Number(rec.unpaid_amount)
-				//isNaN(totalByCurrency[rec.currency_id])? Number(rec.unpaid_amount) :totalByCurrency[rec.currency_id]+Number(rec.unpaid_amount);
+
 
 		}
 

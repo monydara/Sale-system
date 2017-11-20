@@ -45,7 +45,8 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                         xtype: 'container',
                         width: 350,
                         defaults: {
-                            labelAlign: 'right'
+                            labelAlign: 'right',
+                            labelWidth:150
                         },
                         items:me.getVFooter()
                     }]
@@ -233,6 +234,10 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                 }
             })
 
+        })
+        Citems.push({
+            xtype:'hidden',
+            name:'total_amount'
         })
        return Citems;
 

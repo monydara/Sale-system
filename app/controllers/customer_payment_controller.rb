@@ -21,7 +21,7 @@ class CustomerPaymentController < ApplicationController
 			ReceivePayment.transaction do
 				data = ReceivePayment.new(permit_data)
 				data.created_by = @current_user.id
-				data.grand_total_amount = data.total_amount
+				data.grand_total_amount =CustomerPaymentHelper.get_amount_receipt(data)
 				# === get code
 				data.receipt_no = CustomerPaymentHelper.get_code(data)
 				# check code exist
@@ -36,14 +36,14 @@ class CustomerPaymentController < ApplicationController
 					# === update unpaid amount and status
 
 					success = CustomerPaymentHelper.payment_invoice(data , @current_user.id )
-					data.save
-					success = CustomerPaymentHelper.insert_to_customer_transaction(data, @current_user.id )
 
 
 					if data.valid? && success == true
+						data.save
+						success = CustomerPaymentHelper.insert_to_customer_transaction(data, @current_user.id )
 						render json:{ data:data , success:true}
 					else
-						render json:{ message:"Process payment Fail" , success:false}
+						render json:{ message:"Process payment Fail ; message:#{data.errors.messages}" , success:false}
 						raise ActiveRecord::Rollback
 
 					end
@@ -195,6 +195,7 @@ class CustomerPaymentController < ApplicationController
 			:receive_payment_detail_attributes=> [
 				:receive_payment_id,
 				:invoice_id,
+				:currency_id,
 				:amount,
 				:description,
 				:_destroy

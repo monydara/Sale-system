@@ -1,6 +1,15 @@
 module CustomerPaymentHelper
 	@@common = Common.new
 
+	def self.get_amount_receipt(receipt)
+		#--- get all amount in by local currency
+		total_amount = 0
+		receipt.receive_payment_detail.each_with_index do |d|
+
+		end
+
+	end
+
 	def self.get_invioce_detail(customer_id)
 =begin
 TODO
@@ -121,28 +130,23 @@ TODO
 
 	end
 
-	def self.insert_to_customer_transaction(receipt , user_id)
-		begin
-			CustomerTransaction.transaction do
+	def self.insert_to_customer_transaction(receipt , user_id )
 
-				data = CustomerTransaction.new()
+		receipt.receive_payment_detail.each_with_index do |d|
 
-				data.transaction_id=receipt.id 
-				data.date=DateTime.now()
-				data.transaction_type_id=6
-				data.ref_no=receipt.receipt_no
-				data.amount=(receipt.grand_total_amount.to_f * (-1) )
-				data.created_by=user_id
-				data.customer_id = receipt.customer_id
-				data.save
-		
-						
-			end
-			return true
-		rescue Exception => e
-			puts "======== ERROR:insert_to_customer_transaction"+e.message
-			return false
+			data = CustomerTransaction.new()
+
+			data.transaction_id=receipt.id
+			data.date=DateTime.now()
+			data.transaction_type_id=6
+			data.ref_no=receipt.receipt_no
+			data.amount=(d.amount.to_f * (-1) )
+			data.created_by=user_id
+			data.customer_id = receipt.customer_id
+			data.currency_id = d.currency_id
+			data.save
 		end
+
 	end
 
 	def self.update_customer_transaction(receipt , user_id)
