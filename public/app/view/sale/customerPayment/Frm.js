@@ -64,17 +64,11 @@ Ext.define('App.view.sale.customerPayment.Frm', {
 
             title: '<b> Basic Info </b>',
 
-            items: [{
-            xtype: 'combo',
+            items: [
+                {
+            xtype: 'cmbCustomer',
             fieldLabel: 'Customer(<span style="color:red">*</span>)',
-            allowBlank: false,
-            emptyText: '-- Select Customer --',
-            store: 'combo.Customer',
-            valueField: 'id',
-            queryMode:'local',
-            // editable: false,
-            displayField: 'name',
-            name: 'customer_id'
+
         }, {
             xtype:'combo',
             name:'payment_type',

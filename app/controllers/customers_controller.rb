@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
 		data = Customer.joins(:area, :contact)
 		if !params[:string].nil?
 			text = '%'+params[:string]+'%'
-			data = data.where(" customers.name like '#{text}' or legal_name like '#{text}' or phone like '#{text}' or contacts.contact_name like '#{text}'  ")
+			data = data.where(" customers.name like '#{text}' or legal_name like '#{text}' or phone like '#{text}' or contacts.contact_name like '#{text}'  ").order(created_at:'desc')
 		end
 		result = data.select("customers.* , areas.name 'area_name' , contacts.id contact ,contacts.contact_name , contacts.contact_mobile ")
 		render @@common.returnJoinPaginate(data ,result, params[:page],params[:limit])

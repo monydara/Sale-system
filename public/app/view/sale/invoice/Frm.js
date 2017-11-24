@@ -80,17 +80,18 @@ Ext.define('App.view.sale.invoice.Frm', {
                     }]
 
                 }, {
-                    xtype: 'combo',
+                xtype:'cmbCustomer',
+                    // xtype: 'combo',
                     fieldLabel: 'Customer(<span style="color:red">*</span>)',
-                    allowBlank: false,
-                    emptyText: '-- Select Customer --',
-                    store: 'combo.Customer',
-                     forceSelection:true,
-                    valueField: 'id',
-                    // editable: false,
-                    displayField: 'name',
-                     minChars: 2,
-                    name: 'customer_id'
+                    // allowBlank: false,
+                    // emptyText: '-- Select Customer --',
+                    // store: 'combo.Customer',
+                    //  forceSelection:true,
+                    // valueField: 'id',
+                    // // editable: false,
+                    // displayField: 'name',
+                    //  minChars: 2,
+                    // name: 'customer_id'
                 }, {
                     xtype: 'textfield',
                     fieldLabel: 'Ref No.',

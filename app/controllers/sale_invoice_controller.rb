@@ -8,7 +8,7 @@ class SaleInvoiceController < ApplicationController
 		 customers.name customer_name ,
 		 invoices.grand_total_amount grand_total_amount_display ,
 		 invoices.total_amount total_amount_display
-		 ")
+		 ").order(date: "desc")
 
 
 		if !params[:search_string].nil?
@@ -69,7 +69,7 @@ class SaleInvoiceController < ApplicationController
 
 
 					success= SaleInvoiceHelper.save_to_stock_transaction(data, @current_user.id , session[:location_id] , session[:success], session[:message])
-					success= SaleInvoiceHelper.customer_transaction(data, @current_user.id  )
+					success= SaleInvoiceHelper.customer_transaction(data, @current_user.id  , false )
 					render json:{ data:data , success:success}
 				else
 					render json:{ data:data , success:false, error:data.errors }

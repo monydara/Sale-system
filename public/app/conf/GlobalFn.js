@@ -1,5 +1,8 @@
 Ext.define('App.conf.GlobalFn',{
     singleton: true,
+    requires:[
+        'App.view.template.cmbCustomer'
+    ],
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {
         var amountFormat ="";

@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1739221e-c4a8-4f99-85fb-f03dc44c68ac" name="Default" comment="update sale receipt">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/cmbInvoice.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/cmbItem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/cmbLocation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/cmbQuotation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/cmbUm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/txtCurrency.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/txtDate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/view/template/txtNumber.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/customer_payment_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/customer_payment_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/customer_payment_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/customer_payment_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/currency.rb" afterPath="$PROJECT_DIR$/app/models/currency.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/receive_payment_detail.rb" afterPath="$PROJECT_DIR$/app/models/receive_payment_detail.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/customers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/customers_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/custom_price_detail.rb" afterPath="$PROJECT_DIR$/app/models/custom_price_detail.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/conf/GlobalFn.js" afterPath="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" afterPath="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" afterPath="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js" afterPath="$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -23,7 +34,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Sale_system@Development__sale_system_v3.coverage" NAME="Development: sale-system-v3 Coverage Results" MODIFIED="1510991811662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sale-system-v3" />
+    <SUITE FILE_PATH="coverage/Sale_system@Development__sale_system_v3.coverage" NAME="Development: sale-system-v3 Coverage Results" MODIFIED="1511445691952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sale-system-v3" />
     <SUITE FILE_PATH="coverage/Sale_system@Production__sale_system_v3.coverage" NAME="Production: sale-system-v3 Coverage Results" MODIFIED="1508939250894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sale-system-v3" />
     <SUITE FILE_PATH="coverage/Sale_system@db_migrate__sale_system_v3.coverage" NAME="db:migrate: sale-system-v3 Coverage Results" MODIFIED="1509186968752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sale-system-v3" />
   </component>
@@ -35,36 +46,26 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="sale_system@localhost" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="sale_system@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="sale_system" type="e3449647:DbNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="customer_payment_helper.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/customer_payment_helper.rb">
+      <file leaf-file-name="cmbCustomer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbCustomer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="currency.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/currency.rb">
+      <file leaf-file-name="GlobalFn.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -73,18 +74,9 @@
       <file leaf-file-name="sale_invoice_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="914">
-              <caret line="229" column="17" lean-forward="true" selection-start-line="229" selection-start-column="17" selection-end-line="229" selection-end-column="17" />
+            <state relative-caret-position="605">
+              <caret line="135" column="40" lean-forward="true" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="receive_payments" pinned="false" current-in-tab="false">
-        <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.receive_payments">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -92,34 +84,37 @@
       <file leaf-file-name="Frm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="239" column="24" lean-forward="false" selection-start-line="239" selection-start-column="24" selection-end-line="239" selection-end-column="24" />
+            <state relative-caret-position="265">
+              <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
               <folding>
-                <element signature="e#1686#2957#0" expanded="false" />
-                <element signature="e#2975#3990#0" expanded="false" />
-                <marker date="1511141667786" expanded="true" signature="1857:1866" ph="..." />
-                <marker date="1511141667786" expanded="true" signature="3604:3613" ph="..." />
-                <marker date="1511141667786" expanded="true" signature="3725:3734" ph="..." />
+                <element signature="e#2724#3739#0" expanded="false" />
+                <marker date="1511445408468" expanded="true" signature="1880:1889" ph="..." />
+                <marker date="1511445408468" expanded="true" signature="3353:3362" ph="..." />
+                <marker date="1511445408468" expanded="true" signature="3474:3483" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+      <file leaf-file-name="Frm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="374">
+              <caret line="100" column="33" lean-forward="false" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+              <folding>
+                <marker date="1511445509920" expanded="true" signature="1025:1034" ph="..." />
+                <marker date="1511445509920" expanded="true" signature="1158:1167" ph="..." />
+                <marker date="1511445509920" expanded="true" signature="2617:2626" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerPayment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js">
+      <file leaf-file-name="Customer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Customer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,27 +123,37 @@
       <file leaf-file-name="customer_payment_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/customer_payment_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="77" lean-forward="true" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customers_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+              <caret line="14" column="89" lean-forward="true" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="receive_payment.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/receive_payment.rb">
+      <file leaf-file-name="Button.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/view/custom/Button.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="221">
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Customer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Customer.js">
+      <file leaf-file-name="txtNumber.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/view/template/txtNumber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -159,8 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getSaleReceipt</find>
-      <find>sale_rec</find>
       <find>session</find>
       <find>combo.</find>
       <find>setRecord</find>
@@ -189,6 +192,8 @@
       <find>CustomerPayment</find>
       <find>spe</find>
       <find>enter</find>
+      <find>customer</find>
+      <find>audited</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public/app</dir>
@@ -209,11 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/app/view/item/um/Index.js" />
-        <option value="$PROJECT_DIR$/public/app/view/item/um/FmUM.js" />
-        <option value="$PROJECT_DIR$/public/app/view/sale/contact/Index.js" />
-        <option value="$PROJECT_DIR$/public/app/view/sale/contact/Frm.js" />
-        <option value="$PROJECT_DIR$/public/app/view/sale/customer/Index.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/customer/FmCustomer.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/customerPayment/Index.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/customPrice/Index.js" />
@@ -221,7 +221,6 @@
         <option value="$PROJECT_DIR$/public/app/view/custom/Button.js" />
         <option value="$PROJECT_DIR$/public/app/controller/sale/Invoice.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/invoice/Index.js" />
-        <option value="$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/quotation/Index.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/quotation/Frm.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/saleReceipt/Index.js" />
@@ -250,16 +249,22 @@
         <option value="$PROJECT_DIR$/public/app/view/setup/code/Index.js" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e90ce1af-c560-4bb1-b1a5-53656da64c68/console.sql" />
         <option value="$PROJECT_DIR$/app/models/invoice.rb" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/app/view/custom/FieldSet.js" />
-        <option value="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
         <option value="$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js" />
-        <option value="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" />
         <option value="$PROJECT_DIR$/app/models/receive_payment_detail.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/customer_payment_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/customer_payment_helper.rb" />
-        <option value="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" />
         <option value="$PROJECT_DIR$/app/models/currency.rb" />
+        <option value="$PROJECT_DIR$/app/models/custom_price_detail.rb" />
+        <option value="$PROJECT_DIR$/public/css/test.scss" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js" />
+        <option value="$PROJECT_DIR$/public/app/conf/GlobalFn.js" />
+        <option value="$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js" />
+        <option value="$PROJECT_DIR$/public/app/view/template/cmbCustomer.js" />
+        <option value="$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js" />
+        <option value="$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/customer_payment_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/customers_controller.rb" />
       </list>
     </option>
   </component>
@@ -283,11 +288,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1874" />
-    <option name="height" value="1096" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="1" />
+    <option name="width" value="1538" />
+    <option name="height" value="898" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -338,22 +342,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
-              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
-            </path>
-            <path>
-              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
-              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
-              <item name="Models" type="4bd37eb5:ModelsFolderNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -420,6 +408,93 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="RailsProjectView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Controllers" type="28580ddf:ControllersFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Mailers" type="d052a7e1:MailersFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="conf" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="controller" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="view" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="view" type="3dfa953c:FolderSubFolderNode" />
+              <item name="sale" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="view" type="3dfa953c:FolderSubFolderNode" />
+              <item name="sale" type="3dfa953c:FolderSubFolderNode" />
+              <item name="customerPayment" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="view" type="3dfa953c:FolderSubFolderNode" />
+              <item name="sale" type="3dfa953c:FolderSubFolderNode" />
+              <item name="invoice" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+            <path>
+              <item name="Sale-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="sale-system-v3" type="ca5d24b0:RailsModuleNode" />
+              <item name="Public" type="2bb883d:PublicFolderNode" />
+              <item name="app" type="3dfa953c:FolderSubFolderNode" />
+              <item name="view" type="3dfa953c:FolderSubFolderNode" />
+              <item name="template" type="3dfa953c:FolderSubFolderNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -637,6 +712,8 @@
       <workItem from="1510748604507" duration="7437000" />
       <workItem from="1510898025821" duration="449000" />
       <workItem from="1510987143619" duration="9455000" />
+      <workItem from="1511178366804" duration="853000" />
+      <workItem from="1511439309694" duration="5716000" />
     </task>
     <task id="LOCAL-00001" summary="update sale receipt">
       <created>1508500694827</created>
@@ -649,7 +726,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131958000" />
+    <option name="totallyTimeSpent" value="138527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,14 +739,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1554" height="916" extended-state="6" />
+    <frame x="0" y="1" width="1538" height="898" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25461742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31133333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32694763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32660782" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5581098" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5578145" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2707535" sideWeight="0.49570817" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24904214" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25490198" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39667705" sideWeight="0.49375" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -734,125 +811,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.look_ups">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.models">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.next_versions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.payment_vouchers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.payment_voucher_details">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.payment_terms">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.transfer_stocks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.transfer_stock_details">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.transaction_types">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.sys_menus">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.sys_configs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.series">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/view/setup/code/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="34" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/store/sale/CustomerPaymentDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.invoices">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.customer_transactions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e90ce1af-c560-4bb1-b1a5-53656da64c68/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/conf/Store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -892,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1190">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,37 +882,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="40" />
-          <folding>
-            <marker date="1509165883400" expanded="true" signature="305:387" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/view/custom/ToolBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,15 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="87" column="9" lean-forward="false" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-493">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,15 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Customer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,55 +948,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/customer_payment_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.receive_payment_details">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="229" column="17" lean-forward="true" selection-start-line="229" selection-start-column="17" selection-end-line="229" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.receive_payments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="239" column="24" lean-forward="false" selection-start-line="239" selection-start-column="24" selection-end-line="239" selection-end-column="24" />
-          <folding>
-            <element signature="e#1686#2957#0" expanded="false" />
-            <element signature="e#2975#3990#0" expanded="false" />
-            <marker date="1511141667786" expanded="true" signature="1857:1866" ph="..." />
-            <marker date="1511141667786" expanded="true" signature="3604:3613" ph="..." />
-            <marker date="1511141667786" expanded="true" signature="3725:3734" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,16 +965,240 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/customer_payment_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/test.scss">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/PaymentFieldSet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/custom_price_detail.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/custom_price.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/CustomerPayment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="177" column="72" lean-forward="false" selection-start-line="177" selection-start-column="72" selection-end-line="177" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/currency.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/company_profile_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d10a707d/e90ce1af-c560-4bb1-b1a5-53656da64c68/sale_system.receive_payments">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbUm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/txtDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/txtNumber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/custom/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbQuotation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/txtCurrency.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/conf/GlobalFn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbInvoice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/template/cmbCustomer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/sale/invoice/Frm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="100" column="33" lean-forward="false" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+          <folding>
+            <marker date="1511445509920" expanded="true" signature="1025:1034" ph="..." />
+            <marker date="1511445509920" expanded="true" signature="1158:1167" ph="..." />
+            <marker date="1511445509920" expanded="true" signature="2617:2626" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/view/sale/customerPayment/Frm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+          <folding>
+            <element signature="e#2724#3739#0" expanded="false" />
+            <marker date="1511445408468" expanded="true" signature="1880:1889" ph="..." />
+            <marker date="1511445408468" expanded="true" signature="3353:3362" ph="..." />
+            <marker date="1511445408468" expanded="true" signature="3474:3483" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sale_invoice_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="135" column="40" lean-forward="true" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/controller/sale/Customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/customer_payment_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="77" lean-forward="true" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="89" lean-forward="true" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
           <folding />
         </state>
       </provider>

@@ -170,10 +170,13 @@ Ext.define('App.controller.sale.CustomerPayment', {
 		});
 
 		var form = grid.up('form');
-
+		var grandTotalAmount = 0  ;
         for( i in totalByCurrency){
             form.down("displayfield[name=total_currency_"+i+"]").setValue(totalByCurrency[i] );
+            grandTotalAmount+=App.conf.GlobalFn.exchagneLocalRateIn(totalByCurrency[i] , i );
         }
+        form.down("hidden[name=total_amount]").setValue(grandTotalAmount);
+
 
 	},
 	loadInvoice:function(combo , records ){

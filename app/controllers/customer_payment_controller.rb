@@ -7,7 +7,7 @@ class CustomerPaymentController < ApplicationController
 			data = data.where(" code like '#{text}' or name like '#{text}'")
 		end
 		data = data.joins(:customer)
-		result = data.select("receive_payments.* , customers.name customer_name")
+		result = data.select("receive_payments.* , customers.name customer_name").order(created_at:'desc')
 		render @@common.returnJoinPaginate(data, result, params[:page],params[:limit])
 	end
 
@@ -21,7 +21,7 @@ class CustomerPaymentController < ApplicationController
 			ReceivePayment.transaction do
 				data = ReceivePayment.new(permit_data)
 				data.created_by = @current_user.id
-				data.grand_total_amount =CustomerPaymentHelper.get_amount_receipt(data)
+				data.grand_total_amount =data.total_amount
 				# === get code
 				data.receipt_no = CustomerPaymentHelper.get_code(data)
 				# check code exist
