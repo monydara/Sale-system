@@ -59,4 +59,14 @@ class PrintsController <  ActionController::Base
     # #render json: { data: render_to_string('print_invoice_lux.html.erb') }
   end
 
+  def print_reciept
+    @rpt = ReceivePayment.find params[:id]
+    @company  = CompanyProfile.find(1)
+    @customer = @rpt.customer
+
+    receipt_file_name = SysConfig.get_config_by_code "RPT01"
+    puts "----- #{receipt_file_name} ======"
+    render receipt_file_name
+  end
+
 end

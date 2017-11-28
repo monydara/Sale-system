@@ -116,12 +116,18 @@ Ext.define('App.controller.sale.CustomerPayment', {
 			textfield.show();
 		};
 	},
-	print: function(btn) {
-		var record = Util.getRecord(btn, "Please Select Receipt For Print");
-		if (record) {
-			window.open("/CustomerPayment/print.pdf?id=" + record.get('id'));
-		};
-	},
+    print: function(btn) {
+        var record = Util.getRecord(btn, "Please Select Invoice For Print");
+        if (record) {
+            window.open("/Prints/print_reciept.html?id=" + record.get('id'));
+        };
+    },
+	// print: function(btn) {
+	// 	var record = Util.getRecord(btn, "Please Select Receipt For Print");
+	// 	if (record) {
+	// 		window.open("/CustomerPayment/print.pdf?id=" + record.get('id'));
+	// 	};
+	// },
 	payAll:function(btn){
 		var me = this ;
 		var grid = btn.up('grid');

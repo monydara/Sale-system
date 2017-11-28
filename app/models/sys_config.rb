@@ -4,6 +4,9 @@ class SysConfig < ActiveRecord::Base
 --- invoice
    INV01 = invoice format name
 
+-- Receipt
+  RPT01= receipt format
+
 -- extjs
   SYS01 = multi currency
 
