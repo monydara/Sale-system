@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+How to get System running (assumption you have ruby and rails and other require libray installed)
+
+	1) Clone the project from GitHub
+	2) Create database sale-system-test_v3
+	3) Run "$ bundle install"
+  4) Run "$ rails s"
