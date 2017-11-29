@@ -323,13 +323,17 @@ Ext.define('App.controller.sale.CustomerPayment', {
 
   			    	          				    	          		
   		if(form.isValid()){
+  			debugger;
   			storeDetail.each(function(record){
-  				if (record) {  					
-	  				if (!Number(record.get("amount")) > 0 ) {
+  				if (record) {
+  					console.log(Number(record.get("amount")) , "-- invoice list amount")
+	  				if (Number(record.get("amount")) == 0 ) {
+  						console.log("--- recod have removed")
 	  					storeDetail.remove(record);
 	  				};
   				};
   			});
+            debugger;
 			values["receive_payment_detail_attributes"] = Util.getItemStore(storeDetail);
 
   			if (record) {
