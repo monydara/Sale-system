@@ -65,7 +65,8 @@ Ext.define('App.controller.item.Item', {
 		store.add(model);
 
 	},
-	reloadStoreCategory: function() {
+	reloadStoreCategory: function(btn) {
+        App.app.getController("item.ItemCategory").save(btn);
 		var me = this ;
 		setTimeout(function() {
 

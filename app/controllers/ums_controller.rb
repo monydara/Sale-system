@@ -63,7 +63,7 @@ class UmsController < ApplicationController
 
 	def permit_data
 		params.permit(
-			:id,
+			
 			:code,
 			:name,
 			:abbreviation,
