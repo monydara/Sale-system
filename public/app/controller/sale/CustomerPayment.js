@@ -85,16 +85,16 @@ Ext.define('App.controller.sale.CustomerPayment', {
 
                        		if(amount < unpaidAmount ){
                                 record.set("amount" , amount );
-                                record.set("balance" , unpaidAmount-amount);
+                                record.set("last_balance" , unpaidAmount-amount);
                                 amount = 0 ;
 							}else{
                        			amount = amount - unpaidAmount;
                                 record.set("amount" ,unpaidAmount );
-                                record.set("balance" , 0);
+                                record.set("last_balance" , 0);
 							}
 					   }else if(amount == 0 && record.get("currency_id") == currency_id){
                            record.set("amount" ,0);
-                           record.set("balance" , unpaidAmount );
+                           record.set("last_balance" , unpaidAmount );
 					   }
                     });
 
@@ -157,7 +157,7 @@ Ext.define('App.controller.sale.CustomerPayment', {
 			var unpaid = record.get('unpaid_amount');
 			var amount = record.get('amount');
 			var balance = unpaid - amount ;
-			record.set("balance" , balance);
+			record.set("last_balance" , balance);
 			me.setTotalAmountPay(e.grid);
 
 		}

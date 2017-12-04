@@ -24,6 +24,14 @@ class CustomerPaymentController < ApplicationController
 				data.grand_total_amount =data.total_amount
 				# === get code
 				data.receipt_no = CustomerPaymentHelper.get_code(data)
+
+					#=== remvoe detail with amount 0
+				data.receive_payment_detail.each do |d|
+					if d.amount ==0
+						data.receive_payment_detail.delete d
+					end
+				end
+
 				# check code exist
 				if EomController.check_eom_date(data.date) == false
 
@@ -198,6 +206,7 @@ class CustomerPaymentController < ApplicationController
 				:currency_id,
 				:amount,
 				:description,
+				:last_balance,
 				:_destroy
 			]
 			)
@@ -222,6 +231,7 @@ class CustomerPaymentController < ApplicationController
 				:invoice_id,
 				:amount,
 				:description,
+				:last_balance,
 				:_destroy
 			]
 			)

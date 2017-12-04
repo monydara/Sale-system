@@ -190,7 +190,7 @@
       <th width="126px" style="  border-bottom: 2pt solid black;" >Last Balance</th>
       <th width="120px" style="  border-bottom: 2pt solid black;" >Paid Amount</th>
 
-      <th width="101px" style="  border-bottom: 2pt solid black;" >Balance</th>
+      <!--<th width="101px" style="  border-bottom: 2pt solid black;" >Balance</th>-->
     </tr>
     </thead>
     <tbody>
@@ -216,7 +216,7 @@
               <%= cSmb %>
             </div>
             <div class="right">
-              <center><%=  '%.02f' %  0 %> </center>
+              <center><%=  '%.02f' %  d.last_balance %> </center>
             </div>
 
           </td>
@@ -229,15 +229,7 @@
             </div>
 
           </td>
-          <td>
-            <div class="left">
-              <%= cSmb %>
-            </div>
-            <div class="right">
-              <center><%=  '%.02f' %  0 %> </center>
-            </div>
 
-          </td>
         </tr>
 
 

@@ -210,7 +210,7 @@ Ext.define('App.view.sale.customerPayment.Frm', {
                 return App.conf.GlobalFn.currencyFormat(value , field.record.data.currency_id);
             },
             flex: 1,
-            dataIndex:'balance'
+            dataIndex:'last_balance'
         }
         ]
     },
