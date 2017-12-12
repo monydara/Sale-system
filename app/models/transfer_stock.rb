@@ -3,6 +3,6 @@ class TransferStock < ActiveRecord::Base
 	belongs_to :locations ,:foreign_key => "from_location_id"
 	belongs_to :locations ,:foreign_key => "to_location_id"
  	accepts_nested_attributes_for :transfer_stock_detail, :allow_destroy => true
- 	audited
- 	has_associated_audits
+ #	audited
+ 	#has_associated_audits
 end

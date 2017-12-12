@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_action :check_session, :only => [:login]
+  #skip_before_action :check_session, :only => [:login]
 
   @@check_license = false
   def login

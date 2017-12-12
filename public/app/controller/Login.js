@@ -58,13 +58,16 @@ Ext.define('App.controller.Login', {
 		// };
 	},
 	showPageLogin:function(){
-		var form = Ext.create("Ext.form.Panel");
-
-		form.getForm().doAction('standardsubmit',{
-		   url: '/home/logout',
-		   standardSubmit: true,
-		   method: 'POST'
-		});
+		// var form = Ext.create("Ext.form.Panel");
+        //
+		// form.getForm().doAction('standardsubmit',{
+		//    url: '/home/logout',
+		//    standardSubmit: true,
+		//    method: 'POST'
+		// });
+        var page = Ext.getCmp('mainPage');
+        //App.app.getController('admin.User').getMenuList(page.down('fmMenu'));
+        page.getLayout().setActiveItem(0);
 	},
 	submit:function(f,e){
 		if (e.getKey() == e.ENTER) {

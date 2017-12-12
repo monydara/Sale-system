@@ -26,7 +26,6 @@ class UsersController < ApplicationController
             end
 
         rescue Exception => e
-
             render json:{ message:e.message ,success:false}
         end
 

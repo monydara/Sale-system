@@ -1,3 +1,3 @@
 class StockTransaction < ActiveRecord::Base
-	audited
+	#audited
 end

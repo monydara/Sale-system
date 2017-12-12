@@ -1,13 +1,14 @@
 class AdjustStockController < ApplicationController
 	@@common = Common.new
 	def index
-		data = AdjustStock.joins(:locations).select("adjust_stocks.*, locations.name location_name")
+		data = AdjustStock.joins(:locations)
 		if !params[:search_string].nil?
 			text = "%" + params[:search_string] + "%"
 			data = data.where("adjust_stocks.ref_no like '#{text}'
-				or locations.name like '#{text}'")
+				")
 		end
-		render @@common.returnPaginate(data, params[:page], params[:limit])
+		result= data.select("adjust_stocks.*, locations.name location_name")
+		render @@common.returnJoinPaginate(data,result, params[:page], params[:limit])
 	end
 	def create
 		data = AdjustStock.new(permit_data)
