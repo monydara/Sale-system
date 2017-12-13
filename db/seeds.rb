@@ -1,20 +1,43 @@
-Area.create!([
-  {code: "TK", name: "Takeo"},
-  {code: "PP", name: "Phnom Penh"}
-])
+if Area.any?
+  Area.delete_all
+end
+  Area.create!([
+                   {code: "TK", name: "Takeo"},
+                   {code: "PP", name: "Phnom Penh"}
+               ])
+
+
+if CompanyProfile.any?
+  CompanyProfile.delete_all
+end
 CompanyProfile.create!([
   {legal_name: "សារីមុន្នីតារា", company_name: "Sary Monydara", tax_no: "12356", mobile: "012 812812 ", phone: "012 812812 ", email: "company@domain.com", website: "www.website.com", address: "Phnom Penh", update_by: nil, image_file_name: "/system/company_profiles/images/000/000/001/original/Screen_Shot_2017-09-16_at_9.59.07_PM.png?1505573974", image_content_type: "image/png", image_file_size: 27798, image_updated_at: "2017-09-16 14:59:34", account_no: "11-2021-031993-3", account_name: "Dara", bank_name: "Cathay United Bank", vat_tin: "105007390"}
 ])
+
+if Contact.any?
+  Contact.delete_all
+end
 Contact.create!([
   {contact_name: "Default Contact", contact_mobile: "N/A", contact_id_card: "", contact_email: "", contact_address: "", description: nil}
 ])
+
+if Currency.any?
+  Currency.delete_all
+end
 Currency.create!([
   {name: "Riel", symbol: "៛", abbr: "KHR", fraction_unit: 1, rate_in: "1.0", rate_out: "1.0", is_base: true},
   {name: "Dollar", symbol: "$", abbr: "USD", fraction_unit: 1, rate_in: "4000.0", rate_out: "4100.0", is_base: false}
 ])
+
+if Department.any?
+  Department.delete_all
+end
 Department.create!([
   {name: "Sale Department", description: ""}
 ])
+if ItemCategory.any?
+  ItemCategory.delete_all
+end
 ItemCategory.create!([
   {sub_of_id: 4, name: "Beer", remark: "", is_active: true},
   {sub_of_id: 2, name: "Inventory Software", remark: "", is_active: true},
@@ -23,6 +46,10 @@ ItemCategory.create!([
   {sub_of_id: nil, name: "Drink", remark: "", is_active: true},
   {sub_of_id: nil, name: "Beer", remark: "", is_active: true}
 ])
+
+if ItemType.any?
+  ItemType.delete_all
+end
 ItemType.create!([
   {name: "Invetory", code: "001", created_by: nil, modify_by: nil},
   {name: "Service", code: "002", created_by: nil, modify_by: nil},
@@ -30,11 +57,18 @@ ItemType.create!([
   {name: "Asset", code: "004", created_by: nil, modify_by: nil},
   {name: "Group Item", code: "005", created_by: nil, modify_by: nil}
 ])
+
+if Locations.any?
+  Locations.delete_all
+end
 Locations.create!([
   {name: "", phone: "", fax: "", website: "", email: "", address: "", remark: "", is_active: true, create_by: nil, modify_by: nil},
   {name: "Phone Penh", phone: "", fax: "", website: "", email: "", address: "", remark: "", is_active: true, create_by: nil, modify_by: nil},
   {name: "Takeo", phone: "", fax: "", website: "", email: "", address: "", remark: "", is_active: true, create_by: nil, modify_by: nil}
 ])
+if LookUp.any?
+  LookUp.delete_all
+end
 LookUp.create!([
   {cod_type: "LEAD STATUS", code: "L", name: "Lead", description: nil},
   {cod_type: "LEAD STATUS", code: "O", name: "Open", description: nil},
@@ -50,6 +84,10 @@ LookUp.create!([
   {cod_type: "OPPORTUNITY TYPE", code: nil, name: "Replied", description: nil},
   {cod_type: "OPPORTUNITY TYPE", code: nil, name: "Closed", description: nil}
 ])
+
+if NextVersion.any?
+  NextVersion.delete_all
+end
 NextVersion.create!([
   {n_type: "LEAD", prefix: "", next_code: "1", degit: 4, is_manaul: false},
   {n_type: "CUSTOMER", prefix: "", next_code: "1", degit: 4, is_manaul: false},
@@ -69,15 +107,27 @@ NextVersion.create!([
   {n_type: "SALE RECEIPT INCLUDE TAX", prefix: "SRT-", next_code: "1", degit: 4, is_manaul: false},
   {n_type: "SALE RECEIPT NOT INCLUDE TAX", prefix: "SR-", next_code: "1", degit: 4, is_manaul: false}
 ])
+
+if Position.any?
+  Position.delete_all
+end
 Position.create!([
   {name: "Administrator", description: "For System Adminsdf", is_deleted: false, created_by: nil},
   {name: "Sale Supervisor", description: "for sale supervisor", is_deleted: false, created_by: nil},
   {name: "Sale Executive", description: "", is_deleted: false, created_by: 1}
 ])
-Role.create!([
-  {name: "Sale", description: "", is_active: true, is_admin: nil},
-  {name: "System Admin", description: "Default System Role", is_active: true, is_admin: nil}
+if Role.any?
+  Role.delete_all
+end
+roles = Role.create!([
+ {name: "System Admin", description: "Default System Role", is_active: true, is_admin: nil},
+  {name: "Sale", description: "", is_active: true, is_admin: nil}
+
 ])
+
+if Source.any?
+  Source.delete_all
+end
 Source.create!([
   {name: "Advertisement ", description: nil, create_by: nil},
   {name: "Blog Post", description: nil, create_by: nil},
@@ -90,12 +140,19 @@ Source.create!([
   {name: "Facebook", description: nil, create_by: nil},
   {name: "Proposal", description: nil, create_by: nil}
 ])
+
+if SysConfig.any?
+  SysConfig.delete_all
+end
 SysConfig.create!([
   {code: "INV01", name: "Invoice Print Format", description: "configure invoice format base on customer", data_type: "string", value: "print_invoice_lux", configs_type: "Invoice"},
   {code: "SYS01", name: "Multicurrency", description: "set enable to true for system run in multi currency", data_type: "boolean", value: "TRUE", configs_type: "System"},
   {code: "INV02", name: "Default VAT", description: "set value in percentage ", data_type: "int", value: "10", configs_type: "Invoice"},
   {code: "RPT01", name: "Receipt Print Format", description: "configure receipt format base on customer", data_type: "string", value: "print_receipt_lux", configs_type: "Receipt"}
 ])
+if SysMenu.any?
+  SysMenu.delete_all
+end
 SysMenu.create!([
   {menu: "Sale Receipt", icon_cls: "fa fa-file-text-o", expand: nil, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.saleReceipt", controller_name: "sale.SaleReceipt"},
   {menu: "General Setup", icon_cls: "fa fa-cog", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
@@ -138,6 +195,10 @@ SysMenu.create!([
   {menu: "Currency", icon_cls: "fa fa-usd", expand: nil, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.currency", controller_name: "setup.Currency"},
   {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice"}
 ])
+
+if TransactionType.any?
+  TransactionType.delete_all
+end
 TransactionType.create!([
   {name: "Bill", description: "Payment on Bill From vender", flag: 1},
   {name: "Invoice", description: "issue invoice to customer", flag: -1},
@@ -147,15 +208,20 @@ TransactionType.create!([
   {name: "Customer Payment", description: "Customer Pay on invoice", flag: -1},
   {name: "Sale Receipt", description: "Sale Receipt Paybill to customer", flag: 1}
 ])
+
+if Ums.any?
+  Ums.delete_all
+end
 Ums.create!([
   {code: "001", name: "large", abbreviation: "L", remark: "", create_by: nil, modify_by: nil},
   {code: "2", name: "Small", abbreviation: "S", remark: "", create_by: nil, modify_by: nil},
   {code: "3", name: "Medium", abbreviation: "M", remark: "", create_by: nil, modify_by: nil}
 ])
+
+if User.any?
+  User.delete_all
+end
+
 User.create!([
-  {code: "002", date_join: "2017-10-10", first_name: "dara", last_name: "dara", role_id: 2, department_id: 1, phone: "1", email: "", username: "dara1", encrypted_password: "6SkVs0vpBCC8EmpjmTETBmzBKC0uoElUGyQDqnGBQw9YnWWRqwXRhxEA2I7h\nabMi\n", is_active: true, is_admin: false, address: "", api_key: nil},
-  {code: "001", date_join: "2016-02-06", first_name: "System", last_name: "Administration", role_id: 2, department_id: 1, phone: "N/A", email: "", username: "admin", encrypted_password: "xrXgPX/YIxXn7TA53bx3EQ==\n", is_active: true, is_admin: true, address: "", api_key: nil},
-  {code: "002", date_join: "2017-10-10", first_name: "dara2", last_name: "dara", role_id: 2, department_id: 1, phone: "2", email: "", username: "dara2", encrypted_password: "KGnxlTvyNzSGV49rQVztPbnf2ZzyJaq2E/xgZcb5ZEs0QonllyS26nTnARpo\nH4qm\n", is_active: true, is_admin: false, address: "", api_key: nil},
-  {code: "003", date_join: "2017-10-10", first_name: "dara", last_name: "dara", role_id: 2, department_id: 1, phone: "2", email: "", username: "dara4", encrypted_password: "hUOjw1tFpAhRDc40bseX7v4LkZCCz6FhU3z5fJaIp7Lw33DGjB4OQ9lyMYZr\nIdur\n", is_active: true, is_admin: false, address: "", api_key: nil},
-  {code: "005", date_join: "2017-10-10", first_name: "dara", last_name: "dara", role_id: 2, department_id: 1, phone: "2", email: "", username: "dara5", encrypted_password: "hUOjw1tFpAhRDc40bseX7v4LkZCCz6FhU3z5fJaIp7Lw33DGjB4OQ9lyMYZr\nIdur\n", is_active: true, is_admin: false, address: "", api_key: "7zvknpxrjGhEM0mua8bvJwtt"}
+   {code: "005", date_join: "2017-10-10", first_name: "dara", last_name: "dara", role:roles.first, department_id: 1, phone: "2", email: "", username: "dara5", encrypted_password: "hUOjw1tFpAhRDc40bseX7v4LkZCCz6FhU3z5fJaIp7Lw33DGjB4OQ9lyMYZr\nIdur\n", is_active: true, is_admin: false, address: "", api_key: "7zvknpxrjGhEM0mua8bvJwtt"}
 ])
