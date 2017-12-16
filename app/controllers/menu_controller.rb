@@ -2,7 +2,7 @@ class MenuController < ApplicationController
 
   # protect_from_forgery with: :null_session
   def index
-    user = User.find 1 #session[:user_id]
+    user = User.find  @current_user.id #session[:user_id]
     puts 'User------ #{ user }'
     if user.is_admin == true
       main = SysMenu.where is_leaf: false, is_active: true

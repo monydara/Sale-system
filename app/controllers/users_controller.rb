@@ -14,7 +14,7 @@ class UsersController < ApplicationController
             User.transaction do
                 @data = User.new(permit_data)
                 @data.is_admin = false
-                @data.password = params[:password]
+                @data.encrypted_password = params[:password]
 
                 if @data.valid?
                     @data.save

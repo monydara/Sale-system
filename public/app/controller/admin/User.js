@@ -76,7 +76,7 @@ Ext.define('App.controller.admin.User', {
 	},
 
 	getMenuList:function(view){
-		Util.ajax("/Menu" ,{menu:0}, this.applyMenuList , view)
+		Util.ajax("/Menu/index" ,{menu:0}, this.applyMenuList , view)
 	},
 	applyMenuList:function(obj , view){
 		view.removeAll();

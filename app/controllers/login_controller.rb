@@ -35,7 +35,7 @@ class LoginController < ApplicationController
 
 
 				render json:{ login:false , success:false , message:"Incorrect User name "}
-			elsif @user.password ==@password
+			elsif @user.encrypted_password ==@password
 
 				if @user.is_active == false
 

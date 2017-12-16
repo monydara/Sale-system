@@ -32,8 +32,8 @@ Currency.create!([
 if Department.any?
   Department.delete_all
 end
-Department.create!([
-  {name: "Sale Department", description: ""}
+department = Department.create!([
+  {name: "Admin Department", description: ""}
 ])
 if ItemCategory.any?
   ItemCategory.delete_all
@@ -150,51 +150,7 @@ SysConfig.create!([
   {code: "INV02", name: "Default VAT", description: "set value in percentage ", data_type: "int", value: "10", configs_type: "Invoice"},
   {code: "RPT01", name: "Receipt Print Format", description: "configure receipt format base on customer", data_type: "string", value: "print_receipt_lux", configs_type: "Receipt"}
 ])
-if SysMenu.any?
-  SysMenu.delete_all
-end
-SysMenu.create!([
-  {menu: "Sale Receipt", icon_cls: "fa fa-file-text-o", expand: nil, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.saleReceipt", controller_name: "sale.SaleReceipt"},
-  {menu: "General Setup", icon_cls: "fa fa-cog", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "Area", icon_cls: "fa fa-map-marker", expand: false, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.area", controller_name: "setup.Area"},
-  {menu: "Payment Term", icon_cls: "fa fa-calendar-check-o", expand: false, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.paymentTerm", controller_name: "setup.PaymentTerm"},
-  {menu: "Code", icon_cls: "fa fa-code-fork", expand: false, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.code", controller_name: "setup.Code"},
-  {menu: "Company Profile", icon_cls: "fa fa-bank", expand: false, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.companyProfile", controller_name: "setup.CompanyProfile"},
-  {menu: "Position", icon_cls: "fa fa-vcard-o", expand: false, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.position", controller_name: "setup.Position"},
-  {menu: "System Administration", icon_cls: "fa fa-group", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "User", icon_cls: "fa fa-user", expand: false, is_leaf: true, parent_id: 7, action: "update", is_active: true, view_index: "admin.user", controller_name: "admin.User"},
-  {menu: "Role", icon_cls: "fa fa-lock", expand: false, is_leaf: true, parent_id: 7, action: "update", is_active: true, view_index: "admin.role", controller_name: "admin.Role"},
-  {menu: "Department", icon_cls: "fa fa-university", expand: false, is_leaf: true, parent_id: 7, action: "update", is_active: true, view_index: "admin.department", controller_name: "admin.Department"},
-  {menu: "Items", icon_cls: "fa fa-cubes", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "UOM", icon_cls: "fa fa-thermometer-half", expand: false, is_leaf: true, parent_id: 11, action: "update", is_active: true, view_index: "item.um", controller_name: "item.UM"},
-  {menu: "Location", icon_cls: "fa fa-home", expand: false, is_leaf: true, parent_id: 11, action: "update", is_active: true, view_index: "item.location", controller_name: "item.Location"},
-  {menu: "Item Category", icon_cls: "fa fa-folder-open", expand: false, is_leaf: true, parent_id: 11, action: "update", is_active: true, view_index: "item.itemcategory", controller_name: "item.ItemCategory"},
-  {menu: "Item", icon_cls: "fa fa-shopping-cart", expand: false, is_leaf: true, parent_id: 11, action: "update", is_active: true, view_index: "item.item", controller_name: "item.Item"},
-  {menu: "Adjust Stock", icon_cls: "fa fa-cart-plus", expand: false, is_leaf: true, parent_id: 11, action: "update", is_active: true, view_index: "item.adjuststock", controller_name: "item.AdjustStock"},
-  {menu: "Opening Stock", icon_cls: "fa fa-cart-arrow-down", expand: false, is_leaf: true, parent_id: 11, action: "update", is_active: true, view_index: "item.openingstock", controller_name: "item.OpeningStock"},
-  {menu: "Sale", icon_cls: "fa fa-cogs", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "Lead", icon_cls: "fa fa-address-card", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.lead", controller_name: "sale.Lead"},
-  {menu: "Lead Opportunity", icon_cls: "fa fa-gift", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.leadOpportunity", controller_name: "sale.LeadOpportunity"},
-  {menu: "Customer", icon_cls: "fa fa-user-circle", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.customer", controller_name: "sale.Customer"},
-  {menu: "Quotation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 18, action: "", is_active: true, view_index: "sale.quotation", controller_name: "sale.Quotation"},
-  {menu: "Sale Invoice", icon_cls: "fa fa-shopping-cart", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.invoice", controller_name: "sale.Invoice"},
-  {menu: "Customer Payment", icon_cls: "fa fa-credit-card", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.customerPayment", controller_name: "sale.CustomerPayment"},
-  {menu: "Sale Representative", icon_cls: "fa fa-user-o", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.saleRepresentative", controller_name: "sale.SaleRepresentative"},
-  {menu: "Contact", icon_cls: "fa fa-address-book", expand: false, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.contact", controller_name: "sale.Contact"},
-  {menu: "Service", icon_cls: "fa fa-industry", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "Maintenance List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.maintenance", controller_name: "service.Maintenance"},
-  {menu: "Teminate Maintenance List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.terminateMaintenance", controller_name: "service.TerminateMaintenance"},
-  {menu: "Rental List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.rental", controller_name: "service.Rental"},
-  {menu: "Teminate Rental List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.terminaeRental", controller_name: "service.TerminaeRental"},
-  {menu: "Purchase", icon_cls: "fa fa-cart-plus", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "Vendor", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 32, action: "", is_active: true, view_index: "purchase.vender", controller_name: "purchase.Vender"},
-  {menu: "Fix Asset", icon_cls: "fa fa-truck", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
-  {menu: "Transfer Asset", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 34, action: "", is_active: true, view_index: "fixAsset.transferFixAsset", controller_name: "fixAsset.Transfer"},
-  {menu: "Depreciation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 34, action: "", is_active: true, view_index: "fixAsset.depreciation", controller_name: "fixAsset.Depreciation"},
-  {menu: "Menu", icon_cls: "fa fa-bars", expand: false, is_leaf: true, parent_id: 1, action: "update", is_active: false, view_index: "setup.menu", controller_name: "setup.Menu"},
-  {menu: "Currency", icon_cls: "fa fa-usd", expand: nil, is_leaf: true, parent_id: 1, action: "update", is_active: true, view_index: "setup.currency", controller_name: "setup.Currency"},
-  {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent_id: 18, action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice"}
-])
+
 
 if TransactionType.any?
   TransactionType.delete_all
@@ -223,5 +179,65 @@ if User.any?
 end
 
 User.create!([
-   {code: "005", date_join: "2017-10-10", first_name: "dara", last_name: "dara", role:roles.first, department_id: 1, phone: "2", email: "", username: "dara5", encrypted_password: "hUOjw1tFpAhRDc40bseX7v4LkZCCz6FhU3z5fJaIp7Lw33DGjB4OQ9lyMYZr\nIdur\n", is_active: true, is_admin: false, address: "", api_key: "7zvknpxrjGhEM0mua8bvJwtt"}
+  {code: "001", date_join: "2017-10-10", first_name: "dara", last_name: "dara", role:roles.first, department:department.first,
+   phone: "069808433", email: "", username: "admin", encrypted_password:"21232f297a57a5a743894a0e4a801fc3", is_active: true, is_admin: true, address: ""}
 ])
+
+if SysMenu.any?
+  SysMenu.delete_all
+end
+
+# --- create main menu
+genSetup = SysMenu.create!( {menu: "General Setup", icon_cls: "fa fa-cog", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
+admin = SysMenu.create!({menu: "System Administration", icon_cls: "fa fa-group", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
+item= SysMenu.create!( {menu: "Items", icon_cls: "fa fa-cubes", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
+sales= SysMenu.create!({menu: "Sale", icon_cls: "fa fa-cogs", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
+purchase= SysMenu.create!(  {menu: "Purchase", icon_cls: "fa fa-cart-plus", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
+# -- end
+# --- create sub menu
+
+# ---- end
+
+SysMenu.create!([
+              {menu: "Sale Receipt", icon_cls: "fa fa-file-text-o", expand: nil, is_leaf: true, parent:sales, action: "update", is_active: true, view_index: "sale.saleReceipt", controller_name: "sale.SaleReceipt"},
+
+              {menu: "Area", icon_cls: "fa fa-map-marker", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.area", controller_name: "setup.Area"},
+              {menu: "Payment Term", icon_cls: "fa fa-calendar-check-o", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.paymentTerm", controller_name: "setup.PaymentTerm"},
+              {menu: "Code", icon_cls: "fa fa-code-fork", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.code", controller_name: "setup.Code"},
+              {menu: "Company Profile", icon_cls: "fa fa-bank", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.companyProfile", controller_name: "setup.CompanyProfile"},
+              {menu: "Position", icon_cls: "fa fa-vcard-o", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.position", controller_name: "setup.Position"},
+
+              {menu: "User", icon_cls: "fa fa-user", expand: false, is_leaf: true, parent:admin, action: "update", is_active: true, view_index: "admin.user", controller_name: "admin.User"},
+              {menu: "Role", icon_cls: "fa fa-lock", expand: false, is_leaf: true, parent:admin,  action: "update", is_active: true, view_index: "admin.role", controller_name: "admin.Role"},
+              {menu: "Department", icon_cls: "fa fa-university", expand: false, is_leaf: true, parent:admin, action: "update", is_active: true, view_index: "admin.department", controller_name: "admin.Department"},
+
+              {menu: "UOM", icon_cls: "fa fa-thermometer-half", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.um", controller_name: "item.UM"},
+              {menu: "Location", icon_cls: "fa fa-home", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.location", controller_name: "item.Location"},
+              {menu: "Item Category", icon_cls: "fa fa-folder-open", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.itemcategory", controller_name: "item.ItemCategory"},
+              {menu: "Item", icon_cls: "fa fa-shopping-cart", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.item", controller_name: "item.Item"},
+              {menu: "Adjust Stock", icon_cls: "fa fa-cart-plus", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.adjuststock", controller_name: "item.AdjustStock"},
+              {menu: "Opening Stock", icon_cls: "fa fa-cart-arrow-down", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.openingstock", controller_name: "item.OpeningStock"},
+
+              {menu: "Lead", icon_cls: "fa fa-address-card", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.lead", controller_name: "sale.Lead"},
+              {menu: "Lead Opportunity", icon_cls: "fa fa-gift", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.leadOpportunity", controller_name: "sale.LeadOpportunity"},
+              {menu: "Customer", icon_cls: "fa fa-user-circle", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customer", controller_name: "sale.Customer"},
+              {menu: "Quotation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent:sales,  action: "", is_active: true, view_index: "sale.quotation", controller_name: "sale.Quotation"},
+              {menu: "Sale Invoice", icon_cls: "fa fa-shopping-cart", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.invoice", controller_name: "sale.Invoice"},
+              {menu: "Customer Payment", icon_cls: "fa fa-credit-card", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customerPayment", controller_name: "sale.CustomerPayment"},
+              {menu: "Sale Representative", icon_cls: "fa fa-user-o", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.saleRepresentative", controller_name: "sale.SaleRepresentative"},
+              {menu: "Contact", icon_cls: "fa fa-address-book", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.contact", controller_name: "sale.Contact"},
+              {menu: "Service", icon_cls: "fa fa-industry", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
+              {menu: "Maintenance List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.maintenance", controller_name: "service.Maintenance"},
+              {menu: "Teminate Maintenance List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.terminateMaintenance", controller_name: "service.TerminateMaintenance"},
+              {menu: "Rental List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.rental", controller_name: "service.Rental"},
+              {menu: "Teminate Rental List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.terminaeRental", controller_name: "service.TerminaeRental"},
+
+              {menu: "Vendor", icon_cls: "icon-customer", expand: false, is_leaf: true, parent:purchase, action: "", is_active: true, view_index: "purchase.vender", controller_name: "purchase.Vender"},
+              {menu: "Fix Asset", icon_cls: "fa fa-truck", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
+              {menu: "Transfer Asset", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 34, action: "", is_active: true, view_index: "fixAsset.transferFixAsset", controller_name: "fixAsset.Transfer"},
+              {menu: "Depreciation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 34, action: "", is_active: true, view_index: "fixAsset.depreciation", controller_name: "fixAsset.Depreciation"},
+              {menu: "Menu", icon_cls: "fa fa-bars", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: false, view_index: "setup.menu", controller_name: "setup.Menu"},
+              {menu: "Currency", icon_cls: "fa fa-usd", expand: nil, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.currency", controller_name: "setup.Currency"},
+              {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice"}
+            ])
+

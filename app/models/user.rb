@@ -14,13 +14,14 @@ class User < ActiveRecord::Base
 
    # Generate a unique API key
    def generate_api_key
-      loop do n ``
+      loop do
          token = SecureRandom.base64.tr('+/=', 'Qrt')
          break token unless User.exists?(api_key: token)
       end
    end
 
-   attr_encrypted :password, :key =>  Rails.application.secrets.secret_key_base , algorithm: 'aes-256-cbc', mode: :single_iv_and_salt, insecure_mode: true
+   # attr_encrypted :password, :key =>  Rails.application.secrets.secret_key_base , algorithm: 'aes-256-cbc', mode: :single_iv_and_salt, insecure_mode: true
    belongs_to :role, foreign_key:"role_id"
+   belongs_to :department , foreign_key: "department_id"
    validates_uniqueness_of :username
 end

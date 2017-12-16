@@ -7,9 +7,25 @@
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <introspection-schemas>*:sale_system</introspection-schemas>
+    </data-source>
+    <data-source name="Rails sale-system-v3: production" uuid="2ea9526a-4690-4ba3-adf2-c329ba1887e7">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>sale-system-v3</user-name>
+    </data-source>
+    <data-source name="Rails sale-system-v3: development" uuid="f5dd3c19-5275-4684-ba91-d8e47dcc798b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <introspection-schemas>*:sale_system</introspection-schemas>
+    </data-source>
+    <data-source name="Rails sale-system-v3: test" uuid="5befbaa0-8d66-49e3-8ee1-940ad9b7d799">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <introspection-schemas>*:sale-system-v3_test</introspection-schemas>
     </data-source>
   </component>
 </project>
