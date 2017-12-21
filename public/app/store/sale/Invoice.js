@@ -4,5 +4,4 @@ Ext.define('App.store.sale.Invoice', {
 	autoLoad:false,
 	model: 'App.model.Invoice',
     proxy:App.conf.Store.proxy('/sale_invoice')
-
 });

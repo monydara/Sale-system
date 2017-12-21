@@ -1,0 +1,2 @@
+class ItemSkuValue < ApplicationRecord
+end

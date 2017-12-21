@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202113854) do
+ActiveRecord::Schema.define(version: 20171221135935) do
 
   create_table "adjust_stock_details", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "adjust_stock_id"
@@ -346,6 +346,21 @@ ActiveRecord::Schema.define(version: 20171202113854) do
     t.datetime "updated_at"
   end
 
+  create_table "item_option_values", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "item_id"
+    t.integer "option_id"
+    t.string "value_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "item_options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "item_id"
+    t.string "option_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "item_prices", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "item_id"
     t.integer "um_id"
@@ -356,6 +371,24 @@ ActiveRecord::Schema.define(version: 20171202113854) do
     t.integer "modify_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "item_sku_values", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "item_id"
+    t.integer "sku_id"
+    t.integer "option_id"
+    t.integer "value_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "item_skus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "item_id"
+    t.string "code"
+    t.decimal "price", precision: 10
+    t.decimal "cost", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "item_types", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
@@ -394,6 +427,7 @@ ActiveRecord::Schema.define(version: 20171202113854) do
     t.integer "modify_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean "is_variance"
   end
 
   create_table "lead_flag", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|

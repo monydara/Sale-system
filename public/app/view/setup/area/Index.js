@@ -30,7 +30,7 @@ Ext.define('App.view.setup.area.Index', {
                 name:'index',
                 store:'setup.Area',                
                 columns:[
-                    {header:'NO', xtype:'rownumberer', width:50, align:'center'},                                    
+                    {header:'NO', xtype:'rownumberer', width:50, align:'center'},
                     
                     {header:'Code',flex:1,dataIndex:'code'},
                     {header:'Name ',flex:1,dataIndex:'name'},

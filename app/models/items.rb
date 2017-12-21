@@ -9,11 +9,11 @@ class Items < ActiveRecord::Base
 	has_many :maintenance_detail, foreign_key: "item_id"
 	has_many :invoice_detail, foreign_key: "item_id"
 	has_many :transfer_stocks, foreign_key: "item_id"
-   has_many :item_price , foreign_key:"item_id"
+ has_many :item_price , foreign_key:"item_id"
 
-   validates_uniqueness_of :code
+ validates_uniqueness_of :code
 
    # validates_presence_of :item_price
-   accepts_nested_attributes_for :item_price , :allow_destroy => true
+ accepts_nested_attributes_for :item_price, :allow_destroy => true
 
 end

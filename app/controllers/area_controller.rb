@@ -42,7 +42,6 @@ class AreaController < ApplicationController
 	private
 	def permit_data
 		params.permit(
-				:id, 
 				:code, 
 				:name
 			)

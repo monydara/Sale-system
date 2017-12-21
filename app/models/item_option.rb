@@ -1,0 +1,2 @@
+class ItemOption < ApplicationRecord
+end
