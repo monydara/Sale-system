@@ -10,6 +10,11 @@ class Items < ActiveRecord::Base
 	has_many :invoice_detail, foreign_key: "item_id"
 	has_many :transfer_stocks, foreign_key: "item_id"
  has_many :item_price , foreign_key:"item_id"
+	# --- relationship for item varaince
+	has_many :item_skus, foreign_key: "item_id"
+	has_many :item_sku_values , foreign_key: "item_id"
+	has_many :item_options , foreign_key: "item_id"
+	has_many :item_option_values , foreign_key: "item_id"
 
  validates_uniqueness_of :code
 

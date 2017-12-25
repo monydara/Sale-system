@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :adjust_stock
   resources :adjust_stock_detail
   resources :custom_prices
+  resources :brands
 
   # controller for Maintenance module
   resources :maintenance

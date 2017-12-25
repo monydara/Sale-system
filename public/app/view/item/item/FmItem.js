@@ -195,119 +195,131 @@ Ext.define('App.view.item.item.FmItem', {
               },
 
             ]
-        },
-        {
-            xtype: "grid",
-            title: "Item Price",
-            height: 200,
-            tools: [{
-                xtype: 'button',
-                iconCls: 'icon-add',
-                tooltip: 'Add New Price',
-                action: 'addItemPrice',
-            }],
-            border: true,
-            plugins: Ext.create('Ext.grid.plugin.CellEditing', {
-                clicksToEdit: 1
-            }),
-            style: 'border:1px solid silver',
-            selModel: {
-                selType: 'cellmodel'
-            },
-            columns: [{
-                xtype: 'rownumberer',
-                width: 50,
-                align: 'center',
-                text: 'No'
-            }, {
-                header: "UoM",
-                flex:1,
-                dataIndex: 'um_id',
-                editor: {
-                    xtype: 'combo',
-                    store: 'combo.UM',
-                    valueField: 'id',
-                    displayField: 'name',
-                    queryMode: 'local',
-                    editable:false ,
-                    // triggerAction: 'all',
-                    // listeners: {
-                    //     select: function(combo, record, index) {
-                    //         var rec = record[0];
-                    //         App.app.getController("sale.Quotation").umRecord = rec;
+        },{
+        xtype:'tabpanel',
+            border:true,
+            items:[
+                {
+                    xtype: "grid",
+                    title: "Item Price",
+                    height: 200,
+                    tools: [{
+                        xtype: 'button',
+                        iconCls: 'icon-add',
+                        tooltip: 'Add New Price',
+                        action: 'addItemPrice',
+                    }],
+                    border: true,
+                    plugins: Ext.create('Ext.grid.plugin.CellEditing', {
+                        clicksToEdit: 1
+                    }),
+                    style: 'border:1px solid silver',
+                    selModel: {
+                        selType: 'cellmodel'
+                    },
+                    columns: [{
+                        xtype: 'rownumberer',
+                        width: 50,
+                        align: 'center',
+                        text: 'No'
+                    }, {
+                        header: "UoM",
+                        flex:1,
+                        dataIndex: 'um_id',
+                        editor: {
+                            xtype: 'combo',
+                            store: 'combo.UM',
+                            valueField: 'id',
+                            displayField: 'name',
+                            queryMode: 'local',
+                            editable:false ,
+                            // triggerAction: 'all',
+                            // listeners: {
+                            //     select: function(combo, record, index) {
+                            //         var rec = record[0];
+                            //         App.app.getController("sale.Quotation").umRecord = rec;
 
-                    //     }
-                    // },
+                            //     }
+                            // },
+                        },
+                        renderer:function(value){
+                            var store = App.app.getController("item.Item").getComboUMStore();
+                            var rec =  store.getById(value);
+                            if (rec) {
+                                return rec.get("name");
+                            };
+                            return '';
+                        }
+                    }, {
+                        flex:1,
+
+                        header: 'Multiplier',
+                        dataIndex: 'multiplier',
+                        field: {
+                            xtype: 'numberfield',
+                            name: 'price',
+                            minValue: 0,
+                        }
+                    }, {
+                        flex:1,
+                        header: 'Price',
+                        dataIndex: 'price',
+                        // renderer: 'usMoney',
+                        width: 120,
+                        field: {
+                            xtype: 'numberfield',
+                            name: 'price',
+                            minValue: 0,
+                        }
+                    }, {
+                        flex: 1,
+                        header: 'Remark',
+                        dataIndex:'remark',
+                        field:{
+                            xtype:'textarea',
+                            name:'remark',
+                        }
+                    }],
+                    store: 'item.ItemPrice'
+
                 },
-                renderer:function(value){
-                    var store = App.app.getController("item.Item").getComboUMStore();
-                   var rec =  store.getById(value);
-                   if (rec) {
-                    return rec.get("name");
-                   };
-                   return '';
+                {
+                    xtype: 'container',
+                    title:'Remark',
+                    layout: {
+                        type: 'table',
+                        columns: 2,
+                    },
+                    defaults: {
+                        width: 400,
+                        style: 'margin-left:10px',
+                    },
+                    items: [{
+                        xtype: 'textarea',
+                        name: 'purchase_description',
+                        fieldLabel: 'Purchase Description',
+                        style: 'margin-top:10px; margin-left:10px',
+                        // colspan: 2,
+                    }, {
+                        xtype: 'textarea',
+                        name: 'sale_description',
+                        fieldLabel: 'Sale Description',
+                        colspan: 2,
+                    }, {
+                        xtype: 'textarea',
+                        name: 'memo',
+                        fieldLabel: 'Memo',
+                        colspan: 2,
+                    }]
+                },
+                {
+                    xtype:'panel',
+                    title:'Product Variance'
                 }
-            }, {
-                flex:1,
-
-                header: 'Multiplier',
-                dataIndex: 'multiplier',
-                field: {
-                    xtype: 'numberfield',
-                    name: 'price',
-                    minValue: 0,
-                }
-            }, {
-                flex:1,
-                header: 'Price',
-                dataIndex: 'price',
-                // renderer: 'usMoney',
-                width: 120,
-                field: {
-                    xtype: 'numberfield',
-                    name: 'price',
-                    minValue: 0,
-                }
-            }, {
-                flex: 1,
-                header: 'Remark',
-                dataIndex:'remark',
-                field:{
-                    xtype:'textarea',
-                    name:'remark',
-                }
-            }],
-            store: 'item.ItemPrice'
-
+            ]
         },
-        {
-            xtype: 'container',
-            layout: {
-                type: 'table',
-                columns: 2,
-            },
-            defaults: {
-                width: 400,
-                style: 'margin-left:10px',
-            },
-            items: [{
-                xtype: 'textarea',
-                name: 'purchase_description',
-                fieldLabel: 'Purchase Description',
-                style: 'margin-top:10px; margin-left:10px',
-                // colspan: 2,
-            }, {
-                xtype: 'textarea',
-                name: 'sale_description',
-                fieldLabel: 'Sale Description',
-                colspan: 2,
-            }, {
-                xtype: 'textarea',
-                name: 'memo',
-                fieldLabel: 'Memo',
-                colspan: 2,
-            }]
-        }
+
+
     ]
 
 });
