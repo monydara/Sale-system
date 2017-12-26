@@ -11,6 +11,10 @@ class BrandsController < ApplicationController
 
   def combo
     data = Brand.all
+    if !params[:query].nil?
+      text = "%"+params[:query]+"%"
+      data = data.where(" description like '#{text}' or name like '#{text}'")
+    end
     render json:{ data:data , success:true}
   end
 

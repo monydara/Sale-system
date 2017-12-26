@@ -168,7 +168,9 @@ Ext.define('App.view.item.item.FmItem', {
                 displayField:'name',
                 fieldLabel:'Item Currency',
                 name:'currency_id'
-              }, {
+              },{
+                    xtype:'cmbBrand'
+                }, {
                   xtype: 'container',
                   layout: 'hbox',
                   items: [

@@ -9,6 +9,7 @@ Ext.define('App.view.Login', {
 		pack: 'center'
 	}  ,
     bodyStyle:'background-color:silver',
+
     items:[
 	    // {
 	    // 	html:'<img src="images/companylogo.jpg" width = "200px" height="100px"> ' ,
@@ -29,13 +30,13 @@ Ext.define('App.view.Login', {
     				name:'username',
                     emptyText:'User Name',
     				fieldLabel:'User Name', 
-                    value:'dara5'
+                    //value:'dara5'
     			},{
     				xtype:'textfield',
     				inputType: 'password' ,
                     emptyText:'Password',
     				fieldLabel:'Password',
-                    value:'dara',
+                    //value:'dara',
     				name:'password'
     			}
 

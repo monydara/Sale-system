@@ -4,13 +4,17 @@ Ext.define('App.controller.item.Item', {
 		'item.item.Index',
 		'item.item.FmItem',
 	],
+	requires:[
+		'App.view.template.cmbBrand'
+	],
 	stores: [
 		'item.Item',
 		'combo.UM',
 		'combo.ItemCategory',
 		'combo.ItemType',
 		'combo.Currency',
-		"item.ItemPrice"
+		"item.ItemPrice",
+		'combo.Brand',
 	],
 	init: function() {
 

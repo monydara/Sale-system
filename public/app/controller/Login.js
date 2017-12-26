@@ -68,6 +68,8 @@ Ext.define('App.controller.Login', {
         var page = Ext.getCmp('mainPage');
         //App.app.getController('admin.User').getMenuList(page.down('fmMenu'));
         page.getLayout().setActiveItem(0);
+        page.down('textfield[name=username]').focus(true , 500);
+
 	},
 	submit:function(f,e){
 		if (e.getKey() == e.ENTER) {
