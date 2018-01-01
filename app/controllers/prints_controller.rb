@@ -68,5 +68,16 @@ class PrintsController <  ActionController::Base
     puts "----- #{receipt_file_name} ======"
     render receipt_file_name
   end
+  def print_quotation
 
+    if !params[:id].nil?
+
+      @quotation = SaleQuotation.find(params[:id])
+      @company  = CompanyProfile.find(1)
+      @customer = @quotation.customer
+      @sale = @quotation.sale_representative
+      @quotation_detail = @quotation.sale_quotation_detail
+      render 'prints/print_quotation'
+    end
+  end
 end

@@ -11,7 +11,7 @@ class Items < ActiveRecord::Base
 	has_many :transfer_stocks, foreign_key: "item_id"
  has_many :item_price , foreign_key:"item_id"
 	# --- relationship for item varaince
-	has_many :item_skus, foreign_key: "item_id"
+	has_many :item_sku, foreign_key: "item_id"
 	has_many :item_sku_values , foreign_key: "item_id"
 	has_many :item_options , foreign_key: "item_id"
 	has_many :item_option_values , foreign_key: "item_id"
@@ -20,5 +20,43 @@ class Items < ActiveRecord::Base
 
    # validates_presence_of :item_price
  accepts_nested_attributes_for :item_price, :allow_destroy => true
+	accepts_nested_attributes_for :item_sku , :allow_destroy => true
+=begin
+	Function combo is use for get list combo  bind to
+=end
+	def self.combo query
+		condition =""
+		if query.nil? || query == ""
+
+		else
+			condition = "where itm.name like '%#{query}%' or isk.code like '%#{query}%' or itm.code like '%#{query}%'"
+		end
+			items = self.find_by_sql("select
+				isk.id,
+				isk.code,
+
+				itm.name,
+				group_concat(  iop.option_name ,':', ipv.value_name )  'description',
+				um.name 'um',
+				c.symbol
+				 from item_skus isk
+				inner join items itm on itm.id = isk.item_id
+				left join item_sku_values skv on skv.sku_id = isk.id
+				left join item_options iop on iop.id = skv.option_id
+				left join item_option_values ipv on ipv.id = skv.value_id
+				left join ums um on um.id = itm.um_id
+				left join currencies c on c.id = itm.currency_id
+				#{condition}
+
+				group by isk.id
+
+			")
+		items.each do |q|
+			q.name = "#{q.name} #{q.description} "
+		end
+
+
+
+	end
 
 end

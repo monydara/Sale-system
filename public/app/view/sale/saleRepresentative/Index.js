@@ -11,7 +11,7 @@ Ext.define('App.view.sale.saleRepresentative.Index', {
                 {
                     title: '<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Sale Representative List</font>',
                     tools: [{
-                           xtype:'cTxtCancel'
+                           xtype:'cTxtSearch'
                         },
                         // '->',
                         {
@@ -63,12 +63,12 @@ Ext.define('App.view.sale.saleRepresentative.Index', {
                                 }
                             }
 
-                        },
+                        }
 
                     ],
                     bbar: {
-                        type:'cPaging',
-                        store: 'sale.SaleRepresentative',
+                        xtype:'cPaging',
+                        store: 'sale.SaleRepresentative'
                     }
 
                 }, {

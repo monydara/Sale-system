@@ -252,12 +252,12 @@ border-bottom:1px solid #555;
 			<b><%= index+1 %></b>
 		</td>
 		<td>
-			<b><%= qd.items.name %></b><br>
+			<b><%= ItemSku.get_description qd.item_id  %></b><br>
 		</td>
 
 		<td>
 			<center>
-		<img src= "<%= Rails.root %>/public/<%= qd.items.image_url %>" style="width: 50;height:50px"/>
+		<img src= "<%= Rails.root %>/public/<%= qd.item_sku.items.image_url %>" style="width: 50;height:50px"/>
 			</center>
 		</td>
 
@@ -294,7 +294,7 @@ border-bottom:1px solid #555;
 <table border="0" style="border:0px">
 	<tr>
 		<td colspan="3" rowspan="3" style="border:0px; width:720px">
-			<b font-size:15px;>
+			<b >
 				Amount in word:
 				<%  amount = ( @quotation.grand_total_amount.round).humanize   %>
 				<% amount[0] = amount[0].capitalize %>
@@ -339,7 +339,7 @@ border-bottom:1px solid #555;
 				<br>
 		<div>
 			<div class="left" >
-				On behalf of BDK Tel Co , LTD.
+				<!--On behalf of BDK Tel Co , LTD.-->
 				<br>
 				<br>
 				<br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171223003902) do
+ActiveRecord::Schema.define(version: 20171231124525) do
 
   create_table "adjust_stock_details", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "adjust_stock_id"
@@ -396,6 +396,7 @@ ActiveRecord::Schema.define(version: 20171223003902) do
     t.decimal "cost", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_delete"
   end
 
   create_table "item_types", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|

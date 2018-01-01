@@ -149,7 +149,7 @@ Ext.define('App.controller.sale.Quotation', {
 	print:function(btn){
 		var record = Util.getRecord(btn, "Please Select Quotation For Print");
 		if (record) {
-			window.open("/SaleQuotation/print_quotation.pdf?id="+record.get('id'));
+			window.open("/Prints/print_quotation.html?id="+record.get('id'));
 		};
 	},
 	exportToExcel:function(btn){

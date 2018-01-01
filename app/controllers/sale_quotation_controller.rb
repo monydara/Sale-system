@@ -82,18 +82,7 @@ class SaleQuotationController < ApplicationController
 
 	end
 	# layout false
-	def print_quotation
 
-		if !params[:id].nil?
-
-			@quotation = SaleQuotation.find(params[:id])
-			@company  = CompanyProfile.find(1)
-			@customer = @quotation.customer
-			@sale = @quotation.sale_representative
-			@quotation_detail = @quotation.sale_quotation_detail
-
-		end
-	end
 
 
 

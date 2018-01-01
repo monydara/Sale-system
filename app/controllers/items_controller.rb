@@ -36,11 +36,16 @@ class ItemsController < ApplicationController
       @data = ItemsHelper.get_item_by_custom_price(@customer_id, params[:query])
 
     else
-      @data = Items.joins(:item_category, :ums, :currency).select("items.* , item_categories.name 'category_name' , ums.name 'um' , currencies.symbol ")
-      text = params[:query]
-      if !text.nil?
-        @data = @data.where "items.name like '%#{text}%' or items.code like '%#{text}%' "
-      end
+
+      # @data = Items.joins(:item_category, :ums, :currency ).select("items.* , item_categories.name 'category_name' , ums.name 'um' , currencies.symbol ")
+      # text = params[:query]
+      #
+      # if !text.nil?
+      #   @data = @data.where "items.name like '%#{text}%' or items.code like '%#{text}%' "
+      # end
+
+      @data = Items.combo params[:query]
+
     end
 
     render json: {data: @data, success: true}
@@ -55,7 +60,11 @@ class ItemsController < ApplicationController
       data.cost_avc = 0
       # insert um Price
       @itemPrice = [{um_id: data.um_id.to_i, price: data.price, multiplier: 1.to_i}]
-      puts data
+
+      # -- if not variance item it also insert item SKU by default
+      if data.is_variance != true
+        data.item_sku_attributes = [ { code: data.code , price: data.price , cost: data.cost_avc }]
+      end
       data.item_price_attributes =@itemPrice
       if data.valid?
         data.save
