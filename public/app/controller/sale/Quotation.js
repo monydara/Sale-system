@@ -283,24 +283,25 @@ Ext.define('App.controller.sale.Quotation', {
 		var grid = e.grid,
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
-		switch (e.colIdx) {
 
-			case 1:
+		switch (e.field) {
+
+			case "item_name":
 				getRecordComboSetToGrid(editor, e, me, record);
 				break;
-			case 2:
+			case "code":
 				getRecordComboSetToGrid(editor, e, me, record);
 				break;
-			case 3:
+			case "barcode":
 				getRecordComboSetToGrid(editor, e, me, record);
 				break;
-			case 4:
+			case "um":
 				setValuePrice(editor, e, me, record);
 				break;
-			case 5:
+			case "qty":
 				setValueAmount(editor, e, me, record);
 				break;
-			case 6:
+			case "price":
 				setValueAmount(editor, e, me, record);
 				break;
 			default:
@@ -314,11 +315,14 @@ Ext.define('App.controller.sale.Quotation', {
 		}
 
 		function setValuePrice(editor, e, me, record) {
-			var rec = me.umRecord;
-			if (me.umRecord) {
 
-				record.set("price", rec.get("price"));
-				record.set("extent_price", rec.get("price") * record.get("qty"));
+			var rec = me.umRecord;
+
+			if (rec) {
+				var price = record.get("price");
+				//record.set("price", price);
+			//	debugger;
+				record.set("extent_price", price * record.get("qty") * Number(rec.get("multiplier")) );
 				record.set("um_id", rec.get("um_id"));
 				record.set("um", rec.get("um"));
 				me.setTotalAmount(e.grid);

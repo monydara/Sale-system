@@ -34,11 +34,13 @@ class Items < ActiveRecord::Base
 			items = self.find_by_sql("select
 				isk.id,
 				isk.code,
-
+				isk.price ,
 				itm.name,
 				group_concat(  iop.option_name ,':', ipv.value_name )  'description',
 				um.name 'um',
-				c.symbol
+				um.id 'um_id',
+				c.symbol,
+				c.id 'currency_id'
 				 from item_skus isk
 				inner join items itm on itm.id = isk.item_id
 				left join item_sku_values skv on skv.sku_id = isk.id

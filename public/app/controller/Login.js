@@ -84,14 +84,13 @@ Ext.define('App.controller.Login', {
 	logInProcess:function(username, password){
 
 		if(username && password){
-			 Ext.MessageBox.wait("Please Wait ...... ",'extjs  logIn');
+			 Ext.MessageBox.wait("Please Wait ...... ",'logIn');
 			
 			this.username=username;
 			this.password=password;
 			// this.showPageCustomer();
 			Util.ajax('Login/login',{username:username,password:password},this.resultLogin,this);	
 		}
-		
 
 
 	},

@@ -146,21 +146,21 @@ Ext.define('App.view.sale.customPrice.Fm', {
                 },{
                     text:'UOM',
                     dataIndex:'um_name',
-                    editor:{
-                        xtype:'combo',
-                        store:'combo.ItemPrice',
-                        queryMode:'local',
-                        valueField:'um',
-                        displayField:'um',
-                        listeners: {
-                            select: function(combo, record, index) {
-                                var rec = record[0];
-                                console.log(rec);
-                                App.app.getController("sale.CustomPrice").umRecord = rec;
-
-                            }
-                        },
-                    },
+                    // editor:{
+                    //     xtype:'combo',
+                    //     store:'combo.ItemPrice',
+                    //     queryMode:'local',
+                    //     valueField:'um',
+                    //     displayField:'um',
+                    //     listeners: {
+                    //         select: function(combo, record, index) {
+                    //             var rec = record[0];
+                    //             console.log(rec);
+                    //             App.app.getController("sale.CustomPrice").umRecord = rec;
+                    //
+                    //         }
+                    //     },
+                    // },
 
                     flex:0.3
                 },{

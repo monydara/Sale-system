@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
 
     else
 
+      # ---- this is old combobox in old server ( no vairance item )
       # @data = Items.joins(:item_category, :ums, :currency ).select("items.* , item_categories.name 'category_name' , ums.name 'um' , currencies.symbol ")
       # text = params[:query]
       #

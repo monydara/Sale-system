@@ -331,7 +331,8 @@
 		var grid = e.grid,
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
-		switch (e.colIdx) {
+		debugger;
+		switch (e.field) {
         // change code
 			case 1:
 				me.getRecordComboSetToGrid(grid, me, record);
@@ -512,9 +513,6 @@
 			 }
 
          };
-
-
-
 
 		 // grand total
 

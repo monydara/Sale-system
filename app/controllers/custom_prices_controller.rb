@@ -7,7 +7,7 @@ class CustomPricesController < ApplicationController
   end
 
   def get_item_detail
-      @data = CustomPriceDetail.joins(:ums, items:[:currency]).where(custom_price_id:params[:custom_price_id]).select("custom_price_details.* , ums.name 'um_name' , items.name 'item_name' , currencies.symbol")
+      @data = CustomPriceDetail.joins(:ums, item_sku:[items:[:currency]]).where(custom_price_id:params[:custom_price_id]).select("custom_price_details.* , ums.name 'um_name' , items.name 'item_name' , currencies.symbol")
       render json:{ data:@data , success:true}
 
   end
@@ -41,15 +41,18 @@ class CustomPricesController < ApplicationController
 
   end
   def update
-     begin
+
         user_id =  @current_user.id
         @data = CustomPrice.find params[:id]
         @data.update_attributes(permit_data)
         @data.update(updated_by:user_id)
-        render json:{ success:true , message:"Update LeadOpportunity Success "}
-     rescue Exception => e
-        render json:{ success:false  , message:e.message}
-     end
+        if @data.valid?
+          render json:{ success:true , message:"Update LeadOpportunity Success "}
+        else
+          render json:{error:@data.errors, success:false}
+        end
+
+
   end
 
   def destroy
