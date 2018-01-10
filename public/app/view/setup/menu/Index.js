@@ -32,6 +32,7 @@ Ext.define('App.view.setup.menu.Index', {
                     {header:'Menu',flex:1,dataIndex:'menu'},
                     {header:'View',flex:1,dataIndex:'view_index'},
                     {header:'Controller',flex:1,dataIndex:'controller_name'},
+                    {header:'Seq',flex:1,dataIndex:'seq_no'},
                     {header:'Is Leaf',flex:1,dataIndex:'is_leaf'},
 
 

@@ -188,18 +188,18 @@ if SysMenu.any?
 end
 
 # --- create main menu
-genSetup = SysMenu.create!( {menu: "General Setup", icon_cls: "fa fa-cog", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
-admin = SysMenu.create!({menu: "System Administration", icon_cls: "fa fa-group", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
-item= SysMenu.create!( {menu: "Items", icon_cls: "fa fa-cubes", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
-sales= SysMenu.create!({menu: "Sale", icon_cls: "fa fa-cogs", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
-purchase= SysMenu.create!(  {menu: "Purchase", icon_cls: "fa fa-cart-plus", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""})
+genSetup = SysMenu.create!( {menu: "General Setup", icon_cls: "fa fa-cog", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:50})
+admin = SysMenu.create!({menu: "System Administration", icon_cls: "fa fa-group", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:40})
+item= SysMenu.create!( {menu: "Items", icon_cls: "fa fa-cubes", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:20})
+sales= SysMenu.create!({menu: "Sale", icon_cls: "fa fa-cogs", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:10})
+purchase= SysMenu.create!(  {menu: "Purchase", icon_cls: "fa fa-cart-plus", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:30})
 # -- end
 # --- create sub menu
 
 # ---- end
 
 SysMenu.create!([
-              {menu: "Sale Receipt", icon_cls: "fa fa-file-text-o", expand: nil, is_leaf: true, parent:sales, action: "update", is_active: true, view_index: "sale.saleReceipt", controller_name: "sale.SaleReceipt"},
+              {menu: "Sale Receipt", icon_cls: "fa fa-file-text-o", expand: nil, is_leaf: true, parent:sales, action: "update", is_active: true, view_index: "sale.saleReceipt", controller_name: "sale.SaleReceipt", seq_no:14},
 
               {menu: "Area", icon_cls: "fa fa-map-marker", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.area", controller_name: "setup.Area"},
               {menu: "Payment Term", icon_cls: "fa fa-calendar-check-o", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.paymentTerm", controller_name: "setup.PaymentTerm"},
@@ -218,14 +218,14 @@ SysMenu.create!([
               {menu: "Adjust Stock", icon_cls: "fa fa-cart-plus", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.adjuststock", controller_name: "item.AdjustStock"},
               {menu: "Opening Stock", icon_cls: "fa fa-cart-arrow-down", expand: false, is_leaf: true, parent:item, action: "update", is_active: true, view_index: "item.openingstock", controller_name: "item.OpeningStock"},
 
-              {menu: "Lead", icon_cls: "fa fa-address-card", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.lead", controller_name: "sale.Lead"},
-              {menu: "Lead Opportunity", icon_cls: "fa fa-gift", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.leadOpportunity", controller_name: "sale.LeadOpportunity"},
-              {menu: "Customer", icon_cls: "fa fa-user-circle", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customer", controller_name: "sale.Customer"},
-              {menu: "Quotation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent:sales,  action: "", is_active: true, view_index: "sale.quotation", controller_name: "sale.Quotation"},
-              {menu: "Sale Invoice", icon_cls: "fa fa-shopping-cart", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.invoice", controller_name: "sale.Invoice"},
-              {menu: "Customer Payment", icon_cls: "fa fa-credit-card", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customerPayment", controller_name: "sale.CustomerPayment"},
-              {menu: "Sale Representative", icon_cls: "fa fa-user-o", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.saleRepresentative", controller_name: "sale.SaleRepresentative"},
-              {menu: "Contact", icon_cls: "fa fa-address-book", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.contact", controller_name: "sale.Contact"},
+              {menu: "Lead", icon_cls: "fa fa-address-card", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.lead", controller_name: "sale.Lead", seq_no:15},
+              {menu: "Lead Opportunity", icon_cls: "fa fa-gift", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.leadOpportunity", controller_name: "sale.LeadOpportunity", seq_no:16},
+              {menu: "Customer", icon_cls: "fa fa-user-circle", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customer", controller_name: "sale.Customer", seq_no:17},
+              {menu: "Quotation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent:sales,  action: "", is_active: true, view_index: "sale.quotation", controller_name: "sale.Quotation" , seq_no:11},
+              {menu: "Sale Invoice", icon_cls: "fa fa-shopping-cart", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.invoice", controller_name: "sale.Invoice", seq_no:12},
+              {menu: "Customer Payment", icon_cls: "fa fa-credit-card", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customerPayment", controller_name: "sale.CustomerPayment", seq_no:13},
+              {menu: "Sale Representative", icon_cls: "fa fa-user-o", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.saleRepresentative", controller_name: "sale.SaleRepresentative", seq_no:19},
+              {menu: "Contact", icon_cls: "fa fa-address-book", expand: false, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.contact", controller_name: "sale.Contact", seq_no:18},
               {menu: "Service", icon_cls: "fa fa-industry", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: ""},
               {menu: "Maintenance List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.maintenance", controller_name: "service.Maintenance"},
               {menu: "Teminate Maintenance List", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 27, action: "", is_active: true, view_index: "service.terminateMaintenance", controller_name: "service.TerminateMaintenance"},
@@ -238,6 +238,6 @@ SysMenu.create!([
               {menu: "Depreciation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 34, action: "", is_active: true, view_index: "fixAsset.depreciation", controller_name: "fixAsset.Depreciation"},
               {menu: "Menu", icon_cls: "fa fa-bars", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: false, view_index: "setup.menu", controller_name: "setup.Menu"},
               {menu: "Currency", icon_cls: "fa fa-usd", expand: nil, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.currency", controller_name: "setup.Currency"},
-              {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice"}
+              {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice", seq_no:19}
             ])
 

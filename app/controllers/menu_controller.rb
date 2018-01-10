@@ -5,14 +5,14 @@ class MenuController < ApplicationController
     user = User.find  @current_user.id #session[:user_id]
     puts 'User------ #{ user }'
     if user.is_admin == true
-      main = SysMenu.where is_leaf: false, is_active: true
-      sub = SysMenu.where is_leaf: true, is_active: true
+      main = SysMenu.where(is_leaf: false, is_active: true).order(:seq_no)
+      sub = SysMenu.where(is_leaf: true, is_active: true).order(:seq_no)
       render json: { main: main, sub: sub, success: true }
     else
       role_id = user.role_id
 
-      main = SysMenu.where(is_leaf: false, is_active: true)
-      sub = SysMenu.joins(:rel_menu_role).where(is_leaf: true, is_active: true).where("rel_menu_roles.role_id = #{role_id}")
+      main = SysMenu.where(is_leaf: false, is_active: true).order(:seq_no)
+      sub = SysMenu.joins(:rel_menu_role).where(is_leaf: true, is_active: true).where("rel_menu_roles.role_id = #{role_id}").order(:seq_no)
       render json: { main: main, sub: sub, success: true }
     end
   end

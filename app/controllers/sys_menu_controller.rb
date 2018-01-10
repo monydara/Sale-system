@@ -1,7 +1,7 @@
 class SysMenuController < ApplicationController
   @@common = Common.new
 	def index
-		data = SysMenu
+		data = SysMenu.order(:seq_no)
 		if !params[:string].nil?
 			text = "%"+params[:string]+"%"
 			data = data.where(" menu like '%#{text}%'")
@@ -51,7 +51,8 @@ class SysMenuController < ApplicationController
         :action,
         :is_active,
         :view_index,
-        :controller_name
+        :controller_name,
+				:seq_no
 			)
 
 	end

@@ -57,7 +57,11 @@ Ext.define('App.view.setup.menu.Frm', {
                     name:'controller_name',
                     allowBlank:true ,
                     fieldLabel:'Controller'
-                },
+                },{
+                    xtype:'numberfield',
+                    name:'seq_no',
+                    fieldLabel:'Seq No.',
+                }
             ]
         }
     ]

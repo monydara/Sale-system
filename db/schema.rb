@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171231124525) do
+ActiveRecord::Schema.define(version: 20180110120740) do
 
   create_table "adjust_stock_details", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "adjust_stock_id"
@@ -902,6 +902,7 @@ ActiveRecord::Schema.define(version: 20171231124525) do
     t.boolean "is_active"
     t.string "view_index"
     t.string "controller_name"
+    t.integer "seq_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

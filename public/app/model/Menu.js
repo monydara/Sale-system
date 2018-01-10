@@ -11,7 +11,8 @@ Ext.define('App.model.Menu', {
       'is_active',
       'view_index',
       'controller',
-      'controller_name'
+      'controller_name',
+        'seq_no'
 
     ]
 
