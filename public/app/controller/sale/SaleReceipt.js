@@ -310,8 +310,8 @@
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
 
-		switch (e.colIdx) {
-			case 3:
+		switch (e.field) {
+			case "um":
 				if (record.get("item_id") > 0) {
 					me.getComboItemPriceStore().load({
 						params: {
@@ -330,29 +330,29 @@
 		var grid = e.grid,
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
-		switch (e.colIdx) {
+		switch (e.field) {
         // change code
-			case 1:
+			case "code":
 				me.getRecordComboSetToGrid(grid  , me, record);
 				break;
             // change item name
-            case 2:
+            case "item_name":
 				me.getRecordComboSetToGrid(grid , me, record);
 				break;
 		// change um
-            case 3:
+            case "um":
                 setValuePrice(editor, e, me, record);
 				break;
         // change Qyt
-			case 4:
+			case "qty":
                 setValueAmount(editor, e, me, record);
 				break;
         //change price
-			case 5:
+			case "prce":
 				setValueAmount(editor, e, me, record);
 				break;
 		// change Discount
-			case 6:
+			case "dis_percentage":
 				setValueAmount(editor, e, me, record);
 				break;
 			default:
@@ -393,20 +393,22 @@
 		}
 
 		function setValuePrice(editor, e, me, record) {
-			var rec = me.umRecord;
-			if (me.umRecord.data) {
-				record.set("multiplier" , rec.get("multiplier") );
-				record.set("price", rec.get("price"));
-				record.set("total_qty", record.get("qty") *rec.get("multiplier"));
+            var rec = me.umRecord;
+            if (me.umRecord.data) {
 
-				record.set("extent_price", rec.get("price") * record.get("qty"));
-				record.set("um_id", rec.get("um_id"));
-				record.set("um", rec.get("um"));
-				me.setTotalAmountByCurrency(e.grid);
+                var price = rec.get("price");
+                record.set("multiplier" , rec.get("multiplier") );
+                record.set("price", price * rec.get("multiplier"));
+                record.set("total_qty", record.get("qty") * rec.get("multiplier") );
+
+                record.set("extent_price", rec.get("multiplier") * record.get("qty") * price);
+                record.set("um_id", rec.get("um_id"));
+                record.set("um", rec.get("um"));
+                me.setTotalAmountByCurrency(e.grid);
 
 
-				me.umRecord = false;
-			};
+                me.umRecord = false;
+            };
 
 		}
 

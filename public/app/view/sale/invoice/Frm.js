@@ -143,31 +143,31 @@ Ext.define('App.view.sale.invoice.Frm', {
                 align: 'center',
                 width: 50
             },{
-                header: 'Code',
-                dataIndex: 'code',
-                width: 100,
-                editor: {
-                    xtype: 'combo',
-                    displayField: 'code',
-                    valueField: 'code',
-                    store: 'combo.Item',
-                    name: 'code',
-                    queryMode: 'local',
-                    typeAhead: true,
-                    triggerAction: 'all',
-                    listeners: {
-                        select: function(combo, record, index) {
-                            var rec = record[0];
-                            App.app.getController("sale.Invoice").itemRecord = rec;
-
-                        }
-                    },
-                }
-
-            }, {
+            //     header: 'Code',
+            //     dataIndex: 'code',
+            //     width: 100,
+            //     editor: {
+            //         xtype: 'combo',
+            //         displayField: 'code',
+            //         valueField: 'code',
+            //         store: 'combo.Item',
+            //         name: 'code',
+            //         queryMode: 'local',
+            //         typeAhead: true,
+            //         triggerAction: 'all',
+            //         listeners: {
+            //             select: function(combo, record, index) {
+            //                 var rec = record[0];
+            //                 App.app.getController("sale.Invoice").itemRecord = rec;
+            //
+            //             }
+            //         },
+            //     }
+            //
+            // }, {
                 header: 'Item',
                 dataIndex: 'item_name',
-                width: 200,
+                flex:1 ,
                 editor: {
                     xtype: 'combo',
                     displayField: 'name',
@@ -222,12 +222,17 @@ Ext.define('App.view.sale.invoice.Frm', {
                 header: 'Price',
                 dataIndex: 'price',
                 // renderer: 'usMoney',
+                renderer:function(value ,a , rec){
+
+                    return value + rec.get("currency_symbol")
+                },
                 width: 120,
                 field: {
                     xtype: 'numberfield',
                     name: 'price',
                     minValue: 0
-                }
+                },
+
 
             },{
                 header: 'Dis(%)',
@@ -240,24 +245,24 @@ Ext.define('App.view.sale.invoice.Frm', {
                     minValue: 0
                 }
             }, {
-                header: 'Extend Price',
+                header: 'Total Price',
                 width: 120,
                 dataIndex: 'extent_price',
                 // renderer: 'usMoney'
 
-            },{
-                header:'Currency' ,
-                width: 50 ,
-                dataIndex:'currency_symbol'
-
-            }, {
-                header: 'Description',
-                dataIndex: 'description',
-               // width: 200,
-                flex:1 ,
-                field: {
-                    xtype: 'textarea'
-                }
+            // },{
+            //     header:'Currency' ,
+            //     width: 50 ,
+            //     dataIndex:'currency_symbol'
+            //
+            // }, {
+            //     header: 'Description',
+            //     dataIndex: 'description',
+            //    // width: 200,
+            //     flex:1 ,
+            //     field: {
+            //         xtype: 'textarea'
+            //     }
             }, {
                 header: 'Action',
                 width: 50,
@@ -292,18 +297,6 @@ Ext.define('App.view.sale.invoice.Frm', {
                     height: 100,
                 },{
                     xtype:'invTotalByCurrency'
-                    // xtype:'fieldset' ,
-                    // title:'Total By Currency ' ,
-                    // bodyPadding: 20 ,
-                    // defaults: {
-                    //     width:'100%',
-                    // },
-                    // // items:[
-                    // //     {
-                    // //         xtype:'textfield',
-                    // //         fieldLabel:"Total Currency "
-                    // //     }
-                    // // ]
                 }]
             }, {
                 xtype: 'container',

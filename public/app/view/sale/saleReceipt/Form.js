@@ -144,6 +144,7 @@ Ext.define('App.view.sale.saleReceipt.Form', {
             },{
                 header: 'Code',
                 dataIndex: 'code',
+                hidden:true,
                 width: 100,
                 editor: {
                     xtype: 'combo',
@@ -166,8 +167,10 @@ Ext.define('App.view.sale.saleReceipt.Form', {
             }, {
                 header: 'Item',
                 dataIndex: 'item_name',
-                width: 200,
+                // width: 200,
+                flex: 1 ,
                 editor: {
+
                     xtype: 'combo',
                     displayField: 'name',
                     store: 'combo.Item',
@@ -239,7 +242,7 @@ Ext.define('App.view.sale.saleReceipt.Form', {
                         minValue: 0
                     }
                 }, {
-                    header: 'Extend Price',
+                    header: 'Total Price',
                     width: 120,
                     dataIndex: 'extent_price',
                     // renderer: 'usMoney'
@@ -252,6 +255,7 @@ Ext.define('App.view.sale.saleReceipt.Form', {
                 }, {
                     header: 'Description',
                     dataIndex: 'description',
+                    hidden:true,
                     // width: 200,
                     flex:1 ,
                     field: {

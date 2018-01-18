@@ -9,7 +9,6 @@ class Items < ActiveRecord::Base
 	has_many :maintenance_detail, foreign_key: "item_id"
 	has_many :invoice_detail, foreign_key: "item_id"
 	has_many :transfer_stocks, foreign_key: "item_id"
- has_many :item_price , foreign_key:"item_id"
 	# --- relationship for item varaince
 	has_many :item_sku, foreign_key: "item_id"
 	has_many :item_sku_values , foreign_key: "item_id"
@@ -19,7 +18,7 @@ class Items < ActiveRecord::Base
  validates_uniqueness_of :code
 
    # validates_presence_of :item_price
- accepts_nested_attributes_for :item_price, :allow_destroy => true
+
 	accepts_nested_attributes_for :item_sku , :allow_destroy => true
 =begin
 	Function combo is use for get list combo  bind to

@@ -319,7 +319,7 @@ Ext.define('App.controller.sale.Quotation', {
 			var rec = me.umRecord;
 
 			if (rec) {
-				var price = record.get("price");
+                var price = rec.get("price");
 				//record.set("price", price);
 			//	debugger;
 				record.set("extent_price", price * record.get("qty") * Number(rec.get("multiplier")) );

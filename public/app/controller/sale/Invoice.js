@@ -311,8 +311,8 @@
 			me = this;
 		var record = grid.getStore().getAt(e.rowIdx);
 
-		switch (e.colIdx) {
-			case 3:
+		switch (e.field) {
+			case "um":
 				if (record.get("item_id") > 0) {
 					me.getComboItemPriceStore().load({
 						params: {
@@ -397,7 +397,7 @@
 		function setValuePrice(editor, e, me, record) {
 			var rec = me.umRecord;
 			if (me.umRecord.data) {
-				var price = record.get("price");
+                var price = rec.get("price");
 				record.set("multiplier" , rec.get("multiplier") );
 				record.set("price", price * rec.get("multiplier"));
 				record.set("total_qty", record.get("qty") * rec.get("multiplier") );

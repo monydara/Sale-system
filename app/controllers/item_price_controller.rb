@@ -10,14 +10,8 @@ class ItemPriceController < ApplicationController
 
       else
         item_sku = ItemSku.find item_sku_id
-        @data = ItemPrice.joins(:ums).where(item_id: item_sku.item_id).select("
-          item_prices.id,
-        item_prices.item_id,
-        item_prices.um_id,
-        item_prices.multiplier,
-        item_prices.remark,
-        ums.name 'um'
-      ")
+        @data =ItemPrice.get_combo item_sku_id
+
       end
 
     end

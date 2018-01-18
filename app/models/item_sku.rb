@@ -1,6 +1,7 @@
 class ItemSku < ApplicationRecord
   belongs_to :items ,foreign_key: 'item_id' ,optional:true
   has_many :item_sku_values , foreign_key: "sku_id"
+  has_many :item_prices , foreign_key: "item_id"
 
   def self.get_description id
     item = self.joins(:items,:item_sku_values=>[ :item_option , :item_option_value] ).group("item_skus.id").select("
