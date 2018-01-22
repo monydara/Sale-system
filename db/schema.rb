@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110120740) do
+ActiveRecord::Schema.define(version: 20180121002107) do
 
   create_table "adjust_stock_details", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "adjust_stock_id"
@@ -203,7 +203,7 @@ ActiveRecord::Schema.define(version: 20180110120740) do
     t.string "code", limit: 20
     t.string "name", limit: 100
     t.string "legal_name", limit: 100
-    t.string "customer_type", limit: 20
+    t.integer "customer_type_id"
     t.integer "customer_area_id"
     t.integer "custom_price_id"
     t.string "phone", limit: 100

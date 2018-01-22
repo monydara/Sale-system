@@ -42,7 +42,7 @@ class SysMenuController < ApplicationController
 	private
 	def permit_data
 		params.permit(
-        :id,
+
         :menu,
         :icon_cls,
         :expand,

@@ -59,7 +59,10 @@ Ext.define('App.view.item.item.Index', {
                     header:'Price',
                     width:100,
                     dataIndex:'price',
-                    renderer: Ext.util.Format.usMoney
+                    renderer: function(value , cl , rec){
+                        return App.conf.GlobalFn.currencyFormat(value , rec.get("currency_id"));
+
+                    }
                 },  {
                     header:'Currency',
                     width:100,

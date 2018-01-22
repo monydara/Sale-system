@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :login
   # controller for sale module
-  resources :customers , :item_price , :sale_quotation , :sale_representative , :sale_invoice , :receive_payment, :customer_payment , :lead, :lead_direct_sale, :lead_website, :lead_infomation
+  resources :customers , :item_price , :sale_quotation , :sale_representative , :sale_invoice , :receive_payment, :customer_payment , :lead, :lead_direct_sale, :lead_website, :lead_infomation, :customer_types
   resources :sale_receipts
   # controller for Transfer fix asset
   resources :depreciation,:transfer_fix_asset
@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   resources :rel_menu_role
 
   resources :prints
+
+  # ------- print
+  resources :report_customers
 
   get  ':controller(/:action(/:id))'
   post  ':controller(/:action(/:id))'

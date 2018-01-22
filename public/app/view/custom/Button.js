@@ -59,3 +59,25 @@ Ext.define('App.view.custom.ButtonDelete',{
     tooltip: 'Delete Record',
     iconCls: 'icon-delete'
 })
+
+//-- button search
+
+Ext.define('App.view.custom.ButtonSearch',{
+    extend: 'Ext.button.Button',
+    alias:'widget.cBtnSearch',
+    style: 'margin-left:5px',
+    action: 'Search',
+    tooltip: 'Search',
+    iconCls: 'icon-search'
+})
+
+//-- button options
+
+Ext.define('App.view.custom.ButtonOption',{
+    extend: 'Ext.button.Button',
+    alias:'widget.cBtnOption',
+    style: 'margin-left:5px',
+    action: 'Option',
+    tooltip: 'More Option',
+    iconCls: 'icon-setting'
+})

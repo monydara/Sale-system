@@ -1,5 +1,4 @@
-
-Ext.define('App.controller.sale.Customer', {
+Ext.define('App.controller.sale.Customer',{
 	extend: 'Ext.app.Controller',
 	views:[
 		'sale.customer.Index',
@@ -11,7 +10,8 @@ Ext.define('App.controller.sale.Customer', {
 		'combo.Area',
 		"combo.Contact",
 		"combo.Lead",
-		'combo.CustomPrice'
+		'combo.CustomPrice',
+		'combo.CustomerType'
 
 	],
 	init: function() {
@@ -89,7 +89,7 @@ Ext.define('App.controller.sale.Customer', {
 			form.loadRecord(record);
 			form.getForm().setValues(record.data.contact);
 			conatiner.setActiveItem(form);
-		};
+		}
 
 	},
 
@@ -109,7 +109,7 @@ Ext.define('App.controller.sale.Customer', {
   				var model = Ext.create('App.model.Customer');
   				model.set(values);
   				store.add(model);
-  			};
+  			}
 
 
 
@@ -148,4 +148,4 @@ Ext.define('App.controller.sale.Customer', {
 		var grid = conatiner.down('grid[name=index]');
 		conatiner.setActiveItem(grid);
 	}
-})
+});

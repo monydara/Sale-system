@@ -1,7 +1,8 @@
 Ext.define('App.conf.GlobalFn',{
     singleton: true,
     requires:[
-        'App.view.template.cmbCustomer'
+        'App.view.template.cmbCustomer',
+        'App.view.template.cmbCustomerType'
     ],
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {
@@ -11,7 +12,7 @@ Ext.define('App.conf.GlobalFn',{
                 amountFormat = Ext.util.Format.currency(amount , currency.symbol , 2,false);
                 return 0;
             }
-        })
+        });
         return amountFormat ;
 
     },
@@ -42,10 +43,10 @@ Ext.define('App.conf.GlobalFn',{
     //-- set auto set grid to edit
     startGridEdit:function(grid , rowIndex , colInex){
         var editor = grid.plugins[0] ;
-       var e=  editor.startEdit(rowIndex, colInex)
+       var e=  editor.startEdit(rowIndex, colInex);
         //debugger;
 
     }
 
 
-})
+});

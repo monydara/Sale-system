@@ -70,12 +70,12 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                     allowBlank:false,
                     fieldLabel:'Legal Name'+redStar
                 },{
-                    xtype:'combo',
-                    name:'customer_type',
-                    allowBlank:false,
-                    store:['Individual','Company'],
-                    value:'Individual',
-                    fieldLabel:'Customer Type',
+                    xtype:'cmbCustomerType',
+                    // name:'customer_type',
+                    // allowBlank:false,
+                    // store:['Individual','Company'],
+                    // value:'Individual',
+                    // fieldLabel:'Customer Type',
 
                 },{
                   xtype:'combo' ,
@@ -90,7 +90,6 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                   autoSelect: true,
                   allowBlank:false,
                   selectOnFocus:true,
-
 
                 },{
                     xtype:'combo',

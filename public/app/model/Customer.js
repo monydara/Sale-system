@@ -5,7 +5,7 @@ Ext.define('App.model.Customer', {
 		"code",
 		'name',
 		'legal_name',
-		'customer_type',
+		'customer_type_id',
 		'customer_area_id',
 		'vat_tin',
 		'phone',

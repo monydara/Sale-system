@@ -3,7 +3,8 @@ class Customer < ActiveRecord::Base
 	has_many :invoice , foreign_key:'customer_id'
 	has_many :sale_quotation , :foreign_key => "customer_id"
 	has_many :receive_payment  , foreign_key:'customer_id'
-   belongs_to :contact , foreign_key:'contact_id'
+ belongs_to :contact , foreign_key:'contact_id'
+	belongs_to :customer_type , foreign_key:'customer_type_id'
 	# audited #use for audit table
 	has_many :maintenance, foreign_key: 'customer_id'
 
