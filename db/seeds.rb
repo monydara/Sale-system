@@ -193,6 +193,7 @@ admin = SysMenu.create!({menu: "System Administration", icon_cls: "fa fa-group",
 item= SysMenu.create!( {menu: "Items", icon_cls: "fa fa-cubes", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:20})
 sales= SysMenu.create!({menu: "Sale", icon_cls: "fa fa-cogs", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:10})
 purchase= SysMenu.create!(  {menu: "Purchase", icon_cls: "fa fa-cart-plus", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:30})
+report= SysMenu.create!(  {menu: "Report", icon_cls: "fa fa-cart-plus", expand: true, is_leaf: false, parent_id: nil, action: "update", is_active: true, view_index: "", controller_name: "", seq_no:60})
 # -- end
 # --- create sub menu
 
@@ -238,6 +239,8 @@ SysMenu.create!([
               {menu: "Depreciation", icon_cls: "icon-customer", expand: false, is_leaf: true, parent_id: 34, action: "", is_active: true, view_index: "fixAsset.depreciation", controller_name: "fixAsset.Depreciation"},
               {menu: "Menu", icon_cls: "fa fa-bars", expand: false, is_leaf: true, parent:genSetup, action: "update", is_active: false, view_index: "setup.menu", controller_name: "setup.Menu"},
               {menu: "Currency", icon_cls: "fa fa-usd", expand: nil, is_leaf: true, parent:genSetup, action: "update", is_active: true, view_index: "setup.currency", controller_name: "setup.Currency"},
-              {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice", seq_no:19}
-            ])
+              {menu: "Custom Price", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:sales,  action: "update", is_active: true, view_index: "sale.customPrice", controller_name: "sale.CustomPrice", seq_no:19},
 
+# -------- report section
+              {menu: "Report Customer List", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.customerlist", controller_name: "report.Report", seq_no:61},
+            ])
