@@ -123,12 +123,6 @@ Ext.define('App.controller.item.Item', {
 				form.down('image').setSrc('');
 				form.down('hiddenfield[name=image_url]').setValue('');
 
-				// Ext.MessageBox.show({
-				// 	title: 'Saved',
-				// 	msg: 'Record Save Succeed.',
-				// 	icon: Ext.MessageBox.INFO,
-				// 	buttons: Ext.Msg.OK
-				// });
 			}
 		});
 	},
@@ -148,7 +142,7 @@ Ext.define('App.controller.item.Item', {
 		var form = conatiner.down('FormItem');
 		var me = this;
 		form.getForm().reset(true);
-		form.down('image').setSrc('')
+		form.down('image').setSrc('');
 		me.getItemItemPriceStore().removeAll();
 		form.down('textfield[name=code]').focus(true, 300);
 		conatiner.setActiveItem(form);
@@ -170,8 +164,7 @@ Ext.define('App.controller.item.Item', {
 				} else {
 					txtCode.setReadOnly(true);
 				}
-			}
-			else {
+			}else {
 				// for add new form
 				if(obj.is_manaul) {
 					txtCode.setReadOnly(false);
@@ -183,10 +176,10 @@ Ext.define('App.controller.item.Item', {
 					txtCode.setReadOnly(true);
 					form.down('textfield[name=name]').focus(true, 300);
 				}
-			};
-		} else {
+			}
+		}else{
 			Ext.Msg.alert("Error", "extjs Can't Get Code");
-		};
+		}
 	},
 
 	edit: function(btn) {
@@ -197,7 +190,7 @@ Ext.define('App.controller.item.Item', {
 		if (record) {
 			form.getForm().reset(true);
 			form.loadRecord(record);
-			form.down('image').setSrc(record.get('image_url'))
+			form.down('image').setSrc(record.get('image_url'));
 			conatiner.setActiveItem(form);
 			me.getItemItemPriceStore().load({
 				params:{
@@ -210,8 +203,8 @@ Ext.define('App.controller.item.Item', {
 			}, me.setCode, form);
 		}
 		else {
-			Util.msg("Item cannot edit!")
-		};
+			Util.msg("Item cannot edit!");
+		}
 	},
 
 	save: function(btn) {
@@ -233,13 +226,13 @@ Ext.define('App.controller.item.Item', {
 				values["item_price_attributes"] = Util.getItemStore(me.getItemItemPriceStore());
 				model.set(values);
 				store.add(model);
-			};
+			}
 
 			var recs = store.getModifiedRecords();
 			if (recs.length > 0) {
 
-				Ext.MessageBox.wait("Please extjs Proccessing Data.....", "Please Wait")
-			};
+				Ext.MessageBox.wait("Please extjs Proccessing Data.....", "Please Wait");
+			}
 
 			store.sync({
 				success: function() {
@@ -273,4 +266,4 @@ Ext.define('App.controller.item.Item', {
 		var grid = conatiner.down('grid[name=index]');
 		conatiner.setActiveItem(grid);
 	}
-})
+});

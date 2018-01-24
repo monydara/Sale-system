@@ -2,7 +2,9 @@ Ext.define('App.conf.GlobalFn',{
     singleton: true,
     requires:[
         'App.view.template.cmbCustomer',
-        'App.view.template.cmbCustomerType'
+        'App.view.template.cmbCustomerType',
+        'App.view.template.cmbCustomPrice',
+        'App.view.template.cmbCustomerArea',
     ],
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {

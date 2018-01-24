@@ -12,6 +12,11 @@ Ext.define('App.view.reports.customerlist.Index', {
             {header:'Legal Name',flex:1,dataIndex:'legal_name'},
             {header:'Mobile',flex:1,dataIndex:'mobile'},
             {header:'Address',flex:1,dataIndex:'address'},
+            {header:'Customer Type',flex:1,dataIndex:'customer_type' , hidden:true },
+            {header:'Custome Price',flex:1,dataIndex:'custom_price' , hidden:true },
+            {header:'Phone',flex:1,dataIndex:'phone' , hidden:true },
+            {header:'Email',flex:1,dataIndex:'email' , hidden:true },
+            {header:'Contact Name',flex:1,dataIndex:'contact_name' , hidden:true },
             {header:'Create At',flex:1,dataIndex:'created_at' , hidden:true },
         ];
 
@@ -52,9 +57,26 @@ Ext.define('App.view.reports.customerlist.Index', {
                         fieldLabel:'Customer Name' ,
                         name :'customer_name'
                       },{
-                        xtype:'textfield' ,
-                        fieldLabel:'Customer Type',
-                        name :'customer_type'
+                        xtype:'textfield',
+                        fieldLabel:'Mobile' ,
+                        name :'mobile',
+                      },{
+                        xtype:'textfield',
+                        fieldLabel:'Phone',
+                        name:'phone'
+                      },{
+                        xtype:'textfield',
+                        fieldLabel:'Email',
+                        name:'email'
+                      },{
+                        xtype:'textfield',
+                        name:'contact_name',
+                        fieldLabel:'Contact Name'
+                      },{
+                          xtype:'cmbCustomerType',
+
+                      },{
+                        xtype:'cmbCustomPrice'
                       },
                       {
                         xtype:'cmbCustomerArea',
@@ -62,10 +84,18 @@ Ext.define('App.view.reports.customerlist.Index', {
                       },{
                         xtype:'panel',
                         name:'columns',
+                        colspan:2 ,
+                        width: 800,
+                        layout:{
+                            type:'table',
+                            columns:6
+
+                        },
                         title:'Hide/Show Column',
                         fieldLabel: 'Toppings',
                         defaultType: 'checkboxfield',
                         items:itemCheckBoxs,
+                        hidden:true,
 
                       }
 
@@ -84,6 +114,7 @@ Ext.define('App.view.reports.customerlist.Index', {
         ]
         });
         this.callParent(arguments);
+
     },
     getItemCheckBox:function(columns){
         var items=[];

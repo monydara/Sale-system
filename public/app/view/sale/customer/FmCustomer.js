@@ -71,38 +71,12 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                     fieldLabel:'Legal Name'+redStar
                 },{
                     xtype:'cmbCustomerType',
-                    // name:'customer_type',
-                    // allowBlank:false,
-                    // store:['Individual','Company'],
-                    // value:'Individual',
-                    // fieldLabel:'Customer Type',
-
                 },{
-                  xtype:'combo' ,
-                  name:'custom_price_id' ,
-                  store:'combo.CustomPrice',
-                  valueField:'id',
-                  displayField:'name',
-                  fieldLabel:'Custom Price'+redStar,
-                  queryMode:'remote',
-                  minChars:2,
+                  xtype:'cmbCustomPrice' ,
                    listeners:Util.firstSelect(),
-                  autoSelect: true,
-                  allowBlank:false,
-                  selectOnFocus:true,
-
                 },{
-                    xtype:'combo',
-                    name:'customer_area_id',
-                    store:'combo.Area',
-                    valueField:'id',
-                    displayField:'name',
-                    queryMode:'remote',
-                    minChars:2,
-                     listeners:Util.firstSelect(),
-                    autoSelect: true,
-                    allowBlank:false,
-                    selectOnFocus:true,
+                    xtype:'cmbCustomerArea',
+                     listeners:Util.firstSelect(),                  
                     fieldLabel:'Customer Area'+redStar
                 },{
                     name:'vat_tin',

@@ -1,14 +1,14 @@
-Ext.define('App.view.template.cmbCustomerArea',{
+Ext.define('App.view.template.cmbCustomPrice',{
     extend: 'Ext.form.field.ComboBox',
-    alias:'widget.cmbCustomerArea',
-    name:'customer_area_id',
-    store:'combo.Area',
+    alias:'widget.cmbCustomPrice',
+    name:'custom_price_id' ,
+    store:'combo.CustomPrice',
     valueField:'id',
     displayField:'name',
+    fieldLabel:'Custom Price',
     queryMode:'remote',
     minChars:2,
     autoSelect: true,
     allowBlank:false,
     selectOnFocus:true,
-    fieldLabel:'Customer Area'
 });

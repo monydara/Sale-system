@@ -59,8 +59,7 @@ class CustomersController < ApplicationController
 
 	private
 	def permit_data
-		params.permit(
-				:id,
+		params.permit(				
 				:name,
 				:legal_name,
 				:customer_type_id,

@@ -9,7 +9,9 @@ Ext.define('App.controller.report.Report', {
 	],
 	stores:[
 		'combo.Area',
-		'report.ReportCustomer'
+		'report.ReportCustomer',
+		'combo.CustomerType',
+		'combo.CustomPrice'
 	],
 	init: function() {
 
@@ -27,7 +29,19 @@ Ext.define('App.controller.report.Report', {
 	    });
 	},
 	search:function(btn){
+		var form = btn.up("form"),
+		 grid = form.up("reportCustomerList").down("grid"),
+		 store=grid.getStore();
 
+		if (form.isValid()){
+
+			var params =form.getValues();
+
+			Util.loadStoreSearch(store, params);
+
+		}else{
+			Util.msg("Please entry require field");
+		}
 
 	},
 	toggleColumn:function(txt , value ) {
@@ -36,8 +50,10 @@ Ext.define('App.controller.report.Report', {
 		g.columns.forEach(function(col){
 			if (col.dataIndex == name) {
 				if (value) {
+
 					col.show();
 				}else {
+
 					col.hide();
 				}
 			}
@@ -47,8 +63,10 @@ Ext.define('App.controller.report.Report', {
 	toggleOptForm:function(btn){
 			var fmCol = btn.up("form").down("panel[name=columns]");
 			if (fmCol.isHidden()) {
+				console.log("Show from filter");
 				fmCol.show();
 			}else{
+				console.log("Hide from filter");
 				fmCol.hide();
 			}
 	}

@@ -5,10 +5,10 @@ Ext.define('App.store.Config',{
         // add value to global varibble
         var me = App.store.Config ;
         for(var param in obj ){
-            me[param]= obj[param]
+            me[param]= obj[param];
         }
 
     },
     token: ''
 
-})
+});
