@@ -80,7 +80,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                     }]
 
                 }, {
-                xtype:'cmbCustomer',
+                  xtype:'cmbCustomer',
                     // xtype: 'combo',
                     fieldLabel: 'Customer(<span style="color:red">*</span>)',
                     // allowBlank: false,

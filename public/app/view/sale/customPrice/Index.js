@@ -33,9 +33,9 @@ Ext.define('App.view.sale.customPrice.Index', {
                     {header:'Status',width:90, dataIndex:'is_active',
                       renderer :function(value ){
                         if (value == true ) {
-                          return "Active"
+                          return "Active";
                         }else{
-                          return "Deactive"
+                          return "Deactive";
                         }
                       }
                     }

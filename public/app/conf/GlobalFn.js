@@ -5,13 +5,15 @@ Ext.define('App.conf.GlobalFn',{
         'App.view.template.cmbCustomerType',
         'App.view.template.cmbCustomPrice',
         'App.view.template.cmbCustomerArea',
+        'App.view.template.cmbCustomerArea',
+        'App.view.template.txtDate'
     ],
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {
         var amountFormat ="";
         App.store.Config.allCurrency.forEach(function(currency){
             if(currency.id == currencyId){
-                amountFormat = Ext.util.Format.currency(amount , currency.symbol , 2,false);
+                amountFormat = currency.symbol + Ext.util.Format.currency(amount ," " , 2,false);
                 return 0;
             }
         });

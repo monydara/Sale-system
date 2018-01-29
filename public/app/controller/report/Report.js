@@ -4,22 +4,25 @@ Ext.define('App.controller.report.Report', {
 		'reports.customerlist.Index',
 
 	],
-	requires:[
-		'App.view.template.cmbCustomerArea'
-	],
+
 	stores:[
+
+		//--- combo store
 		'combo.Area',
-		'report.ReportCustomer',
 		'combo.CustomerType',
-		'combo.CustomPrice'
+		'combo.CustomPrice',
+		'combo.Customer',
+		//-- report store
+		'report.ReportCustomer',
+		'report.ReportCustomerBalanceDetail',
 	],
 	init: function() {
 
 	    this.control({
-	    	'reportCustomerList button[action=Search]':{
+	    	'report button[action=Search]':{
 	    		click: this.search
 	    	},
-	    	'reportCustomerList button[action=Option]':{
+	    	'report button[action=Option]':{
 	    		click: this.toggleOptForm
 	    	},
 	    	'checkboxfield[name=column]':{
@@ -30,7 +33,7 @@ Ext.define('App.controller.report.Report', {
 	},
 	search:function(btn){
 		var form = btn.up("form"),
-		 grid = form.up("reportCustomerList").down("grid"),
+		 grid = form.up("report").down("grid"),
 		 store=grid.getStore();
 
 		if (form.isValid()){
@@ -46,7 +49,7 @@ Ext.define('App.controller.report.Report', {
 	},
 	toggleColumn:function(txt , value ) {
 		var name =txt.inputValue;
-		var g = txt.up("reportCustomerList").down('grid');
+		var g = txt.up("report").down('grid');
 		g.columns.forEach(function(col){
 			if (col.dataIndex == name) {
 				if (value) {

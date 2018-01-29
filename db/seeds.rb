@@ -243,4 +243,5 @@ SysMenu.create!([
 
 # -------- report section
               {menu: "Report Customer List", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.customerlist", controller_name: "report.Report", seq_no:61},
+              {menu: "Report Customer Balance Detail", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.customerBalanceDetail", controller_name: "report.Report", seq_no:62},
             ])

@@ -56,7 +56,7 @@ Ext.define('App.view.sale.invoice.Index', {
                             width: 150,
                             dataIndex: 'grand_total_amount',
                             renderer: function(value ){
-                                return Ext.util.Format.currency(value , App.store.Config.defaultCurrencySymbol, 2 )
+                                return Ext.util.Format.currency(value , App.store.Config.defaultCurrencySymbol, 2 );
                             }
                         }, {
                             header: 'Status',
@@ -72,7 +72,7 @@ Ext.define('App.view.sale.invoice.Index', {
                                 } else if (value == "I") {
                                     return "<span style='color:green'><b> Invoiced </b></span>";
 
-                                };
+                                }
                             }
 
                         },

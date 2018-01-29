@@ -1,4 +1,4 @@
-Ext.define('App.view.template.cmbCustomer',{
+Ext.define('App.view.template.cmbCustomer',{    
     extend: 'Ext.form.field.ComboBox',
     alias:'widget.cmbCustomer',
     fieldLabel: 'Customer ',
@@ -11,4 +11,4 @@ Ext.define('App.view.template.cmbCustomer',{
     displayField: 'name',
     name: 'customer_id',
     forceSelection:true,
-})
+});

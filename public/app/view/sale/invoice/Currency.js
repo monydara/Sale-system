@@ -10,14 +10,14 @@ Ext.define('App.view.sale.invoice.Currency', {
         });
         this.callParent(arguments);
     },
-    getForm:function () {;
+    getForm:function () {
         var me = this
          var curs= App.store.Config.allCurrency  ;
          var items =new Array();
          for(var index in curs){
              var cur = curs[index];
-             console.log(cur)
-             items.push( me.getFieldSet(cur.id , "Total( "+cur.abbr+" )" , cur.fraction_unit, cur.rate_in , cur.rate_out,cur.symbol))
+             
+             items.push( me.getFieldSet(cur.id , "Total( "+cur.abbr+" )" , cur.fraction_unit, cur.rate_in , cur.rate_out,cur.symbol));
 
          }
          return items;

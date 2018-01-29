@@ -91,9 +91,9 @@
 			fieldItem = form.down('combo[name=txtItem]');
 			setTimeout(function () {
                 fieldItem.focus(true , 200 );
-            }, 200 )
+            }, 200 );
 
-         } 
+         }
      },
      loadInfoToGrid:function (combo, recs) {
 		var me = this ;
@@ -102,7 +102,7 @@
         var store =  grid.getStore() ;
         //--- add to grid with blank row
 
-         store.add({})
+         store.add({});
         var index = store.count() -1;
          var rec =  store.getAt(index);
 
@@ -110,7 +110,7 @@
         //-- auto edit on column qty
 		 setTimeout(function(){
              App.conf.GlobalFn.startGridEdit(grid , index , 4);
-		 } , 200)
+		 } , 200);
 
 
      },
@@ -141,7 +141,7 @@
             id:rec.data.customer.id ,
             name:rec.data.customer.name
          }));
-      Util.ajax("SaleQuotation/get_item_detail", {quotation_id: rec.id } ,me.loadDataDetail )
+      Util.ajax("SaleQuotation/get_item_detail", {quotation_id: rec.id } ,me.loadDataDetail );
    },
    loadDataDetail:function(obj ){
       var data = obj.data ;
@@ -491,7 +491,7 @@
 
              // convert to total currency
 
-             totalAmountLocalCurrency +=App.conf.GlobalFn.exchagneLocalRateIn(subTotal , index)
+             totalAmountLocalCurrency +=App.conf.GlobalFn.exchagneLocalRateIn(subTotal , index);
 
 
          }
@@ -503,7 +503,7 @@
 
          if (discounAmount > 0) {
              grandTotalAmountLocalCurrency =totalAmountLocalCurrency -discounAmount ;
-         };
+         }
 
 
          if (taxRate > 0) {
@@ -513,7 +513,7 @@
                  grandTotalAmountLocalCurrency = grandTotalAmountLocalCurrency + taxAmount;
 			 }
 
-         };
+         }
 
 		 // grand total
 
@@ -675,7 +675,7 @@
 			};
 			setTimeout(function () {
                 me.setTotalAmountByCurrency(conatiner.down("form").down('grid'));
-            },1000)
+            },1000);
 
 
 		} else {
@@ -692,6 +692,8 @@
 			values = form.getValues(),
 			record = form.getRecord(),
 			store = me.getSaleInvoiceStore();
+
+      console.log('invoice value : ',values);
 
 		if (form.isValid()) {
 
@@ -758,4 +760,4 @@
 
 
 
-})
+});
