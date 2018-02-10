@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   resources :prints
 
   # ------- report
-  resources :report_customers , :report_customer_balance_detail
+  resources :report_customers , :report_customer_balance_detail , :report_customer_balances
 
   get  ':controller(/:action(/:id))'
   post  ':controller(/:action(/:id))'

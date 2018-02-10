@@ -6,7 +6,8 @@ Ext.define('App.conf.GlobalFn',{
         'App.view.template.cmbCustomPrice',
         'App.view.template.cmbCustomerArea',
         'App.view.template.cmbCustomerArea',
-        'App.view.template.txtDate'
+        'App.view.template.txtDate',
+        'App.view.template.cmbCurrency'
     ],
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {

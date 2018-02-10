@@ -12,9 +12,12 @@ Ext.define('App.controller.report.Report', {
 		'combo.CustomerType',
 		'combo.CustomPrice',
 		'combo.Customer',
+		'combo.Currency',
 		//-- report store
 		'report.ReportCustomer',
 		'report.ReportCustomerBalanceDetail',
+		'report.ReportCustomerBalance'
+
 	],
 	init: function() {
 

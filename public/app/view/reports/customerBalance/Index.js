@@ -1,5 +1,5 @@
 
-Ext.define('App.view.reports.customerBalanceDetail.Index', {
+Ext.define('App.view.reports.customerBalance.Index', {
     extend:'Ext.panel.Panel',
     alias:'widget.report' ,
     border:true,
@@ -14,16 +14,7 @@ Ext.define('App.view.reports.customerBalanceDetail.Index', {
         var columns =[
             {header:'NO', xtype:'rownumberer', width:50, align:'center'},
             {header:'Customer',flex:1,dataIndex:'customer_name'},
-            {header:'Tran. Type',flex:1,dataIndex:'transaction_type_name'},
-            {header:'Ref. No',flex:1,dataIndex:'ref_no'},
-            {header:'Date',flex:1,dataIndex:'date'},
-            {header:'Amount',flex:1,dataIndex:'amount',
-            renderer:function(value , cl , rec) {
-
-              return App.conf.GlobalFn.currencyFormat(value , rec.get("currency_id"));
-
-            },
-          },{
+          {
             header:'Balance', flex: 1 ,dataIndex:'balance',
             renderer:function(value , cl , rec){
 
@@ -31,14 +22,14 @@ Ext.define('App.view.reports.customerBalanceDetail.Index', {
 
             }
           },
-            {header:'Create At',flex:1,dataIndex:'created_at' , hidden:true },
+
         ];
 
         var itemCheckBoxs = this.getItemCheckBox(columns);
         Ext.apply(this, {
             items:[
             {
-                title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Report Customer Balance Detail</font>',
+                title:'<font style="font-size: 18px;font-weight: bold;color: darkgoldenrod;text-decoration: underline;" > Report Customer Balance</font>',
                 tbar:[
                   {
                     xtype:'form',
@@ -69,10 +60,6 @@ Ext.define('App.view.reports.customerBalanceDetail.Index', {
                       {
                         xtype:'cmbCustomer' ,
                       },{
-                        xtype:'textfield',
-                        fieldLabel:'Ref. NO' ,
-                        name :'ref_no',
-                      },{
                         xtype:'cmbCurrency',
                         allowBlank:true,
                         colspan:2,
@@ -98,11 +85,11 @@ Ext.define('App.view.reports.customerBalanceDetail.Index', {
                 xtype:'grid',
                 border:true,
                 name:'index',
-               store:'report.ReportCustomerBalanceDetail',
+               store:'report.ReportCustomerBalance',
                 columns:columns,
                 bbar:{
                     xtype:'cPaging',
-                    store:'report.ReportCustomerBalanceDetail',
+                    store:'report.ReportCustomerBalance',
                 }
 
             }

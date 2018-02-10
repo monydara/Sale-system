@@ -8,6 +8,8 @@ Ext.application({
         'Util',
     ],
     launch : function() {
+    ///--- ajax load company logo
+    Util.ajax('/CompanyProfile');
       var viewport = Ext.create('App.view.Viewport');
     }
 });
