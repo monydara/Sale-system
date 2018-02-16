@@ -287,7 +287,7 @@ Ext.define('App.view.item.item.FmItem', {
                 },
                 {
                     xtype: 'container',
-                    title:'Remark',
+                    title:'Description',
                     layout: {
                         type: 'table',
                         columns: 2,
@@ -316,7 +316,15 @@ Ext.define('App.view.item.item.FmItem', {
                 },
                 {
                     xtype:'panel',
-                    title:'Product Variance'
+                    title:'Product Variance',
+                    items:[
+                      {
+                        xtype:'gridItemVariance'
+                      }
+                    ]
+                },{
+                  xtype:'panel',
+                  title:'Images'
                 }
             ]
         },

@@ -1,8 +1,10 @@
 Ext.define('App.controller.item.Item', {
 	extend: 'Ext.app.Controller',
 	views: [
+		'item.item.GridVariance',
 		'item.item.Index',
 		'item.item.FmItem',
+
 	],
 	requires:[
 		'App.view.template.cmbBrand'
@@ -57,9 +59,18 @@ Ext.define('App.controller.item.Item', {
 	    	},
 	    	"FormItem button[action=addItemPrice]":{
 	    		click : this.addRow
-	    	}
+	    	},
+
+				"FormItem tagfield[name=option_value]":{
+					specialkey:this.addOptionValue
+				}
 
 		});
+	},
+	addOptionValue:function(field, e){
+		if (e.getKey() == e.ENTER) {
+			debugger;
+		}
 	},
 	addRow: function(btn) {
 
