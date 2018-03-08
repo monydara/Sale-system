@@ -1,9 +1,10 @@
 Ext.define('App.controller.item.Item', {
 	extend: 'Ext.app.Controller',
 	views: [
-		'item.item.GridVariance',
+		'item.item.FMVariance',
 		'item.item.Index',
 		'item.item.FmItem',
+		'item.item.GridVaraince',
 
 	],
 	requires:[
@@ -17,6 +18,7 @@ Ext.define('App.controller.item.Item', {
 		'combo.Currency',
 		"item.ItemPrice",
 		'combo.Brand',
+		'item.ItemSKU'
 	],
 	init: function() {
 
@@ -60,18 +62,41 @@ Ext.define('App.controller.item.Item', {
 	    	"FormItem button[action=addItemPrice]":{
 	    		click : this.addRow
 	    	},
+				//=== form generate item variance
+				"fmItemVariance button[action=AddItemVariance]":{
+					click : this.addVarainceProduct
+				},
+				"fmItemVariance button[action=GenerateItem]":{
+					click : this.generateItemVariance
+				},
 
-				"FormItem tagfield[name=option_value]":{
-					specialkey:this.addOptionValue
-				}
+
 
 		});
 	},
-	addOptionValue:function(field, e){
-		if (e.getKey() == e.ENTER) {
-			debugger;
+	generateItemVariance:function(btn){
+		//-- get item
+		var f = btn.up('fmItemVariance');
+		var values = f.getValues();
+		//-- loop set value
+		for (var i = 1; i <= f.items.length-1; i++) {
+			var n = values['option_name|'+i] ;
+			var v = values['value|'+i];
+			console.log('item: ' , n , v );
 		}
+		debugger;
+		var model = Ext.create('App.model.ItemSKU');
+		//-- add to grid
+
 	},
+	addVarainceProduct:function(btn ){
+		// debugger;
+		var f = btn.up('fmItemVariance');
+		var item = f.getItemOption(f.items.length) ;
+		f.add(item);
+
+	},
+
 	addRow: function(btn) {
 
 		var store = btn.up('grid').getStore();

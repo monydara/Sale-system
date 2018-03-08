@@ -319,7 +319,9 @@ Ext.define('App.view.item.item.FmItem', {
                     title:'Product Variance',
                     items:[
                       {
-                        xtype:'gridItemVariance'
+                        xtype:'fmItemVariance'
+                      },{
+                        xtype:'gridVaraince'
                       }
                     ]
                 },{
