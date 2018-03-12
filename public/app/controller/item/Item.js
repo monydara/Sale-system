@@ -78,13 +78,61 @@ Ext.define('App.controller.item.Item', {
 		//-- get item
 		var f = btn.up('fmItemVariance');
 		var values = f.getValues();
-		//-- loop set value
-		for (var i = 1; i <= f.items.length-1; i++) {
+		var legnth = f.items.length;
+		var itemIndex = {"total" : 1 , "length" : legnth-1  , "active" : legnth-1  , "items" : {}};
+//--- total : total number item will generate
+//-- legnth : total number of option
+//-- active : current active loop
+
+		//-- count item and index
+		for (var i = 1; i <= legnth-1; i++) {
 			var n = values['option_name|'+i] ;
 			var v = values['value|'+i];
-			console.log('item: ' , n , v );
+			var subItem = {}
+			subItem["total"] =v.length;
+			subItem["count"] = 0 ;
+			subItem["item"] = v ;
+			var item = itemIndex.items ;
+			item[i] =  subItem;
+			itemIndex.total = itemIndex.total * v.length;
 		}
+		//-- loop each item
+		for (var i = 0; i < itemIndex.total; i++) {
+		var name =	getItemName(itemIndex ) ;
+		console.log("item Name : " , name );
+			setIndex(itemIndex , i );
+
+		}
+
 		debugger;
+
+		function getItemName(){
+			// debugger;
+			var name = "" ;
+			for (var i = 1; i <= itemIndex.length-1 ; i++) {
+				var obj = itemIndex.items;
+				if (name =="") {
+						name +=obj[i].item[obj[i].count] ;
+				}else{
+					name +="/"+obj[i].item[obj[i].count] ;
+				}
+				setIndex(itemIndex , i );
+			}
+			return name ;
+		}
+
+	  function setIndex(itemIndex ,index ){
+			 var item =itemIndex.items[itemIndex.active ] ;
+			 if (item.count == (item.total-1 )) { //-- reach to limit
+
+			 }else{
+				 // -- check on child
+				 if ( itemIndex.active) {
+
+				 }
+				 item.count++;
+			 }
+		}
 		var model = Ext.create('App.model.ItemSKU');
 		//-- add to grid
 
