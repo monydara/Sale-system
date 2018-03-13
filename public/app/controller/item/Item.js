@@ -100,7 +100,7 @@ Ext.define('App.controller.item.Item', {
 		for (var i = 0; i < itemIndex.total; i++) {
 		var name =	getItemName(itemIndex ) ;
 		console.log("item Name : " , name );
-			setIndex(itemIndex , i );
+			setIndex(itemIndex , itemIndex.active );
 
 		}
 
@@ -109,29 +109,61 @@ Ext.define('App.controller.item.Item', {
 		function getItemName(){
 			// debugger;
 			var name = "" ;
-			for (var i = 1; i <= itemIndex.length-1 ; i++) {
+			for (var i = 1; i <= itemIndex.length ; i++) {
 				var obj = itemIndex.items;
 				if (name =="") {
 						name +=obj[i].item[obj[i].count] ;
 				}else{
 					name +="/"+obj[i].item[obj[i].count] ;
 				}
-				setIndex(itemIndex , i );
+
 			}
 			return name ;
 		}
 
-	  function setIndex(itemIndex ,index ){
-			 var item =itemIndex.items[itemIndex.active ] ;
+	  function setIndex(itemIndex ,activeIndex ){
+			 var item =itemIndex.items[activeIndex ] ;
+			 var isMax = false ;
 			 if (item.count == (item.total-1 )) { //-- reach to limit
+					isMax = true ;
+					// -- check on child
+ 				 if (  activeIndex < itemIndex.length ) {
+	 					 //--- increase on chlid
+	 					if(setIndex(itemIndex , activeIndex + 1  )){ //-- if all child reach to max
+							//-- change active level
+							var aboveIndex= activeIndex -1;
+								itemIndex.active = aboveIndex;
+							//-- increase on upper level
+								itemIndex.items[aboveIndex];
+								item.count++;
+	 						//-- reset all count
+	 						resetIndex(itemIndex , activeIndex)
 
+	 					}
+					}
 			 }else{
 				 // -- check on child
-				 if ( itemIndex.active) {
-
+				 if (  activeIndex < itemIndex.length ) {
+					 //--- increase on chlid
+					if(setIndex(itemIndex , activeIndex + 1  )){ //-- if all child reach to max
+						//-- increase on this level
+							item.count++;
+						//-- reset all count
+						resetIndex(itemIndex , (activeIndex+1))
+					}
+				 }else{
+					item.count++;
 				 }
-				 item.count++;
+
 			 }
+			 return isMax;
+		}
+
+		function resetIndex(itemIndex , activeIndex){
+			for (var i = activeIndex; i <= itemIndex.length; i++) {
+				itemIndex.items[i].count = 0  ;
+			}
+
 		}
 		var model = Ext.create('App.model.ItemSKU');
 		//-- add to grid
