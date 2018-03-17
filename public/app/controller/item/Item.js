@@ -67,23 +67,19 @@ Ext.define('App.controller.item.Item', {
 					click : this.addVarainceProduct
 				},
 				"fmItemVariance button[action=GenerateItem]":{
-					click : this.generateItemVariance
+					click : this.generateItemVarianceV1
 				},
 
 
 
 		});
 	},
-	generateItemVariance:function(btn){
+	generateItemVarianceV1:function(btn){
 		//-- get item
 		var f = btn.up('fmItemVariance');
 		var values = f.getValues();
 		var legnth = f.items.length;
-		var itemIndex = {"total" : 1 , "length" : legnth-1  , "active" : legnth-1  , "items" : {}};
-//--- total : total number item will generate
-//-- legnth : total number of option
-//-- active : current active loop
-
+		var items = {"total" : 1 , "length" : legnth-1  , "active" : legnth-1  , "items" : {}};
 		//-- count item and index
 		for (var i = 1; i <= legnth-1; i++) {
 			var n = values['option_name|'+i] ;
@@ -92,82 +88,39 @@ Ext.define('App.controller.item.Item', {
 			subItem["total"] =v.length;
 			subItem["count"] = 0 ;
 			subItem["item"] = v ;
-			var item = itemIndex.items ;
+			var item = items.items ;
 			item[i] =  subItem;
-			itemIndex.total = itemIndex.total * v.length;
-		}
-		//-- loop each item
-		for (var i = 0; i < itemIndex.total; i++) {
-		var name =	getItemName(itemIndex ) ;
-		console.log("item Name : " , name );
-			setIndex(itemIndex , itemIndex.active );
-
+			items.total = items.total * v.length;
 		}
 
-		debugger;
+		loopItem(items , "" , 1);
 
-		function getItemName(){
-			// debugger;
-			var name = "" ;
-			for (var i = 1; i <= itemIndex.length ; i++) {
-				var obj = itemIndex.items;
-				if (name =="") {
-						name +=obj[i].item[obj[i].count] ;
-				}else{
-					name +="/"+obj[i].item[obj[i].count] ;
+
+		function loopItem(items , itemName , indexItem ){
+			 var item = items.items[indexItem].item ;
+			 var originalItemName = itemName ;
+				for (var i  in item) {
+
+						itemName =originalItemName;
+
+
+					if(itemName ==""){
+						itemName = item[i];
+					}else{
+						itemName += "/"+ item[i];
+					}
+
+					if(items.length == indexItem){
+						console.log( itemName );
+
+					}else{
+						loopItem(items , itemName , (indexItem+1));
+					}
+
+
 				}
 
-			}
-			return name ;
 		}
-
-	  function setIndex(itemIndex ,activeIndex ){
-			 var item =itemIndex.items[activeIndex ] ;
-			 var isMax = false ;
-			 if (item.count == (item.total-1 )) { //-- reach to limit
-					isMax = true ;
-					// -- check on child
- 				 if (  activeIndex < itemIndex.length ) {
-	 					 //--- increase on chlid
-	 					if(setIndex(itemIndex , activeIndex + 1  )){ //-- if all child reach to max
-							//-- change active level
-							var aboveIndex= activeIndex -1;
-								itemIndex.active = aboveIndex;
-							//-- increase on upper level
-								itemIndex.items[aboveIndex];
-								item.count++;
-	 						//-- reset all count
-	 						resetIndex(itemIndex , activeIndex)
-
-	 					}
-					}
-			 }else{
-				 // -- check on child
-				 if (  activeIndex < itemIndex.length ) {
-					 //--- increase on chlid
-					if(setIndex(itemIndex , activeIndex + 1  )){ //-- if all child reach to max
-						//-- increase on this level
-							item.count++;
-						//-- reset all count
-						resetIndex(itemIndex , (activeIndex+1))
-					}
-				 }else{
-					item.count++;
-				 }
-
-			 }
-			 return isMax;
-		}
-
-		function resetIndex(itemIndex , activeIndex){
-			for (var i = activeIndex; i <= itemIndex.length; i++) {
-				itemIndex.items[i].count = 0  ;
-			}
-
-		}
-		var model = Ext.create('App.model.ItemSKU');
-		//-- add to grid
-
 	},
 	addVarainceProduct:function(btn ){
 		// debugger;
