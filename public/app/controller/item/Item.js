@@ -77,6 +77,8 @@ Ext.define('App.controller.item.Item', {
 	generateItemVarianceV1:function(btn){
 		//-- get item
 		var f = btn.up('fmItemVariance');
+		var grid = f.up('form').down("gridVaraince");
+		var itemName = f.up('form').getValues().name ;
 		var values = f.getValues();
 		var legnth = f.items.length;
 		var items = {"total" : 1 , "length" : legnth-1  , "active" : legnth-1  , "items" : {}};
@@ -91,34 +93,50 @@ Ext.define('App.controller.item.Item', {
 			var item = items.items ;
 			item[i] =  subItem;
 			items.total = items.total * v.length;
+
 		}
 
-		loopItem(items , "" , 1);
+		loopItem(items , itemName , 1 , grid );
 
 
-		function loopItem(items , itemName , indexItem ){
+		function loopItem(items , itemName , indexItem ,grid ){
 			 var item = items.items[indexItem].item ;
 			 var originalItemName = itemName ;
+
 				for (var i  in item) {
 
 						itemName =originalItemName;
 
 
-					if(itemName ==""){
-						itemName = item[i];
-					}else{
+					// if(itemName ==""){
+					// 	itemName = item[i];
+					// }else{
 						itemName += "/"+ item[i];
-					}
+					// }
 
 					if(items.length == indexItem){
-						console.log( itemName );
+						addItemToGrid(itemName , grid)
 
 					}else{
-						loopItem(items , itemName , (indexItem+1));
+						loopItem(items , itemName , (indexItem+1) , grid);
 					}
 
 
 				}
+
+		}
+
+		function addItemToGrid(itemName , grid ){
+				var model = Ext.create('App.model.ItemSKU');
+				model.set('code' , itemName );
+		    model.set('price',0);
+		    model.set('cost',0);
+		    model.set('is_delete',false);
+				var store = grid.getStore();
+				if(store.find('code' , itemName) == -1 ){ //-- add item if not exist
+					store.add(model);
+				}
+
 
 		}
 	},

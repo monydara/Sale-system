@@ -317,6 +317,7 @@ Ext.define('App.view.item.item.FmItem', {
                 {
                     xtype:'panel',
                     title:'Product Variance',
+                    bodyPadding:20 ,
                     items:[
                       {
                         xtype:'fmItemVariance'

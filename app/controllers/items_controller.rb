@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
-  @@common = Common.new
-  @@image_url = ''
+  def initialize(argument)
+    @@common = Common.new
+    @@image_url = ''
+  end
+
 
   def index
     data = Items.joins(:item_category, :item_type, :ums, :currency).select("items.* , item_categories.name 'category_name',
