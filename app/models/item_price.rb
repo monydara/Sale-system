@@ -2,6 +2,7 @@ class ItemPrice < ActiveRecord::Base
 	belongs_to :ums , foreign_key:'um_id'
 
    belongs_to :item_sku , foreign_key:"item_id" , optional:true
+	 
 
    validates :um_id, presence: true
    validates :price, presence: true

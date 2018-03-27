@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  def initialize(argument)
+  def initialize
     @@common = Common.new
     @@image_url = ''
   end
@@ -63,15 +63,22 @@ class ItemsController < ApplicationController
       data.create_by = @current_user.id
       data.cost_avc = 0
       # insert um Price
-      @itemPrice = [{um_id: data.um_id.to_i, price: data.price, multiplier: 1.to_i}]
+      # @itemPrice = [{um_id: data.um_id.to_i, price: data.price, multiplier: 1.to_i}]
+
 
       # -- if not variance item it also insert item SKU by default
       if data.is_variance != true
         data.item_sku_attributes = [ { code: data.code , price: data.price , cost: data.cost_avc }]
       end
-      data.item_price_attributes =@itemPrice
+
+      # data.item_price_attributes =@itemPrice
+
       if data.valid?
         data.save
+        # -- save item SKU
+
+        Items.save_item_sku_value(data)
+
         @@image_url = ''
         render json: {data: data, success: true}
       else
@@ -160,12 +167,22 @@ class ItemsController < ApplicationController
         :currency_id,
         :memo,
         :status,
-        item_price_attributes: [
+        :is_variance ,
+        item_options_attributes: [
             :id,
-            :um_id,
-            :multiplier,
-            :price,
-            :remark
+            :option_name,
+            item_option_values_attributes:[
+              :id ,
+              :value_name
+
+            ]
+        ],
+        item_sku_attributes:[
+          :id,
+          :cost ,
+          :id ,
+          :price ,
+          :code
         ]
     )
   end

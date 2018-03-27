@@ -14,12 +14,15 @@ class Items < ActiveRecord::Base
 	has_many :item_sku_values , foreign_key: "item_id"
 	has_many :item_options , foreign_key: "item_id"
 	has_many :item_option_values , foreign_key: "item_id"
+	has_many	:item_price
 
  validates_uniqueness_of :code
 
    # validates_presence_of :item_price
 
+	# accepts_nested_attributes_for :item_price
 	accepts_nested_attributes_for :item_sku , :allow_destroy => true
+	accepts_nested_attributes_for :item_options ,:allow_destroy => true
 =begin
 	Function combo is use for get list combo  bind to
 =end
@@ -56,8 +59,21 @@ class Items < ActiveRecord::Base
 			q.name = "#{q.name} #{q.description} "
 		end
 
-
-
 	end
 
+	def self.save_item_sku_value id
+		item = self.find id
+		# -- update item id to option value
+	
+
+		# 1- loop item sku
+		# 2- get option and value option
+		# 3- add item base on record of option
+			item.item_sku.each do |i , value|
+				puts "----- #{i.code }"
+				codeSplited = i.code.split('/')
+
+				puts "value ----- #{codeSplited	}"
+			end
+	end
 end

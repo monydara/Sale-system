@@ -106,18 +106,13 @@ Ext.define('App.controller.item.Item', {
 				for (var i  in item) {
 
 						itemName =originalItemName;
-
-
-					// if(itemName ==""){
-					// 	itemName = item[i];
-					// }else{
 						itemName += "/"+ item[i];
-					// }
 
 					if(items.length == indexItem){
 						addItemToGrid(itemName , grid)
 
 					}else{
+						// --- loop child
 						loopItem(items , itemName , (indexItem+1) , grid);
 					}
 
@@ -304,13 +299,22 @@ Ext.define('App.controller.item.Item', {
 			store = me.getItemItemStore();
 
 		if (form.isValid()) {
+			values["item_price_attributes"] = Util.getItemStore(me.getItemItemPriceStore());
+			var itemsku = me.getItemItemSKUStore() ;
+			debugger;
+			if (itemsku.count() > 0 ) {
+			values["item_sku_attributes"] = Util.getItemStore(me.getItemItemSKUStore());
+			//-- get item option
+			var values = me.getItemOption(btn , values );
+			console.log(items, '----');
+			//-- get item value
+			values["is_variance"] = true ;
+			}
 
 			if (record) {
-				values["item_price_attributes"] = Util.getItemStore(me.getItemItemPriceStore());
 				record.set(values);
 			} else {
 				var model = Ext.create('App.model.Item');
-				values["item_price_attributes"] = Util.getItemStore(me.getItemItemPriceStore());
 				model.set(values);
 				store.add(model);
 			}
@@ -347,6 +351,32 @@ Ext.define('App.controller.item.Item', {
 		}
 
 
+	},
+	getItemOption:function(btn , value){
+		debugger;
+		var f = btn.up('form').down('fmItemVariance');
+		var values = f.getValues();
+		var legnth = f.items.length;
+		value["item_options_attributes"] =[];
+		//-- count item and index
+		for (var i = 1; i <= legnth-1; i++) {
+			var n = values['option_name|'+i] ;
+			var v = values['value|'+i];
+			var itemOptVal =[];
+			for (var a = 0; a < v.length; a++) {
+				itemOptVal.push({value_name:v[a]});
+			}
+
+
+			value["item_options_attributes"].push(
+				{
+					option_name: n,
+					item_option_values_attributes: itemOptVal
+				}
+			);
+
+		}
+		return value;
 	},
 	cancel: function(btn) {
 		var conatiner = btn.up('itemIndex');
