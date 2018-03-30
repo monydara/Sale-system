@@ -10,7 +10,7 @@ class Invoice < ActiveRecord::Base
 
 	belongs_to :user , foreign_key:'created_by'
 
-	 validates_presence_of :invoice_detail
+	 # validates_presence_of :invoice_detail
  	accepts_nested_attributes_for :invoice_detail , :allow_destroy => true
 
 	def self.get_unpaid_invoice_by_customer customer_id

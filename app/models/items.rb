@@ -62,18 +62,37 @@ class Items < ActiveRecord::Base
 	end
 
 	def self.save_item_sku_value id
+	# def self.a id
 		item = self.find id
-		# -- update item id to option value
-	
+		# -- update item_id to option value
+		itemOption = item.item_options
 
+
+		itemOption.each do |option|
+			option.item_option_values.each do |value|
+				value.update_attributes(item_id: id )
+			end
+		end
 		# 1- loop item sku
 		# 2- get option and value option
 		# 3- add item base on record of option
+		# === get item_option_value base on item
+		itemValue = item.item_option_values
 			item.item_sku.each do |i , value|
-				puts "----- #{i.code }"
-				codeSplited = i.code.split('/')
 
-				puts "value ----- #{codeSplited	}"
+				codeSplited = i.code.split('/')
+				codeSplited.each do |value|
+						v = itemValue.find_by(value_name:value)
+						if !v.nil?
+							puts "===== id  = #{v.id}"
+							# insert to  item_sku_value
+							isv = ItemSkuValue.new({item_id: id , sku_id:i.id , option_id:v.option_id , value_id:v.id})
+							isv.save
+						end
+
+				end
+
+
 			end
 	end
 end

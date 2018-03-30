@@ -1,6 +1,8 @@
 class SaleInvoiceController < ApplicationController
+	def initialize
+		@@common = Common.new
+	end
 
-	@@common = Common.new
 
 	def index
 		model = Invoice.joins( :customer ).where is_sale_receipt:false
@@ -139,6 +141,7 @@ class SaleInvoiceController < ApplicationController
 					data.payment_flag =1 # for flat not yet pay
 					data.status = "S" # for status submit
 					data.is_sale_receipt = is_sale_reciept
+					# data.invoice_detail_attributes = params[:invoice_detail_attributes]
 
 					puts "------ 1"
 
@@ -261,7 +264,6 @@ private
 			:grand_total_amount,
 			:memo,
 			:invoice_detail_attributes=> [
-				:invoice_id,
 				:item_id,
 				:description,
 				:serial,
