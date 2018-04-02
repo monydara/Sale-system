@@ -226,6 +226,13 @@ Ext.define('App.controller.item.Item', {
 		form.getForm().reset(true);
 		form.down('image').setSrc('');
 		me.getItemItemPriceStore().removeAll();
+		me.getItemItemSKUStore().removeAll();
+		//-- reset form item varaince
+		// var f = form.down('fmItemVariance');
+		// debugger;
+		// var item = f.getItemOption(f.items.length) ;
+		// f.add(item);
+
 		form.down('textfield[name=code]').focus(true, 300);
 		conatiner.setActiveItem(form);
 

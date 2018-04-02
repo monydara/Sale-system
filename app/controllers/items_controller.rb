@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
         data.save
         # -- save item SKU
 
-        Items.save_item_sku_value(data)
+        Items.save_item_sku_value(data.id)
 
         @@image_url = ''
         render json: {data: data, success: true}
