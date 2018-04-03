@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
 
       # -- if not variance item it also insert item SKU by default
       if data.is_variance != true
-        data.item_sku_attributes = [ { code: data.code , price: data.price , cost: data.cost_avc }]
+        data.item_sku_attributes = [ { code: data.name , price: data.price , cost: data.cost_avc }]
       end
 
       # data.item_price_attributes =@itemPrice

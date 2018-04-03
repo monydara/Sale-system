@@ -28,8 +28,8 @@ class SaleInvoiceController < ApplicationController
 	def get_item_detail
 		data = []
 		if !params[:invoice_id].nil?
-			data = InvoiceDetail.joins(:ums ,:items , :currency ).where( invoice_id:params[:invoice_id]).select("
-				invoice_details.* ,ums.name um , items.name item_name , items.barcode , items.code  , currencies.symbol currency_symbol")
+			data = InvoiceDetail.joins(:ums ,item_sku:[items:[:currency]]).where( invoice_id:params[:invoice_id]).select("
+				invoice_details.* ,ums.name um , items.barcode , item_skus.code  as item_name , currencies.symbol currency_symbol")
 
 		end
 

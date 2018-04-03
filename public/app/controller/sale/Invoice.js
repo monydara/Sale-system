@@ -109,7 +109,7 @@
         me.getRecordComboSetToGrid(grid, me, rec);
         //-- auto edit on column qty
 		 setTimeout(function(){
-             App.conf.GlobalFn.startGridEdit(grid , index , 4);
+             App.conf.GlobalFn.startGridEdit(grid , index , 3);
 		 } , 200);
 
 

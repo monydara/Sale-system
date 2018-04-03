@@ -23,14 +23,14 @@ module ItemsHelper
 
     Items.find_by_sql("
         select
-        itm.id ,
-        itm.name ,
+        isk.id ,
+        isk.code as name ,
         itm.barcode ,
         itm.item_type_id ,
         itm.category_id ,
         itm.um_id ,
         case when cpd.extend_price is not null
-        then cpd.extend_price+'' else itm.price end  price ,
+        then cpd.extend_price+'' else isk.price end  price ,
         itm.currency_id ,
         itm.code,
           itm.cost_avc,
@@ -52,12 +52,13 @@ module ItemsHelper
            um.name 'um' ,
            crn.symbol
 
-         from items itm
+         from item_skus isk
+         inner join items itm on isk.item_id = itm.id
         left join custom_price_details cpd on cpd.item_id = itm.id and itm.um_id = cpd.um_id  and cpd.custom_price_id = #{custom_price_id}
         inner join item_categories itc  on itc.id = itm.category_id
         inner join ums um on um.id = itm.um_id
         inner join currencies crn on crn.id = itm.currency_id
-        where itm.name like '%#{ query }%' or itm.code like '%#{ query }%' ")
+        where itm.name like '%#{ query }%' or itm.code like '%#{ query }%' or isk.code like '%#{ query }%'")
 
 
   end

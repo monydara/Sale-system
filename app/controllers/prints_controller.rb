@@ -4,7 +4,7 @@ class PrintsController <  ActionController::Base
     if !params[:id].nil?
 
       @invoice = Invoice.find(params[:id])
-      @company  = CompanyProfile.find(1)
+      @company  = CompanyProfile.first
       @customer = @invoice.customer
       @invoice_detail = @invoice.invoice_detail.order("currency_id")
       @default_currency = Currency.find_by_is_base true

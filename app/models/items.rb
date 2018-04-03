@@ -35,9 +35,9 @@ class Items < ActiveRecord::Base
 		end
 			items = self.find_by_sql("select
 				isk.id,
-				isk.code,
+				itm.code,
 				isk.price ,
-				itm.name,
+				isk.code name,
 				group_concat(  iop.option_name ,':', ipv.value_name )  'description',
 				um.name 'um',
 				um.id 'um_id',

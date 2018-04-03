@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+
 	<title>Invoice</title>
   <script>
     window.print();
@@ -229,7 +229,7 @@
 						<tr class="none-border-bottom">
 
 							<td  >
-								<b><%= qd.items.name %></b><br>
+								<b><%= qd.item_sku.code %></b><br>
 
 							</td>
 							<td>
@@ -260,7 +260,7 @@
 			</table>
 			<table border="0" style="border:0px">
 				<tr>
-					
+
 						<td colspan="2" rowspan="3" style="border:0px; width:720px"><b>
 							Amount in word:
 						<% amount = ( @invoice.grand_total_amount.round).humanize %>
@@ -310,8 +310,8 @@
 					<br>
 					<br>
 					<br>
-					
-					
+
+
 					_____________________________ <br>
 					<b>Authorized Signature </b><br>
 					Bank name : <%= @company.bank_name %><br>
@@ -324,7 +324,7 @@
 					<br>
 					<br>
 					<br>
-					
+
 					_____________________________ <br>
 					<b>Customer Authorized </b><br>
 				</div>
@@ -335,4 +335,3 @@
 </body>
 
 </html>
-
