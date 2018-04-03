@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
 
   def index
-    data = Items.joins(:item_category, :item_type, :ums, :currency).select("items.* , item_categories.name 'category_name',
+    data = Items.joins(:item_category, :item_type, :ums, :currency ).select("items.* , item_categories.name 'category_name' , '' item_options , '' item_option_values,
 			item_types.name 'item_type_name', ums.name 'um_name', currencies.name 'currency_name' ")
     if !params[:search_string].nil?
       text = '%' + params[:search_string] + '%'
@@ -20,6 +20,15 @@ class ItemsController < ApplicationController
     data = []
     if !item_id.nil?
       data = ItemPrice.where item_id: item_id
+    end
+    render json: {data: data, success: true}
+  end
+
+  def get_sku
+    item_id = params[:item_id]
+    data = []
+    if !item_id.nil?
+      data = ItemSku.where item_id: item_id
     end
     render json: {data: data, success: true}
   end

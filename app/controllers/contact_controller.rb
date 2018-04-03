@@ -35,8 +35,7 @@ class ContactController < ApplicationController
 
    private
    def permit_data
-      params.permit(
-         :id,
+      params.permit(         
          :contact_name,
          :contact_mobile,
          :contact_id_card,

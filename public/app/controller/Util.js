@@ -15,7 +15,7 @@ Ext.define('App.controller.Util', {
         Ext.MessageBox.show(
             {
                 title : 'Warning',
-				msg : message, 
+				msg : message,
 				icon : Ext.MessageBox.WARNING,
 				buttons : Ext.Msg.OK
             }
@@ -220,17 +220,6 @@ Ext.define('App.controller.Util', {
 			}
 			Util.storeSync(stor , win );
 
-			// stor.sync();
-			// setTimeout(function() {
-			// 	stor.load();
-			// }, 1000);
-			// win.close();
-			// Ext.MessageBox.show({
-			// 	title: 'Saved',
-			// 	msg: 'Record Save Succeed.',
-			// 	icon: Ext.MessageBox.INFO,
-			// 	buttons: Ext.Msg.OK
-			// });
 
 		} else {
 			me.msg("Incorrect Data Entry!");
@@ -253,17 +242,7 @@ Ext.define('App.controller.Util', {
 			}
 			Util.storeSync( stor );
 
-			// stor.sync();
-			// setTimeout(function() {
-			// 	stor.load();
-			// }, 1000);
 
-			// Ext.MessageBox.show({
-			// 	title: 'Saved',
-			// 	msg: 'Record Save Succeed.',
-			// 	icon: Ext.MessageBox.INFO,
-			// 	buttons: Ext.Msg.OK
-			// });
 
 			if (ctr.cancel) {
 				ctr.cancel(btn);

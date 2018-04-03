@@ -66,7 +66,7 @@ Ext.define('App.view.item.item.Index', {
                 },  {
                     header:'Currency',
                     width:100,
-                    dataIndex:'currency_name', 
+                    dataIndex:'currency_name',
                     //renderer: Ext.util.Format.usMoney
                 }, {
                     header:'Reorder Point',
@@ -75,7 +75,14 @@ Ext.define('App.view.item.item.Index', {
                 }, {
                     header:'Status',
                     flex:1,
-                    dataIndex:'status'
+                    dataIndex:'status',
+                    renderer:function(val){
+                      if (val) {
+                        return "Active"
+                      }else{
+                        return "Deactive"
+                      }
+                    }
                 }],
                 bbar:{
                     xtype:'cPaging',

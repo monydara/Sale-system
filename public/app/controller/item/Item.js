@@ -16,7 +16,7 @@ Ext.define('App.controller.item.Item', {
 		'combo.ItemCategory',
 		'combo.ItemType',
 		'combo.Currency',
-		"item.ItemPrice",
+		'item.ItemPrice',
 		'combo.Brand',
 		'item.ItemSKU'
 	],
@@ -131,18 +131,15 @@ Ext.define('App.controller.item.Item', {
 				if(store.find('code' , itemName) == -1 ){ //-- add item if not exist
 					store.add(model);
 				}
-
-
 		}
 	},
 	addVarainceProduct:function(btn ){
 		// debugger;
 		var f = btn.up('fmItemVariance');
-		var item = f.getItemOption(f.items.length) ;
+		var item = f.getItemOption(f.items.length);
 		f.add(item);
 
 	},
-
 	addRow: function(btn) {
 
 		var store = btn.up('grid').getStore();
@@ -152,7 +149,7 @@ Ext.define('App.controller.item.Item', {
 
 	},
 	reloadStoreCategory: function(btn) {
-        App.app.getController("item.ItemCategory").save(btn);
+    App.app.getController("item.ItemCategory").save(btn);
 		var me = this ;
 		setTimeout(function() {
 
@@ -189,7 +186,7 @@ Ext.define('App.controller.item.Item', {
 					form.down('image').setSrc(data.image_url.replace("/", ""));
 					form.down('hiddenfield[name=image_url]').setValue(data.image_url.replace("/", ""));
 				},
-				failure: function(formPanel, action) {
+				failure: function(formPanel, action){
 					var data = Ext.decode(action.response.responseText);
 					alert("Failure: " + data.data);
 				}
@@ -281,7 +278,15 @@ Ext.define('App.controller.item.Item', {
 			form.loadRecord(record);
 			form.down('image').setSrc(record.get('image_url'));
 			conatiner.setActiveItem(form);
+			//-- load item price
 			me.getItemItemPriceStore().load({
+				params:{
+					item_id:record.get("id")
+				}
+			});
+
+			//-- load item variance
+			me.getItemItemSKUStore().load({
 				params:{
 					item_id:record.get("id")
 				}
