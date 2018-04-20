@@ -16,7 +16,8 @@ Ext.define('App.controller.report.Report', {
 		//-- report store
 		'report.ReportCustomer',
 		'report.ReportCustomerBalanceDetail',
-		'report.ReportCustomerBalance'
+		'report.ReportCustomerBalance',
+		'report.ReportSale'
 
 	],
 	init: function() {

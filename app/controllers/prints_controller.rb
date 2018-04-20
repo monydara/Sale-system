@@ -61,7 +61,7 @@ class PrintsController <  ActionController::Base
 
   def print_reciept
     @rpt = ReceivePayment.find params[:id]
-    @company  = CompanyProfile.find(1)
+    @company  = CompanyProfile.first
     @customer = @rpt.customer
     @rpt_by_currency =@rpt.receive_payment_detail.select(" currency_id , sum(amount) amount ").group("currency_id")
     receipt_file_name = SysConfig.get_config_by_code "RPT01"

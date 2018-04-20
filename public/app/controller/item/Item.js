@@ -313,7 +313,7 @@ Ext.define('App.controller.item.Item', {
 		if (form.isValid()) {
 			values["item_price_attributes"] = Util.getItemStore(me.getItemItemPriceStore());
 			var itemsku = me.getItemItemSKUStore() ;
-			debugger;
+			
 			if (itemsku.count() > 0 ) {
 			values["item_sku_attributes"] = Util.getItemStore(me.getItemItemSKUStore());
 			//-- get item option
@@ -365,7 +365,7 @@ Ext.define('App.controller.item.Item', {
 
 	},
 	getItemOption:function(btn , value){
-		debugger;
+	
 		var f = btn.up('form').down('fmItemVariance');
 		var values = f.getValues();
 		var legnth = f.items.length;
