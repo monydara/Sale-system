@@ -13,11 +13,14 @@ Ext.define('App.controller.report.Report', {
 		'combo.CustomPrice',
 		'combo.Customer',
 		'combo.Currency',
+		'combo.Item',
+		'combo.Invoice',
 		//-- report store
 		'report.ReportCustomer',
 		'report.ReportCustomerBalanceDetail',
 		'report.ReportCustomerBalance',
-		'report.ReportSale'
+		'report.ReportSale',
+		'report.ReportSaleItem'
 
 	],
 	init: function() {

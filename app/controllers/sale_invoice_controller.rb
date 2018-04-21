@@ -21,7 +21,13 @@ class SaleInvoiceController < ApplicationController
 		render  @@common.returnJoinPaginate(  model, data, params[:page],params[:limit])
 	end
 	def combo
-		data = Invoice.where(payment_flag:[1,2] , status:"S")
+		data = Invoice.where(status:"S")
+		  @validate = Util::Validate.new
+			if @validate.isNotBlank params[:query]
+				data = data.where "invoice_no like '%#{params[:query]}%'"
+			end
+
+
 		render json:{ data:data , success:true}
 	end
 

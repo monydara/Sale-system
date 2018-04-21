@@ -1,35 +1,35 @@
 class CompanyProfileController < ApplicationController
 	def index
-		data = CompanyProfile.find(1)
+		data = CompanyProfile.first
 		render json:{ data:data , success:true}
-	end	
+	end
 
 	def create
-		data = CompanyProfile.find(1)
+		data = CompanyProfile.first
 		data.update_attributes(permit_data)
-		
+
 		render json:{ data:data , success:true }
 	end
 	def remove_image
-		data = CompanyProfile.find(1)
+		data = CompanyProfile.first
 		data.update_attributes(image_file_name:nil)
 		render json:{data:data , success:true}
 	end
 	def update
-		data = CompanyProfile.find(1)
+		data = CompanyProfile.first
 		data.update_attributes(permit_data)
 		url = data.image.url
 		data.update_attributes(image_file_name:url)
 		if data.valid?
-			render json:{data:data , success:true}	
+			render json:{data:data , success:true}
 		else
-			render json:{error:data.errors , success:false}	
+			render json:{error:data.errors , success:false}
 
 		end
 	end
-	private 
+	private
 	def permit_data
-		params.permit(			
+		params.permit(
 			:legal_name,
 			:company_name,
 			:tax_no,
@@ -44,7 +44,7 @@ class CompanyProfileController < ApplicationController
 			:account_name,
 			:bank_name
 		)
-		
+
 	end
 
 end

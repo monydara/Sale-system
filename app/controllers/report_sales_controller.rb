@@ -30,7 +30,7 @@ class ReportSalesController < ApplicationController
     if @validate.isNotBlank p[:customer_id]
       @data=  @data.where "customers.id =#{p[:customer_id]}"
     end
-  
+
     @data
 end
   def permit_data

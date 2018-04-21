@@ -1,7 +1,7 @@
 class Util::Validate
   #code
   def isBlank text
-    if text.empty? || text.nil?
+    if text.nil? || text.empty?
       true
     else
       false
@@ -9,8 +9,8 @@ class Util::Validate
     #code
   end
   def isNotBlank text
-    if text.empty? || text.nil?
-      false 
+    if text.nil? || text.empty?
+      false
     else
       true
     end
