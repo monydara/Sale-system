@@ -25,7 +25,7 @@ class ReportSaleItemsController < ApplicationController
     end
 
     if @validate.isNotBlank p[:item_id]
-      @data=  @data.where "item_id =#{p[:item_id]}"
+      @data=  @data.where "invoice_details.item_id =#{p[:item_id]}"
     end
 
     @data

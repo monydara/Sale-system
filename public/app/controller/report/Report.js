@@ -32,11 +32,18 @@ Ext.define('App.controller.report.Report', {
 	    	'report button[action=Option]':{
 	    		click: this.toggleOptForm
 	    	},
+	    	'report button[action=Reset]':{
+	    		click: this.resetFilterForm
+	    	},
 	    	'checkboxfield[name=column]':{
 	    		change: this.toggleColumn
 	    	},
 
 	    });
+	},
+	resetFilterForm:function(btn) {
+		var form = btn.up("form");
+		form.reset();
 	},
 	search:function(btn){
 		var form = btn.up("form"),

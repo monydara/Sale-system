@@ -27,12 +27,17 @@ Ext.define('App.view.template.report', {
 
                     bbar:[
                       '->',
+
                       {
                         xtype:'cBtnSearch',
                       },{
                         xtype:'cBtnPrint'
                       },{
                         xtype:'cBtnOption'
+                      },{
+                        xtype:'button',
+                        iconCls:'icon-refresh',
+                        action:'Reset'
                       }
 
                     ],
