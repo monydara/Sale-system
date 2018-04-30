@@ -20,7 +20,8 @@ Ext.define('App.controller.report.Report', {
 		'report.ReportCustomerBalanceDetail',
 		'report.ReportCustomerBalance',
 		'report.ReportSale',
-		'report.ReportSaleItem'
+		'report.ReportSaleItem',
+		'report.ReportItem'
 
 	],
 	init: function() {

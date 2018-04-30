@@ -1,17 +1,20 @@
 class ReportSalesController < ApplicationController
+  def initialize
+    @common = Common.new
+    @validate = Util::Validate.new
+  end
   def index
-    data = get_data
-    render json:{data:data , success:true}
+     get_data
+    render @common.returnJoinPaginate(  @model, @data, params[:page],params[:limit])
   end
 
   def print
     @data = get_data
   end
   def get_data
-  #code
-  @validate = Util::Validate.new
+
   # --- query table
-  @data = Invoice.joins(:customer).select("invoices.* , customers.name")
+  @model = Invoice.joins(:customer)
 
 
     # ----- parameter
@@ -21,17 +24,17 @@ class ReportSalesController < ApplicationController
     # --- filter
     if @validate.isNotBlank p[:from_date]
       if @validate.isNotBlank p[:end_date]
-        @data=  @data.where " invoices.created_at between '#{p[:from_date]}' and  '#{p[:end_date]}' "
+        @model=  @model.where " invoices.created_at between '#{p[:from_date]}' and  '#{p[:end_date]}' "
       else
-          @data=  @data.where " invoices.created_at between '#{p[:from_date]}' and current_timestamp() "
+          @model=  @model.where " invoices.created_at between '#{p[:from_date]}' and current_timestamp() "
       end
 
     end
     if @validate.isNotBlank p[:customer_id]
-      @data=  @data.where "customers.id =#{p[:customer_id]}"
+      @model=  @model.where "customers.id =#{p[:customer_id]}"
     end
 
-    @data
+    @data =@model.select("invoices.* , customers.name")
 end
   def permit_data
 		params.permit(

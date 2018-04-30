@@ -45,6 +45,9 @@
 			'invoiceForm button[action=Cancel]': {
 				click: this.cancel
 			},
+      'invoiceForm button[action=ConvertCurrency]':{
+        click: this.convertItemCurrency
+      },
 			// grid  event
 			'invoiceForm button[action=AddItem]': {
 				click: this.addRow
@@ -83,6 +86,41 @@
 		});
 	},
 	itemRecord: {},
+  convertItemCurrency:function(button){
+    var me = this;
+    var b =button;
+    Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+button.value+'</b>?',
+    	function(btn) {
+
+			if (btn == 'yes') {
+
+        var grid = b.up('form').down('grid');
+				var store = grid.getStore();
+				var cId = b.value;
+				store.each(function(rec){
+					// change unit price , totalAmount , currency id , currencySymbol
+
+					var unitPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('price') , rec.get('currency_id') , cId );
+					var extendPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('extent_price') , rec.get('currency_id') , cId );
+					rec.set('price', unitPrice);
+					rec.set("currency_id", cId);
+					rec.set("extent_price",extendPrice );
+
+				})
+
+
+				// if (rec.get('id') > 0) {
+				// 	rec.set("_destroy", true);
+        //
+				// 	me.storeDetailTmp.add(rec);
+        //
+				// }
+				// store.remove(rec);
+				me.setTotalAmountByCurrency(grid);
+
+			}
+		});
+  },
 	umRecord: {},
      autoSelectCombo: function(f,e){
          if (e.getKey() == e.ENTER) {
@@ -454,6 +492,7 @@
          var totalAmoutByCurrency = {};
          var form = grid.up("form");
          var taxRate = form.down("numberfield[name=tax_percentag]").getValue();
+         this.resetFormTotalByCurrency(form);
 
          // == summary by currency to amount
          grid.getStore().each(function(rec) {
@@ -524,6 +563,16 @@
 
      },
 
+  resetFormTotalByCurrency:function(form){
+    var cur = App.store.Config.allCurrency;
+    for(var index in cur){
+      form.down('textfield[name=sub_total_'+cur[index].id+']').setValue(0);
+      form.down('textfield[name=tax_amount_'+cur[index].id+']').setValue(0);
+	 	form.down('textfield[name=grand_total_'+cur[index].id+']').setValue(0);
+    }
+
+  },
+
 	setTotalAmount: function(grid) {
 
 		//  sum total amount
@@ -581,6 +630,7 @@
 		var conatiner = btn.up('invoiceIndex');
 		var form = conatiner.down('invoiceForm'),
 			me = this;
+
 		form.getForm().reset(true);
 		this.getSaleInvoiceDetailStore().removeAll();
 		conatiner.setActiveItem(form);

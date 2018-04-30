@@ -47,6 +47,19 @@ Ext.define('App.conf.GlobalFn',{
         return amount ;
 
     },
+    exchangeCurrency:function(amount,currencyId , toCurrencyId){
+        var config = App.store.Config.allCurrency ;
+        var localAmount = this.exchagneLocalRateIn(amount , currencyId );
+        var convertedAmount = 0 ; 
+         for(var index in config ){
+             if(config[index].id == toCurrencyId){
+                convertedAmount =  localAmount * config[index].fraction_unit / config[index].rate_in;
+                break;  
+             }
+         }
+
+        return convertedAmount; 
+    },
     //-- set auto set grid to edit
     startGridEdit:function(grid , rowIndex , colInex){
         var editor = grid.plugins[0] ;
