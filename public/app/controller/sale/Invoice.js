@@ -89,7 +89,8 @@
   convertItemCurrency:function(button){
     var me = this;
     var b =button;
-    Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+button.value+'</b>?',
+    var cur = App.conf.GlobalFn.getCurrencyObj(button.value);
+    Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+cur.name+'</b>?',
     	function(btn) {
 
 			if (btn == 'yes') {

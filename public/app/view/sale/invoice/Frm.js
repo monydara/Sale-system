@@ -232,7 +232,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                       renderer:function(value ,a , rec){
 
                           // return value + rec.get("currency_symbol");
-                          return App.conf.GlobalFn.currencyFormat(value , rec.get("currency_id")); 
+                          return App.conf.GlobalFn.currencyFormat(value , rec.get("currency_id"));
                       },
                       width: 120,
                       field: {
@@ -344,7 +344,7 @@ Ext.define('App.view.sale.invoice.Frm', {
       var items =[]
       items.push({
           xtype:'label',
-          text:'Currency'
+          text:'Convert Currency To : '
         }
         );
           for(var index in cur ){
@@ -355,7 +355,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                  text:cur[index].symbol
               })
           }
-      
+
 
 
       return items;

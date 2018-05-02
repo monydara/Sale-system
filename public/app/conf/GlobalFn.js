@@ -50,15 +50,15 @@ Ext.define('App.conf.GlobalFn',{
     exchangeCurrency:function(amount,currencyId , toCurrencyId){
         var config = App.store.Config.allCurrency ;
         var localAmount = this.exchagneLocalRateIn(amount , currencyId );
-        var convertedAmount = 0 ; 
+        var convertedAmount = 0 ;
          for(var index in config ){
              if(config[index].id == toCurrencyId){
                 convertedAmount =  localAmount * config[index].fraction_unit / config[index].rate_in;
-                break;  
+                break;
              }
          }
 
-        return convertedAmount; 
+        return convertedAmount;
     },
     //-- set auto set grid to edit
     startGridEdit:function(grid , rowIndex , colInex){
@@ -66,6 +66,15 @@ Ext.define('App.conf.GlobalFn',{
        var e=  editor.startEdit(rowIndex, colInex);
         //debugger;
 
+    },
+    getCurrencyObj:function(currencyId){
+        var curs = App.store.Config.allCurrency ;
+        for (var i in curs) {
+          if (curs[i].id == currencyId) {
+            return curs[i];
+            
+          }
+        }
     }
 
 

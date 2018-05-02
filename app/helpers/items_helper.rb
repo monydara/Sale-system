@@ -54,7 +54,7 @@ module ItemsHelper
 
          from item_skus isk
          inner join items itm on isk.item_id = itm.id
-        left join custom_price_details cpd on cpd.item_id = itm.id and itm.um_id = cpd.um_id  and cpd.custom_price_id = #{custom_price_id}
+        left join custom_price_details cpd on cpd.item_id = isk.id and itm.um_id = cpd.um_id  and cpd.custom_price_id = #{custom_price_id}
         inner join item_categories itc  on itc.id = itm.category_id
         inner join ums um on um.id = itm.um_id
         inner join currencies crn on crn.id = itm.currency_id
