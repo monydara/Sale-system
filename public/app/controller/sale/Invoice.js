@@ -45,8 +45,8 @@
 			'invoiceForm button[action=Cancel]': {
 				click: this.cancel
 			},
-      'invoiceForm button[action=ConvertCurrency]':{
-        click: this.convertItemCurrency
+      'invoiceForm radiofield[name=convertCurrency]':{
+        change: this.convertItemCurrency
       },
 			// grid  event
 			'invoiceForm button[action=AddItem]': {
@@ -86,41 +86,36 @@
 		});
 	},
 	itemRecord: {},
-  convertItemCurrency:function(button){
+  convertItemCurrency:function(rad , val, oldVal){
     var me = this;
-    var b =button;
-    var cur = App.conf.GlobalFn.getCurrencyObj(button.value);
-    Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+cur.name+'</b>?',
-    	function(btn) {
+    var b =rad;
+    var CurrencyId = rad.inputValue ;
+    var cur = App.conf.GlobalFn.getCurrencyObj(CurrencyId);
+    if (val) {
+      Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+cur.name+'</b>?',
+        function(btn) {
 
-			if (btn == 'yes') {
+        if (btn == 'yes') {
 
-        var grid = b.up('form').down('grid');
-				var store = grid.getStore();
-				var cId = b.value;
-				store.each(function(rec){
-					// change unit price , totalAmount , currency id , currencySymbol
+          var grid = b.up('form').down('grid');
+          var store = grid.getStore();
+          var cId = CurrencyId;
+          store.each(function(rec){
+            // change unit price , totalAmount , currency id , currencySymbol
 
-					var unitPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('price') , rec.get('currency_id') , cId );
-					var extendPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('extent_price') , rec.get('currency_id') , cId );
-					rec.set('price', unitPrice);
-					rec.set("currency_id", cId);
-					rec.set("extent_price",extendPrice );
+            var unitPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('price') , rec.get('currency_id') , cId );
+            var extendPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('extent_price') , rec.get('currency_id') , cId );
+            rec.set('price', unitPrice);
+            rec.set("currency_id", cId);
+            rec.set("extent_price",extendPrice );
 
-				})
+          })
+          me.setTotalAmountByCurrency(grid);
 
+        }
+      });
+    }
 
-				// if (rec.get('id') > 0) {
-				// 	rec.set("_destroy", true);
-        //
-				// 	me.storeDetailTmp.add(rec);
-        //
-				// }
-				// store.remove(rec);
-				me.setTotalAmountByCurrency(grid);
-
-			}
-		});
   },
 	umRecord: {},
      autoSelectCombo: function(f,e){

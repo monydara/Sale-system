@@ -347,12 +347,20 @@ Ext.define('App.view.sale.invoice.Frm', {
           text:'Convert Currency To : '
         }
         );
+        //-- push default
+        items.push({
+          xtype:'radiofield',
+          name:'convertCurrency',
+          inputValue: 0,
+          boxLabel:'Default Currency',
+          checked:true
+        })
           for(var index in cur ){
               items.push({
-                 xtype:'button',
-                 action:'ConvertCurrency',
-                 value: cur[index].id,
-                 text:cur[index].symbol
+                 xtype:'radiofield',
+                 name:'convertCurrency',
+                 inputValue: cur[index].id,
+                 boxLabel:cur[index].symbol
               })
           }
 

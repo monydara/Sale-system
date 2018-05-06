@@ -7,7 +7,8 @@ class CustomPricesController < ApplicationController
   end
 
   def get_item_detail
-      @data = CustomPriceDetail.joins(:ums, item_sku:[items:[:currency]]).where(custom_price_id:params[:custom_price_id]).select("custom_price_details.* , ums.name 'um_name' , items.name 'item_name' , currencies.symbol")
+      @data = CustomPriceDetail.joins(:ums, item_sku:[items:[:currency]]).where(custom_price_id:params[:custom_price_id]).select("custom_price_details.* ,
+         ums.name 'um_name' , item_skus.code 'item_name' , currencies.symbol")
       render json:{ data:@data , success:true}
 
   end
