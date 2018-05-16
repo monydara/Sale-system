@@ -177,7 +177,8 @@ class CustomerPaymentController < ApplicationController
 					invoices.paid_amount-receive_payment_details.amount paid_amount,
 					invoices.invoice_no ,
 					receive_payment_details.amount amount,
-					invoices.unpaid_amount balance
+					invoices.unpaid_amount balance,
+						0 last_balance
 					").where(receive_payment_id:params[:payment_id])
 			end
 			render json:{ data:data , success:true }

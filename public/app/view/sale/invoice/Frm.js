@@ -351,7 +351,7 @@ Ext.define('App.view.sale.invoice.Frm', {
         items.push({
           xtype:'radiofield',
           name:'convertCurrency',
-          inputValue: 0,
+          inputValue: null,
           boxLabel:'Default Currency',
           checked:true
         })

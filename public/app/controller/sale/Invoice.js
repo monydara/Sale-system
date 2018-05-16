@@ -91,8 +91,16 @@
     var b =rad;
     var CurrencyId = rad.inputValue ;
     var cur = App.conf.GlobalFn.getCurrencyObj(CurrencyId);
+    var curName ="";
+
+    if (CurrencyId == null) {
+      curName = "Default";
+    }else{
+      curName =cur.name ;
+    }
+
     if (val) {
-      Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+cur.name+'</b>?',
+      Ext.MessageBox.confirm('Confirm', 'Are you sure you want convert all currency to <b>'+curName+'</b>?',
         function(btn) {
 
         if (btn == 'yes') {
@@ -101,13 +109,35 @@
           var store = grid.getStore();
           var cId = CurrencyId;
           store.each(function(rec){
+            //-- set defaults currency
+            if (rec.get('default_currency_id') == undefined) {
+              rec.set('default_currency_id', rec.get("currency_id"));
+            }
+
+            //-- case change to default currency
+            if(cId== null ){
+
+              var unitPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('price') , rec.get('currency_id') , rec.get('default_currency_id') );
+              var extendPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('extent_price') , rec.get('currency_id') , rec.get('default_currency_id') );
+
+              rec.set('price', unitPrice);
+              rec.set("currency_id", rec.get('default_currency_id'));
+              rec.set("extent_price",extendPrice );
+            }else{
+
+              var unitPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('price') , rec.get('currency_id') , cId );
+              var extendPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('extent_price') , rec.get('currency_id') , cId );
+              rec.set('price', unitPrice);
+              rec.set("currency_id", cId);
+              rec.set("extent_price",extendPrice );
+            }
             // change unit price , totalAmount , currency id , currencySymbol
 
-            var unitPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('price') , rec.get('currency_id') , cId );
-            var extendPrice = App.conf.GlobalFn.exchangeCurrency(rec.get('extent_price') , rec.get('currency_id') , cId );
-            rec.set('price', unitPrice);
-            rec.set("currency_id", cId);
-            rec.set("extent_price",extendPrice );
+
+
+
+
+
 
           })
           me.setTotalAmountByCurrency(grid);
@@ -360,6 +390,7 @@
 
 
 	},
+  
 	setRecord: function(editor, e) {
 
 		var grid = e.grid,
@@ -472,6 +503,8 @@
 			 record.set("description", values.sale_description);
 			 record.set("currency_id", values.currency_id );
 			 record.set("currency_symbol" , values.symbol);
+
+
 
 
 			 me.setTotalAmountByCurrency(grid);

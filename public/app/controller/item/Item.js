@@ -69,10 +69,25 @@ Ext.define('App.controller.item.Item', {
 				"fmItemVariance button[action=GenerateItem]":{
 					click : this.generateItemVarianceV1
 				},
+				"fmItemVariance button[action=removeOption]":{
+					click : this.removeItemOption
+				},
 
 
 
 		});
+	},
+	removeItemOption:function(btn){
+		var index= btn.name.split('|')[1];
+		var fm = btn.up('FormItem');
+		debugger;
+		var txtOpt =fm.down('textfield[name=option_name|'+index +']');
+		var cmbOpt =fm.down('tagfield[name=value|'+index+']');
+		fm.remove(txtOpt,true);
+		fm.remove(cmbOpt,true);
+		fm.remove(btn,true);
+		//TODO
+		
 	},
 	generateItemVarianceV1:function(btn){
 		//-- get item
@@ -313,7 +328,7 @@ Ext.define('App.controller.item.Item', {
 		if (form.isValid()) {
 			values["item_price_attributes"] = Util.getItemStore(me.getItemItemPriceStore());
 			var itemsku = me.getItemItemSKUStore() ;
-			
+
 			if (itemsku.count() > 0 ) {
 			values["item_sku_attributes"] = Util.getItemStore(me.getItemItemSKUStore());
 			//-- get item option
@@ -365,7 +380,7 @@ Ext.define('App.controller.item.Item', {
 
 	},
 	getItemOption:function(btn , value){
-	
+
 		var f = btn.up('form').down('fmItemVariance');
 		var values = f.getValues();
 		var legnth = f.items.length;

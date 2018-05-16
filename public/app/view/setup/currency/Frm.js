@@ -28,7 +28,7 @@ Ext.define('App.view.setup.currency.Frm', {
                 },{
                     xtype:'textfield',
                     name:'symbol',
-                    maxLenght: 1 ,
+                    maxLenght: 1,
                     fieldLabel:'Symbol'
                 },{
                     xtype:'textfield',
@@ -39,20 +39,23 @@ Ext.define('App.view.setup.currency.Frm', {
                 {
                     xtype:'numberfield',
                     name:'fraction_unit',
-                    minValue:1,
+                    minValue:0,
+                    decimalPrecision:4,
                     fieldLabel:'Fraction Unit',
 
                 },
                 {
                     xtype:'numberfield',
                     name:'rate_in',
-                    minValue:1,
+                    minValue:0,
+                    decimalPrecision:4,
                     fieldLabel:'Rate In( <b>'+App.store.Config.defaultCurrencySymbol+' </b>)'
                 },
                 {
                     xtype:'numberfield',
                     name:'rate_out',
-                    minValue:1,
+                    minValue:0,
+                    decimalPrecision:4,
                     fieldLabel:'Rate Out( <b>'+App.store.Config.defaultCurrencySymbol+'</b> )'
                 },{
                     xtype:'panel',

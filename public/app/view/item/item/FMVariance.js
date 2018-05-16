@@ -7,10 +7,11 @@ Ext.define('App.view.item.item.FMVariance', {
             items:[
               {
                 xtype:'cBtnAdd',
+                text:'Add Items Option',
                 action:'AddItemVariance'
               },
               this.getItemOption(1),
-              
+
 
             ],
             bbar:[
@@ -30,9 +31,16 @@ Ext.define('App.view.item.item.FMVariance', {
             layout:'hbox',
             items:[
               {
+                xtype:'button',
+                iconCls:'icon-delete',
+                name:'remove|'+index ,
+                action:'removeOption',
+                tooltip:'Remove This Item Option'
+              },
+              {
                 xtype:'textfield',
                 name:'option_name|'+index ,
-                fieldLabel:'Option'
+                  fieldLabel:'Option'
               },
               {
                 xtype: 'tagfield',

@@ -15,7 +15,7 @@ class Invoice < ActiveRecord::Base
 
 	def self.get_unpaid_invoice_by_customer customer_id
 		self.joins(:customer_transactions).where(customer_id:customer_id,payment_flag:[1,2] , status:"S" , :customer_transactions => { transaction_type_id: 2}).
-				select("invoices.id as invoice_id , customer_transactions.amount as invoice_amount , unpaid_amount, paid_amount ,invoice_no , 0 balance , 0 amount ,
+				select("invoices.id as invoice_id , customer_transactions.amount as invoice_amount , unpaid_amount, paid_amount ,invoice_no , 0 balance , 0 amount ,0 last_balance,
 							 customer_transactions.currency_id  ")
 	end
 

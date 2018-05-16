@@ -71,7 +71,7 @@ Ext.define('App.controller.sale.CustomPrice', {
                 me.imSetPriceToItemDetail(me,record);
                 break;
 			case 2 :
-				me.imSetUmNameAndPriceToItem(me , record)
+					me.imSetUmNameAndPriceToItem(me , record)
 				break;
         }
 
@@ -120,12 +120,7 @@ Ext.define('App.controller.sale.CustomPrice', {
 				var store = grid.getStore();
 				if (rec.get('id') > 0) {
 					rec.set("_destroy", true);
-					// console.log('--- update record');
-					// store.filterBy(function(record){
-                    //
-					//    return record.get('_destroy' ) == true ? false :true ;
-					// });
-					// debugger;
+					debugger;
 				}else {
 					console.log("--- remove record ");
 					store.remove(rec);

@@ -67,8 +67,8 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                     fieldLabel:'Customer Name'+redStar
                 },{
                     name:'legal_name',
-                    allowBlank:false,
-                    fieldLabel:'Legal Name'+redStar
+                    allowBlank:true,
+                    fieldLabel:'Legal Name'
                 },{
                     xtype:'cmbCustomerType',
                 },{
@@ -76,7 +76,7 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                    listeners:Util.firstSelect(),
                 },{
                     xtype:'cmbCustomerArea',
-                     listeners:Util.firstSelect(),                  
+                     listeners:Util.firstSelect(),
                     fieldLabel:'Customer Area'+redStar
                 },{
                     name:'vat_tin',
