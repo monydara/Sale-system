@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
 
 	def combo
 		text = params[:query]
-		@data = Customer.joins(:contact).select("customers.* , customers.contact_id contact")
+		@data = Customer.joins(:contact).select("customers.* , customers.contact_id contact ,customers.custom_price_id	custom_price")
 		if !text.nil?
 			@data = @data.where " name like '%#{text}%'"
 		end

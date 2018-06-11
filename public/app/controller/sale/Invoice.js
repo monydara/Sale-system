@@ -86,6 +86,10 @@
 		});
 	},
 	itemRecord: {},
+	// get value from form 
+	value:function(obj){
+		return obj.up('form').getValues();
+	},
   convertItemCurrency:function(rad , val, oldVal){
     var me = this;
     var b =rad;
@@ -110,9 +114,9 @@
           var cId = CurrencyId;
           store.each(function(rec){
             //-- set defaults currency
-            if (rec.get('default_currency_id') == undefined) {
-              rec.set('default_currency_id', rec.get("currency_id"));
-            }
+            // if (rec.get('default_currency_id') == undefined) {
+            //   rec.set('default_currency_id', rec.get("currency_id"));
+            // }
 
             //-- case change to default currency
             if(cId== null ){
@@ -180,6 +184,7 @@
      },
      filterCustomerPrice:function(combo , value ){
 		var me = this ;
+		var rec = combo.getSelectedRecord() ; 
 		 // filter item detail base on custom price
 		 var itemStore =  me.getComboItemStore();
          itemStore.proxy.extraParams.customer_id =value ;
@@ -192,7 +197,17 @@
          // set default customer to combo item
 		 var itemStoreCombo = combo.up("form").down('combo[name=txtItem]').getStore();
          itemStoreCombo.proxy.extraParams.customer_id =value ;
-         itemStoreCombo.load();
+		 itemStoreCombo.load();
+		 
+		 // set custom Price label 
+		 if(rec){
+		 	combo.up('form').down('displayfield[name=custom_price]').setValue(rec.data.custom_price.name);
+		
+		 }else{
+		 	combo.up('form').down('displayfield[name=custom_price]').setValue("");	
+		 }
+		 
+		
 
 
 	 },
@@ -391,7 +406,7 @@
 
 	},
   
-	setRecord: function(editor, e) {
+	setRecord:function(editor, e) {
 
 		var grid = e.grid,
 			me = this;
@@ -501,11 +516,24 @@
 			 record.set("barcode", values.barcode);
 			 record.set("um", values.um);
 			 record.set("description", values.sale_description);
-			 record.set("currency_id", values.currency_id );
-			 record.set("currency_symbol" , values.symbol);
+			 
+			 //  set default currentcy 			
+			 record.set('default_currency_id', values.currency_id);
+			 var val = me.value(grid);
+			 
+			if(val.convertCurrency != undefined ){
+				
+				 record.set("currency_id", val.convertCurrency);
+			}else{
+				 record.set("currency_id", values.currency_id);
+			}
+			 // recalculate amount ( if have set not default currency )
+			
+
+			 //record.set("currency_symbol" , values.symbol);
 
 
-
+ 
 
 			 me.setTotalAmountByCurrency(grid);
 			 me.itemRecord = false;
