@@ -24,18 +24,18 @@ Ext.define('App.view.sale.saleRepresentative.Frm', {
 
             }]
         }, {
-            xtype: 'fieldset',
-            autoScroll: true,
-            title: '<b> Sale Information </b>',
-            padding: 10,
-            layout: {
-                type: 'table',
-                columns: 2
-            },
-            defaults: {
-                width: 400,
-                style: 'margin-left: 10px'
-            },
+            xtype: 'cFieldSet',
+            // autoScroll: true,
+            // title: '<b> Sale Information </b>',
+            // padding: 10,
+            // layout: {
+            //     type: 'table',
+            //     columns: 2
+            // },
+            // defaults: {
+            //     width: 400,
+            //     style: 'margin-left: 10px'
+            // },
             defaultType:'textfield',
             items: [
                 {
@@ -99,12 +99,12 @@ Ext.define('App.view.sale.saleRepresentative.Frm', {
                     xtype:'textarea',
                     colspan:2 ,
                     fieldLabel:'Address',
-                    width:800 , 
+                    // width:800 , 
                     name:'address'
                 },{
                     xtype:'textarea',
                     colspan:2 , 
-                    width:800 , 
+                    // width:800 , 
                     fieldLabel:'Remark',
                     name:'remark'
                 }

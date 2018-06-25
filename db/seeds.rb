@@ -2,9 +2,20 @@ if Area.any?
   Area.delete_all
 end
   Area.create!([
+                   {code: "01", name: "លក់ដំុ"},
+                   {code: "02", name: "លក់រាយ"}
+               ])
+# -- customer type 
+
+if CustomerType.any?
+  CustomerType.delete_all
+end
+  CustomerType.create!([
                    {code: "TK", name: "Takeo"},
                    {code: "PP", name: "Phnom Penh"}
                ])
+
+
 
 
 if CompanyProfile.any?

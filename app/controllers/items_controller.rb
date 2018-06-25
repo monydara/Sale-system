@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  skip_before_action :authenticate, :only => [:upload_image]
   def initialize
     @@common = Common.new
     @@image_url = ''

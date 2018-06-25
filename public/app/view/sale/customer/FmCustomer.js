@@ -15,36 +15,12 @@ Ext.define('App.view.sale.customer.FmCustomer', {
         }
     ],
 
-    layout:{
-        type:'table',
-        columns:2
-
-    },
-    defaults:{
-        style:'margin-left:10px',
-        // height:40,
-        width:400,
-
-    },
-    defaultType:'textfield',
+ 
     items:[
         {
-             xtype:'fieldset',
-            title:'<b>Customer Info</b>',
-            colspan:2 ,
-            width:850 ,
-            padding:10,
-            layout:{
-                type:'table',
-                columns:2
-            },
-            defaults:{
-                style:'margin-left:10px',
-                // height:40,
-                width:400,
-                allowBlank:true,
-              labelWidth:120,
-            },
+             xtype:'cFieldSet',
+            title:'Customer Info',
+           
             defaultType:'textfield',
             items:[
                 {
@@ -99,27 +75,17 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                     name:'address',
                     fieldLabel:'Address',
                     colspan: 2,
-                    width: 810
+                    // flex:1,
+                    // width:'98%',
+
+                    
                 },
             ]
         },
         {
-            xtype:'fieldset',
-            title:'<b>Contact Info</b>',
-            colspan:2 ,
-            width:850 ,
-            padding:10,
-
-            layout:{
-                type:'table',
-                columns:2
-            },
-            defaults:{
-                style:'margin-left:10px',
-                // height:40,
-                width:400,
-                allowBlank:true,
-            },
+            xtype:'cFieldSet',
+            title:'Contact Info',
+           
             defaultType:'textfield',
             items:[
                 {

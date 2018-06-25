@@ -41,7 +41,7 @@ class ItemCategoriesController < ApplicationController
 	private
 	def permit_data
 		params.permit(
-			:id,
+			
 			:name,
 			:sub_of_id,
 			:remark,

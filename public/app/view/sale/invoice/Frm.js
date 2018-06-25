@@ -53,18 +53,18 @@ Ext.define('App.view.sale.invoice.Frm', {
                       }]
                   }]
               }, {
-                  xtype: 'fieldset',
+                  xtype: 'cFieldSet',
                   autoScroll: true,
                   title: '<b> Basic Info </b>',
-                  padding: 10,
-                  layout: {
-                      type: 'table',
-                      columns: 2
-                  },
-                  defaults: {
-                      width: 400,
-                      style: 'margin-left: 10px'
-                  },
+                //   padding: 10,
+                //   layout: {
+                //       type: 'table',
+                //       columns: 2
+                //   },
+                //   defaults: {
+                //       width: 400,
+                //       style: 'margin-left: 10px'
+                //   },
                   items: [{
                           xtype: 'container',
                           layout: 'hbox',
@@ -113,7 +113,7 @@ Ext.define('App.view.sale.invoice.Frm', {
                   xtype: 'grid',
                   border: true,
                   autoScroll: true,
-                  height: 200,
+                  height: 500,
                   style: 'border:1px solid silver',
                   plugins: Ext.create('Ext.grid.plugin.CellEditing', {
                       clicksToEdit: 1
