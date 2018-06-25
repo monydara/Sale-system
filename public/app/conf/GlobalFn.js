@@ -11,6 +11,8 @@ Ext.define('App.conf.GlobalFn',{
         'App.view.template.cmbItem',
         'App.view.template.cmbInvoice',
         'App.view.custom.FieldSet'
+
+
     ],
     // get currency format base on currency id
     currencyFormat:function (amount , currencyId ) {

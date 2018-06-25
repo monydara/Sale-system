@@ -79,7 +79,7 @@ Ext.define('App.controller.item.Item', {
 	},
 	removeItemOption:function(btn){
 		var index= btn.name.split('|')[1];
-		var fm = btn.up('FormItem');
+		var fm = btn.up('fmItemVariance');
 		debugger;
 		var txtOpt =fm.down('textfield[name=option_name|'+index +']');
 		var cmbOpt =fm.down('tagfield[name=value|'+index+']');

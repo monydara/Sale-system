@@ -62,40 +62,40 @@ Ext.define('App.view.sale.customerPayment.Frm', {
     getVBasicPayment:{
         xtype: 'cFieldSet',
 
-            title: '<b> Basic Info </b>',
+        title: '<b> Basic Info </b>',
 
-            items: [
-                {
-            xtype: 'cmbCustomer',
-            fieldLabel: 'Customer(<span style="color:red">*</span>)',
+        items: [
+            {
+                xtype: 'cmbCustomer',
+                fieldLabel: 'Customer(<span style="color:red">*</span>)',
 
-        }, {
-            xtype:'combo',
-            name:'payment_type',
-            fieldLabel:'Payment Type',
-            valueField:'id',
-            displayField:'name',
-            editable:false ,
-            value:'CA',
-            store:Ext.create("Ext.data.Store",{
-                fields:['id', 'name'],
-                data:[
-                    {id:'CA', name:'Cash'},
-                    {id:'CH', name:'Cheque'},
-                ]
-            })
-        },{
-            xtype: 'textfield',
-            fieldLabel: 'Ref No.',
-            name: 'ref_no',
-        },{
-            xtype:'textfield',
-            fieldLabel:'Cheque No',
-            hidden:true,
-            name:'check_no',
-            maxLength : 10 ,
-            emptyText:'-- Cheque Number --- '
-        },
+            }, {
+                xtype:'combo',
+                name:'payment_type',
+                fieldLabel:'Payment Type',
+                valueField:'id',
+                displayField:'name',
+                editable:false ,
+                value:'CA',
+                store:Ext.create("Ext.data.Store",{
+                    fields:['id', 'name'],
+                    data:[
+                        {id:'CA', name:'Cash'},
+                        {id:'CH', name:'Cheque'},
+                    ]
+                })
+            },{
+                xtype: 'textfield',
+                fieldLabel: 'Ref No.',
+                name: 'ref_no',
+            },{
+                xtype:'textfield',
+                fieldLabel:'Cheque No',
+                hidden:true,
+                name:'check_no',
+                maxLength : 10 ,
+                emptyText:'-- Cheque Number --- '
+            },
 
         ]
     },
