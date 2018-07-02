@@ -199,7 +199,7 @@ Ext.define('App.view.sale.customPrice.Fm', {
                 }
 
             ],
-            height:200,
+            height:500,
 
         },
 

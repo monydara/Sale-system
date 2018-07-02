@@ -148,8 +148,8 @@ ActiveRecord::Schema.define(version: 20180121002107) do
     t.integer "custom_price_id"
     t.integer "item_id"
     t.integer "um_id"
-    t.decimal "price", precision: 10
-    t.decimal "extend_price", precision: 10
+    t.decimal "price", precision: 10 , scale: 6
+    t.decimal "extend_price", precision: 10 , scale: 6
     t.datetime "created_at"
     t.datetime "updated_at"
   end
