@@ -39,6 +39,8 @@ Ext.define('App.view.reports.item.Index', {
      {
        xtype:'cmbItem',
 
+     },{
+       xtype:'cmbCategory'
      }
    ]
 

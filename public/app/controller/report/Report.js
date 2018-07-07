@@ -15,6 +15,7 @@ Ext.define('App.controller.report.Report', {
 		'combo.Currency',
 		'combo.Item',
 		'combo.Invoice',
+		'combo.ItemCategory',
 		//-- report store
 		'report.ReportCustomer',
 		'report.ReportCustomerBalanceDetail',

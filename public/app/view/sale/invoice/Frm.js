@@ -98,6 +98,10 @@ Ext.define('App.view.sale.invoice.Frm', {
                             xtype: 'textfield',
                             fieldLabel: 'Ref No.',
                             name: 'ref_no',
+                        },{
+                            xtype:'button',
+                            text:'Add Customer',
+                            action:'AddCustomer'
                         }, {
                             xtype: 'displayfield',
                             name: 'custom_price',

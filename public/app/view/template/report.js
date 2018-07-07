@@ -77,9 +77,22 @@ Ext.define('App.view.template.report', {
                         items:itemCheckBoxs,
                       //  hidden:true,
 
-                      }
+                      },
+                      // {
+                      //   xtype:'panel', 
+                      //   html:"<h1> Report Title  </h1>"+
+                      //   "<table>"+
+                      //   "<tr>"+
+                      //     "<th> Header Column </th>"+
+                      //   "</tr>"+
+                      //   "</table>"
+                      // }
 
-                ]}],
+                
+                
+                
+                
+                    ]}],
                 xtype:'grid',
                 border:true,
                 name:'index',
@@ -102,6 +115,7 @@ Ext.define('App.view.template.report', {
             var obj ={
               boxLabel: column.header,
               name: 'column',
+
               inputValue: column.dataIndex,
               checked: column.hidden != true //  true
             };

@@ -32,7 +32,8 @@ Ext.define('App.controller.sale.Customer',{
 	    	},
 	    	'FormCustomer button[action=Cancel]':{
 	    		click: this.cancel
-	    	},
+			},
+			
 	    	"FormCustomer combo[name=contact_id]":{
 	    		select: this.selectContact
 	    	},
@@ -41,9 +42,22 @@ Ext.define('App.controller.sale.Customer',{
 	    	},
 	    	"FormCustomer combo[name=lead_id]":{
 	    		select: this.selectLead
+			},
+			//-- save and cancel from window 
+			'FormCustomer button[action=SaveWin]':{
+	    		click: this.saveWin
 	    	},
+	    	'FormCustomer button[action=CancelWin]':{
+	    		click: Util.closeWindow
+			},
+
 
 	    });
+	},
+	saveWin:function(btn){
+		var me = this ; 
+		var store = me.getSaleCustomerStore();
+		Util.save(btn, store , "Customer")
 	},
 	selectLead:function(combo , records){
 		var rec = records[0];

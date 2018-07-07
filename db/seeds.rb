@@ -256,5 +256,8 @@ SysMenu.create!([
               {menu: "Report Customer List", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.customerlist", controller_name: "report.Report", seq_no:61},
               {menu: "Report Customer Balance Detail", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.customerBalanceDetail", controller_name: "report.Report", seq_no:62},
               {menu: "Report Customer Balance", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.customerBalance", controller_name: "report.Report", seq_no:62},
+              {menu: "Report Sale", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.sale", controller_name: "report.Report", seq_no:62},
+              {menu: "Report Item", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.item", controller_name: "report.Report", seq_no:62},
+              {menu: "Report Sale Item", icon_cls: "fa fa-money", expand: nil, is_leaf: true, parent:report,  action: "update", is_active: true, view_index: "reports.saleItem", controller_name: "report.Report", seq_no:62},
 
             ])

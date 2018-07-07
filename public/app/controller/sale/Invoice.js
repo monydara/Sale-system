@@ -78,12 +78,26 @@
 			},
 			'invoiceForm numberfield[name=qty]':{
                 specialkey: this.autoSelectCombo
+			},
+			//-=--- add customer from invoice 
+			'invoiceForm button[action=AddCustomer]':{
+				click : this.showFormCustomer
 			}
 
 
 
 
 		});
+
+		//-- load other controller
+		App.app.getController('sale.Customer')
+	},
+	showFormCustomer:function(btn){
+		
+		var win = Ext.create('App.view.sale.customer.WinCustomer');
+		win.show()
+		win.center()
+		
 	},
 	itemRecord: {},
 	// get value from form 

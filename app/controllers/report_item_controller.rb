@@ -24,6 +24,10 @@ class ReportItemController < ApplicationController
     if @validate.isNotBlank p[:item_id]
       @model=  @model.where "item_id =#{p[:item_id]}"
     end
+    if @validate.isNotBlank p[:category_id]
+      @model = @model.where "category_id =#{ p[:category_id] }"
+    end
+    
 
     @data = @model.select("item_skus.* , items.name ,
       ums.name um_name  ,
@@ -37,7 +41,8 @@ class ReportItemController < ApplicationController
     params.permit(
 
       :item_id,
-      :column
+      :column,
+      :category_id
       )
   end
 end

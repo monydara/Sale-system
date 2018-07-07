@@ -10,6 +10,7 @@ Ext.define('App.conf.GlobalFn',{
         'App.view.template.cmbCurrency',
         'App.view.template.cmbItem',
         'App.view.template.cmbInvoice',
+        'App.view.template.cmbCategory',
         'App.view.custom.FieldSet'
 
 

@@ -8,7 +8,8 @@ Ext.define('App.controller.item.Item', {
 
 	],
 	requires:[
-		'App.view.template.cmbBrand'
+		'App.view.template.cmbBrand',
+		// 'App.controller.item.UM'
 	],
 	stores: [
 		'item.Item',
@@ -76,6 +77,8 @@ Ext.define('App.controller.item.Item', {
 
 
 		});
+		// load controller um 
+		App.app.getController("item.UM")
 	},
 	removeItemOption:function(btn){
 		var index= btn.name.split('|')[1];
@@ -179,6 +182,7 @@ Ext.define('App.controller.item.Item', {
 	},
 	reloadStoreUM: function(btn){
 		var me = this;
+		
 		setTimeout(function(){
 			me.getComboUMStore().load();
 		}, 1000);
