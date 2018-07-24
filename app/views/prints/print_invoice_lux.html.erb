@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Invoice <%= @invoice.invoice_no %>  </title>
   <script>
      window.print();
@@ -139,8 +139,7 @@
 
   <div style="display:inline-block; width:100%">
     <!-- logo -->
-    <img style="width: 200px;" src="<%= @company.image_file_name %>">
-
+    <%= wicked_pdf_image_tag @company.image_file_name %> 
     <div class="right" style="   margin-bottom: -15px; margin-right: 60px; ">
     <b> Main Branch <br>
       សាខាចម្បង<br></b>

@@ -1,6 +1,7 @@
 class PrintsController <  ActionController::Base
 
   def print_invoice
+  
     if !params[:id].nil?
 
       @invoice = Invoice.find(params[:id])
@@ -46,7 +47,15 @@ class PrintsController <  ActionController::Base
 
     invoice_file_name = SysConfig.get_config_by_code "INV01"
     puts "----- #{invoice_file_name} ======"
-    render invoice_file_name
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "invoice.pdf",:template => "./prints/#{invoice_file_name}.html.erb"
+        # render pdf: invoice_file_name+".html.erb"   # Excluding ".pdf" extension.
+      end
+    end
+    # render invoice_file_name
 
     #
     # # ========= testing ======
@@ -58,7 +67,17 @@ class PrintsController <  ActionController::Base
     #
     # #render json: { data: render_to_string('print_invoice_lux.html.erb') }
   end
-
+  def print_test
+  
+      puts "---- print test"
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render :pdf => "invoice.pdf" ,:template =>"./prints/print_test.html.erb"
+          # render pdf: invoice_file_name+".html.erb"   # Excluding ".pdf" extension.
+        end
+      end
+  end 
   def print_reciept
     @rpt = ReceivePayment.find params[:id]
     @company  = CompanyProfile.first
@@ -73,7 +92,7 @@ class PrintsController <  ActionController::Base
     if !params[:id].nil?
 
       @quotation = SaleQuotation.find(params[:id])
-      @company  = CompanyProfile.find(1)
+      @company  =  CompanyProfile.first
       @customer = @quotation.customer
       @sale = @quotation.sale_representative
       @quotation_detail = @quotation.sale_quotation_detail

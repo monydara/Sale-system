@@ -41,17 +41,17 @@ Ext.define('App.view.Viewport', {
                             // ]
 
                         },{
-                            xtype:'panel',
-                            border:true,
-                            region:'center',
-                            layout:'card',
-                            id:'container-page',
-                            html :'Dashboard Page',
-                            items:[
-                                // {
-                                //     xtype:'roomIndex'
-                                // }
-                            ]
+                            xtype:'fmDashboard',
+                            // border:true,
+                            // region:'center',
+                            // layout:'card',
+                            // id:'container-page',
+                            // html :'Dashboard Page',
+                            // items:[
+                            //     // {
+                            //     //     xtype:'roomIndex'
+                            //     // }
+                            // ]
                            
                         }
 

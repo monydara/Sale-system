@@ -20,7 +20,7 @@ default: &default
 
 development:
   <<: *default
-  database: sale_system
+  database: sale_system_oun
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -51,5 +51,5 @@ test:
 production:
   <<: *default
   database: sale_system
-  username: sale-system-v3
-  password: <%= ENV['SALE-SYSTEM-V3_DATABASE_PASSWORD'] %>
+  # username: sale-system-v3
+  # password: <%= ENV['SALE-SYSTEM-V3_DATABASE_PASSWORD'] %>

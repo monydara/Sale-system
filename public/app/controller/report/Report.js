@@ -33,6 +33,9 @@ Ext.define('App.controller.report.Report', {
 	    	},
 	    	'report button[action=Option]':{
 	    		click: this.toggleOptForm
+			},
+			'report button[action=Print]':{
+	    		click: this.printReport
 	    	},
 	    	'report button[action=Reset]':{
 	    		click: this.resetFilterForm
@@ -42,6 +45,15 @@ Ext.define('App.controller.report.Report', {
 	    	},
 
 	    });
+	},
+
+	printReport:function(btn){
+		var me = this 
+		window.open("/ReportCustomers/print.pdf")
+		// Util.ajax("/ReportCustomers/print" , {},me.showInvoice)
+	},
+	showInvoice:function(data){
+		console.log(data)
 	},
 	resetFilterForm:function(btn) {
 		var form = btn.up("form");

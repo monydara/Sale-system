@@ -73,6 +73,8 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem 'seed_dump'
 
-# --- logger
+# --- logger  
 
 # gem 'log4r'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

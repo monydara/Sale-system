@@ -11,6 +11,7 @@ class ReportCustomersController < ApplicationController
 
   def print
     @data = get_data
+    render "customer_report.html"
   end
 def get_data
 

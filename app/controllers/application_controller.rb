@@ -12,6 +12,7 @@ class ApplicationController < ActionController::API
 
   # Authenticate the user with token based authentication
   def authenticate
+   
     authenticate_token || render_unauthorized
   end
 

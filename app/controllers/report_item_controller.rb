@@ -1,4 +1,5 @@
 class ReportItemController < ApplicationController
+  skip_before_action :authenticate, :only => [:show]
   def initialize
     @common = Common.new
     @validate = Util::Validate.new
@@ -8,8 +9,9 @@ class ReportItemController < ApplicationController
     render @common.returnJoinPaginate(  @model, @data, params[:page],params[:limit])
   end
 
-  def print
-    @data = get_data
+  def show
+    # @data = get_data
+    render 'test.html'
   end
   def get_data
   #code
