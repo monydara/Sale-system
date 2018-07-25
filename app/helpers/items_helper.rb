@@ -6,11 +6,13 @@ module ItemsHelper
     # get customer price id
     data = nil
     customer  = Customer.find(customer_id)
-    if customer.custom_price_id > 0
+    if !customer.custom_price_id.nil?
 
       # --- join with  custom price item detail
 
       data = get_item_price_data(  customer.custom_price_id , qeuryString)
+    else 
+      data = Items.combo qeuryString
 
     end
 

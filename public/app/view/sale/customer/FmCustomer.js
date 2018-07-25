@@ -7,7 +7,11 @@ Ext.define('App.view.sale.customer.FmCustomer', {
     title:'Custmer Form',
     buttons:[
         '->',
-
+        {
+            xtype:'cBtnSave',
+            text:'Save & New',
+            action:'SaveAndNew'
+          },
         {
           xtype:'cBtnSave'
         },{
@@ -47,13 +51,16 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                     fieldLabel:'Legal Name'
                 },{
                     xtype:'cmbCustomerType',
+                    allowBlank:true ,
                 },{
                   xtype:'cmbCustomPrice' ,
+                  allowBlank:true ,
                    listeners:Util.firstSelect(),
                 },{
                     xtype:'cmbCustomerArea',
                      listeners:Util.firstSelect(),
-                    fieldLabel:'Customer Area'+redStar
+                     allowBlank:true,
+                    fieldLabel:'Customer Area'
                 },{
                     name:'vat_tin',
                     fieldLabel:"VAT TIN"
@@ -98,11 +105,11 @@ Ext.define('App.view.sale.customer.FmCustomer', {
                             store:'combo.Contact',
                             valueField:'id',
                             minChars:2,
-                            allowBlank:false ,
+                            allowBlank:true ,
                             width:375 ,
                             queryMode:'remote',
                             displayField:'contact_name',
-                            fieldLabel:'Contact Name'+redStar
+                            fieldLabel:'Contact Name'
                         },{
                             xtype:'button',
                             action:'AddContact',

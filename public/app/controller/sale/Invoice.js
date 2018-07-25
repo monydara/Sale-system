@@ -214,7 +214,7 @@
 		 itemStoreCombo.load();
 		 
 		 // set custom Price label 
-		 if(rec){
+		 if(rec.data.custom_price){
 		 	combo.up('form').down('displayfield[name=custom_price]').setValue(rec.data.custom_price.name);
 		
 		 }else{

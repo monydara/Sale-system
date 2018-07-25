@@ -1,20 +1,20 @@
 class CustomersController < ApplicationController
 	@@common = Common.new
 	def index
-		data = Customer.joins(:area, :contact)
+		data = Customer
 		if !params[:string].nil?
 			text = '%'+params[:string]+'%'
-			data = data.where(" customers.name like '#{text}' or legal_name like '#{text}' or phone like '#{text}' or contacts.contact_name like '#{text}'  ").order(created_at:'desc')
+			data = data.where(" customers.name like '#{text}' or legal_name like '#{text}' or phone like '#{text}'  ").order(created_at:'desc')
 		end
-		result = data.select("customers.* , areas.name 'area_name' , contacts.id contact ,contacts.contact_name , contacts.contact_mobile ")
+		result = data
 		render @@common.returnJoinPaginate(data ,result, params[:page],params[:limit])
 	end
 
 	def combo
 		text = params[:query]
-		@data = Customer.joins(:contact).select("customers.* , customers.contact_id contact ,customers.custom_price_id	custom_price")
+		@data = Customer.select("customers.*")
 		if !text.nil?
-			@data = @data.where " name like '%#{text}%'"
+			@data = @data.where " name like '%#{text}%' or legal_name like '%#{text}%'"
 		end
 
 
@@ -28,7 +28,8 @@ class CustomersController < ApplicationController
 			lead_id =data.lead_id
 			if !lead_id.nil? && lead_id > 0
 				Lead.update_status_converted lead_id
-			end
+			end			 
+
 
 			if data.valid?
 				data.save

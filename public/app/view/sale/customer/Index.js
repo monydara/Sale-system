@@ -28,13 +28,10 @@ Ext.define('App.view.sale.customer.Index', {
                 columns:[
                     {header:'NO', xtype:'rownumberer', width:50, align:'center'},
                     {header:'Code', dataIndex:'code'},
-                    {header:'Name ',width:150,dataIndex:'name'},
-                    {header:'Legal Name',width:150,dataIndex:'legal_name'},
-                    {header:'Phone',width:150,dataIndex:'phone'},
-                    {header:'Contact',width:150,dataIndex:'contact_name'},
-                    {header:'Contact Phone',width:150,dataIndex:'contact_mobile'},
-                    {header:'Area', flex:1 , dataIndex:'area_name'}
-
+                    {header:'Name ',width:200,dataIndex:'name'},
+                    {header:'Legal Name',width:200,dataIndex:'legal_name'},
+                    {header:'Phone',flex:1,dataIndex:'phone'},
+                   
                 ],
                 bbar:{
                     xtype:'cPaging' ,
